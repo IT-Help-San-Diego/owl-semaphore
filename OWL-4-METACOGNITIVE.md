@@ -1,4 +1,4 @@
-
+![META Layer Proof Palette](assets/proofs/META-layer-proof-palette.png)
 
 # OWL SEMAPHORE — METACOGNITIVE STANDARD SPECIFICATION
 
