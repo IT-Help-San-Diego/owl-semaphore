@@ -1,26 +1,28 @@
-name: Attach release bundle
+name: Release bundle
 
 on:
+  push:
+    tags:
+      - 'v*'
   workflow_dispatch:
     inputs:
       tag:
-        description: Tag to package and upload
+        description: Tag to package and release
         required: true
         type: string
-  release:
-    types: [published]
 
 permissions:
   contents: write
 
 jobs:
-  bundle-release:
+  release-bundle:
     runs-on: ubuntu-latest
     env:
-      TAG_NAME: ${{ inputs.tag || github.event.release.tag_name }}
+      TAG_NAME: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || inputs.tag }}
 
     steps:
-      - name: Check tag value
+      - name: Resolve tag
+        shell: bash
         run: |
           set -euo pipefail
           test -n "$TAG_NAME"
@@ -32,6 +34,7 @@ jobs:
           ref: ${{ env.TAG_NAME }}
 
       - name: Check required files
+        shell: bash
         run: |
           set -euo pipefail
           test -d assets
@@ -46,8 +49,10 @@ jobs:
           test -f VALIDATION-SCRIPT-SPEC.md
 
       - name: Build release bundle
+        shell: bash
         run: |
           set -euo pipefail
+
           BUNDLE_ROOT="dist/owl-semaphore-${TAG_NAME}"
           mkdir -p "$BUNDLE_ROOT"
 
@@ -65,23 +70,63 @@ jobs:
           cd dist
           zip -r "owl-semaphore-${TAG_NAME}-release-bundle.zip" "owl-semaphore-${TAG_NAME}"
 
-      - name: Verify release exists
-        env:
-          GH_TOKEN: ${{ github.token }}
+      - name: Write release notes
+        shell: bash
         run: |
           set -euo pipefail
-          gh release view "$TAG_NAME"
+          cat > RELEASE_NOTES.md <<EOF
+          ## Owl Semaphore ${TAG_NAME}
 
-      - name: Upload release bundle
+          Full-source, integrity-verifiable release of the Owl Semaphore badge system.
+
+          This release packages the complete asset system, documentation, and validation materials into a single reproducible bundle.
+
+          ### Included
+          - Full \`assets/\` directory
+          - \`INTEGRITY-MANIFEST.md\`
+          - \`LICENSE\`
+          - \`OWL-1-NORMATIVE.md\`
+          - \`OWL-2-NON-NORMATIVE.md\`
+          - \`OWL-3-CRITICAL.md\`
+          - \`OWL-4-METACOGNITIVE.md\`
+          - \`OWL-SEMAPHORE-SYSTEM.md\`
+          - \`RELEASE-HASHES.txt\`
+          - \`VALIDATION-SCRIPT-SPEC.md\`
+
+          ### License
+          CC-BY-4.0
+          EOF
+
+      - name: Create release if missing
         env:
           GH_TOKEN: ${{ github.token }}
+        shell: bash
         run: |
           set -euo pipefail
-          gh release upload "$TAG_NAME" "dist/owl-semaphore-${TAG_NAME}-release-bundle.zip" --clobber
+          if gh release view "$TAG_NAME" >/dev/null 2>&1; then
+            echo "Release already exists for $TAG_NAME"
+          else
+            gh release create "$TAG_NAME" \
+              "dist/owl-semaphore-${TAG_NAME}-release-bundle.zip" \
+              --verify-tag \
+              --title "Owl Semaphore ${TAG_NAME} — Full Source & Release Bundle" \
+              --notes-file RELEASE_NOTES.md
+          fi
 
-      - name: Show release assets
+      - name: Upload or replace release bundle
         env:
           GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh release upload "$TAG_NAME" \
+            "dist/owl-semaphore-${TAG_NAME}-release-bundle.zip" \
+            --clobber
+
+      - name: Show release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
         run: |
           set -euo pipefail
           gh release view "$TAG_NAME"
