@@ -1,12 +1,32 @@
 cff-version: 1.2.0
-title: Owl Semaphore Badge System
-message: If you use this work, please cite it as follows.
+message: "If you use the Owl Semaphore system, please cite it as below."
+title: "Owl Semaphore Badge System"
 type: software
 authors:
-- family-names: Balboa
-  given-names: Carey James
-  orcid: https://orcid.org/0009-0000-5237-9065
-version: v1.0.0
+  - family-names: "Balboa"
+    given-names: "Carey James"
+    orcid: "https://orcid.org/0009-0000-5237-9065"
+version: "v1.0.0"
 date-released: 2026-04-07
-license: BUSL-1.1
-repository-code: https://github.com/IT-Help-San-Diego/owl-semaphore
+license: "CC-BY-4.0"
+repository-code: "https://github.com/IT-Help-San-Diego/owl-semaphore"
+url: "https://github.com/IT-Help-San-Diego/owl-semaphore"
+abstract: "A four-standard publication-grade badge system for classifying DNS Tool documentation into normative, non-normative, critical, and metacognitive material."
+keywords:
+  - visual standard
+  - classification system
+  - DNS Tool
+  - documentation
+  - epistemology
+preferred-citation:
+  type: software
+  authors:
+    - family-names: "Balboa"
+      given-names: "Carey James"
+      orcid: "https://orcid.org/0009-0000-5237-9065"
+  title: "Owl Semaphore Badge System"
+  version: "v1.0.0"
+  date-released: 2026-04-07
+  license: "CC-BY-4.0"
+  repository-code: "https://github.com/IT-Help-San-Diego/owl-semaphore"
+  url: "https://github.com/IT-Help-San-Diego/owl-semaphore"
