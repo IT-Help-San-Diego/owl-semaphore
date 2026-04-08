@@ -1,6 +1,7 @@
 name: Attach release asset bundle
 
 on:
+  workflow_dispatch:
   release:
     types: [published]
 
