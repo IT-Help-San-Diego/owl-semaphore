@@ -22,6 +22,7 @@ jobs:
     steps:
       - name: Check tag value
         run: |
+          set -euo pipefail
           test -n "$TAG_NAME"
           echo "TAG_NAME=$TAG_NAME"
 
@@ -32,6 +33,7 @@ jobs:
 
       - name: Check required files
         run: |
+          set -euo pipefail
           test -d assets
           test -f INTEGRITY-MANIFEST.md
           test -f LICENSE
@@ -63,10 +65,23 @@ jobs:
           cd dist
           zip -r "owl-semaphore-${TAG_NAME}-release-bundle.zip" "owl-semaphore-${TAG_NAME}"
 
+      - name: Verify release exists
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release view "$TAG_NAME"
+
       - name: Upload release bundle
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release upload "$TAG_NAME" \
-            "dist/owl-semaphore-${TAG_NAME}-release-bundle.zip" \
-            --clobber
+          set -euo pipefail
+          gh release upload "$TAG_NAME" "dist/owl-semaphore-${TAG_NAME}-release-bundle.zip" --clobber
+
+      - name: Show release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release view "$TAG_NAME"
