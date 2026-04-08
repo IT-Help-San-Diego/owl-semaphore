@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Editor / OS noise
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp

@@ -1,0 +1,38 @@
+---
+
+# `CITATION.cff`
+
+```yaml
+cff-version: 1.2.0
+title: "Owl Semaphore"
+message: "If you use this work, please cite it using the metadata from this file."
+type: software
+authors:
+  - family-names: "Balboa"
+    given-names: "Carey"
+repository-code: "https://github.com/IT-Help-San-Diego/owl-semaphore"
+abstract: >
+  Owl Semaphore is a finite algebra of epistemic states mapped into a constrained
+  visual system. It defines four discrete states—Normative, Non-Normative,
+  Critical, and Metacognitive—using the Klein four-group as its mathematical basis.
+keywords:
+  - epistemology
+  - visual notation
+  - klein four-group
+  - O(2)
+  - metacognition
+  - philosophy of science
+  - symbolic systems
+license: "SEE LICENSE IN LICENSE FILE"
+version: "1.0.0"
+date-released: 2026-04-07
+url: "https://github.com/IT-Help-San-Diego/owl-semaphore"
+preferred-citation:
+  type: software
+  authors:
+    - family-names: "Balboa"
+      given-names: "Carey"
+  title: "Owl Semaphore"
+  version: "1.0.0"
+  date-released: 2026-04-07
+  url: "https://github.com/IT-Help-San-Diego/owl-semaphore"
