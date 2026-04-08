@@ -42,25 +42,26 @@ jobs:
         run: |
           set -e
 
-          mkdir bundle
+          BUNDLE="owl-semaphore-${TAG}"
+          mkdir "${BUNDLE}"
 
-          cp -R assets bundle/
-          cp LICENSE bundle/
-          cp INTEGRITY-MANIFEST.md bundle/
-          cp OWL-1-NORMATIVE.md bundle/
-          cp OWL-2-NON-NORMATIVE.md bundle/
-          cp OWL-3-CRITICAL.md bundle/
-          cp OWL-4-METACOGNITIVE.md bundle/
-          cp OWL-SEMAPHORE-SYSTEM.md bundle/
-          cp OWL-1-NORMATIVE.pdf bundle/
-          cp OWL-2-NON-NORMATIVE.pdf bundle/
-          cp OWL-3-CRITICAL.pdf bundle/
-          cp OWL-4-METACOGNITIVE.pdf bundle/
-          cp OWL-SEMAPHORE-SYSTEM.pdf bundle/
-          cp RELEASE-HASHES.txt bundle/
-          cp VALIDATION-SCRIPT-SPEC.md bundle/
+          cp -R assets "${BUNDLE}/"
+          cp LICENSE "${BUNDLE}/"
+          cp INTEGRITY-MANIFEST.md "${BUNDLE}/"
+          cp OWL-1-NORMATIVE.md "${BUNDLE}/"
+          cp OWL-2-NON-NORMATIVE.md "${BUNDLE}/"
+          cp OWL-3-CRITICAL.md "${BUNDLE}/"
+          cp OWL-4-METACOGNITIVE.md "${BUNDLE}/"
+          cp OWL-SEMAPHORE-SYSTEM.md "${BUNDLE}/"
+          cp OWL-1-NORMATIVE.pdf "${BUNDLE}/"
+          cp OWL-2-NON-NORMATIVE.pdf "${BUNDLE}/"
+          cp OWL-3-CRITICAL.pdf "${BUNDLE}/"
+          cp OWL-4-METACOGNITIVE.pdf "${BUNDLE}/"
+          cp OWL-SEMAPHORE-SYSTEM.pdf "${BUNDLE}/"
+          cp RELEASE-HASHES.txt "${BUNDLE}/"
+          cp VALIDATION-SCRIPT-SPEC.md "${BUNDLE}/"
 
-          zip -r owl-semaphore-${TAG}.zip bundle
+          zip -r "${BUNDLE}.zip" "${BUNDLE}"
 
       - name: Create GitHub Release + upload bundle
         uses: softprops/action-gh-release@v2
