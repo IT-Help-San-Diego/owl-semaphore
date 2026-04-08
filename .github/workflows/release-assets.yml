@@ -30,15 +30,26 @@ jobs:
         with:
           ref: ${{ env.TAG_NAME }}
 
+      - name: Check required files
+        run: |
+          test -d assets
+          test -f INTEGRITY-MANIFEST.md
+          test -f LICENSE
+          test -f OWL-1-NORMATIVE.md
+          test -f OWL-2-NON-NORMATIVE.md
+          test -f OWL-3-CRITICAL.md
+          test -f OWL-4-METACOGNITIVE.md
+          test -f OWL-SEMAPHORE-SYSTEM.md
+          test -f RELEASE-HASHES.txt
+          test -f VALIDATION-SCRIPT-SPEC.md
+
       - name: Build release bundle
         run: |
           set -euo pipefail
-
           BUNDLE_ROOT="dist/owl-semaphore-${TAG_NAME}"
           mkdir -p "$BUNDLE_ROOT"
 
           cp -R assets "$BUNDLE_ROOT/"
-
           cp INTEGRITY-MANIFEST.md "$BUNDLE_ROOT/"
           cp LICENSE "$BUNDLE_ROOT/"
           cp OWL-1-NORMATIVE.md "$BUNDLE_ROOT/"
