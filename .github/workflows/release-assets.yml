@@ -1,0 +1,32 @@
+name: Attach release asset bundle
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  bundle-assets:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out tagged source
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}
+
+      - name: Create release bundle
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          zip -r "dist/owl-semaphore-${{ github.event.release.tag_name }}-assets.zip" assets
+
+      - name: Upload ZIP to release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload "${{ github.event.release.tag_name }}" \
+            "dist/owl-semaphore-${{ github.event.release.tag_name }}-assets.zip" \
+            --clobber
