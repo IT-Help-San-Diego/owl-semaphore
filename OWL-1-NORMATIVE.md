@@ -1,3 +1,5 @@
+![NORM Layer Proof Palette](assets/proofs/NORM-layer-proof-palette.png)
+
 # OWL SEMAPHORE — NORMATIVE STANDARD SPECIFICATION
 
 ## OWL 1 / NORMATIVE / Identity State
