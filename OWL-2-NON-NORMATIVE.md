@@ -1,4 +1,4 @@
-
+![NONNORM Layer Proof Palette](assets/proofs/NONNORM-layer-proof-palette.png)
 
 # OWL SEMAPHORE — NON-NORMATIVE STANDARD SPECIFICATION
 
