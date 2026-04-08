@@ -1,4 +1,4 @@
-
+![Owl Semaphore Master Proof](assets/proofs/OWL-SEMAPHORE-MASTER-PROOF.png)
 
 # OWL SEMAPHORE — SYSTEM SPECIFICATION
 A finite algebra over epistemic states, implemented as a reproducible visual system with enforced invariants.
