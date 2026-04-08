@@ -1,4 +1,4 @@
-name: Attach release asset bundle
+name: Attach release bundle
 
 on:
   workflow_dispatch:
@@ -14,7 +14,7 @@ permissions:
   contents: write
 
 jobs:
-  bundle-assets:
+  bundle-release:
     runs-on: ubuntu-latest
     env:
       TAG_NAME: ${{ inputs.tag || github.event.release.tag_name }}
@@ -30,16 +30,32 @@ jobs:
         with:
           ref: ${{ env.TAG_NAME }}
 
-      - name: Create release bundle
+      - name: Build release bundle
         run: |
           set -euo pipefail
-          mkdir -p dist
-          zip -r "dist/owl-semaphore-${TAG_NAME}-assets.zip" assets
 
-      - name: Upload ZIP to release
+          BUNDLE_ROOT="dist/owl-semaphore-${TAG_NAME}"
+          mkdir -p "$BUNDLE_ROOT"
+
+          cp -R assets "$BUNDLE_ROOT/"
+
+          cp INTEGRITY-MANIFEST.md "$BUNDLE_ROOT/"
+          cp LICENSE "$BUNDLE_ROOT/"
+          cp OWL-1-NORMATIVE.md "$BUNDLE_ROOT/"
+          cp OWL-2-NON-NORMATIVE.md "$BUNDLE_ROOT/"
+          cp OWL-3-CRITICAL.md "$BUNDLE_ROOT/"
+          cp OWL-4-METACOGNITIVE.md "$BUNDLE_ROOT/"
+          cp OWL-SEMAPHORE-SYSTEM.md "$BUNDLE_ROOT/"
+          cp RELEASE-HASHES.txt "$BUNDLE_ROOT/"
+          cp VALIDATION-SCRIPT-SPEC.md "$BUNDLE_ROOT/"
+
+          cd dist
+          zip -r "owl-semaphore-${TAG_NAME}-release-bundle.zip" "owl-semaphore-${TAG_NAME}"
+
+      - name: Upload release bundle
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release upload "$TAG_NAME" \
-            "dist/owl-semaphore-${TAG_NAME}-assets.zip" \
+            "dist/owl-semaphore-${TAG_NAME}-release-bundle.zip" \
             --clobber
