@@ -270,3 +270,33 @@ NONNORM-composite-white-540.png
 NORM-composite-dark-540.png
 NORM-composite-transparent-540.png
 NORM-composite-white-540.png
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "Owl Semaphore Badge System",
+  "version": "1.0.0",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "codeRepository": "https://github.com/IT-Help-San-Diego/owl-semaphore",
+  "datePublished": "2026-04-07",
+  "dateModified": "2026-04-07",
+  "programmingLanguage": "Not applicable",
+  "author": {
+    "@type": "Person",
+    "name": "Carey James Balboa",
+    "identifier": "https://orcid.org/0009-0000-5237-9065"
+  },
+  "description": "A four-standard publication-grade badge system for classifying DNS Tool documentation into normative, non-normative, critical, and metacognitive material.",
+  "keywords": [
+    "Owl Semaphore",
+    "DNS Tool",
+    "visual standard",
+    "classification system",
+    "documentation",
+    "epistemology"
+  ],
+  "releaseNotes": "First reproducible, integrity-verified release of the Owl Semaphore badge system.",
+  "isAccessibleForFree": true
+}
+</script>
