@@ -1,45 +1,30 @@
-name: Release bundle
+name: Build and Publish Release Bundle
 
 on:
   push:
     tags:
       - 'v*'
-  workflow_dispatch:
-    inputs:
-      tag:
-        description: Tag to package and release
-        required: true
-        type: string
 
 permissions:
   contents: write
 
 jobs:
-  release-bundle:
+  release:
     runs-on: ubuntu-latest
-    env:
-      TAG_NAME: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || inputs.tag }}
 
     steps:
-      - name: Resolve tag
-        shell: bash
-        run: |
-          set -euo pipefail
-          test -n "$TAG_NAME"
-          echo "TAG_NAME=$TAG_NAME"
-
-      - name: Check out tagged source
+      - name: Checkout tag
         uses: actions/checkout@v6
-        with:
-          ref: ${{ env.TAG_NAME }}
 
-      - name: Check required files
-        shell: bash
+      - name: Get tag name
+        run: echo "TAG=${GITHUB_REF_NAME}" >> $GITHUB_ENV
+
+      - name: Validate required files
         run: |
-          set -euo pipefail
+          set -e
           test -d assets
-          test -f INTEGRITY-MANIFEST.md
           test -f LICENSE
+          test -f INTEGRITY-MANIFEST.md
           test -f OWL-1-NORMATIVE.md
           test -f OWL-2-NON-NORMATIVE.md
           test -f OWL-3-CRITICAL.md
@@ -48,85 +33,30 @@ jobs:
           test -f RELEASE-HASHES.txt
           test -f VALIDATION-SCRIPT-SPEC.md
 
-      - name: Build release bundle
-        shell: bash
+      - name: Build bundle
         run: |
-          set -euo pipefail
+          set -e
 
-          BUNDLE_ROOT="dist/owl-semaphore-${TAG_NAME}"
-          mkdir -p "$BUNDLE_ROOT"
+          mkdir bundle
 
-          cp -R assets "$BUNDLE_ROOT/"
-          cp INTEGRITY-MANIFEST.md "$BUNDLE_ROOT/"
-          cp LICENSE "$BUNDLE_ROOT/"
-          cp OWL-1-NORMATIVE.md "$BUNDLE_ROOT/"
-          cp OWL-2-NON-NORMATIVE.md "$BUNDLE_ROOT/"
-          cp OWL-3-CRITICAL.md "$BUNDLE_ROOT/"
-          cp OWL-4-METACOGNITIVE.md "$BUNDLE_ROOT/"
-          cp OWL-SEMAPHORE-SYSTEM.md "$BUNDLE_ROOT/"
-          cp RELEASE-HASHES.txt "$BUNDLE_ROOT/"
-          cp VALIDATION-SCRIPT-SPEC.md "$BUNDLE_ROOT/"
+          cp -R assets bundle/
+          cp LICENSE bundle/
+          cp INTEGRITY-MANIFEST.md bundle/
+          cp OWL-1-NORMATIVE.md bundle/
+          cp OWL-2-NON-NORMATIVE.md bundle/
+          cp OWL-3-CRITICAL.md bundle/
+          cp OWL-4-METACOGNITIVE.md bundle/
+          cp OWL-SEMAPHORE-SYSTEM.md bundle/
+          cp RELEASE-HASHES.txt bundle/
+          cp VALIDATION-SCRIPT-SPEC.md bundle/
 
-          cd dist
-          zip -r "owl-semaphore-${TAG_NAME}-release-bundle.zip" "owl-semaphore-${TAG_NAME}"
+          zip -r owl-semaphore-${TAG}.zip bundle
 
-      - name: Write release notes
-        shell: bash
-        run: |
-          set -euo pipefail
-          cat > RELEASE_NOTES.md <<EOF
-          ## Owl Semaphore ${TAG_NAME}
-
-          Full-source, integrity-verifiable release of the Owl Semaphore badge system.
-
-          This release packages the complete asset system, documentation, and validation materials into a single reproducible bundle.
-
-          ### Included
-          - Full \`assets/\` directory
-          - \`INTEGRITY-MANIFEST.md\`
-          - \`LICENSE\`
-          - \`OWL-1-NORMATIVE.md\`
-          - \`OWL-2-NON-NORMATIVE.md\`
-          - \`OWL-3-CRITICAL.md\`
-          - \`OWL-4-METACOGNITIVE.md\`
-          - \`OWL-SEMAPHORE-SYSTEM.md\`
-          - \`RELEASE-HASHES.txt\`
-          - \`VALIDATION-SCRIPT-SPEC.md\`
-
-          ### License
-          CC-BY-4.0
-          EOF
-
-      - name: Create release if missing
+      - name: Create GitHub Release + upload bundle
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.TAG }}
+          name: Owl Semaphore ${{ env.TAG }} — Full Source & Release Bundle
+          files: owl-semaphore-${{ env.TAG }}.zip
         env:
-          GH_TOKEN: ${{ github.token }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          if gh release view "$TAG_NAME" >/dev/null 2>&1; then
-            echo "Release already exists for $TAG_NAME"
-          else
-            gh release create "$TAG_NAME" \
-              "dist/owl-semaphore-${TAG_NAME}-release-bundle.zip" \
-              --verify-tag \
-              --title "Owl Semaphore ${TAG_NAME} — Full Source & Release Bundle" \
-              --notes-file RELEASE_NOTES.md
-          fi
-
-      - name: Upload or replace release bundle
-        env:
-          GH_TOKEN: ${{ github.token }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          gh release upload "$TAG_NAME" \
-            "dist/owl-semaphore-${TAG_NAME}-release-bundle.zip" \
-            --clobber
-
-      - name: Show release
-        env:
-          GH_TOKEN: ${{ github.token }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          gh release view "$TAG_NAME"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
