@@ -30,6 +30,11 @@ jobs:
           test -f OWL-3-CRITICAL.md
           test -f OWL-4-METACOGNITIVE.md
           test -f OWL-SEMAPHORE-SYSTEM.md
+          test -f OWL-1-NORMATIVE.pdf
+          test -f OWL-2-NON-NORMATIVE.pdf
+          test -f OWL-3-CRITICAL.pdf
+          test -f OWL-4-METACOGNITIVE.pdf
+          test -f OWL-SEMAPHORE-SYSTEM.pdf
           test -f RELEASE-HASHES.txt
           test -f VALIDATION-SCRIPT-SPEC.md
 
@@ -47,6 +52,11 @@ jobs:
           cp OWL-3-CRITICAL.md bundle/
           cp OWL-4-METACOGNITIVE.md bundle/
           cp OWL-SEMAPHORE-SYSTEM.md bundle/
+          cp OWL-1-NORMATIVE.pdf bundle/
+          cp OWL-2-NON-NORMATIVE.pdf bundle/
+          cp OWL-3-CRITICAL.pdf bundle/
+          cp OWL-4-METACOGNITIVE.pdf bundle/
+          cp OWL-SEMAPHORE-SYSTEM.pdf bundle/
           cp RELEASE-HASHES.txt bundle/
           cp VALIDATION-SCRIPT-SPEC.md bundle/
 

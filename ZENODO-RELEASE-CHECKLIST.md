@@ -10,6 +10,11 @@
   - [ ] `OWL-2-NON-NORMATIVE.md`
   - [ ] `OWL-3-CRITICAL.md`
   - [ ] `OWL-4-METACOGNITIVE.md`
+  - [ ] `OWL-SEMAPHORE-SYSTEM.pdf`
+  - [ ] `OWL-1-NORMATIVE.pdf`
+  - [ ] `OWL-2-NON-NORMATIVE.pdf`
+  - [ ] `OWL-3-CRITICAL.pdf`
+  - [ ] `OWL-4-METACOGNITIVE.pdf`
   - [ ] `INTEGRITY-MANIFEST.md`
   - [ ] `CITATION.cff`
   - [ ] `LICENSE`
