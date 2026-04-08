@@ -1,4 +1,4 @@
-
+![CRIT Layer Proof Palette](assets/proofs/CRIT-layer-proof-palette.png)
 
 # OWL SEMAPHORE — CRITICAL STANDARD SPECIFICATION
 
