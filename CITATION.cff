@@ -6,7 +6,7 @@ authors:
   - family-names: "Balboa"
     given-names: "Carey James"
     orcid: "https://orcid.org/0009-0000-5237-9065"
-version: "v1.0.0"
+version: "v1.0.2"
 date-released: 2026-04-07
 license: "CC-BY-4.0"
 repository-code: "https://github.com/IT-Help-San-Diego/owl-semaphore"
@@ -25,7 +25,7 @@ preferred-citation:
       given-names: "Carey James"
       orcid: "https://orcid.org/0009-0000-5237-9065"
   title: "Owl Semaphore Badge System"
-  version: "v1.0.0"
+  version: "v1.0.2"
   date-released: 2026-04-07
   license: "CC-BY-4.0"
   repository-code: "https://github.com/IT-Help-San-Diego/owl-semaphore"
