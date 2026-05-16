@@ -4,7 +4,7 @@
 
 ## OWL 1 / NORMATIVE / Identity State
 
-### Version 1.0 Draft
+### Version 1.3.0-rc (release candidate; document subordinate to v1.3.0-rc)
 
 ---
 
@@ -26,7 +26,7 @@ $$
 V_4 = \{I, \sigma_v, C_2, \sigma_h\}
 $$
 
-This is a finite closed subgroup of the orthogonal group \(O(2)\).
+This is a finite subgroup of the orthogonal group \(O(2)\) isomorphic to V₄ (equivalently the dihedral group D₂); it is not O(2) itself ([Klein four-group, Wikipedia](https://en.wikipedia.org/wiki/Klein_four-group); [Knill, Harvard Math 22b, Unit 8: O(2)](https://people.math.harvard.edu/~knill/teaching/math22b2019/handouts/lecture08.pdf)).
 
 The NORMATIVE owl is the **identity element** of that system. It is the reference state from which all other states are derived.
 
@@ -603,7 +603,7 @@ In the through-the-legs demonstration:
 
 This is exactly the logic of the METACOGNITIVE state.
 
-The observer audits the observer.
+The observer audits the frame. (See OWL-4-METACOGNITIVE for the normative phrasing rule; the v1.3.0-rc canonical sentence for METACOGNITIVE is *"The observer audits the frame,"* with the warmer explanatory variant *"Thinking examines its own frame."*)
 
 ### 20.5 Relation to Pattern Recognition
 
