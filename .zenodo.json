@@ -1,7 +1,8 @@
 {
   "title": "Owl Semaphore Badge System",
+  "version": "v1.2.0",
   "upload_type": "software",
-  "description": "First reproducible, integrity-verified release of the Owl Semaphore badge system. This release establishes the canonical 540x540 publication assets and four-standard classification model used across DNS Tool documentation: NORMATIVE, NON-NORMATIVE, CRITICAL, and METACOGNITIVE.",
+  "description": "Reproducible, integrity-verified release of the Owl Semaphore badge system. This release maintains the canonical 540x540 publication assets and four-standard classification model used across DNS Tool documentation: NORMATIVE, NON-NORMATIVE, CRITICAL, and METACOGNITIVE.",
   "creators": [
     {
       "name": "Balboa, Carey James",
@@ -22,6 +23,16 @@
       "identifier": "https://github.com/IT-Help-San-Diego/owl-semaphore",
       "relation": "isSupplementTo",
       "scheme": "url"
+    },
+    {
+      "identifier": "10.5281/zenodo.19473697",
+      "relation": "isVersionOf",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.19473698",
+      "relation": "isPreviousVersionOf",
+      "scheme": "doi"
     }
   ]
 }

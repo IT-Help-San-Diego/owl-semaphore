@@ -175,7 +175,7 @@ def build_typst_document(doc, body_typst):
     grid(
       columns: (1fr, 1fr, 1fr),
       align: (left, center, right),
-      [Owl Semaphore · v1.0],
+      [Owl Semaphore · v1.2.0],
       [#counter(page).display("1 of 1", both: true)],
       [github.com/IT-Help-San-Diego/owl-semaphore],
     )
@@ -262,8 +262,8 @@ def build_typst_document(doc, body_typst):
 
   #v(6pt)
   #text(size: 8.5pt, fill: luma(120))[
-    ORCID 0009-0000-5237-9065 #h(12pt) DOI 10.5281/zenodo.19473698 \\
-    SOURCE github.com/IT-Help-San-Diego/owl-semaphore #h(12pt) VERSION 1.0 · LICENSE CC-BY-4.0
+    ORCID 0009-0000-5237-9065 #h(12pt) DOI 10.5281/zenodo.19474599 \\
+    SOURCE github.com/IT-Help-San-Diego/owl-semaphore #h(12pt) VERSION 1.2.0 · LICENSE CC-BY-4.0
   ]
   #v(12pt)
 ]
@@ -346,7 +346,7 @@ def build_typst_document(doc, body_typst):
   #line(length: 60%, stroke: 0.5pt + luma(200))
   #v(8pt)
   #text(size: 8pt, fill: luma(140))[
-    Owl Semaphore v1.0 · github.com/IT-Help-San-Diego/owl-semaphore · DOI: 10.5281/zenodo.19473698 \\
+    Owl Semaphore v1.2.0 · github.com/IT-Help-San-Diego/owl-semaphore · DOI: 10.5281/zenodo.19474599 \\
     © 2024–2026 IT Help San Diego Inc. · Licensed under CC-BY-4.0
   ]
 ]

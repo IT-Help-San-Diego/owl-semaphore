@@ -74,15 +74,15 @@
 
 ## 7. Zenodo Preparation
 
-- [ ] Zenodo account connected to GitHub
-- [ ] repository enabled in Zenodo
-- [ ] GitHub release created
-- [ ] Zenodo ingestion confirmed
-- [ ] concept DOI recorded
-- [ ] version DOI recorded
-- [ ] DOI added back into:
-  - [ ] `README.md`
-  - [ ] `CITATION.cff`
+- [x] Zenodo account connected to GitHub
+- [x] repository enabled in Zenodo
+- [x] GitHub release created
+- [x] Zenodo ingestion confirmed
+- [x] concept DOI recorded: `10.5281/zenodo.19473697`
+- [x] version DOI recorded (v1.2.0): `10.5281/zenodo.19474599`
+- [x] DOI added back into:
+  - [x] `README.md`
+  - [x] `CITATION.cff`
   - [ ] release notes
 
 ## 8. Post-Release

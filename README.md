@@ -2,7 +2,24 @@
 
 # OWL SEMAPHORE — SYSTEM SPECIFICATION
 A finite algebra over epistemic states, implemented as a reproducible visual system with enforced invariants.
-## Version 1.0
+
+## Version 1.2.0
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19474599.svg)](https://doi.org/10.5281/zenodo.19474599)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
+- **Version DOI (v1.2.0):** [10.5281/zenodo.19474599](https://doi.org/10.5281/zenodo.19474599)
+- **Concept DOI (all versions):** [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697)
+- **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+## Citation
+
+If you use the Owl Semaphore Badge System, please cite the version DOI:
+
+> Balboa, Carey James. *Owl Semaphore Badge System* (v1.2.0). Zenodo. https://doi.org/10.5281/zenodo.19474599
+
+Machine-readable citation metadata is available in [`CITATION.cff`](CITATION.cff).
+
 ---
 
 ## 1. Statement of Intent
@@ -276,11 +293,16 @@ NORM-composite-white-540.png
   "@context": "https://schema.org",
   "@type": "SoftwareSourceCode",
   "name": "Owl Semaphore Badge System",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "codeRepository": "https://github.com/IT-Help-San-Diego/owl-semaphore",
   "datePublished": "2026-04-07",
   "dateModified": "2026-04-07",
+  "identifier": [
+    "https://doi.org/10.5281/zenodo.19474599",
+    "https://doi.org/10.5281/zenodo.19473697"
+  ],
+  "sameAs": "https://doi.org/10.5281/zenodo.19474599",
   "programmingLanguage": "Not applicable",
   "author": {
     "@type": "Person",
@@ -296,7 +318,7 @@ NORM-composite-white-540.png
     "documentation",
     "epistemology"
   ],
-  "releaseNotes": "First reproducible, integrity-verified release of the Owl Semaphore badge system.",
+  "releaseNotes": "Reproducible, integrity-verified release of the Owl Semaphore badge system.",
   "isAccessibleForFree": true
 }
 </script>

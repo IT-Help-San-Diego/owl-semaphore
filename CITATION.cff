@@ -11,6 +11,14 @@ date-released: 2026-04-07
 license: "CC-BY-4.0"
 repository-code: "https://github.com/IT-Help-San-Diego/owl-semaphore"
 url: "https://github.com/IT-Help-San-Diego/owl-semaphore"
+doi: "10.5281/zenodo.19474599"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.19474599"
+    description: "Version DOI for Owl Semaphore v1.2.0"
+  - type: doi
+    value: "10.5281/zenodo.19473697"
+    description: "Concept DOI (all versions) for the Owl Semaphore Badge System"
 abstract: "A four-standard publication-grade badge system for classifying DNS Tool documentation into normative, non-normative, critical, and metacognitive material."
 keywords:
   - visual standard
@@ -30,3 +38,4 @@ preferred-citation:
   license: "CC-BY-4.0"
   repository-code: "https://github.com/IT-Help-San-Diego/owl-semaphore"
   url: "https://github.com/IT-Help-San-Diego/owl-semaphore"
+  doi: "10.5281/zenodo.19474599"
