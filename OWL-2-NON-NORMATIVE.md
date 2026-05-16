@@ -4,7 +4,12 @@
 
 ## OWL 2 / NON-NORMATIVE / Reflection State (σᵥ)
 
-### Version 1.0 Draft
+### Version 1.3.0-rc (subordinate to release candidate; Zenodo DOI to be minted on publication)
+
+- **Concept DOI (all versions):** [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697)
+- **Last published version DOI (v1.2.0):** [10.5281/zenodo.19474599](https://doi.org/10.5281/zenodo.19474599)
+- **Version DOI (v1.3.0):** `TBD_BY_ZENODO_ON_RELEASE`
+- **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ---
 

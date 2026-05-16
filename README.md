@@ -1,24 +1,35 @@
 ![Owl Semaphore Master Proof](assets/proofs/OWL-SEMAPHORE-MASTER-PROOF.png)
 
 # OWL SEMAPHORE — SYSTEM SPECIFICATION
-A finite algebra over epistemic states, implemented as a reproducible visual system with enforced invariants.
+A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants.
 
-## Version 1.2.0
+## Version 1.3.0-rc (release candidate — not yet published to Zenodo)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19474599.svg)](https://doi.org/10.5281/zenodo.19474599)
+[![DOI (last published, v1.2.0)](https://zenodo.org/badge/DOI/10.5281/zenodo.19474599.svg)](https://doi.org/10.5281/zenodo.19474599)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-- **Version DOI (v1.2.0):** [10.5281/zenodo.19474599](https://doi.org/10.5281/zenodo.19474599)
+- **Version DOI (v1.3.0):** `TBD_BY_ZENODO_ON_RELEASE` (will be minted when this release candidate is published to Zenodo)
+- **Last published version DOI (v1.2.0):** [10.5281/zenodo.19474599](https://doi.org/10.5281/zenodo.19474599)
 - **Concept DOI (all versions):** [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697)
 - **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
+## Canonical wording stack
+
+| Layer | Sentence |
+| --- | --- |
+| Formal | A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants. |
+| Operational | A four-state visual system for marking how a claim, document, dataset, or finding should be evaluated before belief, challenge, or action. |
+| Human | Four owls tell the reader what kind of thinking they are looking at: standard, exploration, inversion, or self-audit. |
+
+See [`OWL-SEMAPHORE-EXPLANATION.md`](OWL-SEMAPHORE-EXPLANATION.md) for the origin story, archetype rationale, and why two states were not enough.
+
 ## Citation
 
-If you use the Owl Semaphore Badge System, please cite the version DOI:
+If you use the Owl Semaphore Badge System, please cite the most recently published version DOI:
 
 > Balboa, Carey James. *Owl Semaphore Badge System* (v1.2.0). Zenodo. https://doi.org/10.5281/zenodo.19474599
 
-Machine-readable citation metadata is available in [`CITATION.cff`](CITATION.cff).
+When v1.3.0 is published, replace with the new version DOI. Machine-readable citation metadata is available in [`CITATION.cff`](CITATION.cff).
 
 ---
 
@@ -42,13 +53,13 @@ The objective is to create a system that is:
 
 ### 2.1 Group Definition
 
-The Owl Semaphore is defined as the Klein four-group:
+The four visual states of the Owl Semaphore are modelled by the Klein four-group:
 
 $$
 V_4 = \{I, \sigma_v, C_2, \sigma_h\}
 $$
 
-This is a finite subgroup of the orthogonal group \(O(2)\).
+The four transformations form a finite subgroup of the orthogonal group \(O(2)\) isomorphic to \(V_4\) (equivalently, the dihedral group \(D_2\)). \(V_4\) itself is finite; \(O(2)\) is a continuous Lie group, so the system uses \(V_4\) as a subgroup of \(O(2)\), not as \(O(2)\) itself. The explicit Cayley table for these elements is given in Section 2.3 and in `OWL-SEMAPHORE-SYSTEM.md` §2.
 
 ### 2.2 Elements
 
@@ -249,7 +260,9 @@ If the system is used to imply certainty rather than epistemic position, it is b
 
 This system is defined as:
 
-A finite algebra over epistemic states, mapped into a visual system with strict invariants.
+A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants.
+
+This sentence is the single canonical formal definition for the project. Earlier wording variants (recorded verbatim in [`CHANGELOG.md`](CHANGELOG.md)) are superseded as of v1.3.0-rc.
 
 ---
 
@@ -293,23 +306,23 @@ NORM-composite-white-540.png
   "@context": "https://schema.org",
   "@type": "SoftwareSourceCode",
   "name": "Owl Semaphore Badge System",
-  "version": "1.2.0",
+  "version": "1.3.0-rc",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "codeRepository": "https://github.com/IT-Help-San-Diego/owl-semaphore",
   "datePublished": "2026-04-07",
-  "dateModified": "2026-04-07",
+  "dateModified": "2026-05-16",
   "identifier": [
     "https://doi.org/10.5281/zenodo.19474599",
     "https://doi.org/10.5281/zenodo.19473697"
   ],
-  "sameAs": "https://doi.org/10.5281/zenodo.19474599",
+  "sameAs": "https://doi.org/10.5281/zenodo.19473697",
   "programmingLanguage": "Not applicable",
   "author": {
     "@type": "Person",
     "name": "Carey James Balboa",
     "identifier": "https://orcid.org/0009-0000-5237-9065"
   },
-  "description": "A four-standard publication-grade badge system for classifying DNS Tool documentation into normative, non-normative, critical, and metacognitive material.",
+  "description": "A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants. Provides four classification states (NORMATIVE, NON-NORMATIVE, CRITICAL, METACOGNITIVE) for marking how a claim, document, dataset, or finding should be evaluated.",
   "keywords": [
     "Owl Semaphore",
     "DNS Tool",

@@ -4,7 +4,12 @@
 
 ## OWL 1 / NORMATIVE / Identity State
 
-### Version 1.0 Draft
+### Version 1.3.0-rc (subordinate to release candidate; Zenodo DOI to be minted on publication)
+
+- **Concept DOI (all versions):** [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697)
+- **Last published version DOI (v1.2.0):** [10.5281/zenodo.19474599](https://doi.org/10.5281/zenodo.19474599)
+- **Version DOI (v1.3.0):** `TBD_BY_ZENODO_ON_RELEASE`
+- **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ---
 
@@ -20,13 +25,13 @@ The goal is simple: the mark must be reproducible, auditable, mathematically coh
 
 ## 2. System Context
 
-The Owl Semaphore is a visual epistemic notation system based on the Owl of Athena. Its discrete state space is modeled as the Klein four-group:
+The Owl Semaphore is a visual epistemic notation system based on the Owl of Athena. Its discrete state space is modelled by the Klein four-group:
 
 $$
 V_4 = \{I, \sigma_v, C_2, \sigma_h\}
 $$
 
-This is a finite closed subgroup of the orthogonal group \(O(2)\).
+The four transformations form a finite subgroup of the orthogonal group \(O(2)\) isomorphic to \(V_4\) (equivalently, \(D_2\)); see `OWL-SEMAPHORE-SYSTEM.md` §2 for the Cayley table establishing closure.
 
 The NORMATIVE owl is the **identity element** of that system. It is the reference state from which all other states are derived.
 

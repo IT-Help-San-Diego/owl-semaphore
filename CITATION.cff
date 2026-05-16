@@ -6,26 +6,34 @@ authors:
   - family-names: "Balboa"
     given-names: "Carey James"
     orcid: "https://orcid.org/0009-0000-5237-9065"
-version: "v1.2.0"
-date-released: 2026-04-07
+version: "v1.3.0-rc"
+date-released: 2026-05-16
 license: "CC-BY-4.0"
 repository-code: "https://github.com/IT-Help-San-Diego/owl-semaphore"
 url: "https://github.com/IT-Help-San-Diego/owl-semaphore"
 doi: "10.5281/zenodo.19474599"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.19474599"
-    description: "Version DOI for Owl Semaphore v1.2.0"
-  - type: doi
     value: "10.5281/zenodo.19473697"
     description: "Concept DOI (all versions) for the Owl Semaphore Badge System"
-abstract: "A four-standard publication-grade badge system for classifying DNS Tool documentation into normative, non-normative, critical, and metacognitive material."
+  - type: doi
+    value: "10.5281/zenodo.19474599"
+    description: "Last published version DOI (v1.2.0)"
+  - type: other
+    value: "TBD_BY_ZENODO_ON_RELEASE"
+    description: "Placeholder for the v1.3.0 version DOI; replace with the value minted by Zenodo on publication"
+abstract: "A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants. The Owl Semaphore provides four classification states (NORMATIVE, NON-NORMATIVE, CRITICAL, METACOGNITIVE) for marking how a claim, document, dataset, or finding should be evaluated before belief, challenge, or action."
 keywords:
-  - visual standard
+  - visual notation system
+  - finite algebra
+  - Klein four-group
+  - epistemic states
   - classification system
   - DNS Tool
   - documentation
   - epistemology
+  - accessibility
+  - normative language
 preferred-citation:
   type: software
   authors:
@@ -33,9 +41,10 @@ preferred-citation:
       given-names: "Carey James"
       orcid: "https://orcid.org/0009-0000-5237-9065"
   title: "Owl Semaphore Badge System"
-  version: "v1.2.0"
-  date-released: 2026-04-07
+  version: "v1.3.0-rc"
+  date-released: 2026-05-16
   license: "CC-BY-4.0"
   repository-code: "https://github.com/IT-Help-San-Diego/owl-semaphore"
   url: "https://github.com/IT-Help-San-Diego/owl-semaphore"
   doi: "10.5281/zenodo.19474599"
+  abstract: "Release-candidate metadata. The v1.3.0 version DOI will be minted by Zenodo on publication; until then citations should reference the v1.2.0 version DOI (10.5281/zenodo.19474599) or the concept DOI (10.5281/zenodo.19473697)."

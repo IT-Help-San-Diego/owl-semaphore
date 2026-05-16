@@ -1,8 +1,8 @@
 {
   "title": "Owl Semaphore Badge System",
-  "version": "v1.2.0",
+  "version": "v1.3.0-rc",
   "upload_type": "software",
-  "description": "Reproducible, integrity-verified release of the Owl Semaphore badge system. This release maintains the canonical 540x540 publication assets and four-standard classification model used across DNS Tool documentation: NORMATIVE, NON-NORMATIVE, CRITICAL, and METACOGNITIVE.",
+  "description": "Release candidate. A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants. The Owl Semaphore provides four classification states (NORMATIVE, NON-NORMATIVE, CRITICAL, METACOGNITIVE) for marking how a claim, document, dataset, or finding should be evaluated before belief, challenge, or action. v1.3.0-rc reconciles canonical wording across the README, system specification, state specifications, citation metadata, and generated PDFs; replaces stale Version 1.0 stamps; adds OWL-SEMAPHORE-EXPLANATION.md (origin story and archetype rationale); adds per-page owl headers, embedded PDF metadata, and a single-command (make pdfs) reproducible PDF build; adds banner-tuple integrity tests verifying state, transform, determinant, mapping, version, and DOI family from the generated PDFs; adds citations for external scientific claims (RFC 2119/8174, V4/O(2), WCAG 2.2, ICD 203, seL4); and refreshes the integrity manifest and SHA-3-512 hash coverage. The V4 algebra, state assignments, transforms, color assignments, and canonical geometry are unchanged. License remains CC BY 4.0.",
   "creators": [
     {
       "name": "Balboa, Carey James",
@@ -13,10 +13,15 @@
   "keywords": [
     "Owl Semaphore",
     "DNS Tool",
-    "documentation",
+    "visual notation system",
+    "finite algebra",
+    "Klein four-group",
+    "epistemic states",
     "classification system",
-    "visual standard",
-    "epistemology"
+    "documentation",
+    "epistemology",
+    "accessibility",
+    "normative language"
   ],
   "related_identifiers": [
     {
@@ -30,9 +35,14 @@
       "scheme": "doi"
     },
     {
-      "identifier": "10.5281/zenodo.19473698",
+      "identifier": "10.5281/zenodo.19474599",
       "relation": "isPreviousVersionOf",
       "scheme": "doi"
     }
-  ]
+  ],
+  "_notes": {
+    "version_doi": "TBD_BY_ZENODO_ON_RELEASE — the v1.3.0 version DOI will be minted by Zenodo when this release candidate is published. Until then the concept DOI (10.5281/zenodo.19473697) and the last published version DOI (10.5281/zenodo.19474599) remain the citable identifiers.",
+    "release_candidate": true,
+    "do_not_publish_until_review_complete": true
+  }
 }

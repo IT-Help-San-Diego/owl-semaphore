@@ -1,5 +1,7 @@
 # Owl Semaphore — Zenodo Release Checklist
 
+> **v1.3.0-rc note.** This release candidate is intentionally **not** published to Zenodo and intentionally has **no** release tag. The new version DOI (`TBD_BY_ZENODO_ON_RELEASE`) will be minted by Zenodo when the candidate is published. Until then the citable identifiers remain the concept DOI (`10.5281/zenodo.19473697`) and the last published version DOI (`10.5281/zenodo.19474599`). See `CHANGELOG.md` for the canonical sentence in effect for v1.3.0-rc.
+
 ## 1. Repository Readiness
 
 - [ ] Repository name is `owl-semaphore`
@@ -10,13 +12,17 @@
   - [ ] `OWL-2-NON-NORMATIVE.md`
   - [ ] `OWL-3-CRITICAL.md`
   - [ ] `OWL-4-METACOGNITIVE.md`
+  - [ ] `OWL-SEMAPHORE-EXPLANATION.md` *(added in v1.3.0-rc)*
   - [ ] `OWL-SEMAPHORE-SYSTEM.pdf`
   - [ ] `OWL-1-NORMATIVE.pdf`
   - [ ] `OWL-2-NON-NORMATIVE.pdf`
   - [ ] `OWL-3-CRITICAL.pdf`
   - [ ] `OWL-4-METACOGNITIVE.pdf`
+  - [ ] `OWL-SEMAPHORE-EXPLANATION.pdf` *(added in v1.3.0-rc)*
   - [ ] `INTEGRITY-MANIFEST.md`
   - [ ] `CITATION.cff`
+  - [ ] `CHANGELOG.md` *(added in v1.3.0-rc)*
+  - [ ] `Makefile` *(added in v1.3.0-rc — `make pdfs` reproduces every PDF)*
   - [ ] `LICENSE`
   - [ ] `README.md`
 - [ ] Asset directories present:
@@ -76,13 +82,18 @@
 
 - [x] Zenodo account connected to GitHub
 - [x] repository enabled in Zenodo
-- [x] GitHub release created
-- [x] Zenodo ingestion confirmed
+- [x] GitHub release created (v1.2.0)
+- [x] Zenodo ingestion confirmed (v1.2.0)
 - [x] concept DOI recorded: `10.5281/zenodo.19473697`
-- [x] version DOI recorded (v1.2.0): `10.5281/zenodo.19474599`
-- [x] DOI added back into:
-  - [x] `README.md`
-  - [x] `CITATION.cff`
+- [x] last published version DOI recorded (v1.2.0): `10.5281/zenodo.19474599`
+- [ ] v1.3.0 version DOI minted by Zenodo (currently `TBD_BY_ZENODO_ON_RELEASE`)
+- [ ] DOI added back into:
+  - [ ] `README.md`
+  - [ ] `CITATION.cff`
+  - [ ] `.zenodo.json`
+  - [ ] `OWL-SEMAPHORE-SYSTEM.md`
+  - [ ] state spec markdown headers (`OWL-1..4-*.md`, `OWL-SEMAPHORE-EXPLANATION.md`)
+  - [ ] PDF metadata / title-page DOI block (regenerate via `make pdfs`)
   - [ ] release notes
 
 ## 8. Post-Release

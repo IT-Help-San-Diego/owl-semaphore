@@ -1,15 +1,23 @@
 #!/usr/bin/env python3
 """
-Generate publication-grade PDFs for the Owl Semaphore system.
+Generate publication-grade PDFs for the Owl Semaphore system (v1.3.0-rc).
 
-Converts each OWL specification .md file into a styled PDF with:
-  - Badge image header
-  - Contact sheet / layer proof palette
-  - Proper math rendering
-  - Classification ledger (back page)
-  - Styled headers, footers, and horizontal rules
+Pipeline (Typst, kept for v1.3.0 per the release-candidate plan):
+  Markdown source --pandoc--> Typst markup --typst--> PDF
 
-Requires: pandoc, typst (both available via Homebrew)
+Each PDF includes:
+  - Title-page badge, label, math line, canonical quote, RFC reference
+  - A machine-parseable banner-tuple block ("BANNER TUPLE … END") so
+    scripts/verify_banner_tuple.py can read state/transform/det/mapping/
+    version/DOI directly out of the rendered PDF
+  - Per-page running header with the state's owl + label + version
+  - Contact-sheet / layer-proof palette
+  - Full classification ledger on the back page
+  - PDF document-info metadata (title, author, subject, keywords)
+  - Footer with v1.3.0-rc, repo URL, page numbers, license, concept DOI
+
+Requires: pandoc on PATH, and the `typst` Python package
+           (pip install typst) which embeds the Typst compiler.
 Usage:   python3 generate_pdfs.py
 """
 
@@ -17,9 +25,26 @@ import os
 import re
 import subprocess
 import sys
-import base64
+
+import typst
 
 REPO = os.path.dirname(os.path.abspath(__file__))
+
+# ── Project-wide constants ────────────────────────────────────────────────
+
+VERSION = "1.3.0-rc"
+VERSION_LABEL = "v1.3.0-rc"
+CONCEPT_DOI = "10.5281/zenodo.19473697"
+LAST_VERSION_DOI = "10.5281/zenodo.19474599"
+VERSION_DOI = "TBD_BY_ZENODO_ON_RELEASE"
+LICENSE = "CC BY 4.0"
+REPO_URL = "github.com/IT-Help-San-Diego/owl-semaphore"
+AUTHOR = "Carey James Balboa"
+ORCID = "0009-0000-5237-9065"
+CANONICAL_SENTENCE = (
+    "A finite algebra over epistemic states, implemented as a reproducible "
+    "visual notation system with enforced invariants."
+)
 
 # ── Document metadata ──────────────────────────────────────────────────────
 
@@ -32,12 +57,18 @@ DOCS = [
         "color": "#d4a853",
         "color_rgb": "rgb(212, 168, 83)",
         "label": "N O R M A T I V E",
+        "label_compact": "NORMATIVE",
         "title": "Owl Semaphore",
         "subtitle_typst": "System Specification — A Finite Algebra of Epistemic States",
+        "transform_text": "I",
+        "det_text": "+1",
+        "mapping_text": "(x, y) → (x, y)",
         "mathline": "T = I    det = +1    (x, y) → (x, y)",
         "quote": '"This is the standard."',
         "standard_ref": "RFC 2119 MUST / SHALL",
         "contact_caption": "Owl Semaphore System — Master Proof",
+        "keywords": "Owl Semaphore, finite algebra, Klein four-group, V4, epistemic notation, visual standard, classification, DNS Tool",
+        "subject": "System specification for the Owl Semaphore visual epistemic notation system.",
     },
     {
         "md": "OWL-1-NORMATIVE.md",
@@ -47,12 +78,18 @@ DOCS = [
         "color": "#d4a853",
         "color_rgb": "rgb(212, 168, 83)",
         "label": "N O R M A T I V E",
+        "label_compact": "NORMATIVE",
         "title": "Owl Semaphore — Normative",
         "subtitle_typst": "OWL 1 / Identity State / Standard Specification",
+        "transform_text": "I",
+        "det_text": "+1",
+        "mapping_text": "(x, y) → (x, y)",
         "mathline": "T = I    det = +1    (x, y) → (x, y)",
         "quote": '"This is the standard."',
         "standard_ref": "RFC 2119 MUST / SHALL",
         "contact_caption": "Normative — Layer Proof Palette",
+        "keywords": "Owl Semaphore, normative, identity state, V4, RFC 2119, classification, DNS Tool",
+        "subject": "OWL 1 NORMATIVE — identity state specification of the Owl Semaphore.",
     },
     {
         "md": "OWL-2-NON-NORMATIVE.md",
@@ -62,12 +99,18 @@ DOCS = [
         "color": "#316964",
         "color_rgb": "rgb(49, 105, 100)",
         "label": "N O N - N O R M A T I V E",
+        "label_compact": "NON-NORMATIVE",
         "title": "Owl Semaphore — Non-Normative",
         "subtitle_typst": "OWL 2 / Reflection State (σ#sub[v]) / Standard Specification",
+        "transform_text": "σv",
+        "det_text": "-1",
+        "mapping_text": "(x, y) → (-x, y)",
         "mathline": "T = σᵥ    det = −1    (x, y) → (−x, y)",
         "quote": '"This reflects the standard."',
         "standard_ref": "Informative / Advisory (NOTE)",
         "contact_caption": "Non-Normative — Layer Proof Palette",
+        "keywords": "Owl Semaphore, non-normative, reflection state, V4, informative, classification, DNS Tool",
+        "subject": "OWL 2 NON-NORMATIVE — reflection state specification of the Owl Semaphore.",
     },
     {
         "md": "OWL-3-CRITICAL.md",
@@ -77,12 +120,18 @@ DOCS = [
         "color": "#990f1e",
         "color_rgb": "rgb(153, 15, 30)",
         "label": "C R I T I C A L",
+        "label_compact": "CRITICAL",
         "title": "Owl Semaphore — Critical",
         "subtitle_typst": "OWL 3 / Inversion State (C#sub[2]) / Standard Specification",
+        "transform_text": "C2",
+        "det_text": "+1",
+        "mapping_text": "(x, y) → (-x, -y)",
         "mathline": "T = C₂    det = +1    (x, y) → (−x, −y)",
         "quote": '"This inverts the standard."',
         "standard_ref": "RFC 2119 MUST NOT / SHALL NOT",
         "contact_caption": "Critical — Layer Proof Palette",
+        "keywords": "Owl Semaphore, critical, inversion state, V4, RFC 2119, classification, DNS Tool",
+        "subject": "OWL 3 CRITICAL — inversion state specification of the Owl Semaphore.",
     },
     {
         "md": "OWL-4-METACOGNITIVE.md",
@@ -92,18 +141,49 @@ DOCS = [
         "color": "#8C4191",
         "color_rgb": "rgb(140, 65, 145)",
         "label": "M E T A C O G N I T I V E",
+        "label_compact": "METACOGNITIVE",
         "title": "Owl Semaphore — Metacognitive",
         "subtitle_typst": "OWL 4 / Frame-Inversion State (σ#sub[h]) / Standard Specification",
+        "transform_text": "σh",
+        "det_text": "-1",
+        "mapping_text": "(x, y) → (x, -y)",
         "mathline": "T = σₕ    det = −1    (x, y) → (x, −y)",
         "quote": '"This audits the standard."',
         "standard_ref": "Epistemic / Framework (META)",
         "contact_caption": "Metacognitive — Layer Proof Palette",
+        "keywords": "Owl Semaphore, metacognitive, frame-inversion, V4, ICD 203, classification, DNS Tool",
+        "subject": "OWL 4 METACOGNITIVE — frame-inversion state specification of the Owl Semaphore.",
+    },
+    {
+        "md": "OWL-SEMAPHORE-EXPLANATION.md",
+        "pdf": "OWL-SEMAPHORE-EXPLANATION.pdf",
+        "badge": "assets/releases/540/NORM-composite-transparent-540.png",
+        "contact_sheet": "assets/proofs/OWL-SEMAPHORE-MASTER-PROOF.png",
+        "color": "#d4a853",
+        "color_rgb": "rgb(212, 168, 83)",
+        "label": "E X P L A N A T I O N",
+        "label_compact": "EXPLANATION",
+        "title": "Owl Semaphore — Explanation",
+        "subtitle_typst": "Origin story, archetype rationale, why two states were not enough",
+        "transform_text": "I",
+        "det_text": "+1",
+        "mapping_text": "(x, y) → (x, y)",
+        "mathline": "Informative companion to OWL-SEMAPHORE-SYSTEM",
+        "quote": '"Four owls tell the reader what kind of thinking they are looking at."',
+        "standard_ref": "Informative (this entire document)",
+        "contact_caption": "Owl Semaphore — Four-State Master Proof",
+        "keywords": "Owl Semaphore, explanation, origin story, archetype, DNS Tool, RFC 2119, V4, WCAG, ICD 203, seL4",
+        "subject": "Informative companion to the Owl Semaphore system specification: origin story and design rationale.",
     },
 ]
 
 
 def preprocess_md(md_path):
-    """Read markdown, strip front image, convert \\(...\\) to $...$."""
+    """Read markdown, strip front image, convert \\(...\\) inline math to $...$.
+
+    Also strip the top-level heading and version line — they're rendered
+    from the template's title block, not the body.
+    """
     with open(md_path, "r") as f:
         lines = f.readlines()
 
@@ -113,26 +193,24 @@ def preprocess_md(md_path):
 
     text = "".join(lines).strip()
 
-    # Convert \(...\) inline math to $...$
+    # Convert \(...\) inline math to $...$ for pandoc->typst.
     text = re.sub(r"\\\((.+?)\\\)", r"$\1$", text)
 
-    # Strip the top-level heading and subtitle (we handle those in template)
-    # Remove lines starting with # (h1) and ## that are title/version lines
     new_lines = []
     skip_count = 0
     for line in text.split("\n"):
-        if skip_count < 3 and (
+        if skip_count < 4 and (
             line.startswith("# OWL SEMAPHORE")
+            or line.startswith("# OWL-SEMAPHORE-EXPLANATION")
             or line.startswith("## OWL ")
-            or line.startswith("### Version")
             or line.startswith("## Version")
+            or line.startswith("### Version")
         ):
             skip_count += 1
             continue
         new_lines.append(line)
 
     text = "\n".join(new_lines).strip()
-    # Remove leading --- if present (separator after removed title)
     text = re.sub(r"^---\s*\n", "", text)
 
     return text
@@ -152,6 +230,11 @@ def md_to_typst(md_text):
     return result.stdout
 
 
+def typst_escape(s):
+    """Escape a string for safe interpolation inside a Typst string literal."""
+    return s.replace("\\", "\\\\").replace('"', '\\"')
+
+
 def build_typst_document(doc, body_typst):
     """Build complete Typst source with header, styling, contact sheet, and ledger."""
 
@@ -160,24 +243,77 @@ def build_typst_document(doc, body_typst):
     color = doc["color_rgb"]
     is_system = doc["md"] == "OWL-SEMAPHORE-SYSTEM.md"
 
-    # Badge paths for classification ledger (relative to repo root)
+    # Per-state badge paths used in the classification ledger.
     norm_badge = "assets/releases/540/NORM-composite-transparent-540.png"
     nonnorm_badge = "assets/releases/540/NONNORM-composite-transparent-540.png"
     crit_badge = "assets/releases/540/CRIT-composite-transparent-540.png"
     meta_badge = "assets/releases/540/META-composite-transparent-540.png"
 
+    # PDF document-info metadata.
+    pdf_title = typst_escape(doc["title"])
+    pdf_keywords = typst_escape(doc["keywords"])
+    pdf_subject = typst_escape(doc["subject"])
+    pdf_author = typst_escape(AUTHOR)
+
+    # Banner tuple — a fixed-format machine-parseable block on page 1 that
+    # tests/test_banner_tuple.py reads back out of the rendered PDF.
+    banner_block = (
+        f"BANNER TUPLE BEGIN\\n"
+        f"state={doc['label_compact']}\\n"
+        f"transform={doc['transform_text']}\\n"
+        f"determinant={doc['det_text']}\\n"
+        f"mapping={doc['mapping_text']}\\n"
+        f"version={VERSION_LABEL}\\n"
+        f"concept_doi={CONCEPT_DOI}\\n"
+        f"version_doi={VERSION_DOI}\\n"
+        f"last_published_doi={LAST_VERSION_DOI}\\n"
+        f"license={LICENSE}\\n"
+        f"BANNER TUPLE END"
+    )
+
     return f'''// Owl Semaphore PDF — generated by generate_pdfs.py
+#set document(
+  title: "{pdf_title}",
+  author: "{pdf_author}",
+  keywords: ("Owl Semaphore", "{doc['label_compact']}", "V4", "Klein four-group", "epistemic notation", "DNS Tool"),
+  description: "{pdf_subject} Version {VERSION_LABEL}. Concept DOI {CONCEPT_DOI}. License {LICENSE}.",
+)
+
 #set page(
   paper: "us-letter",
-  margin: (top: 72pt, bottom: 72pt, left: 72pt, right: 72pt),
+  margin: (top: 96pt, bottom: 72pt, left: 72pt, right: 72pt),
+  header: context {{
+    // Per-page running owl header (suppressed on the title page).
+    let p = counter(page).get().first()
+    if p > 1 [
+      #set text(8pt, fill: luma(110))
+      #grid(
+        columns: (auto, 1fr, auto),
+        align: (left + horizon, center + horizon, right + horizon),
+        [#image("{badge_path}", height: 20pt)],
+        [
+          #text(weight: "bold", tracking: 2pt)[{doc["label_compact"]}]
+          #h(8pt)
+          T = #raw("{doc["transform_text"]}")
+          #h(6pt)
+          det = #raw("{doc["det_text"]}")
+          #h(6pt)
+          #raw("{doc["mapping_text"]}")
+        ],
+        [Owl Semaphore · {VERSION_LABEL}],
+      )
+      #v(2pt)
+      #line(length: 100%, stroke: 0.4pt + {color})
+    ]
+  }},
   footer: context {{
     set text(8pt, fill: luma(140))
     grid(
       columns: (1fr, 1fr, 1fr),
       align: (left, center, right),
-      [Owl Semaphore · v1.2.0],
+      [Owl Semaphore · {VERSION_LABEL} · CC BY 4.0],
       [#counter(page).display("1 of 1", both: true)],
-      [github.com/IT-Help-San-Diego/owl-semaphore],
+      [{REPO_URL} · concept DOI {CONCEPT_DOI}],
     )
   }},
 )
@@ -237,7 +373,7 @@ def build_typst_document(doc, body_typst):
 // ════════════════════════════════════════════════════════════════════════════
 
 #align(center)[
-  #v(24pt)
+  #v(12pt)
   #image("{badge_path}", width: 140pt)
   #v(8pt)
 
@@ -257,24 +393,41 @@ def build_typst_document(doc, body_typst):
   #text(size: 12pt, fill: luma(80))[{doc["subtitle_typst"]}]
   #v(10pt)
 
-  #text(size: 11pt, weight: "bold")[Carey James Balboa] \\
+  #text(size: 11pt, weight: "bold")[{AUTHOR}] \\
   #text(size: 10pt, fill: luma(80))[Independent DNS Security Researcher]
 
   #v(6pt)
   #text(size: 8.5pt, fill: luma(120))[
-    ORCID 0009-0000-5237-9065 #h(12pt) DOI 10.5281/zenodo.19474599 \\
-    SOURCE github.com/IT-Help-San-Diego/owl-semaphore #h(12pt) VERSION 1.2.0 · LICENSE CC-BY-4.0
+    ORCID {ORCID} #h(12pt) Concept DOI {CONCEPT_DOI} \\
+    Last published version DOI {LAST_VERSION_DOI} #h(12pt) v1.3.0 version DOI {VERSION_DOI} \\
+    SOURCE {REPO_URL} #h(12pt) VERSION {VERSION_LABEL} · LICENSE {LICENSE}
+  ]
+  #v(6pt)
+  #text(size: 8pt, fill: luma(100), style: "italic")[
+    Canonical: {CANONICAL_SENTENCE}
   ]
   #v(12pt)
 ]
 
 #line(length: 100%, stroke: 1.5pt + {color})
 
+// ── Banner tuple (machine-parseable; used by scripts/verify_banner_tuple.py) ─
+
+#v(10pt)
+#block(
+  fill: luma(248),
+  inset: 8pt,
+  radius: 2pt,
+  width: 100%,
+  text(size: 7.5pt, font: "DejaVu Sans Mono", fill: luma(70))[#raw("{banner_block}")],
+)
+#v(8pt)
+
 // ════════════════════════════════════════════════════════════════════════════
 // CONTACT SHEET
 // ════════════════════════════════════════════════════════════════════════════
 
-#v(16pt)
+#v(12pt)
 #align(center)[
   #text(size: 9pt, weight: "bold", fill: luma(100), tracking: 1.5pt)[
     {doc["contact_caption"].upper()}
@@ -310,32 +463,26 @@ def build_typst_document(doc, body_typst):
   #grid(
     columns: (1fr, 1fr, 1fr, 1fr),
     gutter: 12pt,
-    // Row 1: badges
     align(center, image("{norm_badge}", width: 80pt)),
     align(center, image("{nonnorm_badge}", width: 80pt)),
     align(center, image("{crit_badge}", width: 80pt)),
     align(center, image("{meta_badge}", width: 80pt)),
-    // Row 2: labels
     align(center, text(size: 8pt, weight: "bold", tracking: 1.5pt)[NORMATIVE]),
     align(center, text(size: 8pt, weight: "bold", tracking: 1.5pt)[NON-NORMATIVE]),
     align(center, text(size: 8pt, weight: "bold", tracking: 1.5pt)[CRITICAL]),
     align(center, text(size: 8pt, weight: "bold", tracking: 1.5pt)[METACOGNITIVE]),
-    // Row 3: operator + det
     align(center, text(size: 7.5pt, fill: luma(100))[T = I #h(4pt) det = +1]),
     align(center, text(size: 7.5pt, fill: luma(100))[T = σ#sub[v] #h(4pt) det = −1]),
     align(center, text(size: 7.5pt, fill: luma(100))[T = C#sub[2] #h(4pt) det = +1]),
     align(center, text(size: 7.5pt, fill: luma(100))[T = σ#sub[h] #h(4pt) det = −1]),
-    // Row 4: mapping
     align(center, text(size: 7.5pt, fill: luma(100))[(x, y) → (x, y)]),
     align(center, text(size: 7.5pt, fill: luma(100))[(x, y) → (−x, y)]),
     align(center, text(size: 7.5pt, fill: luma(100))[(x, y) → (−x, −y)]),
     align(center, text(size: 7.5pt, fill: luma(100))[(x, y) → (x, −y)]),
-    // Row 5: quotes
     align(center, text(size: 7.5pt, style: "italic", fill: luma(100))["This is the standard."]),
     align(center, text(size: 7.5pt, style: "italic", fill: luma(100))["This reflects the standard."]),
     align(center, text(size: 7.5pt, style: "italic", fill: luma(100))["This inverts the standard."]),
     align(center, text(size: 7.5pt, style: "italic", fill: luma(100))["This audits the standard."]),
-    // Row 6: standard ref
     align(center, text(size: 7pt, fill: luma(140))[RFC 2119 MUST / SHALL]),
     align(center, text(size: 7pt, fill: luma(140))[Informative / Advisory (NOTE)]),
     align(center, text(size: 7pt, fill: luma(140))[RFC 2119 MUST NOT / SHALL NOT]),
@@ -346,8 +493,9 @@ def build_typst_document(doc, body_typst):
   #line(length: 60%, stroke: 0.5pt + luma(200))
   #v(8pt)
   #text(size: 8pt, fill: luma(140))[
-    Owl Semaphore v1.2.0 · github.com/IT-Help-San-Diego/owl-semaphore · DOI: 10.5281/zenodo.19474599 \\
-    © 2024–2026 IT Help San Diego Inc. · Licensed under CC-BY-4.0
+    Owl Semaphore {VERSION_LABEL} · {REPO_URL} · concept DOI {CONCEPT_DOI} \\
+    Last published version DOI {LAST_VERSION_DOI} · v1.3.0 version DOI {VERSION_DOI} \\
+    © 2024–2026 IT Help San Diego Inc. · Licensed under {LICENSE}
   ]
 ]
 
@@ -360,13 +508,17 @@ def generate_pdf(doc):
     md_path = os.path.join(REPO, doc["md"])
     pdf_path = os.path.join(REPO, doc["pdf"])
 
+    if not os.path.exists(md_path):
+        print(f"  SKIP missing source: {doc['md']}", file=sys.stderr)
+        return False
+
     print(f"  Reading {doc['md']}...")
     md_text = preprocess_md(md_path)
 
     print(f"  Converting to Typst...")
     body_typst = md_to_typst(md_text)
 
-    print(f"  Building document...")
+    print(f"  Building Typst source...")
     typst_source = build_typst_document(doc, body_typst)
 
     typ_path = os.path.join(REPO, doc["pdf"].replace(".pdf", ".typ"))
@@ -374,34 +526,36 @@ def generate_pdf(doc):
         f.write(typst_source)
 
     print(f"  Compiling {doc['pdf']}...")
-    result = subprocess.run(
-        ["typst", "compile", typ_path, pdf_path],
-        capture_output=True,
-        text=True,
-    )
-    if result.returncode != 0:
-        print(f"  ERROR compiling {doc['pdf']}:\n{result.stderr}", file=sys.stderr)
+    try:
+        typst.compile(typ_path, output=pdf_path, root=REPO)
+    except Exception as exc:
+        print(f"  ERROR compiling {doc['pdf']}: {exc}", file=sys.stderr)
         return False
-
-    # Clean up .typ intermediate
-    os.remove(typ_path)
+    finally:
+        # Keep .typ on error for debugging; only delete on success.
+        if os.path.exists(pdf_path):
+            try:
+                os.remove(typ_path)
+            except OSError:
+                pass
 
     size_mb = os.path.getsize(pdf_path) / (1024 * 1024)
-    print(f"  ✓ {doc['pdf']} ({size_mb:.1f} MB)")
+    print(f"  OK {doc['pdf']} ({size_mb:.1f} MB)")
     return True
 
 
 def main():
     print("Owl Semaphore PDF Generator")
-    print("=" * 50)
+    print(f"Version: {VERSION_LABEL}")
+    print("=" * 60)
 
     success = 0
     for doc in DOCS:
-        print(f"\n[{doc['label'].replace(' ', '')}] {doc['title']}")
+        print(f"\n[{doc['label_compact']}] {doc['title']}")
         if generate_pdf(doc):
             success += 1
 
-    print(f"\n{'=' * 50}")
+    print(f"\n{'=' * 60}")
     print(f"Generated {success}/{len(DOCS)} PDFs")
 
     if success < len(DOCS):
