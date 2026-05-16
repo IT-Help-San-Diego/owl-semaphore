@@ -4,7 +4,7 @@
 
 ## OWL 2 / NON-NORMATIVE / Reflection State (σᵥ)
 
-### Version 1.0 Draft
+### Version 1.3.0-rc (release candidate; document subordinate to v1.3.0-rc)
 
 ---
 
@@ -246,10 +246,10 @@ It does not indicate failure or error.
 
 ## 16. Relationship to Other States
 
-- NORMATIVE → identity
-- NON-NORMATIVE → reflection
-- CRITICAL → inversion
-- METACOGNITIVE → frame inversion
+- NORMATIVE → identity (*"This is the standard."*)
+- NON-NORMATIVE → reflection (*"This reflects the standard."*)
+- CRITICAL → inversion (*"This inverts the standard."*)
+- METACOGNITIVE → frame-audit (*"The observer audits the frame."* — thinking examines its own frame)
 
 ---
 

@@ -4,7 +4,7 @@
 
 ## OWL 3 / CRITICAL / Inversion State (C₂)
 
-### Version 1.0 Draft
+### Version 1.3.0-rc (release candidate; document subordinate to v1.3.0-rc)
 
 ---
 
@@ -173,6 +173,16 @@ The red-on-red contrast is intentionally low relative to other states.
 
 This forces deliberate inspection rather than passive recognition.
 
+### 9.4 Accessibility — Color Is Not the Only Carrier
+
+The CRITICAL palette is intentionally close to a red-on-red regime, which would be unrecoverable for users with red-axis (protan) color vision deficiency if color were the only carrier of state identity ([PMC global CVD review, 12385717](https://pmc.ncbi.nlm.nih.gov/articles/PMC12385717/)). Therefore, in v1.3.0-rc the system explicitly requires that CRITICAL identity be perceptually recoverable from at least three independent channels:
+
+1. **color** (red palette)
+2. **orientation** (upside-down, left-facing — defined by C₂)
+3. **textual label and context** (the literal token `CRITICAL` and the supporting math/quote tuple printed alongside the badge)
+
+This triple-redundant encoding (color + orientation + label) is the project's design response to WCAG 2.2 SC 1.4.1 (Use of Color), which prohibits color from being the sole means of conveying information ([WCAG 2.2 SC 1.4.1](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html)), and to Section 508 §302.3 ([Section 508](https://www.section508.gov/create/making-color-usage-accessible/)). The contrast invariant remains intentionally tight; the accessibility guarantee comes from the redundancy across channels, not from softening the color.
+
 ---
 
 ## 10. Transparency and Alpha
@@ -253,10 +263,10 @@ It does not imply that the content is incorrect.
 
 ## 16. Relationship to Other States
 
-- NORMATIVE → baseline
-- NON-NORMATIVE → reflection
-- CRITICAL → inversion
-- METACOGNITIVE → observer audit
+- NORMATIVE → baseline (*"This is the standard."*)
+- NON-NORMATIVE → reflection (*"This reflects the standard."*)
+- CRITICAL → inversion (*"This inverts the standard."*)
+- METACOGNITIVE → frame-audit (*"The observer audits the frame."* — thinking examines its own frame)
 
 ---
 
