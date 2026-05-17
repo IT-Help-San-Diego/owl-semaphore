@@ -10,6 +10,25 @@ Each release entry records the **canonical formal sentence used in that release*
 
 ## [Unreleased — v2.0.0-rc] — major release candidate (no Zenodo DOI minted, no tag)
 
+### 2026-05-17 — OWL-1 NORMATIVE reader-facing story moved to top of doc
+
+- Added a new `## 1. The Proven Ground` at the top of `OWL-1-NORMATIVE.md` so
+  the plain-English NORMATIVE example (upright, feet planted, (x, y) ↦ (x, y);
+  Newton's laws as a 200-year normative ground) appears immediately after the
+  title page and visual proof pages, before the formal `Statement of Intent`
+  and `System Context`.
+- Renumbered all subsequent sections by +1 (old 1 → 2, …, old 23 → 24).
+  Total sections now 24. No internal cross-references depended on the prior
+  numbering, so renaming is purely additive at the head.
+- The new section explicitly frames itself as **orientation, not proof**, and
+  points readers to the now-§5 *Mathematical Definition* for the formal
+  identity-transform statement. The state-line at the top of the new section
+  is the canonical `T = I, det = +1, (x, y) ↦ (x, y)` so the formal object
+  remains visible alongside the story.
+- No 31°/lean/tilt language was reintroduced. No non-NORMATIVE / CRITICAL /
+  METACOGNITIVE source was modified by this revision (those PDFs were merely
+  rebuilt by the unified `generate_pdfs.py` run).
+
 ### 2026-05-17 — Removed obsolete 31°/lean/tilt content from active scientific docs
 
 - Removed `## 21. Forward-Looking Rule for the 31° Lean` from

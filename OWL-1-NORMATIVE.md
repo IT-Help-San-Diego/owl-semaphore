@@ -8,7 +8,19 @@
 
 ---
 
-## 1. Statement of Intent
+## 1. The Proven Ground
+
+**State line:** NORMATIVE — *T = I*, det = +1, (x, y) ↦ (x, y)
+
+Stand upright, feet planted, facing forward. (x, y) ↦ (x, y): no transform. You see the room exactly as it is.
+
+Newton's laws of motion held for 200 years before Einstein showed where they break down. During those 200 years, they were *normative*: tested, verified, operational. The owl stands upright when the work has been done and the foundation holds — not because it is permanently true, but because, right now, the evidence supports it.
+
+> This section is **orientation, not proof.** The formal scientific object remains the identity transform *I*, with determinant +1 and coordinate action (x, y) ↦ (x, y). The story above is the plain-English meaning of that operator; the operator itself is defined formally in §5 (Mathematical Definition).
+
+---
+
+## 2. Statement of Intent
 
 This document defines the **NORMATIVE owl** as a scientific, mathematical, graphical, and archival standard within the Owl Semaphore system.
 
@@ -18,7 +30,7 @@ The goal is simple: the mark must be reproducible, auditable, mathematically coh
 
 ---
 
-## 2. System Context
+## 3. System Context
 
 The Owl Semaphore is a visual epistemic notation system based on the Owl of Athena. Its discrete state space is modeled as the Klein four-group:
 
@@ -34,7 +46,7 @@ This specification concerns only **OWL 1 — NORMATIVE**, but it is written so t
 
 ---
 
-## 3. Ontological Role
+## 4. Ontological Role
 
 ### 3.1 Semantic Designation
 
@@ -71,7 +83,7 @@ It marks **epistemic status**, not infallibility.
 
 ---
 
-## 4. Mathematical Definition
+## 5. Mathematical Definition
 
 ### 4.1 State Operator
 
@@ -119,7 +131,7 @@ This means the NORMATIVE owl is the unique semaphore state that applies no refle
 
 ---
 
-## 5. Closure Context
+## 6. Closure Context
 
 The four-state Owl Semaphore closes under composition because the full discrete set is:
 
@@ -145,7 +157,7 @@ The NORMATIVE owl is therefore not merely the first badge in a list. It is the *
 
 ---
 
-## 6. Coordinate System
+## 7. Coordinate System
 
 ### 6.1 Raster Domain
 
@@ -187,7 +199,7 @@ All circular and annular zones in the standard are defined relative to this cent
 
 ---
 
-## 7. Canonical Orientation
+## 8. Canonical Orientation
 
 The NORMATIVE owl is the reference pose.
 
@@ -206,7 +218,7 @@ This is the zero-transform state. Every other semaphore state must be expressibl
 
 ---
 
-## 8. Asset Topology
+## 9. Asset Topology
 
 ### 8.1 Canonical Layer Set
 
@@ -253,7 +265,7 @@ The outer gold annulus that closes the coin-like boundary and functions as the h
 
 ---
 
-## 9. Geometry
+## 10. Geometry
 
 ### 9.1 Scaled Geometry Basis
 
@@ -302,7 +314,7 @@ The boundary system is intentionally coin-like rather than logo-flat. The struct
 
 ---
 
-## 10. Color Specification
+## 11. Color Specification
 
 ### 10.1 Normative Palette
 
@@ -335,7 +347,7 @@ For the NORMATIVE owl, gold is not merely decorative. It functions as the visual
 
 ---
 
-## 11. Transparency and Alpha Regime
+## 12. Transparency and Alpha Regime
 
 ### 11.1 Transparency Rule
 
@@ -356,7 +368,7 @@ A transparency claim is not accepted as normative unless alpha values verify it.
 
 ---
 
-## 12. Provenance
+## 13. Provenance
 
 ### 12.1 Source Statement
 
@@ -377,7 +389,7 @@ The source file had previously been represented as transparent while still carry
 
 ---
 
-## 13. Asset Invariants
+## 14. Asset Invariants
 
 The following are locked invariants for OWL 1 — NORMATIVE.
 
@@ -411,7 +423,7 @@ The following are locked invariants for OWL 1 — NORMATIVE.
 
 ---
 
-## 14. Integrity Regime
+## 15. Integrity Regime
 
 ### 14.1 Hash Standard
 
@@ -449,7 +461,7 @@ No asset in the normative line is treated as authoritative merely because it loo
 
 ---
 
-## 15. File Naming Standard
+## 16. File Naming Standard
 
 ### 15.1 Composite Form
 
@@ -481,7 +493,7 @@ Naming is part of the standard. Ambiguous naming is a data integrity problem, no
 
 ---
 
-## 16. TIFF Master Policy
+## 17. TIFF Master Policy
 
 ### 16.1 Role of TIFF
 
@@ -503,7 +515,7 @@ The TIFF file is the **archival master container**, while the per-layer PNGs rem
 
 ---
 
-## 17. Interpretation Rules
+## 18. Interpretation Rules
 
 ### 17.1 Positive Rule
 
@@ -519,7 +531,7 @@ When other owl states are compared, transformed, audited, or measured, they are 
 
 ---
 
-## 18. Non-Permitted Changes
+## 19. Non-Permitted Changes
 
 The following changes are non-compliant unless the standard itself is revised:
 
@@ -534,7 +546,7 @@ The following changes are non-compliant unless the standard itself is revised:
 
 ---
 
-## 19. Relationship to the Other States
+## 20. Relationship to the Other States
 
 The NORMATIVE owl is the base state for all subsequent semaphore transforms.
 
@@ -548,7 +560,7 @@ The normative state therefore has a privileged status: it is not merely one opti
 
 A concrete physical demonstration of the METACOGNITIVE state is the act of searching a room in the ordinary upright position, failing to detect the target, then bending over and viewing the same room upside down through the legs.
 
-## 20. Physical Instantiation of σₕ: The Through-the-Legs Demonstration
+## 21. Physical Instantiation of σₕ: The Through-the-Legs Demonstration
 
 ### 20.1 Operational Description
 
@@ -649,7 +661,7 @@ When the METACOGNITIVE owl is applied to a document, the intended meaning is:
 
 That is the standard meaning. The mark does not say that the subject changed. It says the observer audited the observer.
 
-## 21. Compliance Checklist
+## 22. Compliance Checklist
 
 An asset claiming to be a compliant **OWL 1 — NORMATIVE** master must satisfy all of the following:
 
@@ -673,7 +685,7 @@ An asset claiming to be a compliant **OWL 1 — NORMATIVE** master must satisfy 
 
 ---
 
-## 22. Formal Definition
+## 23. Formal Definition
 
 Let \(\Omega\) be the 1080×1080 raster domain and let \(c=(540,540)\) be the common image center. Let
 
@@ -713,7 +725,7 @@ and serves as the reference state for transform, comparison, and interpretive cl
 
 ---
 
-## 23. Closing Statement
+## 24. Closing Statement
 
 This standard treats the NORMATIVE owl as a reproducible scientific-design object rather than a decorative graphic.
 
