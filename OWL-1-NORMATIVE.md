@@ -48,7 +48,7 @@ This specification concerns only **OWL 1 — NORMATIVE**, but it is written so t
 
 ## 4. Ontological Role
 
-### 3.1 Semantic Designation
+### 4.1 Semantic Designation
 
 **NORMATIVE** means:
 
@@ -59,7 +59,7 @@ This specification concerns only **OWL 1 — NORMATIVE**, but it is written so t
 - reference-grade
 - identity-state
 
-### 3.2 Interpretive Role
+### 4.2 Interpretive Role
 
 This mark is used to signal content that carries the highest internal obligation level in the Owl Semaphore system. In practical terms, that means:
 
@@ -70,7 +70,7 @@ This mark is used to signal content that carries the highest internal obligation
 - baseline measurement standards
 - formally adopted system rules
 
-### 3.3 What It Does Not Mean
+### 4.3 What It Does Not Mean
 
 The NORMATIVE owl does **not** mean:
 
@@ -85,7 +85,7 @@ It marks **epistemic status**, not infallibility.
 
 ## 5. Mathematical Definition
 
-### 4.1 State Operator
+### 5.1 State Operator
 
 The NORMATIVE owl is defined by the identity transform:
 
@@ -93,7 +93,7 @@ $$
 T_{\text{norm}} = I
 $$
 
-### 4.2 Matrix Form
+### 5.2 Matrix Form
 
 $$
 I =
@@ -103,13 +103,13 @@ I =
 \end{bmatrix}
 $$
 
-### 4.3 Determinant
+### 5.3 Determinant
 
 $$
 \det(I)=+1
 $$
 
-### 4.4 Group-Theoretic Class
+### 5.4 Group-Theoretic Class
 
 The NORMATIVE state is:
 
@@ -119,7 +119,7 @@ The NORMATIVE state is:
 - order 1
 - self-inverse only in the trivial sense that \(I^{-1}=I\)
 
-### 4.5 Action on Coordinates
+### 5.5 Action on Coordinates
 
 For every planar coordinate vector \(p=(x,y)^T\),
 
@@ -159,7 +159,7 @@ The NORMATIVE owl is therefore not merely the first badge in a list. It is the *
 
 ## 7. Coordinate System
 
-### 6.1 Raster Domain
+### 7.1 Raster Domain
 
 The canonical raster domain for the current master is:
 
@@ -167,12 +167,12 @@ $$
 \Omega = \{0,1,2,\dots,1079\} \times \{0,1,2,\dots,1079\}
 $$
 
-### 6.2 Canvas Size
+### 7.2 Canvas Size
 
 - Width: 1080 px
 - Height: 1080 px
 
-### 6.3 Center
+### 7.3 Center
 
 The canonical geometric center is:
 
@@ -180,14 +180,14 @@ $$
 (c_x,c_y)=(540,540)
 $$
 
-### 6.4 Axis Convention
+### 7.4 Axis Convention
 
 Raster coordinates are defined as follows:
 
 - \(x\) increases to the right
 - \(y\) increases downward
 
-### 6.5 Radial Function
+### 7.5 Radial Function
 
 For any pixel center \((x,y)\), the radial coordinate is:
 
@@ -203,7 +203,7 @@ All circular and annular zones in the standard are defined relative to this cent
 
 The NORMATIVE owl is the reference pose.
 
-### 7.1 Orientation Conditions
+### 8.1 Orientation Conditions
 
 - upright
 - faces right
@@ -212,7 +212,7 @@ The NORMATIVE owl is the reference pose.
 - no 180° inversion
 - no additional rotational offset
 
-### 7.2 Transform Interpretation
+### 8.2 Transform Interpretation
 
 This is the zero-transform state. Every other semaphore state must be expressible as a transform of this one.
 
@@ -220,7 +220,7 @@ This is the zero-transform state. Every other semaphore state must be expressibl
 
 ## 9. Asset Topology
 
-### 8.1 Canonical Layer Set
+### 9.1 Canonical Layer Set
 
 The current NORMATIVE master is defined as a four-layer raster object:
 
@@ -229,7 +229,7 @@ The current NORMATIVE master is defined as a four-layer raster object:
 3. **L3 — owl body**
 4. **L4 — outer ring**
 
-### 8.2 Composite Definition
+### 9.2 Composite Definition
 
 Let the layers be RGBA-valued fields
 
@@ -245,7 +245,7 @@ $$
 
 where \(\oplus\) denotes standard ordered alpha compositing on a common canvas.
 
-### 8.3 Layer Roles
+### 9.3 Layer Roles
 
 #### L1 — Inner Field
 
@@ -267,7 +267,7 @@ The outer gold annulus that closes the coin-like boundary and functions as the h
 
 ## 10. Geometry
 
-### 9.1 Scaled Geometry Basis
+### 10.1 Scaled Geometry Basis
 
 The previously documented 540 px standard defines the following radial structure:
 
@@ -287,7 +287,7 @@ The 1080 px master is the exact 2× scaling of that system, giving the following
 - outer ring solid: \(516 \le r \le 528\)
 - outer anti-alias edge: \(530 \le r \le 534\)
 
-### 9.2 Normative Geometry Table
+### 10.2 Normative Geometry Table
 
 | Zone                 | 540 Standard | 1080 Master | Function              |
 | -------------------- | ------------ | ----------- | --------------------- |
@@ -298,7 +298,7 @@ The 1080 px master is the exact 2× scaling of that system, giving the following
 | Outer ring solid     | 258–264      | 516–528     | Perimeter signal band |
 | Outer AA fringe      | 265–267      | 530–534     | Anti-aliased edge     |
 
-### 9.3 Boundary Logic
+### 10.3 Boundary Logic
 
 The boundary architecture is not incidental. It is part of the standard:
 
@@ -308,7 +308,7 @@ The boundary architecture is not incidental. It is part of the standard:
 - meander and separator are allowed to overlap by design
 - separator and outer ring are separated by a narrow transition zone
 
-### 9.4 Design Principle
+### 10.4 Design Principle
 
 The boundary system is intentionally coin-like rather than logo-flat. The structure is annular, nested, and center-locked.
 
@@ -316,7 +316,7 @@ The boundary system is intentionally coin-like rather than logo-flat. The struct
 
 ## 11. Color Specification
 
-### 10.1 Normative Palette
+### 11.1 Normative Palette
 
 The current normative palette is:
 
@@ -325,13 +325,13 @@ The current normative palette is:
 - Black band: **#0f0f0f**
 - Owl: gold, multi-tonal extracted artwork
 
-### 10.2 RGB Values
+### 11.2 RGB Values
 
 - Gold ring: (212, 168, 83)
 - Fill: (15, 15, 15)
 - Black band: (15, 15, 15)
 
-### 10.3 Contrast
+### 11.3 Contrast
 
 Recorded owl-on-fill contrast for NORMATIVE:
 
@@ -341,7 +341,7 @@ $$
 
 This exceeds ordinary minimum UI readability thresholds and is suitable for reference-grade use where visual distinction must be preserved.
 
-### 10.4 Color Doctrine
+### 11.4 Color Doctrine
 
 For the NORMATIVE owl, gold is not merely decorative. It functions as the visual marker of canonical status, while the near-black field stabilizes contrast and preserves legibility against both white and dark deployment environments.
 
@@ -349,7 +349,7 @@ For the NORMATIVE owl, gold is not merely decorative. It functions as the visual
 
 ## 12. Transparency and Alpha Regime
 
-### 11.1 Transparency Rule
+### 12.1 Transparency Rule
 
 The canonical transparent master must satisfy all of the following:
 
@@ -358,11 +358,11 @@ The canonical transparent master must satisfy all of the following:
 - center alpha = 255
 - no false transparency claims in RGB-only files
 
-### 11.2 Masking Rule
+### 12.2 Masking Rule
 
 The NORMATIVE transparent composite is defined by a circular alpha mask at the coin edge with anti-aliased feathering.
 
-### 11.3 Scientific Reason for the Rule
+### 12.3 Scientific Reason for the Rule
 
 A transparency claim is not accepted as normative unless alpha values verify it. This rule exists to prevent the common design failure mode in which a file is visually placed on a neutral background and then mislabeled as transparent.
 
@@ -370,11 +370,11 @@ A transparency claim is not accepted as normative unless alpha values verify it.
 
 ## 13. Provenance
 
-### 12.1 Source Statement
+### 13.1 Source Statement
 
 The NORMATIVE owl was built from the original NORM composite source and retained the identity transform.
 
-### 12.2 Transform Statement
+### 13.2 Transform Statement
 
 - no rotation
 - no horizontal flip
@@ -383,7 +383,7 @@ The NORMATIVE owl was built from the original NORM composite source and retained
 
 This is the one state in the system for which the transform chain is intentionally null.
 
-### 12.3 Transparency Correction
+### 13.3 Transparency Correction
 
 The source file had previously been represented as transparent while still carrying full alpha. The corrected normative master applies an actual circular alpha mask with anti-aliased edge handling.
 
@@ -393,21 +393,21 @@ The source file had previously been represented as transparent while still carry
 
 The following are locked invariants for OWL 1 — NORMATIVE.
 
-### 13.1 Algebraic Invariants
+### 14.1 Algebraic Invariants
 
 - operator = identity
 - determinant = +1
 - orientation-preserving
 - reference state for all other transforms
 
-### 13.2 Geometric Invariants
+### 14.2 Geometric Invariants
 
 - common center at (540,540) for 1080 masters
 - circular annular architecture
 - no transform displacement
 - no orientation drift
 
-### 13.3 Visual Invariants
+### 14.3 Visual Invariants
 
 - upright owl
 - owl faces right
@@ -415,7 +415,7 @@ The following are locked invariants for OWL 1 — NORMATIVE.
 - dark central field
 - shared meander geometry remains intact
 
-### 13.4 File Invariants
+### 14.4 File Invariants
 
 - transparent master must remain RGBA
 - composite must be reproducible from canonical layers
@@ -425,17 +425,17 @@ The following are locked invariants for OWL 1 — NORMATIVE.
 
 ## 15. Integrity Regime
 
-### 14.1 Hash Standard
+### 15.1 Hash Standard
 
 All normative assets are to be verified using **SHA-3-512**.
 
-### 14.2 Verification Command
+### 15.2 Verification Command
 
 ```bash
 openssl dgst -sha3-512 <filename>
 ```
 
-### 14.3 Locked Composite Records
+### 15.3 Locked Composite Records
 
 The locked 540 px normative composites are recorded as:
 
@@ -445,11 +445,11 @@ The locked 540 px normative composites are recorded as:
 
 with their SHA-3-512 values recorded in the integrity manifest.
 
-### 14.4 Canonical Source Record
+### 15.4 Canonical Source Record
 
 The canonical transparent source-of-truth image for the badge system is recorded as an immutable RGBA PNG in the asset library.
 
-### 14.5 Integrity Principle
+### 15.5 Integrity Principle
 
 No asset in the normative line is treated as authoritative merely because it looks correct. It must also satisfy:
 
@@ -463,31 +463,31 @@ No asset in the normative line is treated as authoritative merely because it loo
 
 ## 16. File Naming Standard
 
-### 15.1 Composite Form
+### 16.1 Composite Form
 
 ```text
 NORM-composite-{background}-{size}.png
 ```
 
-### 15.2 Layer Form
+### 16.2 Layer Form
 
 ```text
 NORM-L{n}-{role}-{size}.png
 ```
 
-### 15.3 Master Form
+### 16.3 Master Form
 
 ```text
 NORM-MASTER-{size}.tiff
 ```
 
-### 15.4 Permitted Background Tokens
+### 16.4 Permitted Background Tokens
 
 - `white`
 - `dark`
 - `transparent`
 
-### 15.5 Principle
+### 16.5 Principle
 
 Naming is part of the standard. Ambiguous naming is a data integrity problem, not a cosmetic problem.
 
@@ -495,11 +495,11 @@ Naming is part of the standard. Ambiguous naming is a data integrity problem, no
 
 ## 17. TIFF Master Policy
 
-### 16.1 Role of TIFF
+### 17.1 Role of TIFF
 
 The TIFF master is the archival raster container for the normative standard.
 
-### 16.2 Why TIFF Is Acceptable
+### 17.2 Why TIFF Is Acceptable
 
 TIFF is suitable here because it is:
 
@@ -509,7 +509,7 @@ TIFF is suitable here because it is:
 - widely parseable
 - appropriate for archival scientific image workflows
 
-### 16.3 Policy Statement
+### 17.3 Policy Statement
 
 The TIFF file is the **archival master container**, while the per-layer PNGs remain the most explicit cross-tool representation of atomic layer truth.
 
@@ -517,15 +517,15 @@ The TIFF file is the **archival master container**, while the per-layer PNGs rem
 
 ## 18. Interpretation Rules
 
-### 17.1 Positive Rule
+### 18.1 Positive Rule
 
 When the NORMATIVE owl is present, the marked object is to be interpreted as operating under the system’s highest ordinary level of internal methodological obligation.
 
-### 17.2 Negative Rule
+### 18.2 Negative Rule
 
 The mark does not exempt the underlying content from audit, challenge, correction, or future revision.
 
-### 17.3 Reference Rule
+### 18.3 Reference Rule
 
 When other owl states are compared, transformed, audited, or measured, they are compared against the NORMATIVE state as the identity reference.
 
@@ -562,7 +562,7 @@ A concrete physical demonstration of the METACOGNITIVE state is the act of searc
 
 ## 21. Physical Instantiation of σₕ: The Through-the-Legs Demonstration
 
-### 20.1 Operational Description
+### 21.1 Operational Description
 
 A concrete physical demonstration of the METACOGNITIVE state is the act of searching a room in the ordinary upright position, failing to detect the target, then bending over and viewing the same room upside down through the legs.
 
@@ -574,7 +574,7 @@ $$
 
 The subject of analysis does not change. The room remains the same room. The search direction remains aimed at the same environment. What changes is the observer's evaluative frame.
 
-### 20.2 Coordinate Interpretation
+### 21.2 Coordinate Interpretation
 
 Under the ordinary upright search posture, the visual field operates in the baseline orientation. In the simplified local frame used by this system, horizontal structure is preserved while the vertical relation is flipped when the observer bends and looks through the legs:
 
@@ -583,7 +583,7 @@ Under the ordinary upright search posture, the visual field operates in the base
 
 This is the defining action of \(\sigma_h\).
 
-### 20.3 Why It Works
+### 21.3 Why It Works
 
 The practical force of the maneuver is not mystical. It is perceptual.
 
@@ -600,7 +600,7 @@ When the observer inverts the vertical axis while keeping the same scene under i
 
 In plain terms: the observer forces the pattern-recognition system to stop coasting.
 
-### 20.4 Epistemic Meaning
+### 21.4 Epistemic Meaning
 
 That is why this maneuver is a correct physical analogue for metacognition.
 
@@ -617,7 +617,7 @@ This is exactly the logic of the METACOGNITIVE state.
 
 The observer audits the frame. (See OWL-4-METACOGNITIVE for the normative phrasing rule; the v2.0.0-rc canonical sentence for METACOGNITIVE is *"The observer audits the frame,"* with the warmer explanatory variant *"Thinking examines its own frame."*)
 
-### 20.5 Relation to Pattern Recognition
+### 21.5 Relation to Pattern Recognition
 
 This system is especially relevant in contexts of strong pattern-recognition ability.
 
@@ -627,7 +627,7 @@ The \(\sigma_h\) maneuver interrupts that fluency by feeding the perceptual syst
 
 That reconstruction window is often where the missed object becomes visible.
 
-### 20.6 Determinant Interpretation
+### 21.6 Determinant Interpretation
 
 In the semaphore system, identity and 180° rotation have determinant \(+1\), while the two reflections have determinant \(-1\).
 
@@ -639,7 +639,7 @@ $$
 
 This captures the fact that the evaluative frame has been reversed rather than merely preserved under a rotation within the same orientation class.
 
-### 20.7 Tactical and Applied Implications
+### 21.7 Tactical and Applied Implications
 
 The demonstration has implications beyond human introspection.
 
@@ -653,7 +653,7 @@ Any search system that depends on entrenched priors or optimized detection paths
 
 A robot or vision pipeline that periodically re-examines the same environment under an inversion regime is not being whimsical. It is performing a structured audit of its own detection assumptions.
 
-### 20.8 Standard Interpretation Rule
+### 21.8 Standard Interpretation Rule
 
 When the METACOGNITIVE owl is applied to a document, the intended meaning is:
 

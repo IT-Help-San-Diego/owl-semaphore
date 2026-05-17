@@ -10,6 +10,23 @@ Each release entry records the **canonical formal sentence used in that release*
 
 ## [Unreleased — v2.0.0-rc] — major release candidate (no Zenodo DOI minted, no tag)
 
+### 2026-05-17 — OWL-1-NORMATIVE: fix subsection numbering after §1 insertion
+
+- QA after the *Proven Ground* §1 insertion caught that `### N.M` subsection
+  headings still carried the pre-insertion parent number (e.g. *4. Ontological
+  Role* was followed by *3.1 Semantic Designation*).
+- Renumbered all 60 `###` subsection headings in `OWL-1-NORMATIVE.md` by +1 on
+  the parent: §4 → 4.1/4.2/4.3, §5 → 5.1..5.5, §7 → 7.1..7.5, §8 → 8.1/8.2,
+  §9 → 9.1/9.2/9.3, §10 → 10.1..10.4, §11 → 11.1..11.4, §12 → 12.1..12.3,
+  §13 → 13.1..13.3, §14 → 14.1..14.4, §15 → 15.1..15.5, §16 → 16.1..16.5,
+  §17 → 17.1..17.3, §18 → 18.1..18.3, §21 → 21.1..21.8.
+- Audited the body for stray decimal cross-references that might still cite
+  the old numbering; only non-section decimals remain (e.g. the 8.69:1
+  contrast ratio).
+- Regenerated `OWL-1-NORMATIVE.pdf`; pdftotext confirms every parent N is
+  followed by N.1, N.2, … with no parent/child mismatches.
+- 31°/lean/tilt scrub re-checked across all six active PDFs: 0 matches each.
+
 ### 2026-05-17 — OWL-1 NORMATIVE reader-facing story moved to top of doc
 
 - Added a new `## 1. The Proven Ground` at the top of `OWL-1-NORMATIVE.md` so
