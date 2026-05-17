@@ -16,20 +16,25 @@
 PYTHON ?= python3
 REPO   := $(CURDIR)
 
-.PHONY: all badges pdfs tiffs hashes manifest test clean help
+.PHONY: all owl3-b-balanced badges pdfs tiffs hashes manifest test clean help
 
 help:
 	@echo "Owl Semaphore — make targets (v2.0.0-rc):"
-	@echo "  make badges     build v2 final composed badges (1080/540) + contact sheet"
-	@echo "  make pdfs       regenerate all six PDFs (v2 asset set)"
-	@echo "  make tiffs      assemble v2 multi-page master TIFFs"
-	@echo "  make hashes     recompute SHA-3-512 hashes -> RELEASE-HASHES.txt"
-	@echo "  make manifest   rewrite integrity-manifest sections from hashes"
-	@echo "  make test       run banner-tuple PDF integrity test + v2 asset doctrine tests"
-	@echo "  make all        badges -> tiffs -> pdfs -> hashes -> manifest -> test"
-	@echo "  make clean      remove generated intermediates"
+	@echo "  make owl3-b-balanced  build OWL-3 CRITICAL B-geometry + B alert red balanced master + layer proof"
+	@echo "  make badges           build v2 final composed badges (1080/540) + contact sheet"
+	@echo "  make pdfs             regenerate all six PDFs (v2 asset set)"
+	@echo "  make tiffs            assemble v2 multi-page master TIFFs"
+	@echo "  make hashes           recompute SHA-3-512 hashes -> RELEASE-HASHES.txt"
+	@echo "  make manifest         rewrite integrity-manifest sections from hashes"
+	@echo "  make test             run banner-tuple PDF integrity test + v2 asset doctrine tests"
+	@echo "  make all              owl3-b-balanced -> badges -> tiffs -> pdfs -> hashes -> manifest -> test"
+	@echo "  make clean            remove generated intermediates"
 
-all: badges tiffs pdfs hashes manifest test
+all: owl3-b-balanced badges tiffs pdfs hashes manifest test
+
+owl3-b-balanced:
+	$(PYTHON) $(REPO)/scripts/build_owl3_b_balanced_master.py
+	$(PYTHON) $(REPO)/scripts/build_owl3_layer_proof.py
 
 badges:
 	$(PYTHON) $(REPO)/scripts/build_v2_composed_badges.py

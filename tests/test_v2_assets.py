@@ -54,12 +54,21 @@ FILES_540 = {
 # (220, 199, 116) was the saturated #D8B760 gold; the approved B parchment-gold
 # is a lighter, warmer tone whose owl-only median is (211, 194, 154).
 # See assets/v2/normative-D-B-gold-master/ for the provenance package.
-# NON-NORMATIVE / CRITICAL / METACOGNITIVE palette centers are unchanged
-# pending the next per-state review.
+#
+# CRITICAL center was updated on 2026-05-17 to reflect the human-approved
+# OWL-3 CRITICAL B-geometry + B alert red balanced master. The prior center
+# (240, 125, 124) was the saturated salmon body; the approved alert-red body
+# yields a median of (240, 121, 127) after LUT recolor (R preserved, G/B
+# nudged toward the new alert-red palette). The transparent master was
+# recolored in-place; the prior salmon master is preserved under
+# assets/v2/critical-b-geometry-e-ring-master-superseded/preserved-transparent-pre-b-balanced/.
+#
+# NON-NORMATIVE / METACOGNITIVE palette centers are unchanged pending the
+# next per-state review.
 PALETTE = {
     "NORMATIVE":     (211, 194, 154),
     "NON-NORMATIVE": ( 77, 177, 176),
-    "CRITICAL":      (240, 125, 124),
+    "CRITICAL":      (240, 121, 127),
     "METACOGNITIVE": (181, 153, 230),
 }
 PALETTE_TOL = 25  # per-channel +/- band

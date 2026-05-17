@@ -5,8 +5,8 @@ proof PNG (a descriptive 3x2 contact sheet of the existing layers) is
 re-rasterized so its captions fit the tile width.
 
 Outputs:
-    assets/v2/critical-b-geometry-e-ring-master/proofs/
-        OWL-3-CRITICAL-B-GEOMETRY-E-RING-LAYER-PROOF.png
+    assets/v2/critical-b-geometry-e-ring-b-balanced-master/proofs/
+        OWL-3-CRITICAL-B-GEOMETRY-B-BALANCED-LAYER-PROOF.png
     assets/v2/proofs/CRIT-v2-layer-proof-palette.png  (byte-exact copy)
 """
 
@@ -18,10 +18,10 @@ import shutil
 from PIL import Image, ImageDraw, ImageFont
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-KIT = os.path.join(REPO, "assets", "v2", "critical-b-geometry-e-ring-master")
+KIT = os.path.join(REPO, "assets", "v2", "critical-b-geometry-e-ring-b-balanced-master")
 LAYER_DIR = os.path.join(KIT, "layers")
-COMPOSITE = os.path.join(KIT, "OWL-3-CRITICAL-B-GEOMETRY-E-RING-COMPOSITE-1080.png")
-OUT_KIT = os.path.join(KIT, "proofs", "OWL-3-CRITICAL-B-GEOMETRY-E-RING-LAYER-PROOF.png")
+COMPOSITE = os.path.join(KIT, "OWL-3-CRITICAL-B-GEOMETRY-B-BALANCED-COMPOSITE-1080.png")
+OUT_KIT = os.path.join(KIT, "proofs", "OWL-3-CRITICAL-B-GEOMETRY-B-BALANCED-LAYER-PROOF.png")
 OUT_FINAL = os.path.join(REPO, "assets", "v2", "proofs", "CRIT-v2-layer-proof-palette.png")
 
 # (file, two-line caption). Captions are intentionally short so each line
@@ -29,16 +29,16 @@ OUT_FINAL = os.path.join(REPO, "assets", "v2", "proofs", "CRIT-v2-layer-proof-pa
 TILES = [
     ("OWL-3-CRITICAL-L0-inner-field-critical-original-1080.png",
      ("L0  inner field", "critical original")),
-    ("OWL-3-CRITICAL-L1-inner-red-ring-matched-to-OWL2-halfway-salmon-1080.png",
-     ("L1  inner red ring", "OWL-2 geometry  ·  halfway salmon")),
+    ("OWL-3-CRITICAL-L1-inner-red-ring-B-alert-red-balanced-1080.png",
+     ("L1  inner red ring", "OWL-2 geometry  ·  alert red")),
     ("OWL-3-CRITICAL-L2-meander-ring-critical-original-1080.png",
      ("L2  meander ring", "critical original")),
-    ("OWL-3-CRITICAL-L3-critical-human-gold-branch-B-geometry-1080.png",
-     ("L3  CRITICAL owl", "human gold branch  ·  B geometry")),
-    ("OWL-3-CRITICAL-L4-outer-critical-ring-halfway-salmon-1080.png",
-     ("L4  outer ring", "halfway salmon")),
+    ("OWL-3-CRITICAL-L3-B-balanced-owl-body-gold-branch-preserved-1080.png",
+     ("L3  CRITICAL owl", "alert red body  ·  gold preserved")),
+    ("OWL-3-CRITICAL-L4-outer-ring-B-alert-red-balanced-1080.png",
+     ("L4  outer ring", "alert red balanced")),
     (None,  # composite uses COMPOSITE
-     ("FINAL COMPOSITE", "B geometry + E ring")),
+     ("FINAL COMPOSITE", "B geometry + B alert red")),
 ]
 
 COLS = 3

@@ -75,8 +75,17 @@ recomputes hashes, rewrites the integrity manifest, and runs both test suites.
 | --- | --- | --- | --- |
 | NORMATIVE | `#CBB178` (B parchment-gold) | (211, 194, 154) | `PALETTE_NORMATIVE` |
 | NON-NORMATIVE | `#4DB1B0` (Math97 teal) | (77, 177, 176) | `PALETTE_NONNORMATIVE` |
-| CRITICAL | `#C85B5B` *(pending review)* | *(pending review)* | `PALETTE_CRITICAL` |
+| CRITICAL | `#DA3741` (B alert red balanced) | (240, 121, 127) | `PALETTE_CRITICAL` |
 | METACOGNITIVE | `#8F75BF` *(pending review)* | *(pending review)* | `PALETTE_METACOGNITIVE` |
+
+The CRITICAL row reflects the human-approved B alert red balanced master
+(2026-05-17) derived from the controlled OWL-3 red perception study under
+`/home/user/workspace/owl3_critical_red_perception_study/`. The body and
+the red rings carry RGB(218,55,65); the gold branch / leaves / olive and
+the dark / black linework are preserved exactly by a per-pixel LUT that is
+identity outside the observed salmon domain. The prior salmon-rings-only
+kit is preserved under `assets/v2/critical-b-geometry-e-ring-master-superseded/`
+for provenance.
 
 The NORMATIVE and NON-NORMATIVE rows reflect their human-approved v2 masters
 (D + B parchment-gold and Math-Mirror Center-Scale-97 + Seam-17 + Five-Over

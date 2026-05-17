@@ -57,7 +57,7 @@ The four transforms form a **finite subgroup of O(2) isomorphic to the Klein fou
 | --- | --- |
 | NORMATIVE | `#D8B760` (warm gold) |
 | NON-NORMATIVE | `#2F8C8C` (teal) |
-| CRITICAL | `#C85B5B` (red) |
+| CRITICAL | `#DA3741` (B alert red balanced) |
 | METACOGNITIVE | `#8F75BF` (amethyst) |
 
 **Hard rules:**

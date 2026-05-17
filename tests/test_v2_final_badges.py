@@ -58,12 +58,19 @@ FINAL_FILES_540 = {
 # original) alongside the teal owl and teal outer ring, so the
 # luma-band-restricted median that the composed-badge test uses is pulled
 # toward the gold meander pixels rather than the teal owl pixels.
-# CRITICAL / METACOGNITIVE centers are unchanged pending the next per-state
-# reviews.
+# CRITICAL center was updated on 2026-05-17 to reflect the human-approved
+# OWL-3 CRITICAL B-geometry + B alert red balanced composite (body + rings
+# recolored to RGB(218,55,65), gold branch / leaves / olive preserved),
+# sourced byte-exact from
+# assets/v2/critical-b-geometry-e-ring-b-balanced-master/OWL-3-CRITICAL-B-GEOMETRY-B-BALANCED-COMPOSITE-1080.png.
+# The composed-badge dominant is pulled toward (218, 118, 108) because the
+# luma-band-restricted median includes anti-aliased outline pixels and the
+# preserved gold-branch / olive pixels alongside the saturated alert red.
+# METACOGNITIVE center is unchanged pending the next per-state review.
 PALETTE_COMPOSED = {
     "NORMATIVE":     (190, 167, 127),
     "NON-NORMATIVE": (172, 175, 101),
-    "CRITICAL":      (224, 115, 115),
+    "CRITICAL":      (218, 118, 108),
     "METACOGNITIVE": (160, 135, 170),
 }
 PALETTE_COMPOSED_TOL = 30

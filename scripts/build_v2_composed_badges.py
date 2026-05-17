@@ -62,7 +62,7 @@ PROOF_DIR = os.path.join(REPO, "assets", "v2", "proofs")
 PALETTE = {
     "NORMATIVE":     (0xCB, 0xB1, 0x78),  # B parchment-gold (prior: 0xD8 0xB7 0x60)
     "NON-NORMATIVE": (0x2F, 0x8C, 0x8C),
-    "CRITICAL":      (0xC8, 0x5B, 0x5B),
+    "CRITICAL":      (0xDA, 0x37, 0x41),  # B alert red balanced (218,55,65) - prior: 0xC8 0x5B 0x5B
     "METACOGNITIVE": (0x8F, 0x75, 0xBF),
 }
 
@@ -91,6 +91,24 @@ PINNED_NONNORMATIVE_COMPOSITE_1080 = os.path.join(
 PINNED_NONNORMATIVE_COMPOSITE_540 = os.path.join(
     REPO, "assets", "v2", "nonnormative-math97-five-over-master",
     "OWL-2-NON-NORMATIVE-MATH97-FIVE-OVER-COMPOSITE-540.png",
+)
+
+# Approved B-geometry + B alert red balanced master overrides for CRITICAL.
+# Same byte-exact-pin rationale as NORMATIVE / NON-NORMATIVE: the user
+# (Carey James Balboa) approved the COMPOSITE-1080.png and COMPOSITE-540.png
+# as the published OWL-3 CRITICAL badge after a controlled six-candidate red
+# perception study. The composite is body + rings recolored to RGB(218,55,65),
+# preserving the gold branch / leaves / olive and dark/black linework
+# exactly. See assets/v2/critical-b-geometry-e-ring-b-balanced-master/
+# SOURCE-README.md for the provenance package. The prior salmon-rings-only
+# kit is preserved under -superseded for provenance.
+PINNED_CRITICAL_COMPOSITE_1080 = os.path.join(
+    REPO, "assets", "v2", "critical-b-geometry-e-ring-b-balanced-master",
+    "OWL-3-CRITICAL-B-GEOMETRY-B-BALANCED-COMPOSITE-1080.png",
+)
+PINNED_CRITICAL_COMPOSITE_540 = os.path.join(
+    REPO, "assets", "v2", "critical-b-geometry-e-ring-b-balanced-master",
+    "OWL-3-CRITICAL-B-GEOMETRY-B-BALANCED-COMPOSITE-540.png",
 )
 
 OWL_FILES = {
@@ -265,6 +283,10 @@ def main() -> int:
             pinned_1080 = PINNED_NONNORMATIVE_COMPOSITE_1080
             pinned_540  = PINNED_NONNORMATIVE_COMPOSITE_540
             pin_label   = "approved Math97 Five-Over master"
+        elif state == "CRITICAL" and os.path.isfile(PINNED_CRITICAL_COMPOSITE_1080):
+            pinned_1080 = PINNED_CRITICAL_COMPOSITE_1080
+            pinned_540  = PINNED_CRITICAL_COMPOSITE_540
+            pin_label   = "approved B-geometry + B alert red balanced master"
 
         if pinned_1080:
             # Use the human-approved composite byte-exact, bypassing the generic
