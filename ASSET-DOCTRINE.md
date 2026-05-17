@@ -32,9 +32,11 @@ Rules:
   obsolete v1 contamination and must not appear in any v2 final composite.
 - The composed badge is editorial / presentation-layer. It is NOT an input to the V₄ transform and
   is NOT part of the algebraic master. The V₄ algebra still holds on the owl-only master.
-- PDFs use the composed badge on title pages, the back-page classification ledger, and the
-  contact-sheet section (the published visible badge). They also include the owl-only master
-  proof inline so the algebraic source remains visible alongside the editorial composite.
+- PDFs use the composed badge on title pages, the back-page classification ledger, the
+  contact-sheet section (the published visible badge), **and the small running page-corner
+  marker in the page header** so the reader always sees the full state medallion at a glance.
+  PDFs also include the owl-only master proof inline (in the master-proof block under the
+  contact sheet) so the algebraic source remains visible alongside the editorial composite.
 - Both layers must agree on palette: the composed badge ring/meander must use the same
   doctrine hex as the owl body of its state. Test `test_composed_palette_matches_doctrine`
   enforces this against `assets/v2/final-1080/`.

@@ -230,8 +230,9 @@ def md_to_typst(md_text: str) -> str:
 
 
 def build_typst_document(doc: dict, body_typst: str) -> str:
-    badge_path = doc["badge"]                       # owl-only transparent (header thumbnail)
-    final_badge_path = doc["final_badge"]           # final composed circle/medallion (title page, ledger)
+    badge_path = doc["badge"]                       # owl-only transparent (kept for the inline owl-only master proof block below the contact sheet)
+    final_badge_path = doc["final_badge"]           # final composed circle/medallion (title page, ledger, AND the small per-page header marker)
+    header_badge_path = final_badge_path            # running page-corner marker: the full per-state composed badge (see ASSET-DOCTRINE.md §1a)
     contact_path = doc["contact_sheet"]
     owl_master_proof = doc.get(
         "owl_master_proof",
@@ -273,7 +274,7 @@ def build_typst_document(doc: dict, body_typst: str) -> str:
 )
 
 #let header-color = {color}
-#let owl-badge = "{badge_path}"
+#let owl-badge = "{header_badge_path}"
 #let state-token = "{_typst_str(state_token)}"
 
 #set page(

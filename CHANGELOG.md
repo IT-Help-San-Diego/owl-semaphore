@@ -10,6 +10,32 @@ Each release entry records the **canonical formal sentence used in that release*
 
 ## [Unreleased — v2.0.0-rc] — major release candidate (no Zenodo DOI minted, no tag)
 
+### 2026-05-17 — Page-header marker switched to per-state composed badge
+
+- `generate_pdfs.py` now uses each document's `final_badge` (the full per-state
+  composed medallion at 540 px) as the small running page-corner marker in
+  the Typst page header, instead of the prior owl-only transparent thumbnail.
+  Resolved paths per document:
+  - `OWL-1-NORMATIVE.pdf`               → `assets/v2/final-540/NORMATIVE-V2-FINAL-COMPOSED-540.png`
+  - `OWL-2-NON-NORMATIVE.pdf`           → `assets/v2/final-540/NON-NORMATIVE-V2-FINAL-COMPOSED-540.png`
+  - `OWL-3-CRITICAL.pdf`                → `assets/v2/final-540/CRITICAL-V2-FINAL-COMPOSED-540.png`
+  - `OWL-4-METACOGNITIVE.pdf`           → `assets/v2/final-540/METACOGNITIVE-V2-FINAL-COMPOSED-540.png`
+  - `OWL-SEMAPHORE-SYSTEM.pdf`          → `assets/v2/final-540/NORMATIVE-V2-FINAL-COMPOSED-540.png`
+  - `OWL-SEMAPHORE-EXPLANATION.pdf`     → `assets/v2/final-540/METACOGNITIVE-V2-FINAL-COMPOSED-540.png`
+- The owl-only master remains the algebraic source and continues to be shown
+  inline in the *Owl-Only Mathematical Master — V4-Tested Source* proof block
+  under the contact sheet, per `ASSET-DOCTRINE.md §1a`.
+- `ASSET-DOCTRINE.md §1a` updated to record that the running page-corner
+  marker is now the composed medallion.
+- No state assets were modified; only the running-header image path changed.
+  Each PDF still uses *its own* per-state badge.
+- Visual evidence: `pdfimages -p -f 1 -l 1` extracted the page-1 header image
+  from each regenerated PDF and confirmed it is byte-equivalent to the
+  corresponding `assets/v2/final-540/<STATE>-V2-FINAL-COMPOSED-540.png`
+  (identical dominant RGB and identical ~0.49 dark-opaque ratio, vs the
+  owl-only master's 0.00 dark-opaque ratio).
+- 31°/lean/tilt scrub re-checked across all six active PDFs: 0 matches each.
+
 ### 2026-05-17 — OWL-1-NORMATIVE: fix subsection numbering after §1 insertion
 
 - QA after the *Proven Ground* §1 insertion caught that `### N.M` subsection
