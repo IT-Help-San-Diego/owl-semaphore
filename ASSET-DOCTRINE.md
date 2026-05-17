@@ -71,12 +71,17 @@ recomputes hashes, rewrites the integrity manifest, and runs both test suites.
 
 ## 3. Palette (normative)
 
-| State | Hex | Token in code |
-| --- | --- | --- |
-| NORMATIVE | `#D8B760` | `PALETTE_NORMATIVE` |
-| NON-NORMATIVE | `#2F8C8C` | `PALETTE_NONNORMATIVE` |
-| CRITICAL | `#C85B5B` | `PALETTE_CRITICAL` |
-| METACOGNITIVE | `#8F75BF` | `PALETTE_METACOGNITIVE` |
+| State | Doctrine hex | Approved-master observed RGB | Token in code |
+| --- | --- | --- | --- |
+| NORMATIVE | `#CBB178` (B parchment-gold) | (211, 194, 154) | `PALETTE_NORMATIVE` |
+| NON-NORMATIVE | `#4DB1B0` (Math97 teal) | (77, 177, 176) | `PALETTE_NONNORMATIVE` |
+| CRITICAL | `#C85B5B` *(pending review)* | *(pending review)* | `PALETTE_CRITICAL` |
+| METACOGNITIVE | `#8F75BF` *(pending review)* | *(pending review)* | `PALETTE_METACOGNITIVE` |
+
+The NORMATIVE and NON-NORMATIVE rows reflect their human-approved v2 masters
+(D + B parchment-gold and Math-Mirror Center-Scale-97 + Seam-17 + Five-Over
+respectively). CRITICAL and METACOGNITIVE retain their prior v2 hex values
+pending per-state review.
 
 Hard rules:
 

@@ -10,6 +10,62 @@ Each release entry records the **canonical formal sentence used in that release*
 
 ## [Unreleased — v2.0.0-rc] — major release candidate (no Zenodo DOI minted, no tag)
 
+### 2026-05-17 — OWL-2 NON-NORMATIVE promoted to Math-Mirror Center-Scale-97 + Seam-17 + Five-Over
+
+- **OWL-2 NON-NORMATIVE master asset** promoted to the human-approved
+  Math-Mirror Center-Scale-97 + Seam-17 + Five-Over master. User
+  approval was the one-word "Pass!" on the Five-Over candidate after
+  Math-Mirror Center-Scale-97 and Seam-17 refinement. The composite asset
+  is byte-exact (SHA-256 `a0e995ec…`) with the user-passed proof at
+  `/home/user/workspace/owl2_inner_meander_edge_refinement/OWL-2-C_touch_edge_black_5_over.png`
+  (diff bbox: `None`).
+- Source package preserved under
+  `assets/v2/nonnormative-math97-five-over-master/` (TIFF + 6 layers +
+  composites + metrics + 2 proofs + SOURCE-README + SOURCE-AUDIT-NOTE
+  + AUDIT-NOTE).
+- Live paths updated (NON-NORMATIVE only):
+  `assets/v2/transparent-{1080,540}/NON-NORMATIVE-…png`,
+  `assets/v2/final-{1080,540}/NON-NORMATIVE-V2-FINAL-COMPOSED-…png`,
+  `assets/v2/proofs/NONNORM-v2-layer-proof-palette.png` (regenerated 6-up
+  showing L0..L4 + L2.5 of the approved kit).
+- `scripts/build_v2_composed_badges.py` now pins NON-NORMATIVE to the
+  approved composite byte-exact (mirrors the existing NORMATIVE pin).
+- `OWL-2-NON-NORMATIVE.md`:
+  - Inserted new `## 1. Da Vinci's Wings` with the user-approved
+    interpretive story (mirror, Leonardo da Vinci's wing studies, Wright
+    Brothers 400 years later, non-normative work as the engine of progress).
+    Frames itself as orientation, not proof.
+  - Renumbered all subsequent sections by +1 (old 1..18 → 2..19) and
+    bumped every nested `### N.M` subsection parent number by +1 for
+    coherence (same fix pattern as OWL-1).
+  - Rewrote §8 Asset Topology to reflect the L0/L1/L2/L2.5/L3/L4 layer
+    structure of the approved kit.
+  - Rewrote §10 Color Specification with the approved observed dominant
+    RGB (77, 177, 176) ≈ `#4DB1B0`.
+  - Rewrote §12 Provenance to point at the kit and honestly describe the
+    Math-Mirror Center-Scale-97 construction (not a pure pixel-array σᵥ;
+    the visual master adds the 97 % re-scale and seam refinements while
+    the formal state operator remains σᵥ).
+- `tests/test_v2_assets.py::V2TransformFidelity` docstring updated to
+  explain that `test_nonnormative_is_sigma_v_of_normative` is
+  **permanently** expected-failure at this visual doctrine (IoU ~ 0.815
+  due to the 97 % re-scale). CRITICAL and METACOGNITIVE V4 tests remain
+  pending per-state reviews.
+- `tests/test_v2_final_badges.py::PALETTE_COMPOSED["NON-NORMATIVE"]`
+  updated from `(75, 172, 170)` to `(172, 175, 101)` — the test-method
+  composed-dominant on the approved kit. The kit preserves the original
+  gold meander, so the luma-band-restricted median is gold-leaning;
+  this is the approved visual, not a regression.
+- `ASSET-DOCTRINE.md` §3 palette table extended with an "approved-master
+  observed RGB" column and a note that CRITICAL / METACOGNITIVE remain
+  pending review.
+- `scripts/compute_hashes.py` extended to cover the new NN master kit
+  directory (TIFF, layers, proofs, metrics, READMEs, AUDIT-NOTE).
+- All six PDFs regenerated. `OWL-2-NON-NORMATIVE.pdf` rendered at 9 pages,
+  ~2.4 MB, with full embedded docinfo. The running page-corner marker is
+  the full NON-NORMATIVE composed medallion (verified via `pdfimages`).
+- `RELEASE-HASHES.txt` + `INTEGRITY-MANIFEST.md` regenerated.
+
 ### 2026-05-17 — PDF byline broadened to "Independent Researcher"
 
 - The visible title-page byline in `generate_pdfs.py` was changed from

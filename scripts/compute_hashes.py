@@ -51,6 +51,10 @@ def collect_targets() -> list[str]:
         os.path.join("assets", "v2", "normative-D-B-gold-master"),
         os.path.join("assets", "v2", "normative-D-B-gold-master", "layers"),
         os.path.join("assets", "v2", "normative-D-B-gold-master", "proofs"),
+        os.path.join("assets", "v2", "nonnormative-math97-five-over-master"),
+        os.path.join("assets", "v2", "nonnormative-math97-five-over-master", "layers"),
+        os.path.join("assets", "v2", "nonnormative-math97-five-over-master", "proofs"),
+        os.path.join("assets", "v2", "nonnormative-math97-five-over-master", "metrics"),
     ):
         d = os.path.join(REPO, sub)
         if os.path.isdir(d):
@@ -68,6 +72,12 @@ def collect_targets() -> list[str]:
     norm_master_root = os.path.join("assets", "v2", "normative-D-B-gold-master")
     for name in ("SOURCE-README.md", "AUDIT-NOTE.md"):
         rel = os.path.join(norm_master_root, name)
+        if os.path.isfile(os.path.join(REPO, rel)):
+            targets.append(rel)
+
+    nn_master_root = os.path.join("assets", "v2", "nonnormative-math97-five-over-master")
+    for name in ("SOURCE-README.md", "SOURCE-AUDIT-NOTE.md", "AUDIT-NOTE.md"):
+        rel = os.path.join(nn_master_root, name)
         if os.path.isfile(os.path.join(REPO, rel)):
             targets.append(rel)
 

@@ -79,6 +79,20 @@ PINNED_NORMATIVE_COMPOSITE_540 = os.path.join(
     "NORMATIVE-V2-D-B-GOLD-MASTER-COMPOSITE-540.png",
 )
 
+# Approved Math-Mirror Center-Scale-97 + Seam-17 + Five-Over master overrides
+# for NON-NORMATIVE. Same byte-exact-pin rationale as NORMATIVE: the user
+# visually approved the COMPOSITE-1080.png and COMPOSITE-540.png as the
+# published presentation-layer badge for OWL-2; we copy them in directly
+# instead of relying on the generic recolor pipeline.
+PINNED_NONNORMATIVE_COMPOSITE_1080 = os.path.join(
+    REPO, "assets", "v2", "nonnormative-math97-five-over-master",
+    "OWL-2-NON-NORMATIVE-MATH97-FIVE-OVER-COMPOSITE-1080.png",
+)
+PINNED_NONNORMATIVE_COMPOSITE_540 = os.path.join(
+    REPO, "assets", "v2", "nonnormative-math97-five-over-master",
+    "OWL-2-NON-NORMATIVE-MATH97-FIVE-OVER-COMPOSITE-540.png",
+)
+
 OWL_FILES = {
     "NORMATIVE":     "NORMATIVE-human-gold-branch-transparent-1080.png",
     "NON-NORMATIVE": "NON-NORMATIVE-human-gold-branch-transparent-1080.png",
@@ -240,23 +254,35 @@ def main() -> int:
         out1080 = os.path.join(OUT_1080, f"{state}-V2-FINAL-COMPOSED-1080.png")
         out540 = os.path.join(OUT_540, f"{state}-V2-FINAL-COMPOSED-540.png")
 
+        pinned_1080: Optional[str] = None
+        pinned_540: Optional[str] = None
+        pin_label = ""
         if state == "NORMATIVE" and os.path.isfile(PINNED_NORMATIVE_COMPOSITE_1080):
-            # Use the human-approved D+B parchment-gold composite byte-exact.
-            # This bypasses the generic recolor pipeline for NORMATIVE only so
-            # the published badge is identical to the reviewed master.
-            badge = Image.open(PINNED_NORMATIVE_COMPOSITE_1080).convert("RGBA")
+            pinned_1080 = PINNED_NORMATIVE_COMPOSITE_1080
+            pinned_540  = PINNED_NORMATIVE_COMPOSITE_540
+            pin_label   = "approved D+B gold master"
+        elif state == "NON-NORMATIVE" and os.path.isfile(PINNED_NONNORMATIVE_COMPOSITE_1080):
+            pinned_1080 = PINNED_NONNORMATIVE_COMPOSITE_1080
+            pinned_540  = PINNED_NONNORMATIVE_COMPOSITE_540
+            pin_label   = "approved Math97 Five-Over master"
+
+        if pinned_1080:
+            # Use the human-approved composite byte-exact, bypassing the generic
+            # recolor pipeline so the published badge is identical to the
+            # reviewed master.
+            badge = Image.open(pinned_1080).convert("RGBA")
             badges_1080[state] = badge
             badge.save(out1080, format="PNG")
-            print(f"  OK  {out1080} (pinned to approved D+B gold master, "
+            print(f"  OK  {out1080} (pinned to {pin_label}, "
                   f"{os.path.getsize(out1080) / 1024:.0f} KB)")
 
-            if os.path.isfile(PINNED_NORMATIVE_COMPOSITE_540):
-                badge_540 = Image.open(PINNED_NORMATIVE_COMPOSITE_540).convert("RGBA")
+            if pinned_540 and os.path.isfile(pinned_540):
+                badge_540 = Image.open(pinned_540).convert("RGBA")
             else:
                 badge_540 = badge.resize((540, 540), Image.LANCZOS)
             badges_540[state] = badge_540
             badge_540.save(out540, format="PNG")
-            print(f"  OK  {out540} (pinned to approved D+B gold master, "
+            print(f"  OK  {out540} (pinned to {pin_label}, "
                   f"{os.path.getsize(out540) / 1024:.0f} KB)")
             continue
 

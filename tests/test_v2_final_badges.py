@@ -48,15 +48,21 @@ FINAL_FILES_540 = {
 # composite mixes ring + owl ornament + outline.
 #
 # NORMATIVE center was updated on 2026-05-17 to reflect the human-approved
-# OWL-1 NORMATIVE D-geometry + B parchment-gold composite. The approved
-# composite is sourced byte-exact from
-# assets/v2/normative-D-B-gold-master/NORMATIVE-V2-D-B-GOLD-MASTER-COMPOSITE-1080.png
-# (its composite-method median is (190, 167, 127)).
-# NON-NORMATIVE / CRITICAL / METACOGNITIVE centers are unchanged pending the
-# next per-state review.
+# OWL-1 NORMATIVE D-geometry + B parchment-gold composite. NON-NORMATIVE
+# center was updated on 2026-05-17 to reflect the human-approved OWL-2
+# Math-Mirror Center-Scale-97 + Seam-17 + Five-Over composite, sourced
+# byte-exact from
+# assets/v2/nonnormative-math97-five-over-master/OWL-2-NON-NORMATIVE-MATH97-FIVE-OVER-COMPOSITE-1080.png.
+# The NN composed dominant (172, 175, 101) is gold-leaning because the
+# approved kit preserves the original gold meander ring (L2 meander ring
+# original) alongside the teal owl and teal outer ring, so the
+# luma-band-restricted median that the composed-badge test uses is pulled
+# toward the gold meander pixels rather than the teal owl pixels.
+# CRITICAL / METACOGNITIVE centers are unchanged pending the next per-state
+# reviews.
 PALETTE_COMPOSED = {
     "NORMATIVE":     (190, 167, 127),
-    "NON-NORMATIVE": ( 75, 172, 170),
+    "NON-NORMATIVE": (172, 175, 101),
     "CRITICAL":      (224, 115, 115),
     "METACOGNITIVE": (160, 135, 170),
 }

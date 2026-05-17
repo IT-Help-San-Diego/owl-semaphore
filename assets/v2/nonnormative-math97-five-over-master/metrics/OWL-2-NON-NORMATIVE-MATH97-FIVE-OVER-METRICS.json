@@ -1,0 +1,74 @@
+{
+  "state": "OWL-2 NON-NORMATIVE",
+  "approved_by_user": "Pass; selected Five Over after Math Mirror Center Scale 97 and Seam 17 refinement",
+  "source_master_tiff": "/home/user/workspace/owl-semaphore-addaf085/assets/masters/NONNORM-MASTER-1080.tiff",
+  "source_owl": "/home/user/workspace/owl-semaphore-addaf085/assets/v2/transparent-1080/NON-NORMATIVE-human-gold-branch-transparent-1080.png",
+  "selected_proof": "/home/user/workspace/owl2_inner_meander_edge_refinement/OWL-2-C_touch_edge_black_5_over.png",
+  "geometry": "Math Mirror Center Scale 97",
+  "seam_treatment": "inner field underpaint 17px; inner teal ring outward 17px; inner meander black edge 5 over; no owl geometry changes after approval",
+  "layer_order": [
+    "L0-inner-field-underpaint-17",
+    "L1-inner-teal-ring-outward-17",
+    "L2-meander-ring-original",
+    "L2_5-inner-meander-black-edge-5-over",
+    "L3-owl-math-mirror-center-scale-97",
+    "L4-outer-teal-ring",
+    "FINAL-COMPOSITE"
+  ],
+  "normative_reference_l3_bbox": [
+    230,
+    212,
+    864,
+    856
+  ],
+  "owl2_l3_bbox": [
+    226,
+    222,
+    841,
+    847
+  ],
+  "diff_bbox_vs_selected_proof": null,
+  "tiff_status": "created_with_magick",
+  "files": {
+    "OWL-2-NON-NORMATIVE-L0-inner-field-underpaint-17-1080.png": {
+      "sha256": "d84672d2826b7b70d950d902c61d9c660bcfe6f1953224c676ef1ac43e3d867a",
+      "bytes": 11456
+    },
+    "OWL-2-NON-NORMATIVE-L1-inner-teal-ring-outward-17-1080.png": {
+      "sha256": "11c124955391cd45c6577060ef2b98d0031a3374ab213bd2e1a44af99b7423be",
+      "bytes": 51579
+    },
+    "OWL-2-NON-NORMATIVE-L2-meander-ring-original-1080.png": {
+      "sha256": "01c1696068baea7107066b25b0cb0b9f466ba104d151850707e24fdc95ae402b",
+      "bytes": 747449
+    },
+    "OWL-2-NON-NORMATIVE-L2_5-inner-meander-black-edge-5-over-1080.png": {
+      "sha256": "7b10ce3db48e6ba035380776831fd0608e6751625505faa5cd9696c4cc0a2f44",
+      "bytes": 45512
+    },
+    "OWL-2-NON-NORMATIVE-L3-owl-math-mirror-center-scale-97-1080.png": {
+      "sha256": "b1440b6bb15bdf3e0c7bcf7d3999e35e30fc2836928efc2df16ce7ba219c8dd6",
+      "bytes": 390975
+    },
+    "OWL-2-NON-NORMATIVE-L4-outer-teal-ring-1080.png": {
+      "sha256": "796659cb0d201fa5fabf80422a40ebe1155c0a58069d0e679eb8d6ffb2708a75",
+      "bytes": 112100
+    },
+    "OWL-2-NON-NORMATIVE-MATH97-FIVE-OVER-COMPOSITE-1080.png": {
+      "sha256": "a0e995ecaa8bcc7e1a26b718be5d48d51ad88af9ff971e2b06878a5652179d00",
+      "bytes": 1205068
+    },
+    "OWL-2-NON-NORMATIVE-MATH97-FIVE-OVER-COMPOSITE-540.png": {
+      "sha256": "8c50c01a9a116e116f27792e9d9a18e8224f7cafd0fc70753ae8bea387bc7048",
+      "bytes": 404456
+    },
+    "OWL-2-NON-NORMATIVE-MATH97-FIVE-OVER-LAYER-PROOF.png": {
+      "sha256": "5578c5bd99dc54d305a4d1fc59a0c8a998b7533d6958113e9bad9aaf10a723f4",
+      "bytes": 564785
+    },
+    "OWL-2-NON-NORMATIVE-MATH97-FIVE-OVER-MASTER-ASSET-1080.tiff": {
+      "sha256": "d4b451d484ef10b6a679aa80a9cef92f18f5753985595379ee2dad4e6a09e4c2",
+      "bytes": 32661462
+    }
+  }
+}

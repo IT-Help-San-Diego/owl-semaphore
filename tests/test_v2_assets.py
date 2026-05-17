@@ -125,14 +125,24 @@ class V2TransformFidelity(unittest.TestCase):
     """Alpha-mask geometry must match the V4 image of NORMATIVE.
 
     NOTE (2026-05-17): NORMATIVE was promoted to the human-approved
-    D-geometry + B parchment-gold master in isolation. The non-NORMATIVE
-    sibling masters (NON-NORMATIVE / CRITICAL / METACOGNITIVE) have not yet
-    been re-derived from the new NORMATIVE under V4; they remain on the
-    prior NORMATIVE geometry. The three V4 sibling-fidelity tests below are
-    therefore marked ``expectedFailure`` until those per-state reviews
-    happen. When siblings are re-derived, the decorator MUST be removed so
-    the V4 invariant is gated again. The algebra invariant test on the
-    NORMATIVE mask alone remains active (no decorator).
+    D-geometry + B parchment-gold master, and NON-NORMATIVE was promoted to
+    the human-approved Math-Mirror Center-Scale-97 + Seam-17 + Five-Over
+    master. The latter is a deliberate visual choice (the owl is mirrored
+    *and* scaled to 97 % with seam refinements) rather than a pure
+    pixel-array sigma_v, so NON-NORMATIVE / NORMATIVE alpha IoU is ~0.815
+    rather than 1.0. The CRITICAL and METACOGNITIVE siblings have not been
+    reviewed yet and remain on the prior NORMATIVE geometry.
+
+    The three V4 sibling-fidelity tests below are therefore marked
+    ``expectedFailure``. For NON-NORMATIVE the failure is permanent at this
+    visual doctrine (the user-approved asset is the source of truth); the
+    decorator should remain. For CRITICAL and METACOGNITIVE, the decorator
+    MUST be removed after each state's own per-state visual review concludes
+    and the sibling is re-derived (or, like NN, approved as a deliberate
+    visual choice).
+
+    The algebra invariant test on the NORMATIVE mask alone remains active
+    (no decorator).
     """
 
     def setUp(self):
@@ -141,6 +151,11 @@ class V2TransformFidelity(unittest.TestCase):
 
     @unittest.expectedFailure
     def test_nonnormative_is_sigma_v_of_normative(self):
+        # Permanent expected failure at the approved Math-Mirror Center-Scale-97
+        # visual doctrine for NON-NORMATIVE. The user explicitly approved the
+        # composite asset, which is not pixel-array-sigma_v of NORMATIVE
+        # (observed IoU ~ 0.815). See
+        # assets/v2/nonnormative-math97-five-over-master/SOURCE-AUDIT-NOTE.md.
         a = _alpha_mask(self.imgs["NON-NORMATIVE"])
         b = _alpha_mask(self.norm[:, ::-1, :])
         iou = _iou(a, b)

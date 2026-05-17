@@ -8,7 +8,19 @@
 
 ---
 
-## 1. Statement of Intent
+## 1. Da Vinci's Wings
+
+**State line:** NON-NORMATIVE — *T = σᵥ*, det = −1, (x, y) ↦ (−x, y)
+
+Stand in front of a mirror. You are still upright — up is still up, down is still down — but left and right have swapped. That is a vertical-axis reflection: (x, y) ↦ (−x, y). Not a rotation — a mirror image.
+
+When Leonardo da Vinci spent years studying birds, sketching wing mechanics, and building machines that could not fly, he was a Non-Normative owl. Facing the other direction. Seeing what everyone else had their backs to. He failed, but he left the rest of the world a guideline for success. The Wright Brothers stood on his shoulders 400 years later. Non-normative work is the engine of progress: rigorous exploration that hasn't finished yet.
+
+> This section is **orientation, not proof.** The formal scientific object remains the reflection operator *σᵥ*, with determinant −1 and coordinate action (x, y) ↦ (−x, y). The story above is the plain-English meaning of that operator; the operator itself is defined formally in §5 (Mathematical Definition).
+
+---
+
+## 2. Statement of Intent
 
 This document defines the **NON-NORMATIVE owl** as a formal epistemic state within the Owl Semaphore system.
 
@@ -18,7 +30,7 @@ The goal is to preserve rigor while allowing controlled deviation from the basel
 
 ---
 
-## 2. System Context
+## 3. System Context
 
 The Owl Semaphore system is defined by the Klein four-group:
 
@@ -34,9 +46,9 @@ $$
 
 ---
 
-## 3. Ontological Role
+## 4. Ontological Role
 
-### 3.1 Semantic Designation
+### 4.1 Semantic Designation
 
 NON-NORMATIVE represents:
 
@@ -45,7 +57,7 @@ NON-NORMATIVE represents:
 - analytical deviation
 - structured disagreement
 
-### 3.2 Interpretive Role
+### 4.2 Interpretive Role
 
 This state indicates that the content:
 
@@ -53,7 +65,7 @@ This state indicates that the content:
 - remains structurally grounded in the same system
 - is not arbitrary or invalid
 
-### 3.3 What It Does Not Mean
+### 4.3 What It Does Not Mean
 
 - not random
 - not incorrect by default
@@ -63,15 +75,15 @@ It is **reflection**, not rejection.
 
 ---
 
-## 4. Mathematical Definition
+## 5. Mathematical Definition
 
-### 4.1 State Operator
+### 5.1 State Operator
 
 $$
 T_{\text{non}} = \sigma_v
 $$
 
-### 4.2 Matrix Form
+### 5.2 Matrix Form
 
 $$
 \sigma_v =
@@ -81,13 +93,13 @@ $$
 \end{bmatrix}
 $$
 
-### 4.3 Determinant
+### 5.3 Determinant
 
 $$
 \det(\sigma_v) = -1
 $$
 
-### 4.4 Properties
+### 5.4 Properties
 
 - orientation-reversing
 - reflection class
@@ -99,7 +111,7 @@ $$
 
 ---
 
-## 5. Coordinate System
+## 6. Coordinate System
 
 The NON-NORMATIVE state uses the same coordinate system as NORMATIVE:
 
@@ -110,37 +122,44 @@ Transformation is applied relative to this center.
 
 ---
 
-## 6. Canonical Orientation
+## 7. Canonical Orientation
 
-### 6.1 Visual Definition
+### 7.1 Visual Definition
 
 - upright
 - faces LEFT
 
-### 6.2 Transform Relationship
+### 7.2 Transform Relationship
 
 The NON-NORMATIVE owl is the horizontal mirror of the normative owl.
 
 ---
 
-## 7. Asset Topology
+## 8. Asset Topology
 
-Layer structure is identical to normative:
+The approved Math-Mirror Center-Scale-97 master extends the four-layer
+NORMATIVE topology with two seam-refinement layers:
 
-- L1 — inner field
-- L2 — meander ring
-- L3 — owl body
-- L4 — outer ring
+- L0 — inner field underpaint (17 px)
+- L1 — inner teal ring outward (17 px)
+- L2 — meander ring (original, shared with NORMATIVE)
+- L2.5 — inner meander black edge (5 px over)
+- L3 — owl body (math-mirror center-scale-97)
+- L4 — outer teal ring
 
-### 7.1 Composite Definition
+L2.5 and the 17-px seam treatments in L0/L1 are presentation-layer
+refinements to maintain legibility on the dark inner field; they do not
+enter the V₄ transform. The mathematical state operator remains σᵥ.
+
+### 8.1 Composite Definition
 
 $$
-N_{\text{non}} = L_1 \oplus L_2 \oplus L_3 \oplus L_4
+N_{\text{non}} = L_0 \oplus L_1 \oplus L_2 \oplus L_{2.5} \oplus L_3 \oplus L_4
 $$
 
 ---
 
-## 8. Geometry
+## 9. Geometry
 
 All geometric constraints are inherited from the normative standard:
 
@@ -152,22 +171,30 @@ No geometric deformation is permitted.
 
 ---
 
-## 9. Color Specification
+## 10. Color Specification
 
-### 9.1 Palette
+### 10.1 Palette
 
-- outer ring: #316964 (teal)
-- owl: #316964 (teal)
-- field: #d2d8d6 (cool gray)
-- meander: unchanged (gold)
+The approved Math-Mirror Center-Scale-97 + Seam-17 + Five-Over master uses
+the following palette on the dark inner field:
 
-### 9.2 Color Doctrine
+- owl: teal — observed dominant RGB **(77, 177, 176)** ≈ `#4DB1B0`
+- outer ring: teal — same family as the owl, recolored from the geometry layer
+- meander: gold (unchanged, shared with NORMATIVE)
+- inner field: dark slate (carried over from the L0 inner-field underpaint)
 
-Teal represents analytical distance from the normative baseline while maintaining structural coherence.
+The full reviewed provenance for these layers (L0 inner-field underpaint 17, L1
+inner teal ring outward 17, L2 meander ring original, L2.5 inner meander
+black edge 5-over, L3 owl math-mirror center-scale-97, L4 outer teal ring)
+lives in `assets/v2/nonnormative-math97-five-over-master/`.
+
+### 10.2 Color Doctrine
+
+Teal represents analytical distance from the normative baseline while maintaining structural coherence. The brighter teal used in the approved Math-Mirror Center-Scale-97 master is calibrated for legibility against the dark inner field, mirroring the parchment-tone rationale used for NORMATIVE.
 
 ---
 
-## 10. Transparency and Alpha
+## 11. Transparency and Alpha
 
 Same rules as normative:
 
@@ -177,42 +204,59 @@ Same rules as normative:
 
 ---
 
-## 11. Provenance
+## 12. Provenance
 
-### 11.1 Construction
+### 12.1 Construction
 
-Derived from normative by:
+The approved master is the human-reviewed **Math-Mirror Center-Scale-97 +
+Seam-17 + Five-Over** composite, staged in
+`assets/v2/nonnormative-math97-five-over-master/`. Its layer order is:
 
-- horizontal reflection
-- no rotation
-- no scaling
+1. L0 — inner field underpaint 17
+2. L1 — inner teal ring outward 17
+3. L2 — meander ring original (shared geometry with NORMATIVE)
+4. L2.5 — inner meander black edge 5 over (seam refinement)
+5. L3 — owl math-mirror center-scale-97 (vertical-axis mirror of the source owl, then re-centered and scaled to 97 %)
+6. L4 — outer teal ring
 
-### 11.2 Transform Integrity
+The owl-only L3 is the visual mathematical master for NON-NORMATIVE. It is
+*close to* but not bit-for-bit identical with `σᵥ(NORMATIVE)` because of
+the 97 % re-scale and the seam refinements introduced for legibility on
+the dark inner field. The asset was promoted only after explicit human
+visual approval; the source TIFF, all six layers, and the audit JSON are
+preserved verbatim under the master kit directory for future review.
 
-The transform must be exact. Any distortion invalidates the state.
+### 12.2 Transform Integrity
+
+The state's *formal* operator remains σᵥ with determinant −1. The visual
+master is a presentation-layer asset built from σᵥ-derived owl geometry
+plus reviewed seam refinements; the algebra of the state system is
+unchanged. The full audit trail (per-layer SHA-256, diff-bbox check against
+the user-approved proof) lives in
+`assets/v2/nonnormative-math97-five-over-master/metrics/OWL-2-NON-NORMATIVE-MATH97-FIVE-OVER-METRICS.json`.
 
 ---
 
-## 12. Asset Invariants
+## 13. Asset Invariants
 
-### 12.1 Algebraic
+### 13.1 Algebraic
 
 - operator = σᵥ
 - determinant = -1
 
-### 12.2 Visual
+### 13.2 Visual
 
 - upright
 - mirrored orientation
 
-### 12.3 Structural
+### 13.3 Structural
 
 - geometry unchanged
 - layer structure unchanged
 
 ---
 
-## 13. Integrity Regime
+## 14. Integrity Regime
 
 All assets must:
 
@@ -221,21 +265,21 @@ All assets must:
 
 ---
 
-## 14. Interpretation Rules
+## 15. Interpretation Rules
 
-### 14.1 Positive Rule
+### 15.1 Positive Rule
 
 When present:
 
 The content reflects the normative framework while offering a structured alternative.
 
-### 14.2 Negative Rule
+### 15.2 Negative Rule
 
 It does not indicate failure or error.
 
 ---
 
-## 15. Non-Permitted Changes
+## 16. Non-Permitted Changes
 
 - rotation
 - vertical flip
@@ -244,7 +288,7 @@ It does not indicate failure or error.
 
 ---
 
-## 16. Relationship to Other States
+## 17. Relationship to Other States
 
 - NORMATIVE → identity (*"This is the standard."*)
 - NON-NORMATIVE → reflection (*"This reflects the standard."*)
@@ -253,7 +297,7 @@ It does not indicate failure or error.
 
 ---
 
-## 17. Formal Definition
+## 18. Formal Definition
 
 Let L₁–L₄ be the layer fields.
 
@@ -269,7 +313,7 @@ $$
 
 ---
 
-## 18. Closing Statement
+## 19. Closing Statement
 
 The NON-NORMATIVE owl preserves system integrity while enabling structured deviation.
 
