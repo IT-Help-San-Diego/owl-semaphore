@@ -1,0 +1,19 @@
+{
+  "selected_geometry": "D: C alignment with 94% scale",
+  "selected_color": "B: old owl parchment",
+  "color_reason": "Carey selected B because it is the lightest candidate and preserves crisp visibility against the dark field.",
+  "linework_warning_addressed": "Wing-end linework audited by preserving the original alpha mask and comparing dark-line pixels.",
+  "alpha_diff_nonzero_pixels_vs_prior_D_L3": 0,
+  "orig_dark_line_pixel_count": 0,
+  "new_dark_line_pixel_count": 0,
+  "dark_line_xor_pixels_vs_prior_D_L3": 0,
+  "layer_order": [
+    "L1-inner-field",
+    "L2-meander-ring",
+    "L3-v2-approved-owl-D-geometry-B-parchment-gold",
+    "L4-outer-ring",
+    "COMPOSITE-preview"
+  ],
+  "tiff_note": "Multi-page TIFF with named component pages plus composite preview; not proprietary Pixelmator/Photoshop editable-layer TIFF.",
+  "color_management_note": "sRGB RGBA assets; no CMYK conversion applied."
+}

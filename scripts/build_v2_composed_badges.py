@@ -49,12 +49,35 @@ OUT_1080 = os.path.join(REPO, "assets", "v2", "final-1080")
 OUT_540 = os.path.join(REPO, "assets", "v2", "final-540")
 PROOF_DIR = os.path.join(REPO, "assets", "v2", "proofs")
 
+# Per-state palette used to recolor the legacy meander/outer-ring geometry.
+#
+# NORMATIVE was updated on 2026-05-17 to reflect the human-approved OWL-1
+# NORMATIVE D-geometry + B parchment-gold master. The prior #D8B760 is
+# retained as a comment for provenance. The new hex below approximates the
+# B parchment-gold tone observed in the approved composite, but the active
+# NORMATIVE composite is sourced byte-exact from
+# assets/v2/normative-D-B-gold-master/NORMATIVE-V2-D-B-GOLD-MASTER-COMPOSITE-*.png
+# (see PINNED_NORMATIVE_COMPOSITE_* below). NON-NORMATIVE / CRITICAL /
+# METACOGNITIVE are unchanged pending the next per-state review.
 PALETTE = {
-    "NORMATIVE":     (0xD8, 0xB7, 0x60),
+    "NORMATIVE":     (0xCB, 0xB1, 0x78),  # B parchment-gold (prior: 0xD8 0xB7 0x60)
     "NON-NORMATIVE": (0x2F, 0x8C, 0x8C),
     "CRITICAL":      (0xC8, 0x5B, 0x5B),
     "METACOGNITIVE": (0x8F, 0x75, 0xBF),
 }
+
+# Approved D+B parchment-gold master overrides for NORMATIVE. The approval was
+# byte-exact on the composites; we copy them in directly instead of relying on
+# the generic recolor pipeline so the published NORMATIVE badge is identical
+# to the asset reviewed and approved by the human author.
+PINNED_NORMATIVE_COMPOSITE_1080 = os.path.join(
+    REPO, "assets", "v2", "normative-D-B-gold-master",
+    "NORMATIVE-V2-D-B-GOLD-MASTER-COMPOSITE-1080.png",
+)
+PINNED_NORMATIVE_COMPOSITE_540 = os.path.join(
+    REPO, "assets", "v2", "normative-D-B-gold-master",
+    "NORMATIVE-V2-D-B-GOLD-MASTER-COMPOSITE-540.png",
+)
 
 OWL_FILES = {
     "NORMATIVE":     "NORMATIVE-human-gold-branch-transparent-1080.png",
@@ -214,17 +237,38 @@ def main() -> int:
     badges_540: dict[str, Image.Image] = {}
 
     for state in ["NORMATIVE", "NON-NORMATIVE", "CRITICAL", "METACOGNITIVE"]:
+        out1080 = os.path.join(OUT_1080, f"{state}-V2-FINAL-COMPOSED-1080.png")
+        out540 = os.path.join(OUT_540, f"{state}-V2-FINAL-COMPOSED-540.png")
+
+        if state == "NORMATIVE" and os.path.isfile(PINNED_NORMATIVE_COMPOSITE_1080):
+            # Use the human-approved D+B parchment-gold composite byte-exact.
+            # This bypasses the generic recolor pipeline for NORMATIVE only so
+            # the published badge is identical to the reviewed master.
+            badge = Image.open(PINNED_NORMATIVE_COMPOSITE_1080).convert("RGBA")
+            badges_1080[state] = badge
+            badge.save(out1080, format="PNG")
+            print(f"  OK  {out1080} (pinned to approved D+B gold master, "
+                  f"{os.path.getsize(out1080) / 1024:.0f} KB)")
+
+            if os.path.isfile(PINNED_NORMATIVE_COMPOSITE_540):
+                badge_540 = Image.open(PINNED_NORMATIVE_COMPOSITE_540).convert("RGBA")
+            else:
+                badge_540 = badge.resize((540, 540), Image.LANCZOS)
+            badges_540[state] = badge_540
+            badge_540.save(out540, format="PNG")
+            print(f"  OK  {out540} (pinned to approved D+B gold master, "
+                  f"{os.path.getsize(out540) / 1024:.0f} KB)")
+            continue
+
         badge = build_state_badge(state)
         badges_1080[state] = badge
 
-        out1080 = os.path.join(OUT_1080, f"{state}-V2-FINAL-COMPOSED-1080.png")
         badge.save(out1080, format="PNG")
         size_kb = os.path.getsize(out1080) / 1024
         print(f"  OK  {out1080} ({size_kb:.0f} KB)")
 
         badge_540 = badge.resize((540, 540), Image.LANCZOS)
         badges_540[state] = badge_540
-        out540 = os.path.join(OUT_540, f"{state}-V2-FINAL-COMPOSED-540.png")
         badge_540.save(out540, format="PNG")
         size_kb = os.path.getsize(out540) / 1024
         print(f"  OK  {out540} ({size_kb:.0f} KB)")

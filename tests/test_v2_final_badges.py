@@ -46,8 +46,16 @@ FINAL_FILES_540 = {
 # These are *post-composite* medians (ring + owl ornament; inner black field
 # and near-white background excluded). Tolerance is generous because the
 # composite mixes ring + owl ornament + outline.
+#
+# NORMATIVE center was updated on 2026-05-17 to reflect the human-approved
+# OWL-1 NORMATIVE D-geometry + B parchment-gold composite. The approved
+# composite is sourced byte-exact from
+# assets/v2/normative-D-B-gold-master/NORMATIVE-V2-D-B-GOLD-MASTER-COMPOSITE-1080.png
+# (its composite-method median is (190, 167, 127)).
+# NON-NORMATIVE / CRITICAL / METACOGNITIVE centers are unchanged pending the
+# next per-state review.
 PALETTE_COMPOSED = {
-    "NORMATIVE":     (176, 152,  83),
+    "NORMATIVE":     (190, 167, 127),
     "NON-NORMATIVE": ( 75, 172, 170),
     "CRITICAL":      (224, 115, 115),
     "METACOGNITIVE": (160, 135, 170),

@@ -48,6 +48,9 @@ def collect_targets() -> list[str]:
         os.path.join("assets", "v2", "final-540"),
         os.path.join("assets", "v2", "masters"),
         os.path.join("assets", "v2", "proofs"),
+        os.path.join("assets", "v2", "normative-D-B-gold-master"),
+        os.path.join("assets", "v2", "normative-D-B-gold-master", "layers"),
+        os.path.join("assets", "v2", "normative-D-B-gold-master", "proofs"),
     ):
         d = os.path.join(REPO, sub)
         if os.path.isdir(d):
@@ -61,6 +64,12 @@ def collect_targets() -> list[str]:
         for name in sorted(os.listdir(md)):
             if name.endswith(".json"):
                 targets.append(os.path.join(metrics, name))
+
+    norm_master_root = os.path.join("assets", "v2", "normative-D-B-gold-master")
+    for name in ("SOURCE-README.md", "AUDIT-NOTE.md"):
+        rel = os.path.join(norm_master_root, name)
+        if os.path.isfile(os.path.join(REPO, rel)):
+            targets.append(rel)
 
     for name in (
         "OWL-SEMAPHORE-SYSTEM.pdf",
