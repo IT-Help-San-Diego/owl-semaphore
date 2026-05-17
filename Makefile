@@ -16,19 +16,23 @@
 PYTHON ?= python3
 REPO   := $(CURDIR)
 
-.PHONY: all pdfs tiffs hashes manifest test clean help
+.PHONY: all badges pdfs tiffs hashes manifest test clean help
 
 help:
 	@echo "Owl Semaphore — make targets (v2.0.0-rc):"
+	@echo "  make badges     build v2 final composed badges (1080/540) + contact sheet"
 	@echo "  make pdfs       regenerate all six PDFs (v2 asset set)"
 	@echo "  make tiffs      assemble v2 multi-page master TIFFs"
 	@echo "  make hashes     recompute SHA-3-512 hashes -> RELEASE-HASHES.txt"
 	@echo "  make manifest   rewrite integrity-manifest sections from hashes"
 	@echo "  make test       run banner-tuple PDF integrity test + v2 asset doctrine tests"
-	@echo "  make all        tiffs -> pdfs -> hashes -> manifest -> test"
+	@echo "  make all        badges -> tiffs -> pdfs -> hashes -> manifest -> test"
 	@echo "  make clean      remove generated intermediates"
 
-all: tiffs pdfs hashes manifest test
+all: badges tiffs pdfs hashes manifest test
+
+badges:
+	$(PYTHON) $(REPO)/scripts/build_v2_composed_badges.py
 
 pdfs:
 	$(PYTHON) $(REPO)/generate_pdfs.py

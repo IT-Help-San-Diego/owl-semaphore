@@ -44,6 +44,8 @@ def collect_targets() -> list[str]:
     for sub in (
         os.path.join("assets", "v2", "transparent-1080"),
         os.path.join("assets", "v2", "transparent-540"),
+        os.path.join("assets", "v2", "final-1080"),
+        os.path.join("assets", "v2", "final-540"),
         os.path.join("assets", "v2", "masters"),
         os.path.join("assets", "v2", "proofs"),
     ):

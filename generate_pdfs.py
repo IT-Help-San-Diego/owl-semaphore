@@ -60,7 +60,9 @@ DOCS = [
         "md": "OWL-SEMAPHORE-SYSTEM.md",
         "pdf": "OWL-SEMAPHORE-SYSTEM.pdf",
         "badge": "assets/v2/transparent-540/NORMATIVE-human-gold-branch-transparent-540.png",
-        "contact_sheet": "assets/v2/proofs/OWL-SEMAPHORE-V2-MASTER-PROOF.png",
+        "final_badge": "assets/v2/final-540/NORMATIVE-V2-FINAL-COMPOSED-540.png",
+        "contact_sheet": "assets/v2/proofs/OWL-SEMAPHORE-V2-FINAL-CONTACT-SHEET.png",
+        "owl_master_proof": "assets/v2/proofs/OWL-SEMAPHORE-V2-MASTER-PROOF.png",
         "color": "#d4a853",
         "color_rgb": "rgb(212, 168, 83)",
         "label": "N O R M A T I V E",
@@ -77,7 +79,9 @@ DOCS = [
         "md": "OWL-SEMAPHORE-EXPLANATION.md",
         "pdf": "OWL-SEMAPHORE-EXPLANATION.pdf",
         "badge": "assets/v2/transparent-540/METACOGNITIVE-human-gold-branch-transparent-540.png",
-        "contact_sheet": "assets/v2/proofs/OWL-SEMAPHORE-V2-MASTER-PROOF.png",
+        "final_badge": "assets/v2/final-540/METACOGNITIVE-V2-FINAL-COMPOSED-540.png",
+        "contact_sheet": "assets/v2/proofs/OWL-SEMAPHORE-V2-FINAL-CONTACT-SHEET.png",
+        "owl_master_proof": "assets/v2/proofs/OWL-SEMAPHORE-V2-MASTER-PROOF.png",
         "color": "#8C4191",
         "color_rgb": "rgb(140, 65, 145)",
         "label": "E X P L A N A T I O N",
@@ -94,7 +98,9 @@ DOCS = [
         "md": "OWL-1-NORMATIVE.md",
         "pdf": "OWL-1-NORMATIVE.pdf",
         "badge": "assets/v2/transparent-540/NORMATIVE-human-gold-branch-transparent-540.png",
+        "final_badge": "assets/v2/final-540/NORMATIVE-V2-FINAL-COMPOSED-540.png",
         "contact_sheet": "assets/v2/proofs/NORM-v2-layer-proof-palette.png",
+        "owl_master_proof": "assets/v2/proofs/OWL-SEMAPHORE-V2-MASTER-PROOF.png",
         "color": "#d4a853",
         "color_rgb": "rgb(212, 168, 83)",
         "label": "N O R M A T I V E",
@@ -111,7 +117,9 @@ DOCS = [
         "md": "OWL-2-NON-NORMATIVE.md",
         "pdf": "OWL-2-NON-NORMATIVE.pdf",
         "badge": "assets/v2/transparent-540/NON-NORMATIVE-human-gold-branch-transparent-540.png",
+        "final_badge": "assets/v2/final-540/NON-NORMATIVE-V2-FINAL-COMPOSED-540.png",
         "contact_sheet": "assets/v2/proofs/NONNORM-v2-layer-proof-palette.png",
+        "owl_master_proof": "assets/v2/proofs/OWL-SEMAPHORE-V2-MASTER-PROOF.png",
         "color": "#316964",
         "color_rgb": "rgb(49, 105, 100)",
         "label": "N O N - N O R M A T I V E",
@@ -128,7 +136,9 @@ DOCS = [
         "md": "OWL-3-CRITICAL.md",
         "pdf": "OWL-3-CRITICAL.pdf",
         "badge": "assets/v2/transparent-540/CRITICAL-human-gold-branch-transparent-540.png",
+        "final_badge": "assets/v2/final-540/CRITICAL-V2-FINAL-COMPOSED-540.png",
         "contact_sheet": "assets/v2/proofs/CRIT-v2-layer-proof-palette.png",
+        "owl_master_proof": "assets/v2/proofs/OWL-SEMAPHORE-V2-MASTER-PROOF.png",
         "color": "#990f1e",
         "color_rgb": "rgb(153, 15, 30)",
         "label": "C R I T I C A L",
@@ -145,7 +155,9 @@ DOCS = [
         "md": "OWL-4-METACOGNITIVE.md",
         "pdf": "OWL-4-METACOGNITIVE.pdf",
         "badge": "assets/v2/transparent-540/METACOGNITIVE-human-gold-branch-transparent-540.png",
+        "final_badge": "assets/v2/final-540/METACOGNITIVE-V2-FINAL-COMPOSED-540.png",
         "contact_sheet": "assets/v2/proofs/META-v2-layer-proof-palette.png",
+        "owl_master_proof": "assets/v2/proofs/OWL-SEMAPHORE-V2-MASTER-PROOF.png",
         "color": "#8C4191",
         "color_rgb": "rgb(140, 65, 145)",
         "label": "M E T A C O G N I T I V E",
@@ -218,15 +230,21 @@ def md_to_typst(md_text: str) -> str:
 
 
 def build_typst_document(doc: dict, body_typst: str) -> str:
-    badge_path = doc["badge"]
+    badge_path = doc["badge"]                       # owl-only transparent (header thumbnail)
+    final_badge_path = doc["final_badge"]           # final composed circle/medallion (title page, ledger)
     contact_path = doc["contact_sheet"]
+    owl_master_proof = doc.get(
+        "owl_master_proof",
+        "assets/v2/proofs/OWL-SEMAPHORE-V2-MASTER-PROOF.png",
+    )
     color = doc["color_rgb"]
     is_system = doc["md"] == "OWL-SEMAPHORE-SYSTEM.md"
 
-    norm_badge = "assets/v2/transparent-540/NORMATIVE-human-gold-branch-transparent-540.png"
-    nonnorm_badge = "assets/v2/transparent-540/NON-NORMATIVE-human-gold-branch-transparent-540.png"
-    crit_badge = "assets/v2/transparent-540/CRITICAL-human-gold-branch-transparent-540.png"
-    meta_badge = "assets/v2/transparent-540/METACOGNITIVE-human-gold-branch-transparent-540.png"
+    # Back-page classification ledger uses the FINAL composed badges (presentation layer).
+    norm_badge = "assets/v2/final-540/NORMATIVE-V2-FINAL-COMPOSED-540.png"
+    nonnorm_badge = "assets/v2/final-540/NON-NORMATIVE-V2-FINAL-COMPOSED-540.png"
+    crit_badge = "assets/v2/final-540/CRITICAL-V2-FINAL-COMPOSED-540.png"
+    meta_badge = "assets/v2/final-540/METACOGNITIVE-V2-FINAL-COMPOSED-540.png"
 
     state_token = doc["state_token"]
     label_long = doc["label"]
@@ -337,7 +355,7 @@ def build_typst_document(doc: dict, body_typst: str) -> str:
 
 #align(center)[
   #v(12pt)
-  #image("{badge_path}", width: 140pt)
+  #image("{final_badge_path}", width: 160pt)
   #v(8pt)
 
   #text(size: 10pt, weight: "bold", fill: header-color, tracking: 3pt)[{label_long}]
@@ -377,7 +395,7 @@ def build_typst_document(doc: dict, body_typst: str) -> str:
 #line(length: 100%, stroke: 1.5pt + header-color)
 
 // =====================================================================
-// CONTACT SHEET
+// CONTACT SHEET (final composed badges — presentation layer)
 // =====================================================================
 
 #v(16pt)
@@ -387,8 +405,35 @@ def build_typst_document(doc: dict, body_typst: str) -> str:
   ]
   #v(8pt)
   #image("{contact_path}", width: {"85%" if not is_system else "90%"})
+  #v(4pt)
+  #text(size: 7.5pt, style: "italic", fill: luma(120))[
+    Presentation-layer composed badges: per-state palette meander/ring around
+    the V4-tested owl-only master. The mathematical master is the owl-only
+    transparent PNG (shown below); the surrounding circle is editorial.
+  ]
 ]
 #v(12pt)
+
+// ---------------------------------------------------------------------
+// OWL-ONLY MATHEMATICAL MASTER PROOF (V4-tested source)
+// ---------------------------------------------------------------------
+
+#v(8pt)
+#align(center)[
+  #text(size: 8.5pt, weight: "bold", fill: luma(100), tracking: 1.5pt)[
+    OWL-ONLY MATHEMATICAL MASTER — V4-TESTED SOURCE
+  ]
+  #v(6pt)
+  #image("{owl_master_proof}", width: 78%)
+  #v(4pt)
+  #text(size: 7.5pt, style: "italic", fill: luma(120))[
+    These are the V4-tested owl-only PNGs (owl + human-selected gold branch).
+    They are the algebraic master; tests/test_v2_assets.py gates them. The
+    surrounding circle/meander above is presentation only and is not part of
+    the V4 transform input.
+  ]
+]
+#v(10pt)
 
 // =====================================================================
 // BODY CONTENT

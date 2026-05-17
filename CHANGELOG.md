@@ -46,12 +46,37 @@ from v1.3.0-rc.
   NORMATIVE-not-red guardrail, CRITICAL-is-red guardrail, V₄ algebra invariants, black-speckle /
   junk-pixel check.
 - `make tiffs` Makefile target to regenerate v2 multi-page TIFFs.
+- `assets/v2/final-1080/` and `assets/v2/final-540/` — final composed badge assets (presentation
+  layer): per-state palette meander + outer ring around the v2 owl-only master. These are the
+  *published visible badge*. The mathematical master remains the owl-only transparent PNG.
+- `assets/v2/proofs/OWL-SEMAPHORE-V2-FINAL-CONTACT-SHEET.png` — four-up contact sheet of the
+  final composed badges, intended for editorial visual review.
+- `scripts/build_v2_composed_badges.py` — deterministic composed-badge build pipeline. Reuses
+  legacy geometry layers (`NORM-L1-inner-field`, `NORM-L2-meander-ring`, `NORM-L4-outer-ring`)
+  recolored to the v2 palette, around the v2 owl-only master. Does NOT reuse the legacy
+  `NORM-L3-owl-body` layer or the AOE letters or the leaf overlay.
+- `tests/test_v2_final_badges.py` — final-badge presence, mode/size, per-state composed-palette
+  correctness, structural sanity (inner black field present, ring reaches the canvas edge),
+  guardrail that `generate_pdfs.py` does not silently revert to v1 lineage paths
+  (`assets/releases/`, `assets/masters/`, `assets/exports/`).
+- `make badges` Makefile target to regenerate the v2 final composed badges and contact sheet.
 
 ### Changed
 
 - README masthead updated to point at the v2 master proof and to describe v2.0.0-rc as a major
   release with the owl-only doctrine.
 - `generate_pdfs.py` switched to consume v2 badges and v2 proof-palette images from `assets/v2/`.
+  Title pages and the back-page classification ledger now use the **final composed badges**
+  (`assets/v2/final-540/<STATE>-V2-FINAL-COMPOSED-540.png`) as the published visible badge.
+  The header thumbnail and an inline "owl-only mathematical master proof" panel continue to
+  show the owl-only transparent master so the algebraic source remains visible alongside the
+  presentation composite.
+- Per-state spec mastheads (`OWL-1` through `OWL-4`) now reference the v2 final composed badge
+  as the leading image, replacing the v1 `assets/proofs/<STATE>-layer-proof-palette.png` image.
+- Active document version stamps in the v2 spec docs updated from "Version 1.3.0-rc" to
+  "Version 2.0.0-rc"; canonical-sentence-stack section header retitled to "v2.0.0-rc".
+  Historical "deprecated as of v1.3.0-rc" notes are retained (they record when the deprecation
+  happened) and the "carried forward in v2.0.0-rc" continuity is now explicit.
 - Banner-tuple test target updated to `v2.0.0-rc` (state quotes and transforms unchanged).
 - `INTEGRITY-MANIFEST.md` scope extended to cover the v2 asset directory, the multi-page TIFF
   masters, and the new doctrine + provenance markdown files.

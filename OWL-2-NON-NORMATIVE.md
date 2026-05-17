@@ -1,10 +1,10 @@
-![NONNORM Layer Proof Palette](assets/proofs/NONNORM-layer-proof-palette.png)
+![NON-NORMATIVE — v2 final composed badge](assets/v2/final-540/NON-NORMATIVE-V2-FINAL-COMPOSED-540.png)
 
 # OWL SEMAPHORE — NON-NORMATIVE STANDARD SPECIFICATION
 
 ## OWL 2 / NON-NORMATIVE / Reflection State (σᵥ)
 
-### Version 1.3.0-rc (release candidate; document subordinate to v1.3.0-rc)
+### Version 2.0.0-rc (release candidate; document subordinate to v2.0.0-rc)
 
 ---
 

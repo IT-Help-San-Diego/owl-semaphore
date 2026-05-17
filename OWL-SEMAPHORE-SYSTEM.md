@@ -1,8 +1,8 @@
-![Owl Semaphore Master Proof](assets/proofs/OWL-SEMAPHORE-MASTER-PROOF.png)
+![Owl Semaphore Final Composed Badges (v2.0.0-rc)](assets/v2/proofs/OWL-SEMAPHORE-V2-FINAL-CONTACT-SHEET.png)
 
 # OWL SEMAPHORE — SYSTEM SPECIFICATION
 A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants.
-## Version 1.3.0-rc (release candidate)
+## Version 2.0.0-rc (release candidate)
 
 ---
 
@@ -20,7 +20,7 @@ The objective is a system that is:
 - operationally reproducible
 - resistant to ambiguity and drift
 
-### 1.1 Canonical Sentence Stack (v1.3.0-rc)
+### 1.1 Canonical Sentence Stack (v2.0.0-rc)
 
 The project uses a three-layer canonical sentence stack so that the same concept can be expressed at the level of mathematics, operation, and human story without drifting between documents:
 
@@ -30,7 +30,7 @@ The project uses a three-layer canonical sentence stack so that the same concept
 | Operational | *A four-state visual system for marking how a claim, document, dataset, or finding should be evaluated before belief, challenge, or action.* | Explanation document, public overview, DNS Tool bridge |
 | Human | *Four owls tell the reader what kind of thinking they are looking at: standard, exploration, inversion, or self-audit.* | Story sections, teaching material |
 
-Earlier inconsistent forms — *"mapped into a visual system with strict invariants"* (former §11) and *"implemented as a reproducible visual system with enforced invariants"* (former README masthead) — are reconciled in v1.3.0-rc onto the canonical formal sentence above.
+Earlier inconsistent forms — *"mapped into a visual system with strict invariants"* (former §11) and *"implemented as a reproducible visual system with enforced invariants"* (former README masthead) — were reconciled in v1.3.0-rc onto the canonical formal sentence above, and that reconciliation is carried forward unchanged in v2.0.0-rc.
 
 ---
 
@@ -55,7 +55,7 @@ This is a finite subgroup of the orthogonal group \(O(2)\) isomorphic to V₄ (e
 | CRITICAL | C₂ | (x,y) → (-x,-y) | +1 |
 | METACOGNITIVE | σₕ | (x,y) → (x,-y) | -1 |
 
-The σₕ assignment to METACOGNITIVE is unchanged from v1.2.0. Only the interpretive wording is refined in v1.3.0-rc (see §4).
+The σₕ assignment to METACOGNITIVE is unchanged from v1.2.0. The interpretive wording was refined in v1.3.0-rc and is carried forward in v2.0.0-rc (see §4).
 
 ### 2.3 Closure (Cayley Table)
 
@@ -117,7 +117,7 @@ The system separates three levels:
 2. observer
 3. evaluative frame
 
-### 4.2 State Mapping (Normative Phrasing — v1.3.0-rc)
+### 4.2 State Mapping (Normative Phrasing — v2.0.0-rc)
 
 | State | Quote (scientific / normative) | Meaning |
 |------|--------|--------|
@@ -193,7 +193,7 @@ Each state is assigned a distinct color space region:
 
 Color is semantic, not decorative.
 
-### 7.2 Accessibility — Triple-Redundant Encoding (v1.3.0-rc, normative)
+### 7.2 Accessibility — Triple-Redundant Encoding (v2.0.0-rc, normative)
 
 **Color is not the only carrier.** State identity must remain recoverable when color is removed (grayscale rendering, color vision deficiency, or low-vision contexts). Every state in the Owl Semaphore is therefore encoded through at least three independent channels:
 
@@ -205,7 +205,7 @@ This satisfies the design intent of **WCAG 2.2 SC 1.4.1 (Use of Color, Level A)*
 
 Red-green color vision deficiency affects approximately 8% of males and 0.5% of females of Northern European descent; rates vary by population ([PMC global CVD review, 12385717](https://pmc.ncbi.nlm.nih.gov/articles/PMC12385717/)).
 
-Full WCAG 2.2 Level AA empirical conformance testing (automated checks, CVD simulation, user testing) is scoped to a future release; v1.3.0-rc states the design rule and its compliance intent.
+Full WCAG 2.2 Level AA empirical conformance testing (automated checks, CVD simulation, user testing) is scoped to a future release; v2.0.0-rc states the design rule and its compliance intent.
 
 ---
 
@@ -264,13 +264,13 @@ If the system is used to imply certainty rather than epistemic position, it is b
 
 ---
 
-## 11. Core Principle (Reconciled, v1.3.0-rc)
+## 11. Core Principle (Reconciled, v2.0.0-rc)
 
 This system is defined as:
 
 > **A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants.**
 
-This sentence is the single formal canonical definition for v1.3.0-rc. It supersedes both *"implemented as a reproducible visual system with enforced invariants"* and *"mapped into a visual system with strict invariants"*. See [CHANGELOG.md](CHANGELOG.md) for the per-version canonical-sentence history.
+This sentence is the single formal canonical definition for v2.0.0-rc (carried forward unchanged from v1.3.0-rc). It supersedes both *"implemented as a reproducible visual system with enforced invariants"* and *"mapped into a visual system with strict invariants"*. See [CHANGELOG.md](CHANGELOG.md) for the per-version canonical-sentence history.
 
 ---
 

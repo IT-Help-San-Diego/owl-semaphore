@@ -1,10 +1,10 @@
-![NORM Layer Proof Palette](assets/proofs/NORM-layer-proof-palette.png)
+![NORMATIVE — v2 final composed badge](assets/v2/final-540/NORMATIVE-V2-FINAL-COMPOSED-540.png)
 
 # OWL SEMAPHORE — NORMATIVE STANDARD SPECIFICATION
 
 ## OWL 1 / NORMATIVE / Identity State
 
-### Version 1.3.0-rc (release candidate; document subordinate to v1.3.0-rc)
+### Version 2.0.0-rc (release candidate; document subordinate to v2.0.0-rc)
 
 ---
 
@@ -603,7 +603,7 @@ In the through-the-legs demonstration:
 
 This is exactly the logic of the METACOGNITIVE state.
 
-The observer audits the frame. (See OWL-4-METACOGNITIVE for the normative phrasing rule; the v1.3.0-rc canonical sentence for METACOGNITIVE is *"The observer audits the frame,"* with the warmer explanatory variant *"Thinking examines its own frame."*)
+The observer audits the frame. (See OWL-4-METACOGNITIVE for the normative phrasing rule; the v2.0.0-rc canonical sentence for METACOGNITIVE is *"The observer audits the frame,"* with the warmer explanatory variant *"Thinking examines its own frame."*)
 
 ### 20.5 Relation to Pattern Recognition
 

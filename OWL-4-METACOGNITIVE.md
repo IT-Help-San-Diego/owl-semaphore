@@ -1,10 +1,10 @@
-![META Layer Proof Palette](assets/proofs/META-layer-proof-palette.png)
+![METACOGNITIVE — v2 final composed badge](assets/v2/final-540/METACOGNITIVE-V2-FINAL-COMPOSED-540.png)
 
 # OWL SEMAPHORE — METACOGNITIVE STANDARD SPECIFICATION
 
 ## OWL 4 / METACOGNITIVE / Frame-Audit State (σₕ)
 
-### Version 1.3.0-rc (release candidate; document subordinate to v1.3.0-rc)
+### Version 2.0.0-rc (release candidate; document subordinate to v2.0.0-rc)
 
 ---
 
@@ -214,7 +214,7 @@ The owl must remain distinguishable from the field with sufficient luminance con
 
 ### 10.4 Accessibility — Color Is Not the Only Carrier
 
-In v1.3.0-rc the system explicitly states that **color cannot be the only carrier of state identity**. The METACOGNITIVE state — like every state — must be perceptually recoverable from at least three independent visual channels:
+From v1.3.0-rc onward (and unchanged in v2.0.0-rc) the system explicitly states that **color cannot be the only carrier of state identity**. The METACOGNITIVE state — like every state — must be perceptually recoverable from at least three independent visual channels:
 
 1. **color** (amethyst / violet)
 2. **orientation** (upside-down, right-facing)
@@ -310,7 +310,7 @@ The earlier interpretive sentence *"This audits the standard"* is deprecated in 
 
 ## 17. Relationship to Other States
 
-| State | Operator | Quote (v1.3.0-rc) |
+| State | Operator | Quote (v2.0.0-rc) |
 | --- | --- | --- |
 | NORMATIVE | I | "This is the standard." |
 | NON-NORMATIVE | σᵥ | "This reflects the standard." |
