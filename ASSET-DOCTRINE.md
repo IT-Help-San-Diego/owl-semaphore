@@ -89,8 +89,11 @@ for provenance.
 
 The NORMATIVE and NON-NORMATIVE rows reflect their human-approved v2 masters
 (D + B parchment-gold and Math-Mirror Center-Scale-97 + Seam-17 + Five-Over
-respectively). CRITICAL and METACOGNITIVE retain their prior v2 hex values
-pending per-state review.
+respectively). The METACOGNITIVE row retains its prior v2 hex value pending
+per-state review; its visible badge bytes are preserved byte-exact in the
+master asset kit at `assets/v2/metacognitive-sigma-h-purple-master/` (see
+that kit's `AUDIT-NOTE.md` for the layered re-expression provenance — the
+kit does not propose a recolor).
 
 Hard rules:
 

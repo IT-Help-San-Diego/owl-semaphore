@@ -1,0 +1,159 @@
+{
+  "state": "OWL-4 METACOGNITIVE",
+  "selected_visual": "sigma_h owl + purple meander/outer ring (prior v2 doctrine retained)",
+  "approved_by": "preserved-bytes equivalent to currently-published composed badge",
+  "approval_date": "2026-05-17 (kit captured; visual unchanged from prior approved composite)",
+  "doctrine_note": "ASSET-DOCTRINE.md \u00a73 records METACOGNITIVE palette hex #8F75BF as 'pending review'. This kit does NOT propose a visual change. It captures the existing approved pixels into the same structured kit shape used by OWL-1, OWL-2, OWL-3 so the METACOGNITIVE asset has the same provenance footprint (layered TIFF, layer-proof contact sheet, per-layer SHA-256 manifest, multi-page composite TIFF). The visible badge bytes are unchanged.",
+  "geometry": {
+    "owl_target_diameter_px": 700,
+    "canvas_px": 1080,
+    "owl_bbox": [
+      196,
+      192,
+      885,
+      890
+    ],
+    "inner_field_bbox": [
+      140,
+      140,
+      940,
+      940
+    ],
+    "meander_bbox": [
+      26,
+      26,
+      1054,
+      1054
+    ],
+    "outer_ring_bbox": [
+      4,
+      4,
+      1076,
+      1076
+    ],
+    "rationale": "Geometry inherits from the legacy normative-owl geometry layers (byte-exact for L1, alpha-preserved recolor for L2 and L4) and the approved METACOGNITIVE transparent owl-only master scaled to the standard 700-px target diameter. The owl alpha geometry is preserved exactly through the Lanczos resize.",
+    "no_global_filter": true,
+    "no_resize_of_master_geometry": true,
+    "no_vector_approximation": true
+  },
+  "color": {
+    "palette_rgb": [
+      143,
+      117,
+      191
+    ],
+    "palette_hex": "#8F75BF",
+    "mode": "meander/outer ring recolored (luma-preserving multiply); owl L3 unchanged",
+    "method": "L2 and L4 recolor uses the same luma-preserving multiply as scripts/build_v2_composed_badges.py::_recolor_to_palette. L3 is byte-equivalent to the approved transparent master (after standard scale+center). The owl's gold branch / leaves / olive and dark linework are therefore preserved at pixel granularity inside L3."
+  },
+  "sources": {
+    "transparent_master_1080": "assets/v2/transparent-1080/METACOGNITIVE-human-gold-branch-transparent-1080.png",
+    "inner_field_source": "assets/layers/normative-owl/NORM-L1-inner-field-1080.png",
+    "meander_source": "assets/layers/normative-owl/NORM-L2-meander-ring-1080.png",
+    "outer_ring_source": "assets/layers/normative-owl/NORM-L4-outer-ring-1080.png"
+  },
+  "composite_validation": {
+    "byte_exact_match_to_published_composite": true,
+    "mean_abs_rgb_diff_vs_published": 0.0,
+    "max_abs_rgb_diff_vs_published": 0,
+    "alpha_iou_vs_published": 1.0
+  },
+  "files": {
+    "OWL-4-METACOGNITIVE-L1-inner-field-original-1080.png": {
+      "bbox": [
+        140,
+        140,
+        940,
+        940
+      ],
+      "sha256": "09eaba6a59976961a300130872bb04e455fb89f55dc6a55d90fef7c5bcfec037",
+      "policy": "byte-exact copy from assets/layers/normative-owl/NORM-L1-inner-field-1080.png"
+    },
+    "OWL-4-METACOGNITIVE-L2-meander-ring-purple-recolored-1080.png": {
+      "bbox": [
+        26,
+        26,
+        1054,
+        1054
+      ],
+      "source_layer": "assets/layers/normative-owl/NORM-L2-meander-ring-1080.png",
+      "sha256": "5f222c51d3b50c41da3d7e745dbecf0b74f0e5b936e5b26915a314670700b009",
+      "recolor_metrics": {
+        "changed_pixel_count": 330567,
+        "max_abs_channel_delta": 144,
+        "target_rgb": [
+          143,
+          117,
+          191
+        ]
+      },
+      "policy": "luma-preserving multiply to METACOGNITIVE palette hex; alpha preserved exactly"
+    },
+    "OWL-4-METACOGNITIVE-L3-sigma-h-owl-body-gold-branch-preserved-1080.png": {
+      "bbox": [
+        196,
+        192,
+        885,
+        890
+      ],
+      "source_layer": "assets/v2/transparent-1080/METACOGNITIVE-human-gold-branch-transparent-1080.png",
+      "sha256": "f02248e56fcb2529e634305a1d9f484e4c2e0cfcaab832bf0025c91656e696ba",
+      "policy": "LANCZOS resize to 700-px target diameter + centered paste on 1080 canvas; preserves gold branch / leaves / olive and dark linework at pixel granularity"
+    },
+    "OWL-4-METACOGNITIVE-L4-outer-ring-purple-recolored-1080.png": {
+      "bbox": [
+        4,
+        4,
+        1076,
+        1076
+      ],
+      "source_layer": "assets/layers/normative-owl/NORM-L4-outer-ring-1080.png",
+      "sha256": "429bca7f99ea79534588e620852ab0743af122ab5c007672bef7ddf9930eb37d",
+      "recolor_metrics": {
+        "changed_pixel_count": 72239,
+        "max_abs_channel_delta": 136,
+        "target_rgb": [
+          143,
+          117,
+          191
+        ]
+      },
+      "policy": "luma-preserving multiply to METACOGNITIVE palette hex; alpha preserved exactly"
+    },
+    "OWL-4-METACOGNITIVE-SIGMA-H-PURPLE-COMPOSITE-1080.png": {
+      "bbox": [
+        4,
+        4,
+        1076,
+        1076
+      ],
+      "sha256": "95a5494e770d7a1973f3b8c27cf50bd3650ecc0b99ecc4c01022729efc2b91ba",
+      "policy": "alpha-composite L4 -> L2 -> L1 -> L3"
+    },
+    "OWL-4-METACOGNITIVE-SIGMA-H-PURPLE-COMPOSITE-540.png": {
+      "bbox": [
+        2,
+        2,
+        538,
+        538
+      ],
+      "sha256": "de1e6be1945b6f84661abc94c19f1294fcdcb594be689939cd6831797ccbfc72",
+      "policy": "LANCZOS downscale of the 1080 composite"
+    },
+    "OWL-4-METACOGNITIVE-SIGMA-H-PURPLE-MASTER-ASSET-1080.tiff": {
+      "frames": 3,
+      "frame_layout": [
+        "page 1: composited badge (RGBA, transparent)",
+        "page 2: composite on white",
+        "page 3: composite on dark slate (30,33,39)"
+      ],
+      "shape": [
+        3,
+        1080,
+        1080,
+        4
+      ],
+      "sha256": "15309595bfb612b532a3fa7ffa38504d4fb7f24635456c0b5b4d81c748efd763"
+    }
+  }
+}

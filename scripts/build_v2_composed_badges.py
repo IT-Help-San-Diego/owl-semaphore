@@ -111,6 +111,25 @@ PINNED_CRITICAL_COMPOSITE_540 = os.path.join(
     "OWL-3-CRITICAL-B-GEOMETRY-B-BALANCED-COMPOSITE-540.png",
 )
 
+# Approved sigma_h + purple master overrides for METACOGNITIVE. Same
+# byte-exact-pin rationale as the other three states: the kit at
+# assets/v2/metacognitive-sigma-h-purple-master/ captures the existing
+# prior-approved METACOGNITIVE composed badge into a structured layered
+# kit (the kit's composite is byte-exact equal to the composed-badge bytes
+# this script produces from the generic recolor pipeline). The pin is
+# load-bearing: it documents that the published METACOGNITIVE badge is the
+# kit asset, not a regenerated approximation. See
+# assets/v2/metacognitive-sigma-h-purple-master/AUDIT-NOTE.md for full
+# provenance.
+PINNED_METACOGNITIVE_COMPOSITE_1080 = os.path.join(
+    REPO, "assets", "v2", "metacognitive-sigma-h-purple-master",
+    "OWL-4-METACOGNITIVE-SIGMA-H-PURPLE-COMPOSITE-1080.png",
+)
+PINNED_METACOGNITIVE_COMPOSITE_540 = os.path.join(
+    REPO, "assets", "v2", "metacognitive-sigma-h-purple-master",
+    "OWL-4-METACOGNITIVE-SIGMA-H-PURPLE-COMPOSITE-540.png",
+)
+
 OWL_FILES = {
     "NORMATIVE":     "NORMATIVE-human-gold-branch-transparent-1080.png",
     "NON-NORMATIVE": "NON-NORMATIVE-human-gold-branch-transparent-1080.png",
@@ -287,6 +306,10 @@ def main() -> int:
             pinned_1080 = PINNED_CRITICAL_COMPOSITE_1080
             pinned_540  = PINNED_CRITICAL_COMPOSITE_540
             pin_label   = "approved B-geometry + B alert red balanced master"
+        elif state == "METACOGNITIVE" and os.path.isfile(PINNED_METACOGNITIVE_COMPOSITE_1080):
+            pinned_1080 = PINNED_METACOGNITIVE_COMPOSITE_1080
+            pinned_540  = PINNED_METACOGNITIVE_COMPOSITE_540
+            pin_label   = "approved sigma_h + purple master"
 
         if pinned_1080:
             # Use the human-approved composite byte-exact, bypassing the generic
