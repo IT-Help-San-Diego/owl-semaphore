@@ -10,6 +10,41 @@ Each release entry records the **canonical formal sentence used in that release*
 
 ## [Unreleased — v2.0.0-rc] — major release candidate (no Zenodo DOI minted, no tag)
 
+### 2026-05-17 — OWL-2 §5.4 overlap fix + layer-proof caption legibility
+
+- **§5.4 Properties.** Perplexity's `share_file` PDF validator refused
+  `OWL-2-NON-NORMATIVE.pdf` because page 4 had `1 overlapping text regions
+  detected — "𝜎2" overlaps with "𝑣 = 𝐼"`. Typst's math font rendered the
+  displayed equation `\sigma_v^2 = I` with the subscript `v` and the
+  superscript `2` abutting on the same base.
+  - **Fix in `OWL-2-NON-NORMATIVE.md` §5.4 only:** the displayed equation
+    is now `\sigma_v \circ \sigma_v = I` — three baseline glyphs separated
+    by the composition operator. No subscript/superscript stacking, no
+    overlap potential. Meaning unchanged (order-2 involution); the bullet
+    above now reads `order 2 (self-inverse involution)` for explicit
+    redundancy.
+  - **OWL-3 CRITICAL has a similar `C_2^2 = I` pattern** (renders as
+    `𝐶22 = 𝐼` in pdftotext). Per the user's "OWL-2 only" scope
+    constraint and the rule that CRITICAL/METACOGNITIVE assets and texts
+    are not touched outside their own per-state review pass, OWL-3 is
+    **intentionally not changed here** and will be addressed in the
+    CRITICAL review pass.
+- **NON-NORMATIVE layer-proof caption legibility.**
+  `assets/v2/proofs/NONNORM-v2-layer-proof-palette.png` (a presentation
+  helper graphic, NOT part of the user-approved master kit) is
+  regenerated with bolder, near-black captions for better legibility:
+  - Caption font: DejaVuSans 12 pt regular → DejaVuSans-Bold 14 pt.
+  - Caption fill: `(60, 60, 60)` mid-gray → `(15, 15, 15)` near-black.
+  - Caption strip height bumped 36 → 56 px so the heavier font has
+    breathing room.
+  - The six layer thumbnails (L0..L4 + L2.5) remain **byte-identical to
+    the user-approved kit's PNGs**, scaled to 250×250 over the same
+    dark-slate background. No semantic change to the visual asset.
+- All six PDFs regenerated. Tests pass (32 ran, 29 ok, 3 expected
+  failures unchanged). Hashes/manifest regenerated. Title-page two-line
+  layout from `aabd915` is preserved on OWL-2; the other five PDFs are
+  unchanged in title-page layout.
+
 ### 2026-05-17 — OWL-2 title-page hyphenation fix
 
 - `OWL-2-NON-NORMATIVE.pdf` page 1 previously wrapped its big title as

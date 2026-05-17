@@ -103,10 +103,10 @@ $$
 
 - orientation-reversing
 - reflection class
-- order 2
+- order 2 (self-inverse involution)
 
 $$
-\sigma_v^2 = I
+\sigma_v \circ \sigma_v = I
 $$
 
 ---
