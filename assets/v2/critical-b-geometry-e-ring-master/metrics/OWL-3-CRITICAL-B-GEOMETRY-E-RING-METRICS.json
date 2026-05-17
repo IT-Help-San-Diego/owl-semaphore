@@ -1,0 +1,114 @@
+{
+  "state": "OWL-3 CRITICAL",
+  "selected_visual": "B geometry + E halfway salmon rings",
+  "geometry": {
+    "ring_alpha_source": "OWL-2 approved L1 geometry recolored only",
+    "owl2_l1_bbox": [
+      134,
+      134,
+      947,
+      947
+    ],
+    "owl3_l1_bbox": [
+      134,
+      134,
+      947,
+      947
+    ],
+    "owl_bbox": [
+      236,
+      233,
+      851,
+      858
+    ],
+    "rationale": "B geometry was selected as the best combined visual/mathematical score: near exact C2 while improving optical balance."
+  },
+  "color": {
+    "ring_color_rgb": [
+      226,
+      92,
+      96
+    ],
+    "method": "ring-only harmony; owl body pixels not recolored to preserve black feather linework and avoid speckling"
+  },
+  "sources": {
+    "critical_master_tiff": "/home/user/workspace/owl-semaphore-addaf085/assets/masters/CRIT-MASTER-1080.tiff",
+    "critical_gold_branch_l3": "/home/user/workspace/owl-semaphore-addaf085/assets/v2/transparent-1080/CRITICAL-human-gold-branch-transparent-1080.png",
+    "owl2_ring_geometry": "/home/user/workspace/owl-semaphore-addaf085/assets/v2/nonnormative-math97-five-over-master/layers/OWL-2-NON-NORMATIVE-L1-inner-teal-ring-outward-17-1080.png"
+  },
+  "files": {
+    "OWL-3-CRITICAL-L0-inner-field-critical-original-1080.png": {
+      "bbox": [
+        140,
+        140,
+        941,
+        941
+      ],
+      "sha256": "a6603872e66bbe2900c246b5b7e35a08c93ec7ca1484920e5a19cf443c0f0e91"
+    },
+    "OWL-3-CRITICAL-L1-inner-red-ring-matched-to-OWL2-halfway-salmon-1080.png": {
+      "bbox": [
+        134,
+        134,
+        947,
+        947
+      ],
+      "sha256": "8cfa87d9d6418ef0f80832bfe54c4cbdba3ff8fd4d5845e5eb635d20c4bd204d"
+    },
+    "OWL-3-CRITICAL-L2-meander-ring-critical-original-1080.png": {
+      "bbox": [
+        26,
+        26,
+        1055,
+        1055
+      ],
+      "sha256": "01c1696068baea7107066b25b0cb0b9f466ba104d151850707e24fdc95ae402b"
+    },
+    "OWL-3-CRITICAL-L3-critical-human-gold-branch-B-geometry-1080.png": {
+      "bbox": [
+        236,
+        233,
+        851,
+        858
+      ],
+      "sha256": "2b1ead7319ffeeb1c335e20a540d577197e206a1f9448ed10a14f958c2faab5c"
+    },
+    "OWL-3-CRITICAL-L4-outer-critical-ring-halfway-salmon-1080.png": {
+      "bbox": [
+        4,
+        4,
+        1077,
+        1077
+      ],
+      "sha256": "ce948cc9a52d5c20eba4c99d405b605c937407ed6400d1e25f6362ac6e9a2544"
+    },
+    "OWL-3-CRITICAL-B-GEOMETRY-E-RING-COMPOSITE-1080.png": {
+      "bbox": [
+        4,
+        4,
+        1077,
+        1077
+      ],
+      "sha256": "9f6c105e442d402e21e97a18abcd01c369fd6524a8e6aa7d11a17525d85d9059"
+    },
+    "OWL-3-CRITICAL-B-GEOMETRY-E-RING-COMPOSITE-540.png": {
+      "bbox": [
+        0,
+        0,
+        540,
+        540
+      ],
+      "sha256": "855790c804da87a675374043e9a39b621a57fb49a1c01d3ff2bd89e059e57386"
+    },
+    "OWL-3-CRITICAL-B-GEOMETRY-E-RING-MASTER-ASSET-1080.tiff": {
+      "frames": 6,
+      "shape": [
+        6,
+        1080,
+        1080,
+        4
+      ],
+      "sha256": "c1923d102d8362fabba5ea81b9eada667beaf94d457b95c5f099d5e5cb34a14a"
+    }
+  }
+}

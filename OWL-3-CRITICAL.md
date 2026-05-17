@@ -85,12 +85,13 @@ $$
 
 ### 4.4 Properties
 
-- orientation-preserving
-- inversion via rotation
+- 180° rotation
+- determinant +1 (orientation-preserving)
 - order 2
+- self-composition is the identity
 
 $$
-C_2^2 = I
+C_2 \circ C_2 = I
 $$
 
 ---
