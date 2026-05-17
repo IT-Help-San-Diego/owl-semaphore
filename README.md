@@ -49,7 +49,7 @@ The METACOGNITIVE phrasing introduced in v1.3.0-rc is preserved. *"This audits t
 
 ## Group-theoretic scope (no overclaim)
 
-The four transforms form a **finite subgroup of O(2) isomorphic to the Klein four-group V₄** (equivalently the dihedral group D₂). The system is **not** O(2); it is a four-element subgroup. There is no 31-degree tilt as active doctrine. There is no formal-verification claim — invariants are enforced by tests, not by a proof assistant.
+The four transforms form a **finite subgroup of O(2) isomorphic to the Klein four-group V₄** (equivalently the dihedral group D₂). The system is **not** O(2); it is a four-element subgroup. The complete state algebra is exactly: NORMATIVE *I* (x, y) ↦ (x, y); NON-NORMATIVE σᵥ (x, y) ↦ (−x, y); CRITICAL C₂ (x, y) ↦ (−x, −y); METACOGNITIVE σₕ (x, y) ↦ (x, −y). There is no formal-verification claim — invariants are enforced by tests, not by a proof assistant.
 
 ## Palette (v2.0.0-rc, normative)
 

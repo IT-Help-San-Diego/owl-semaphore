@@ -649,17 +649,7 @@ When the METACOGNITIVE owl is applied to a document, the intended meaning is:
 
 That is the standard meaning. The mark does not say that the subject changed. It says the observer audited the observer.
 
-## 21. Forward-Looking Rule for the 31° Lean
-
-The measured 31° lean associated with the earlier teal art is not part of the normative state and is not part of the finite closed four-state semaphore set.
-
-That operator is better understood as a processive or transitional gesture rather than a stable epistemic badge state.
-
-For that reason, it shall not be used to define or mutate the normative standard.
-
----
-
-## 22. Compliance Checklist
+## 21. Compliance Checklist
 
 An asset claiming to be a compliant **OWL 1 — NORMATIVE** master must satisfy all of the following:
 
@@ -683,7 +673,7 @@ An asset claiming to be a compliant **OWL 1 — NORMATIVE** master must satisfy 
 
 ---
 
-## 23. Formal Definition
+## 22. Formal Definition
 
 Let \(\Omega\) be the 1080×1080 raster domain and let \(c=(540,540)\) be the common image center. Let
 
@@ -723,7 +713,7 @@ and serves as the reference state for transform, comparison, and interpretive cl
 
 ---
 
-## 24. Closing Statement
+## 23. Closing Statement
 
 This standard treats the NORMATIVE owl as a reproducible scientific-design object rather than a decorative graphic.
 

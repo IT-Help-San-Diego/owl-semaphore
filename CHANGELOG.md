@@ -10,6 +10,27 @@ Each release entry records the **canonical formal sentence used in that release*
 
 ## [Unreleased — v2.0.0-rc] — major release candidate (no Zenodo DOI minted, no tag)
 
+### 2026-05-17 — Removed obsolete 31°/lean/tilt content from active scientific docs
+
+- Removed `## 21. Forward-Looking Rule for the 31° Lean` from
+  `OWL-1-NORMATIVE.md`; renumbered subsequent sections (22→21, 23→22, 24→23).
+- Removed `### 3.3 The 31° Rotation` (and the now-redundant `### 3.2 Continuous
+  Process` lead-in) from `OWL-SEMAPHORE-SYSTEM.md`; section 3.4 Principle is
+  renumbered to 3.2 and rephrased to enumerate the four V₄ transforms only.
+- Replaced `INTEGRITY-MANIFEST.md` §6.3 *State vs Process* with §6.3 *Scope of
+  the State Algebra* — the state algebra is exactly the four V₄ transforms
+  (I, σᵥ, C₂, σₕ); any other operator is out of scope for state assignment.
+- Trimmed 31°/lean/tilt mentions from active doctrine language in `README.md`,
+  `ASSET-DOCTRINE.md` §4, `ZENODO-RELEASE-CHECKLIST.md` §2, and
+  `.zenodo.json` description.
+- Quarantined the history into `PROVENANCE.md` §7 *Historical-only: the v1-era
+  ~31° rotation note*. This is the single place in the repo where the
+  historical removal is recorded, for full audit-trail traceability. It is
+  not active doctrine and is not cited by any active publication.
+- Regenerated all six PDFs. `pdftotext` audit on the new PDFs reports zero
+  occurrences of `31°`, `31 deg`, `tilt`, or `lean` in active scientific
+  documents; the only `180° rotation` references are legitimate (C₂).
+
 ### 2026-05-17 — NORMATIVE promoted to D-geometry + B parchment-gold
 
 - **OWL-1 NORMATIVE master asset** promoted to the human-approved
@@ -120,7 +141,8 @@ from v1.3.0-rc.
 - METACOGNITIVE phrasing: unchanged from v1.3.0-rc (*"The observer audits the frame"* /
   *"Thinking examines its own frame"*).
 - Group-theoretic scope language: still **finite subgroup of O(2) isomorphic to V₄ (≅ D₂)**; the
-  system is not O(2). No 31-degree tilt is reintroduced. No formal-verification claim is added.
+  system is not O(2). The state algebra is exactly the four V₄ transforms (*I*, σᵥ, C₂, σₕ); no
+  other operator is reintroduced. No formal-verification claim is added.
 
 ### Non-goals (explicit, v2.0.0-rc)
 

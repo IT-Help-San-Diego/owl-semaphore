@@ -87,23 +87,9 @@ The four owls represent discrete epistemic states:
 - inversion (CRITICAL)
 - frame-audit (METACOGNITIVE)
 
-### 3.2 Continuous Process
+### 3.2 Principle
 
-Not all operations belong to the state system.
-
-### 3.3 The 31° Rotation
-
-The measured ~31° rotation is not part of V₄.
-
-- it is not closed
-- repeated composition does not return to the set
-
-It represents **process**, not state.
-
-### 3.4 Principle
-
-States classify position.
-Processes move between positions.
+States classify position. The four V₄ transforms — identity, σᵥ, C₂, σₕ — are the **only** operators that define an epistemic badge state in this system. Any other operator (continuous rotation, scaling, shearing, etc.) is out of scope for the state algebra and is not part of the four-state semaphore set.
 
 ---
 

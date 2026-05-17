@@ -75,7 +75,27 @@ and exporting from the host application. This is the documented Pixelmator-requi
 - No claim that the system is O(2). The four transforms form a finite subgroup of O(2) isomorphic
   to V₄ (≅ D₂); see [`ASSET-DOCTRINE.md`](ASSET-DOCTRINE.md) §4 and
   [`OWL-SEMAPHORE-SYSTEM.md`](OWL-SEMAPHORE-SYSTEM.md) §2.
-- No 31-degree tilt is active doctrine. Any such tilt that appears in historical artefacts is not
-  part of v2.
 - No DOI for v2.0.0 has been minted. The version DOI placeholder is `TBD_BY_ZENODO_ON_RELEASE`
   until Zenodo mints it on release.
+
+## 7. Historical-only: the v1-era ~31° rotation note
+
+Earlier iterations of this project (pre-v2) carried text discussing a measured
+~31° lean/rotation that had been observed in legacy teal artwork. That note has
+been **removed from all active v2 publications** (`OWL-1-NORMATIVE.md`,
+`OWL-SEMAPHORE-SYSTEM.md`, `OWL-SEMAPHORE-EXPLANATION.md`, `README.md`,
+`ASSET-DOCTRINE.md`, `ZENODO-RELEASE-CHECKLIST.md`) on 2026-05-17 because the
+v2.0.0-rc state algebra is exactly and only the four V₄ transforms:
+
+| State | T | det T | (x, y) ↦ |
+| --- | --- | --- | --- |
+| NORMATIVE | *I* | +1 | (x, y) |
+| NON-NORMATIVE | σᵥ | −1 | (−x, y) |
+| CRITICAL | C₂ | +1 | (−x, −y) |
+| METACOGNITIVE | σₕ | −1 | (x, −y) |
+
+Any continuous rotation, including the v1-era ~31° lean, is out of scope for
+the state algebra and is **not** part of the four-state semaphore set. This
+paragraph exists only so the historical record of the removal is auditable; it
+is not active doctrine and must not be cited as defining or modifying any
+state.

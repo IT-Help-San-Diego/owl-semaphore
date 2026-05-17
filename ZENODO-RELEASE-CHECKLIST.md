@@ -28,8 +28,7 @@
 
 - [ ] All four owl specifications are complete
 - [ ] System specification is complete
-- [ ] State vs process distinction is explicit
-- [ ] 31° rotation is documented as process, not state
+- [ ] The state algebra is the four V₄ transforms only (I, σᵥ, C₂, σₕ); any other operator is out of scope and must not appear in active doctrine
 - [ ] Mathematical notation is internally consistent
 - [ ] Terminology is consistent across all documents
 

@@ -88,8 +88,8 @@ Hard rules:
 ## 4. Group-theoretic scope (no overclaim)
 
 - The four transforms form a **finite subgroup of O(2) isomorphic to V₄ (≅ D₂)**.
-- The system is not O(2). There is no 31-degree tilt as active doctrine. There is no formal-
-  verification claim — invariants are tested by `tests/`, not proved by a proof assistant.
+- The system is not O(2). There is no formal-verification claim — invariants are tested by
+  `tests/`, not proved by a proof assistant.
 - The geometric transforms applied to the owl + branch composite are exactly:
 
 | State | T | det T | (x, y) ↦ |
