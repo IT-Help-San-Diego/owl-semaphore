@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
-"""Compute SHA-3-512 hashes for tracked release artifacts (v1.3.0-rc).
+"""Compute SHA-3-512 hashes for tracked release artifacts (v2.0.0-rc).
 
 Writes RELEASE-HASHES.txt at the repository root, formatted compatibly with
 ``openssl dgst -sha3-512`` output, covering:
 
-  - all PNGs under assets/releases/540/
+  - all PNGs under assets/releases/540/ (v1.3 lineage; retained)
+  - all PNGs under assets/v2/transparent-1080/ and assets/v2/transparent-540/
+  - all TIFFs under assets/v2/masters/
+  - all PNGs under assets/v2/proofs/
   - all five generated specification PDFs (when present)
-  - the markdown specifications and README and CHANGELOG and EXPLANATION
+  - the markdown specifications and README and CHANGELOG and EXPLANATION,
+    plus the v2 doctrine and provenance files
 
 The output is deterministic (sorted by path) so the hashes file diffs cleanly.
 """
@@ -37,6 +41,25 @@ def collect_targets() -> list[str]:
             if name.endswith(".png"):
                 targets.append(os.path.join("assets", "releases", "540", name))
 
+    for sub in (
+        os.path.join("assets", "v2", "transparent-1080"),
+        os.path.join("assets", "v2", "transparent-540"),
+        os.path.join("assets", "v2", "masters"),
+        os.path.join("assets", "v2", "proofs"),
+    ):
+        d = os.path.join(REPO, sub)
+        if os.path.isdir(d):
+            for name in sorted(os.listdir(d)):
+                if name.lower().endswith((".png", ".tiff", ".tif", ".json")):
+                    targets.append(os.path.join(sub, name))
+
+    metrics = os.path.join("assets", "v2", "metrics")
+    md = os.path.join(REPO, metrics)
+    if os.path.isdir(md):
+        for name in sorted(os.listdir(md)):
+            if name.endswith(".json"):
+                targets.append(os.path.join(metrics, name))
+
     for name in (
         "OWL-SEMAPHORE-SYSTEM.pdf",
         "OWL-SEMAPHORE-EXPLANATION.pdf",
@@ -51,6 +74,8 @@ def collect_targets() -> list[str]:
     for name in (
         "README.md",
         "CHANGELOG.md",
+        "ASSET-DOCTRINE.md",
+        "PROVENANCE.md",
         "OWL-SEMAPHORE-SYSTEM.md",
         "OWL-SEMAPHORE-EXPLANATION.md",
         "OWL-1-NORMATIVE.md",

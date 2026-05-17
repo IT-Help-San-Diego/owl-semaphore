@@ -1,4 +1,4 @@
-"""Banner-tuple PDF integrity test (v1.3.0-rc).
+"""Banner-tuple PDF integrity test (v2.0.0-rc).
 
 Each generated PDF in the Owl Semaphore release embeds a single-line
 ``BANNER-TUPLE :: ...`` string on its title page that names the state, the
@@ -27,7 +27,7 @@ import unittest
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-VERSION = "v1.3.0-rc"
+VERSION = "v2.0.0-rc"
 CONCEPT_DOI = "10.5281/zenodo.19473697"
 PUBLISHED_VERSION_DOI = "10.5281/zenodo.19474599"
 RC_VERSION_DOI = "TBD_BY_ZENODO_ON_RELEASE"
@@ -148,7 +148,7 @@ class BannerTupleTest(unittest.TestCase):
 
     def test_deprecated_quote_absent_from_meta_ledger(self):
         """The deprecated METACOGNITIVE wording 'This audits the standard.' must
-        not appear in the METACOGNITIVE PDF or the system PDF in v1.3.0-rc."""
+        not appear in the METACOGNITIVE PDF or the system PDF in v2.0.0-rc."""
         for pdf_name in ("OWL-4-METACOGNITIVE.pdf", "OWL-SEMAPHORE-SYSTEM.pdf"):
             pdf_path = os.path.join(REPO, pdf_name)
             if not os.path.exists(pdf_path):

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate publication-grade PDFs for the Owl Semaphore system (v1.3.0-rc).
+Generate publication-grade PDFs for the Owl Semaphore system (v2.0.0-rc).
 
 Produces, with one command, five PDFs:
   - OWL-SEMAPHORE-SYSTEM.pdf
@@ -41,10 +41,10 @@ except ImportError:  # pragma: no cover - handled at runtime
 
 REPO = os.path.dirname(os.path.abspath(__file__))
 
-# ── Project-wide metadata (v1.3.0-rc) ───────────────────────────────────────
+# ── Project-wide metadata (v2.0.0-rc) ───────────────────────────────────────
 
-VERSION = "1.3.0-rc"
-RELEASE_LABEL = "v1.3.0-rc"
+VERSION = "2.0.0-rc"
+RELEASE_LABEL = "v2.0.0-rc"
 AUTHOR = "Carey James Balboa"
 ORCID = "0009-0000-5237-9065"
 REPO_URL = "github.com/IT-Help-San-Diego/owl-semaphore"
@@ -59,8 +59,8 @@ DOCS = [
     {
         "md": "OWL-SEMAPHORE-SYSTEM.md",
         "pdf": "OWL-SEMAPHORE-SYSTEM.pdf",
-        "badge": "assets/releases/540/NORM-composite-transparent-540.png",
-        "contact_sheet": "assets/proofs/OWL-SEMAPHORE-MASTER-PROOF.png",
+        "badge": "assets/v2/transparent-540/NORMATIVE-human-gold-branch-transparent-540.png",
+        "contact_sheet": "assets/v2/proofs/OWL-SEMAPHORE-V2-MASTER-PROOF.png",
         "color": "#d4a853",
         "color_rgb": "rgb(212, 168, 83)",
         "label": "N O R M A T I V E",
@@ -71,13 +71,13 @@ DOCS = [
         "quote": '"This is the standard."',
         "standard_ref": "RFC 2119 MUST / SHALL",
         "contact_caption": "Owl Semaphore System — Master Proof",
-        "pdf_subject": "Owl Semaphore System Specification (v1.3.0-rc)",
+        "pdf_subject": "Owl Semaphore System Specification (v2.0.0-rc)",
     },
     {
         "md": "OWL-SEMAPHORE-EXPLANATION.md",
         "pdf": "OWL-SEMAPHORE-EXPLANATION.pdf",
-        "badge": "assets/releases/540/META-composite-transparent-540.png",
-        "contact_sheet": "assets/proofs/OWL-SEMAPHORE-MASTER-PROOF.png",
+        "badge": "assets/v2/transparent-540/METACOGNITIVE-human-gold-branch-transparent-540.png",
+        "contact_sheet": "assets/v2/proofs/OWL-SEMAPHORE-V2-MASTER-PROOF.png",
         "color": "#8C4191",
         "color_rgb": "rgb(140, 65, 145)",
         "label": "E X P L A N A T I O N",
@@ -88,13 +88,13 @@ DOCS = [
         "quote": '"Thinking examines its own frame."',
         "standard_ref": "Informative / Explanatory",
         "contact_caption": "Owl Semaphore System — Master Proof",
-        "pdf_subject": "Owl Semaphore Explanation (informative companion, v1.3.0-rc)",
+        "pdf_subject": "Owl Semaphore Explanation (informative companion, v2.0.0-rc)",
     },
     {
         "md": "OWL-1-NORMATIVE.md",
         "pdf": "OWL-1-NORMATIVE.pdf",
-        "badge": "assets/releases/540/NORM-composite-transparent-540.png",
-        "contact_sheet": "assets/proofs/NORM-layer-proof-palette.png",
+        "badge": "assets/v2/transparent-540/NORMATIVE-human-gold-branch-transparent-540.png",
+        "contact_sheet": "assets/v2/proofs/NORM-v2-layer-proof-palette.png",
         "color": "#d4a853",
         "color_rgb": "rgb(212, 168, 83)",
         "label": "N O R M A T I V E",
@@ -105,13 +105,13 @@ DOCS = [
         "quote": '"This is the standard."',
         "standard_ref": "RFC 2119 MUST / SHALL",
         "contact_caption": "Normative — Layer Proof Palette",
-        "pdf_subject": "Owl Semaphore — Normative state specification (OWL 1 / I, v1.3.0-rc)",
+        "pdf_subject": "Owl Semaphore — Normative state specification (OWL 1 / I, v2.0.0-rc)",
     },
     {
         "md": "OWL-2-NON-NORMATIVE.md",
         "pdf": "OWL-2-NON-NORMATIVE.pdf",
-        "badge": "assets/releases/540/NONNORM-composite-transparent-540.png",
-        "contact_sheet": "assets/proofs/NONNORM-layer-proof-palette.png",
+        "badge": "assets/v2/transparent-540/NON-NORMATIVE-human-gold-branch-transparent-540.png",
+        "contact_sheet": "assets/v2/proofs/NONNORM-v2-layer-proof-palette.png",
         "color": "#316964",
         "color_rgb": "rgb(49, 105, 100)",
         "label": "N O N - N O R M A T I V E",
@@ -122,13 +122,13 @@ DOCS = [
         "quote": '"This reflects the standard."',
         "standard_ref": "Informative / Advisory (NOTE)",
         "contact_caption": "Non-Normative — Layer Proof Palette",
-        "pdf_subject": "Owl Semaphore — Non-Normative state specification (OWL 2 / sigma_v, v1.3.0-rc)",
+        "pdf_subject": "Owl Semaphore — Non-Normative state specification (OWL 2 / sigma_v, v2.0.0-rc)",
     },
     {
         "md": "OWL-3-CRITICAL.md",
         "pdf": "OWL-3-CRITICAL.pdf",
-        "badge": "assets/releases/540/CRIT-composite-transparent-540.png",
-        "contact_sheet": "assets/proofs/CRIT-layer-proof-palette.png",
+        "badge": "assets/v2/transparent-540/CRITICAL-human-gold-branch-transparent-540.png",
+        "contact_sheet": "assets/v2/proofs/CRIT-v2-layer-proof-palette.png",
         "color": "#990f1e",
         "color_rgb": "rgb(153, 15, 30)",
         "label": "C R I T I C A L",
@@ -139,13 +139,13 @@ DOCS = [
         "quote": '"This inverts the standard."',
         "standard_ref": "RFC 2119 MUST NOT / SHALL NOT",
         "contact_caption": "Critical — Layer Proof Palette",
-        "pdf_subject": "Owl Semaphore — Critical state specification (OWL 3 / C2, v1.3.0-rc)",
+        "pdf_subject": "Owl Semaphore — Critical state specification (OWL 3 / C2, v2.0.0-rc)",
     },
     {
         "md": "OWL-4-METACOGNITIVE.md",
         "pdf": "OWL-4-METACOGNITIVE.pdf",
-        "badge": "assets/releases/540/META-composite-transparent-540.png",
-        "contact_sheet": "assets/proofs/META-layer-proof-palette.png",
+        "badge": "assets/v2/transparent-540/METACOGNITIVE-human-gold-branch-transparent-540.png",
+        "contact_sheet": "assets/v2/proofs/META-v2-layer-proof-palette.png",
         "color": "#8C4191",
         "color_rgb": "rgb(140, 65, 145)",
         "label": "M E T A C O G N I T I V E",
@@ -156,7 +156,7 @@ DOCS = [
         "quote": '"The observer audits the frame."',
         "standard_ref": "Epistemic / Framework (META)",
         "contact_caption": "Metacognitive — Layer Proof Palette",
-        "pdf_subject": "Owl Semaphore — Metacognitive state specification (OWL 4 / sigma_h, v1.3.0-rc)",
+        "pdf_subject": "Owl Semaphore — Metacognitive state specification (OWL 4 / sigma_h, v2.0.0-rc)",
     },
 ]
 
@@ -223,10 +223,10 @@ def build_typst_document(doc: dict, body_typst: str) -> str:
     color = doc["color_rgb"]
     is_system = doc["md"] == "OWL-SEMAPHORE-SYSTEM.md"
 
-    norm_badge = "assets/releases/540/NORM-composite-transparent-540.png"
-    nonnorm_badge = "assets/releases/540/NONNORM-composite-transparent-540.png"
-    crit_badge = "assets/releases/540/CRIT-composite-transparent-540.png"
-    meta_badge = "assets/releases/540/META-composite-transparent-540.png"
+    norm_badge = "assets/v2/transparent-540/NORMATIVE-human-gold-branch-transparent-540.png"
+    nonnorm_badge = "assets/v2/transparent-540/NON-NORMATIVE-human-gold-branch-transparent-540.png"
+    crit_badge = "assets/v2/transparent-540/CRITICAL-human-gold-branch-transparent-540.png"
+    meta_badge = "assets/v2/transparent-540/METACOGNITIVE-human-gold-branch-transparent-540.png"
 
     state_token = doc["state_token"]
     label_long = doc["label"]
@@ -452,7 +452,7 @@ def build_typst_document(doc: dict, body_typst: str) -> str:
   #v(8pt)
   #text(size: 8pt, fill: luma(140))[
     Owl Semaphore {RELEASE_LABEL} · {REPO_URL} \\
-    Concept DOI {CONCEPT_DOI} · v1.2.0 DOI {PUBLISHED_VERSION_DOI} · v1.3.0 DOI {VERSION_DOI_RC} \\
+    Concept DOI {CONCEPT_DOI} · v1.2.0 DOI {PUBLISHED_VERSION_DOI} · v2.0.0 DOI {VERSION_DOI_RC} \\
     (c) 2024-2026 IT Help San Diego Inc. · Licensed under {LICENSE}
   ]
 ]

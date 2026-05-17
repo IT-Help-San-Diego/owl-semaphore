@@ -1,13 +1,13 @@
 cff-version: 1.2.0
-message: "If you use the Owl Semaphore system, please cite the most recently published Zenodo version DOI (currently v1.2.0). v1.3.0 is a release candidate; its version DOI will be minted by Zenodo on release."
+message: "If you use the Owl Semaphore system, please cite the most recently published Zenodo version DOI (currently v1.2.0). v2.0.0 is a release candidate; its version DOI will be minted by Zenodo on release."
 title: "Owl Semaphore Badge System"
 type: software
 authors:
   - family-names: "Balboa"
     given-names: "Carey James"
     orcid: "https://orcid.org/0009-0000-5237-9065"
-version: "v1.3.0-rc"
-date-released: 2026-05-16
+version: "v2.0.0-rc"
+date-released: 2026-05-17
 license: "CC-BY-4.0"
 repository-code: "https://github.com/IT-Help-San-Diego/owl-semaphore"
 url: "https://github.com/IT-Help-San-Diego/owl-semaphore"
@@ -15,14 +15,14 @@ doi: "10.5281/zenodo.19474599"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.19474599"
-    description: "Most recently published version DOI (v1.2.0). v1.3.0 RC carries this DOI in citation metadata until the v1.3.0 DOI is minted."
+    description: "Most recently published version DOI (v1.2.0). v2.0.0 RC carries this DOI in citation metadata until the v2.0.0 DOI is minted."
   - type: doi
     value: "10.5281/zenodo.19473697"
     description: "Concept DOI (all versions) for the Owl Semaphore Badge System."
   - type: other
     value: "TBD_BY_ZENODO_ON_RELEASE"
-    description: "Placeholder for v1.3.0 version DOI; will be minted by Zenodo on release."
-abstract: "A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants. Four-state classification (NORMATIVE / NON-NORMATIVE / CRITICAL / METACOGNITIVE) realised as the Klein four-group V4, encoded redundantly through color, orientation, and textual label. v1.3.0-rc refines the METACOGNITIVE phrasing to 'The observer audits the frame' (deprecating 'This audits the standard'), makes the accessibility rule (color is not the only carrier) normative, adds an explanation document, and ships a single-command reproducible PDF pipeline. The V4 algebra and sigma_h assignment are unchanged from v1.2.0."
+    description: "Placeholder for v2.0.0 version DOI; will be minted by Zenodo on release."
+abstract: "A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants. Four-state classification (NORMATIVE / NON-NORMATIVE / CRITICAL / METACOGNITIVE) realised as the Klein four-group V4 (a finite subgroup of O(2) isomorphic to D2), encoded redundantly through color, orientation, and textual label. v2.0.0-rc is a major release candidate: it promotes the owl-only PNG lineage to the authoritative visual master and treats the human-selected gold branch / olive heritage marker as part of the source owl form before the V4 transforms (so the branch transforms with the owl rather than being a fixed decorative overlay). The V4 algebra and the sigma_h assignment to METACOGNITIVE are unchanged."
 keywords:
   - visual epistemic notation
   - classification system
@@ -40,8 +40,8 @@ preferred-citation:
       given-names: "Carey James"
       orcid: "https://orcid.org/0009-0000-5237-9065"
   title: "Owl Semaphore Badge System"
-  version: "v1.3.0-rc"
-  date-released: 2026-05-16
+  version: "v2.0.0-rc"
+  date-released: 2026-05-17
   license: "CC-BY-4.0"
   repository-code: "https://github.com/IT-Help-San-Diego/owl-semaphore"
   url: "https://github.com/IT-Help-San-Diego/owl-semaphore"

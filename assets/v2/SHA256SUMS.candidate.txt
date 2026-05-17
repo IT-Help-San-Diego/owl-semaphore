@@ -1,0 +1,13 @@
+19e028f1aaaa614e9f91ee1e47b36470d94789a50452cf4272bf2ba3f2ed13c6  ./README.md
+f7c648cfa1d1b76a66ebe117f7010589164e571f907df7beda8026e6daa1be1e  ./assets/transparent-1080/CRITICAL-human-gold-branch-transparent-1080.png
+19353c9e182870e9902159cc589d358c31ae2fc1b1f7ad257c2537faef0d325a  ./assets/transparent-1080/METACOGNITIVE-human-gold-branch-transparent-1080.png
+d5b4cb254ca59d8dbb615d1e411886d1f9de059c0516ca2a899de92b9ae85bb7  ./assets/transparent-1080/NON-NORMATIVE-human-gold-branch-transparent-1080.png
+2687dc1f6737fe7335da4dcb67dfb8f8ff3dda494ee2b900a00a7b9ee314f76d  ./assets/transparent-1080/NORMATIVE-human-gold-branch-transparent-1080.png
+6f1ef40e06909309b6c448af9dd6bbe7806d11e50945dc99bc22464ee4ae4f04  ./assets/transparent-540/CRITICAL-human-gold-branch-transparent-540.png
+a4a921554255c92848a997e6324921803c3eb3c5d7222a0f9c8ded8b17aa14ed  ./assets/transparent-540/METACOGNITIVE-human-gold-branch-transparent-540.png
+51f7a408ba04deb1ed493de778b28c84d3b0bcf49cc2620bd56643c9a89e5dcc  ./assets/transparent-540/NON-NORMATIVE-human-gold-branch-transparent-540.png
+1d509203b7773ae27023013d43fd39285ec231a5427af9e699c15c018bd890bb  ./assets/transparent-540/NORMATIVE-human-gold-branch-transparent-540.png
+6effbeb8bf625ff1fef0c19247bd86ef077ecaa44f4effc6a213de5000a054e1  ./metrics/human_gold_branch_metrics.json
+3d7b3d8b032ed3b8f7e496063958ca94bf3ad7b556ea5bb3297ad7655fbddf61  ./proofs/human-gold-branch-contact-sheet.png
+8929dcb01e5922c301866a04920d9dbd9442cf9c76e3355f3c2b1c534ede3d75  ./proofs/human-gold-branch-mask-1080.png
+76a603e4c69683c45201366247e7d762a46f06746c103d215f3ea4cf3b36611c  ./proofs/human-gold-branch-mask-zoom.png

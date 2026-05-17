@@ -1,0 +1,41 @@
+{
+  "source": "/home/user/workspace/OWL-NORMATIVE-SOURCE-CLEAN.png",
+  "human_branch_export": "/home/user/workspace/CJ-OWL-NORMATIVE-SOURCE-CLEAN.png",
+  "master": "/home/user/workspace/owl_clean_png_alpha_pilot/NORMATIVE-clean-png-alpha-transparent-1080.png",
+  "source_size": [
+    612,
+    792
+  ],
+  "branch_export_size": [
+    612,
+    792
+  ],
+  "source_crop_bbox": [
+    117,
+    202,
+    468,
+    558
+  ],
+  "resized_size": [
+    749,
+    760
+  ],
+  "master_offset": [
+    166,
+    160
+  ],
+  "branch_mask_pixels_1080": 17502,
+  "branch_mask_bbox_1080": [
+    410,
+    343,
+    915,
+    588
+  ],
+  "palette": {
+    "NORMATIVE": "#D8B760",
+    "NON-NORMATIVE": "#2F8C8C",
+    "CRITICAL": "#C85B5B",
+    "METACOGNITIVE": "#8F75BF"
+  },
+  "method": "human Pixelmator selection transformed with same crop/scale/center as the 1080 owl master; gold branch applied before V4 transforms"
+}
