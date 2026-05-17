@@ -376,7 +376,7 @@ def build_typst_document(doc: dict, body_typst: str) -> str:
   #v(10pt)
 
   #text(size: 11pt, weight: "bold")[{AUTHOR}] \\
-  #text(size: 10pt, fill: luma(80))[Independent DNS Security Researcher]
+  #text(size: 10pt, fill: luma(80))[Independent Researcher]
 
   #v(6pt)
   #text(size: 8.5pt, fill: luma(120))[

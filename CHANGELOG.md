@@ -10,6 +10,25 @@ Each release entry records the **canonical formal sentence used in that release*
 
 ## [Unreleased — v2.0.0-rc] — major release candidate (no Zenodo DOI minted, no tag)
 
+### 2026-05-17 — PDF byline broadened to "Independent Researcher"
+
+- The visible title-page byline in `generate_pdfs.py` was changed from
+  *"Independent DNS Security Researcher"* to the broader, more accurate
+  *"Independent Researcher"*. The Owl Semaphore is not exclusively a DNS
+  artifact; the prior label under-described its scope.
+- All other identity / provenance / licensing metadata on the title page
+  is unchanged: name `Carey James Balboa`, `ORCID 0009-0000-5237-9065`,
+  `CONCEPT-DOI 10.5281/zenodo.19473697`, `PUBLISHED-VERSION-DOI
+  10.5281/zenodo.19474599`, `RC-VERSION-DOI TBD_BY_ZENODO_ON_RELEASE`,
+  `SOURCE github.com/IT-Help-San-Diego/owl-semaphore`, `VERSION v2.0.0-rc`,
+  `LICENSE CC-BY-4.0`.
+- The "DNS Tool" keyword in PDF docinfo and pikepdf metadata stays — it
+  describes the upstream project context, not an author credential, and
+  the system genuinely grew out of DNS Tool.
+- All six PDFs regenerated. pdftotext: old byline "Independent DNS Security
+  Researcher" appears 0 times in every PDF; new byline "Independent
+  Researcher" appears once per PDF (the title page).
+
 ### 2026-05-17 — Page-header marker switched to per-state composed badge
 
 - `generate_pdfs.py` now uses each document's `final_badge` (the full per-state
