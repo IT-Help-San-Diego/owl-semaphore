@@ -253,6 +253,19 @@ def build_typst_document(doc: dict, body_typst: str) -> str:
     quote = doc["quote"]
     standard_ref = doc["standard_ref"]
     title = doc["title"]
+    # Typeset variant of the title: replace the ASCII hyphen in "Non-Normative"
+    # with U+2011 (non-breaking hyphen) so the line breaker treats the state
+    # name as atomic. This fixes the OWL-2 title-page hyphenation defect
+    # ("Owl Semaphore — Non-Norma-/tive") observed on page 1. Other titles
+    # contain no internal hyphens and are unaffected.
+    title_typeset = title.replace("Non-Normative", "Non‑Normative")
+    # ``title_needs_unjustified`` flags titles that wrap to two lines and
+    # therefore must NOT be justified across the page width — only OWL-2.
+    # All other titles fit on one line and render through the original code
+    # path with no surrounding ``par(justify: false)`` wrapper, so they are
+    # bit-stable vs the pre-fix layout. We detect OWL-2 by the U+2011 that
+    # the replace() above introduces.
+    title_needs_unjustified = "‑" in title_typeset
     subtitle = doc["subtitle_typst"]
     contact_caption = doc["contact_caption"]
 
@@ -370,7 +383,18 @@ def build_typst_document(doc: dict, body_typst: str) -> str:
   #text(size: 8.5pt, fill: luma(120))[{_typst_str(standard_ref)}]
 
   #v(16pt)
-  #text(size: 28pt, weight: "bold")[{_typst_str(title)}]
+  // Big title.
+  // For titles that fit on one line (OWL-1 NORMATIVE, OWL-3 CRITICAL,
+  // OWL-4 METACOGNITIVE, OWL-SEMAPHORE-SYSTEM, OWL-SEMAPHORE-EXPLANATION),
+  // render through the original single-#text path to keep layout exactly
+  // stable vs the pre-fix build.
+  // For OWL-2 NON-NORMATIVE, the title wraps to two lines and must NOT be
+  // justified across the page width. ``title_typeset`` substitutes the
+  // ASCII hyphen in "Non-Normative" with U+2011 (non-breaking hyphen) so
+  // the state name stays atomic; the line breaks cleanly at the em-dash
+  // word boundary, and ``par(justify: false)`` keeps both lines centered
+  // rather than spread edge-to-edge.
+  {("#par(justify: false)[#text(size: 28pt, weight: \"bold\", hyphenate: false)[" + _typst_str(title_typeset) + "]]") if title_needs_unjustified else ("#text(size: 28pt, weight: \"bold\")[" + _typst_str(title_typeset) + "]")}
   #v(4pt)
   #text(size: 12pt, fill: luma(80))[{subtitle}]
   #v(10pt)

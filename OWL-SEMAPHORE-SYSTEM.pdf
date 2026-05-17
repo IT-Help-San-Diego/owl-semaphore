@@ -4,7 +4,7 @@
 << /Lang (en) /MarkInfo << /Marked true /Suspects false >> /Metadata 3 0 R /Outlines 4 0 R /Pages 5 0 R /StructTreeRoot 6 0 R /Type /Catalog /ViewerPreferences << /Direction /L2R >> >>
 endobj
 2 0 obj
-<< /Author (Carey James Balboa) /CreationDate (D:20260517044227+00'00) /Creator (owl-semaphore/generate_pdfs.py v2.0.0-rc) /Keywords (Owl Semaphore, Klein four-group, V4, epistemic notation, SYSTEM, DNS Tool, accessibility, metacognition, v2.0.0-rc) /ModDate (D:20260517044227+00'00) /Producer (typst \(via python-typst\) + pikepdf) /Subject (Owl Semaphore System Specification \(v2.0.0-rc\)) /Title (Owl Semaphore \(v2.0.0-rc\)) >>
+<< /Author (Carey James Balboa) /CreationDate (D:20260517045326+00'00) /Creator (owl-semaphore/generate_pdfs.py v2.0.0-rc) /Keywords (Owl Semaphore, Klein four-group, V4, epistemic notation, SYSTEM, DNS Tool, accessibility, metacognition, v2.0.0-rc) /ModDate (D:20260517045326+00'00) /Producer (typst \(via python-typst\) + pikepdf) /Subject (Owl Semaphore System Specification \(v2.0.0-rc\)) /Title (Owl Semaphore \(v2.0.0-rc\)) >>
 endobj
 3 0 obj
 << /Subtype /XML /Type /Metadata /Length 2170 >>
@@ -30,11 +30,11 @@ stream
           <rdf:li>en</rdf:li>
         </rdf:Bag>
       </dc:language>
-      <xmp:ModifyDate>2026-05-17T04:42:27+00:00</xmp:ModifyDate>
-      <xmp:CreateDate>2026-05-17T04:42:27+00:00</xmp:CreateDate>
+      <xmp:ModifyDate>2026-05-17T04:53:26+00:00</xmp:ModifyDate>
+      <xmp:CreateDate>2026-05-17T04:53:26+00:00</xmp:CreateDate>
       <xmpTPg:NPages>10</xmpTPg:NPages>
       <dc:format>application/pdf</dc:format>
-      <xmpMM:InstanceID>84lpvrV2P/8p7+2wCQWpeQ==</xmpMM:InstanceID>
+      <xmpMM:InstanceID>u5M5Jtvo1zTAnTMue3FZ/A==</xmpMM:InstanceID>
       <xmpMM:DocumentID>9f3hEnvhi17joQxN5DkYeA==</xmpMM:DocumentID>
       <xmpMM:RenditionClass>proof</xmpMM:RenditionClass>
       <pdf:PDFVersion>1.7</pdf:PDFVersion>
@@ -17878,7 +17878,7 @@ xref
 0003802232 00000 n 
 0003802278 00000 n 
 0003802320 00000 n 
-trailer << /Info 2 0 R /Root 1 0 R /Size 641 /ID [<39663368456e76686931376a6f51784e35446b5965413d3d><3c323604fd336af4c8018c1bede7e1e2>] >>
+trailer << /Info 2 0 R /Root 1 0 R /Size 641 /ID [<39663368456e76686931376a6f51784e35446b5965413d3d><c70b80284b8e5f96392cc8f0d1cdc57d>] >>
 startxref
 3802366
 %%EOF

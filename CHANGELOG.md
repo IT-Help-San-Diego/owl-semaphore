@@ -10,6 +10,32 @@ Each release entry records the **canonical formal sentence used in that release*
 
 ## [Unreleased — v2.0.0-rc] — major release candidate (no Zenodo DOI minted, no tag)
 
+### 2026-05-17 — OWL-2 title-page hyphenation fix
+
+- `OWL-2-NON-NORMATIVE.pdf` page 1 previously wrapped its big title as
+  *"Owl Semaphore — Non-Norma- / tive"* — Typst's hyphenation broke the
+  state name mid-word at 28 pt bold on US-letter.
+- Fix in `generate_pdfs.py::build_typst_document()` — surgical, OWL-2 only:
+  - Compute a typeset-only title variant by replacing the ASCII hyphen in
+    `"Non-Normative"` with U+2011 (non-breaking hyphen). The state name
+    is now atomic to the line breaker; the title wraps cleanly at the
+    em-dash word boundary instead of breaking inside the state name.
+  - Detect this case by `"‑" in title_typeset` (only OWL-2 ever has it);
+    when set, wrap the big-title `#text` in `#par(justify: false)` so the
+    two-line title is centered rather than justified edge-to-edge. Also
+    set `hyphenate: false` as belt-and-suspenders.
+  - When the typeset title contains no U+2011 (the other five PDFs), the
+    code path is byte-identical to the pre-fix version: a single
+    `#text(size: 28pt, weight: "bold")[…]` with no surrounding wrappers.
+    OWL-1, OWL-3, OWL-4, OWL-SEMAPHORE-SYSTEM, and OWL-SEMAPHORE-EXPLANATION
+    titles are unchanged in layout (verified via pdftotext diff).
+- PDF docinfo `/Title` remains `"Owl Semaphore — Non-Normative (v2.0.0-rc)"`
+  with the ASCII hyphen (searchable / copyable). Only the *visible* big
+  title on the title page renders the U+2011 non-breaking hyphen — visually
+  indistinguishable.
+- All six PDFs regenerated. Tests pass (32 ran, 29 ok, 3 expected failures
+  unchanged). Hashes/manifest regenerated.
+
 ### 2026-05-17 — OWL-2 NON-NORMATIVE promoted to Math-Mirror Center-Scale-97 + Seam-17 + Five-Over
 
 - **OWL-2 NON-NORMATIVE master asset** promoted to the human-approved
