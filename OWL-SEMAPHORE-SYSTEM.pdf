@@ -4,7 +4,7 @@
 << /Lang (en) /MarkInfo << /Marked true /Suspects false >> /Metadata 3 0 R /Outlines 4 0 R /Pages 5 0 R /StructTreeRoot 6 0 R /Type /Catalog /ViewerPreferences << /Direction /L2R >> >>
 endobj
 2 0 obj
-<< /Author (Carey James Balboa) /CreationDate (D:20260523033208+00'00) /Creator (owl-semaphore/generate_pdfs.py v1.3.0-rc) /Keywords (Owl Semaphore, Klein four-group, V4, epistemic notation, SYSTEM, DNS Tool, accessibility, metacognition, v1.3.0-rc) /ModDate (D:20260523033208+00'00) /Producer (typst \(via python-typst\) + pikepdf) /Subject (Owl Semaphore System Specification \(v1.3.0-rc\)) /Title (Owl Semaphore \(v1.3.0-rc\)) >>
+<< /Author (Carey James Balboa) /CreationDate (D:20260523034450+00'00) /Creator (owl-semaphore/generate_pdfs.py v1.3.0-rc) /Keywords (Owl Semaphore, Klein four-group, V4, epistemic notation, SYSTEM, DNS Tool, accessibility, metacognition, v1.3.0-rc) /ModDate (D:20260523034450+00'00) /Producer (typst \(via python-typst\) + pikepdf) /Subject (Owl Semaphore System Specification \(v1.3.0-rc\)) /Title (Owl Semaphore \(v1.3.0-rc\)) >>
 endobj
 3 0 obj
 << /Subtype /XML /Type /Metadata /Length 2170 >>
@@ -30,11 +30,11 @@ stream
           <rdf:li>en</rdf:li>
         </rdf:Bag>
       </dc:language>
-      <xmp:ModifyDate>2026-05-23T03:32:08+00:00</xmp:ModifyDate>
-      <xmp:CreateDate>2026-05-23T03:32:08+00:00</xmp:CreateDate>
+      <xmp:ModifyDate>2026-05-23T03:44:50+00:00</xmp:ModifyDate>
+      <xmp:CreateDate>2026-05-23T03:44:50+00:00</xmp:CreateDate>
       <xmpTPg:NPages>10</xmpTPg:NPages>
       <dc:format>application/pdf</dc:format>
-      <xmpMM:InstanceID>try+DQLvuEf7ZqITaXRCyw==</xmpMM:InstanceID>
+      <xmpMM:InstanceID>dY1fAGd6fo/mtnPnjNH4+Q==</xmpMM:InstanceID>
       <xmpMM:DocumentID>B1Gr7BtOdPUwAbkZVBJrCQ==</xmpMM:DocumentID>
       <xmpMM:RenditionClass>proof</xmpMM:RenditionClass>
       <pdf:PDFVersion>1.7</pdf:PDFVersion>
@@ -16181,7 +16181,7 @@ $½Wc˜Yþ¼Y/Â°€äzLc’1fÒ/[NÔ¥>Q¢æíšÃ¡!i™À)n@ïŒ†|>ECn'H¢,t‡¤4ŠàÇé™Sz´$t“
 endstream
 endobj
 71 0 obj
-<< /A << /S /URI /Type /Action /URI (https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html) >> /Border [ 0 0 0 ] /Contents (https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html) /F 4 /Rect [ 431.58765 244.15698 456.33765 258.82 ] /StructParent 14 /Subtype /Link /Type /Annot >>
+<< /A << /S /URI /Type /Action /URI (https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html) >> /Border [ 0 0 0 ] /Contents (https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html) /F 4 /Rect [ 431.58765 244.15698 456.33765 258.82 ] /StructParent 14 /Subtype /Link /Type /Annot >>
 endobj
 72 0 obj
 << /A << /S /URI /Type /Action /URI (https://www.section508.gov/create/making-color-usage-accessible/) >> /Border [ 0 0 0 ] /Contents (https://www.section508.gov/create/making-color-usage-accessible/) /F 4 /Rect [ 167.35336 229.49402 241.36682 244.15698 ] /StructParent 15 /Subtype /Link /Type /Annot >>
@@ -23334,7 +23334,7 @@ xref
 0005669186 00000 n 
 0005669234 00000 n 
 0005669280 00000 n 
-trailer << /Info 2 0 R /Root 1 0 R /Size 654 /ID [<423147723742744f6450557741626b5a56424a7243513d3d><a07bbf8173bea45d5d154d1eeea0d051>] >>
+trailer << /Info 2 0 R /Root 1 0 R /Size 654 /ID [<423147723742744f6450557741626b5a56424a7243513d3d><5a0a00dd8dcc77d20973425414486007>] >>
 startxref
 5669326
 %%EOF

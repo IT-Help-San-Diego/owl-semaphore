@@ -201,7 +201,7 @@ Color is semantic, not decorative.
 2. **orientation** (the V₄ transform applied to the canonical owl: upright/inverted × right/left-facing)
 3. **textual label and context** (the literal state token — `NORMATIVE`, `NON-NORMATIVE`, `CRITICAL`, `METACOGNITIVE` — and the math/quote tuple printed alongside the badge)
 
-This satisfies the design intent of **WCAG 2.2 SC 1.4.1 (Use of Color, Level A)**, which prohibits color from being the only visual means of conveying information ([W3C](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html)), and aligns with Section 508 §302.3 ([Section 508.gov](https://www.section508.gov/create/making-color-usage-accessible/)). The CRITICAL state's intentionally low red-on-red contrast is the most acute test of this rule: redness alone never carries CRITICAL identity — orientation (upside-down, left-facing) and the literal label `CRITICAL` are required.
+This satisfies the design intent of **WCAG 2.2 SC 1.4.1 (Use of Color, Level A)**, which prohibits color from being the only visual means of conveying information ([W3C](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html)), and aligns with Section 508 §302.3 ([Section 508.gov](https://www.section508.gov/create/making-color-usage-accessible/)). The CRITICAL state's intentionally low red-on-red contrast is the most acute test of this rule: redness alone never carries CRITICAL identity — orientation (upside-down, left-facing) and the literal label `CRITICAL` are required.
 
 Red-green color vision deficiency affects approximately 8% of males and 0.5% of females of Northern European descent; rates vary by population ([PMC global CVD review, 12385717](https://pmc.ncbi.nlm.nih.gov/articles/PMC12385717/)).
 

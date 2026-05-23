@@ -4,7 +4,7 @@
 << /Lang (en) /MarkInfo << /Marked true /Suspects false >> /Metadata 3 0 R /Outlines 4 0 R /Pages 5 0 R /StructTreeRoot 6 0 R /Type /Catalog /ViewerPreferences << /Direction /L2R >> >>
 endobj
 2 0 obj
-<< /Author (Carey James Balboa) /CreationDate (D:20260523033220+00'00) /Creator (owl-semaphore/generate_pdfs.py v1.3.0-rc) /Keywords (Owl Semaphore, Klein four-group, V4, epistemic notation, METACOGNITIVE, DNS Tool, accessibility, metacognition, v1.3.0-rc) /ModDate (D:20260523033220+00'00) /Producer (typst \(via python-typst\) + pikepdf) /Subject (Owl Semaphore \204 Metacognitive state specification \(OWL 4 / sigma_h, v1.3.0-rc\)) /Title (Owl Semaphore \204 Metacognitive \(v1.3.0-rc\)) >>
+<< /Author (Carey James Balboa) /CreationDate (D:20260523034452+00'00) /Creator (owl-semaphore/generate_pdfs.py v1.3.0-rc) /Keywords (Owl Semaphore, Klein four-group, V4, epistemic notation, METACOGNITIVE, DNS Tool, accessibility, metacognition, v1.3.0-rc) /ModDate (D:20260523034452+00'00) /Producer (typst \(via python-typst\) + pikepdf) /Subject (Owl Semaphore \204 Metacognitive state specification \(OWL 4 / sigma_h, v1.3.0-rc\)) /Title (Owl Semaphore \204 Metacognitive \(v1.3.0-rc\)) >>
 endobj
 3 0 obj
 << /Subtype /XML /Type /Metadata /Length 2236 >>
@@ -30,11 +30,11 @@ stream
           <rdf:li>en</rdf:li>
         </rdf:Bag>
       </dc:language>
-      <xmp:ModifyDate>2026-05-23T03:32:20+00:00</xmp:ModifyDate>
-      <xmp:CreateDate>2026-05-23T03:32:20+00:00</xmp:CreateDate>
+      <xmp:ModifyDate>2026-05-23T03:44:52+00:00</xmp:ModifyDate>
+      <xmp:CreateDate>2026-05-23T03:44:52+00:00</xmp:CreateDate>
       <xmpTPg:NPages>10</xmpTPg:NPages>
       <dc:format>application/pdf</dc:format>
-      <xmpMM:InstanceID>8NkY0ii82+W0jjFnVbg9Ug==</xmpMM:InstanceID>
+      <xmpMM:InstanceID>XSFkPLdZVp2AcJO46nZklg==</xmpMM:InstanceID>
       <xmpMM:DocumentID>iog/3arp3dXcmp5HGNz37g==</xmpMM:DocumentID>
       <xmpMM:RenditionClass>proof</xmpMM:RenditionClass>
       <pdf:PDFVersion>1.7</pdf:PDFVersion>
@@ -3289,10 +3289,10 @@ endobj
 << /A << /S /URI /Type /Action /URI (https://pmc.ncbi.nlm.nih.gov/articles/PMC12385717/) >> /Border [ 0 0 0 ] /Contents (https://pmc.ncbi.nlm.nih.gov/articles/PMC12385717/) /F 4 /Rect [ 72 611.481 152.95593 626.144 ] /StructParent 11 /Subtype /Link /Type /Annot >>
 endobj
 61 0 obj
-<< /A << /S /URI /Type /Action /URI (https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html) >> /Border [ 0 0 0 ] /Contents (https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html) /F 4 /Rect [ 504.481 596.818 540 611.481 ] /StructParent 12 /Subtype /Link /Type /Annot >>
+<< /A << /S /URI /Type /Action /URI (https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html) >> /Border [ 0 0 0 ] /Contents (https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html) /F 4 /Rect [ 504.481 596.818 540 611.481 ] /StructParent 12 /Subtype /Link /Type /Annot >>
 endobj
 62 0 obj
-<< /A << /S /URI /Type /Action /URI (https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html) >> /Border [ 0 0 0 ] /Contents (https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html) /F 4 /Rect [ 72 582.155 129.95071 596.818 ] /StructParent 13 /Subtype /Link /Type /Annot >>
+<< /A << /S /URI /Type /Action /URI (https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html) >> /Border [ 0 0 0 ] /Contents (https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html) /F 4 /Rect [ 72 582.155 129.95071 596.818 ] /StructParent 13 /Subtype /Link /Type /Annot >>
 endobj
 63 0 obj
 << /Filter /FlateDecode /Length 2883 >>
@@ -10338,7 +10338,7 @@ xref
 0002148546 00000 n 
 0002148661 00000 n 
 0002148707 00000 n 
-trailer << /Info 2 0 R /Root 1 0 R /Size 639 /ID [<696f672f33617270336458636d703548474e7a3337673d3d><dee1b4682573b3a6ef32d1e82b887768>] >>
+trailer << /Info 2 0 R /Root 1 0 R /Size 639 /ID [<696f672f33617270336458636d703548474e7a3337673d3d><34dbdc47270ed1e1507d8c6eb33c06e1>] >>
 startxref
 2148755
 %%EOF

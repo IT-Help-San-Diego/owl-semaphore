@@ -103,7 +103,7 @@ The earlier line *"This audits the standard"* is **deprecated** as of v1.3.0-rc.
 Color matters in this system: gold for NORMATIVE, teal for NON-NORMATIVE, red for CRITICAL, amethyst for METACOGNITIVE. But color cannot do the work alone.
 
 - About **8% of males and 0.5% of females of Northern-European descent** have red-green color vision deficiency; rates vary by population ([PMC global review, 12385717](https://pmc.ncbi.nlm.nih.gov/articles/PMC12385717/)).
-- **WCAG 2.2 Success Criterion 1.4.1 (Use of Color)** prohibits color from being the only visual means of conveying information ([W3C SC 1.4.1](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html)).
+- **WCAG 2.2 Success Criterion 1.4.1 (Use of Color)** prohibits color from being the only visual means of conveying information ([W3C SC 1.4.1](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html)).
 - **Section 508 §302.3** requires at least one visual mode of operation that does not require user perception of color ([section508.gov](https://www.section508.gov/create/making-color-usage-accessible/)).
 - **CRITICAL** in particular is intentionally low-contrast: a red owl on a warm-red field. If color were the only carrier, CRITICAL would be unrecoverable for red-axis (protan) CVD users. So it cannot be the only carrier.
 

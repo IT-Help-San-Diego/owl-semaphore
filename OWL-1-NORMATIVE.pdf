@@ -4,7 +4,7 @@
 << /Lang (en) /MarkInfo << /Marked true /Suspects false >> /Metadata 3 0 R /Outlines 4 0 R /Pages 5 0 R /StructTreeRoot 6 0 R /Type /Catalog /ViewerPreferences << /Direction /L2R >> >>
 endobj
 2 0 obj
-<< /Author (Carey James Balboa) /CreationDate (D:20260523033216+00'00) /Creator (owl-semaphore/generate_pdfs.py v1.3.0-rc) /Keywords (Owl Semaphore, Klein four-group, V4, epistemic notation, NORMATIVE, DNS Tool, accessibility, metacognition, v1.3.0-rc) /ModDate (D:20260523033216+00'00) /Producer (typst \(via python-typst\) + pikepdf) /Subject (Owl Semaphore \204 Normative state specification \(OWL 1 / I, v1.3.0-rc\)) /Title (Owl Semaphore \204 Normative \(v1.3.0-rc\)) >>
+<< /Author (Carey James Balboa) /CreationDate (D:20260523034451+00'00) /Creator (owl-semaphore/generate_pdfs.py v1.3.0-rc) /Keywords (Owl Semaphore, Klein four-group, V4, epistemic notation, NORMATIVE, DNS Tool, accessibility, metacognition, v1.3.0-rc) /ModDate (D:20260523034451+00'00) /Producer (typst \(via python-typst\) + pikepdf) /Subject (Owl Semaphore \204 Normative state specification \(OWL 1 / I, v1.3.0-rc\)) /Title (Owl Semaphore \204 Normative \(v1.3.0-rc\)) >>
 endobj
 3 0 obj
 << /Subtype /XML /Type /Metadata /Length 2214 >>
@@ -30,11 +30,11 @@ stream
           <rdf:li>en</rdf:li>
         </rdf:Bag>
       </dc:language>
-      <xmp:ModifyDate>2026-05-23T03:32:16+00:00</xmp:ModifyDate>
-      <xmp:CreateDate>2026-05-23T03:32:16+00:00</xmp:CreateDate>
+      <xmp:ModifyDate>2026-05-23T03:44:51+00:00</xmp:ModifyDate>
+      <xmp:CreateDate>2026-05-23T03:44:51+00:00</xmp:CreateDate>
       <xmpTPg:NPages>19</xmpTPg:NPages>
       <dc:format>application/pdf</dc:format>
-      <xmpMM:InstanceID>F/FwNB2xFnMgme75WDbD/Q==</xmpMM:InstanceID>
+      <xmpMM:InstanceID>5iH8VJhrYQe1X/et0aEfVA==</xmpMM:InstanceID>
       <xmpMM:DocumentID>elO+40YJjPlG6HZuXhVmKQ==</xmpMM:DocumentID>
       <xmpMM:RenditionClass>proof</xmpMM:RenditionClass>
       <pdf:PDFVersion>1.7</pdf:PDFVersion>
@@ -15071,7 +15071,7 @@ xref
 0002734398 00000 n 
 0002734446 00000 n 
 0002734493 00000 n 
-trailer << /Info 2 0 R /Root 1 0 R /Size 1251 /ID [<656c4f2b3430594a6a506c4736485a755868566d4b513d3d><f1d391c237761750b2d21181d4907940>] >>
+trailer << /Info 2 0 R /Root 1 0 R /Size 1251 /ID [<656c4f2b3430594a6a506c4736485a755868566d4b513d3d><b359a2b629c05257c82e31a9c47bb43b>] >>
 startxref
 2734542
 %%EOF

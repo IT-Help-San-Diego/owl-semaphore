@@ -4,7 +4,7 @@
 << /Lang (en) /MarkInfo << /Marked true /Suspects false >> /Metadata 3 0 R /Outlines 4 0 R /Pages 5 0 R /StructTreeRoot 6 0 R /Type /Catalog /ViewerPreferences << /Direction /L2R >> >>
 endobj
 2 0 obj
-<< /Author (Carey James Balboa) /CreationDate (D:20260523033211+00'00) /Creator (owl-semaphore/generate_pdfs.py v1.3.0-rc) /Keywords (Owl Semaphore, Klein four-group, V4, epistemic notation, EXPLAIN, DNS Tool, accessibility, metacognition, v1.3.0-rc) /ModDate (D:20260523033211+00'00) /Producer (typst \(via python-typst\) + pikepdf) /Subject (Owl Semaphore Explanation \(informative companion, v1.3.0-rc\)) /Title (Owl Semaphore \204 Explanation \(v1.3.0-rc\)) >>
+<< /Author (Carey James Balboa) /CreationDate (D:20260523034450+00'00) /Creator (owl-semaphore/generate_pdfs.py v1.3.0-rc) /Keywords (Owl Semaphore, Klein four-group, V4, epistemic notation, EXPLAIN, DNS Tool, accessibility, metacognition, v1.3.0-rc) /ModDate (D:20260523034450+00'00) /Producer (typst \(via python-typst\) + pikepdf) /Subject (Owl Semaphore Explanation \(informative companion, v1.3.0-rc\)) /Title (Owl Semaphore \204 Explanation \(v1.3.0-rc\)) >>
 endobj
 3 0 obj
 << /Subtype /XML /Type /Metadata /Length 2201 >>
@@ -30,11 +30,11 @@ stream
           <rdf:li>en</rdf:li>
         </rdf:Bag>
       </dc:language>
-      <xmp:ModifyDate>2026-05-23T03:32:11+00:00</xmp:ModifyDate>
-      <xmp:CreateDate>2026-05-23T03:32:11+00:00</xmp:CreateDate>
+      <xmp:ModifyDate>2026-05-23T03:44:50+00:00</xmp:ModifyDate>
+      <xmp:CreateDate>2026-05-23T03:44:50+00:00</xmp:CreateDate>
       <xmpTPg:NPages>9</xmpTPg:NPages>
       <dc:format>application/pdf</dc:format>
-      <xmpMM:InstanceID>Encyx0bZ/j7OAvDK5CZOEA==</xmpMM:InstanceID>
+      <xmpMM:InstanceID>dRC4hyWXJjbIf7l3US+ORQ==</xmpMM:InstanceID>
       <xmpMM:DocumentID>mGS1UgkQooLE5FVdGx/Zng==</xmpMM:DocumentID>
       <xmpMM:RenditionClass>proof</xmpMM:RenditionClass>
       <pdf:PDFVersion>1.7</pdf:PDFVersion>
@@ -16309,7 +16309,7 @@ endobj
 << /A << /S /URI /Type /Action /URI (https://pmc.ncbi.nlm.nih.gov/articles/PMC12385717/) >> /Border [ 0 0 0 ] /Contents (https://pmc.ncbi.nlm.nih.gov/articles/PMC12385717/) /F 4 /Rect [ 324.318 490.628 467.505 505.291 ] /StructParent 25 /Subtype /Link /Type /Annot >>
 endobj
 96 0 obj
-<< /A << /S /URI /Type /Action /URI (https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html) >> /Border [ 0 0 0 ] /Contents (https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html) /F 4 /Rect [ 278.415 461.269 347.165 475.932 ] /StructParent 26 /Subtype /Link /Type /Annot >>
+<< /A << /S /URI /Type /Action /URI (https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html) >> /Border [ 0 0 0 ] /Contents (https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html) /F 4 /Rect [ 278.415 461.269 347.165 475.932 ] /StructParent 26 /Subtype /Link /Type /Annot >>
 endobj
 97 0 obj
 << /A << /S /URI /Type /Action /URI (https://www.section508.gov/create/making-color-usage-accessible/) >> /Border [ 0 0 0 ] /Contents (https://www.section508.gov/create/making-color-usage-accessible/) /F 4 /Rect [ 183.903 431.91 253.016 446.573 ] /StructParent 27 /Subtype /Link /Type /Annot >>
@@ -22898,7 +22898,7 @@ xref
 0005661882 00000 n 
 0005662175 00000 n 
 0005662221 00000 n 
-trailer << /Info 2 0 R /Root 1 0 R /Size 537 /ID [<6d47533155676b516f6f4c453546566447782f5a6e673d3d><b0fdd67a7e97428f9f75b86110c1e6db>] >>
+trailer << /Info 2 0 R /Root 1 0 R /Size 537 /ID [<6d47533155676b516f6f4c453546566447782f5a6e673d3d><6752c346a4b377b5382689d53696e9dc>] >>
 startxref
 5662266
 %%EOF
