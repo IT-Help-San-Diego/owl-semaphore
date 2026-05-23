@@ -220,7 +220,7 @@ In v1.3.0-rc the system explicitly states that **color cannot be the only carrie
 2. **orientation** (upside-down, right-facing)
 3. **textual label and context** (the literal token `METACOGNITIVE` and the supporting math/quote tuple printed alongside the badge)
 
-This triple-redundant encoding (color + orientation + label) is the project's mitigation for color vision deficiency (≈8% of males, ≈0.5% of females of Northern-European descent ([PMC global review, 12385717](https://pmc.ncbi.nlm.nih.gov/articles/PMC12385717/))) and for grayscale rendering. It satisfies the design intent of WCAG 2.2 SC 1.4.1 (Use of Color), which prohibits color from being the sole means of conveying information ([WCAG 2.2 SC 1.4.1](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html)). Conformance is a design target; full empirical accessibility audit is a v1.4 objective.
+This triple-redundant encoding (color + orientation + label) is the project's mitigation for color vision deficiency (≈8% of males, ≈0.5% of females of Northern-European descent ([PMC global review, 12385717](https://pmc.ncbi.nlm.nih.gov/articles/PMC12385717/))) and for grayscale rendering. It satisfies the design intent of WCAG 2.2 SC 1.4.1 (Use of Color), which prohibits color from being the sole means of conveying information ([WCAG 2.2 SC 1.4.1](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html)). Conformance is a design target; full empirical accessibility audit is a v1.4 objective.
 
 The same accessibility rule applies to the CRITICAL state, whose red palette is intentionally low-contrast: redness alone never carries the CRITICAL identity — orientation (upside-down, left-facing) and the literal label `CRITICAL` are required.
 

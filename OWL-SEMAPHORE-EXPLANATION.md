@@ -55,7 +55,7 @@ The two-state register collapses (3) and (4) into "not normative," which loses b
 
 The four states need to *close* under composition: doing any two of them in succession must land you back inside the same set. Otherwise the system would leak into unmarked, unspecified states, and the discipline would erode.
 
-The smallest finite group that fits the four-state behavior we need is the Klein four-group V₄ ([Wikipedia](https://en.wikipedia.org/wiki/Klein_four-group); [nLab](https://ncatlab.org/nlab/show/Klein+four-group)). In the visual plane it is realized by the symmetry group of a non-square rectangle: the identity, vertical reflection, horizontal reflection, and 180° rotation. It is a **finite subgroup of the orthogonal group O(2) isomorphic to V₄** (equivalently, the dihedral group D₂); it is **not** O(2) itself ([Knill, Harvard Math 22b, Unit 8: O(2)](https://people.math.harvard.edu/~knill/teaching/math22b2019/handouts/lecture08.pdf)).
+The smallest finite group that fits the four-state behavior we need is the Klein four-group V₄ ([Vierergruppe, Wolfram MathWorld](https://mathworld.wolfram.com/Vierergruppe.html); [nLab, Klein four-group](https://ncatlab.org/nlab/show/Klein+four-group)). In the visual plane it is realized by the symmetry group of a non-square rectangle: the identity, vertical reflection, horizontal reflection, and 180° rotation. It is a **finite subgroup of the orthogonal group O(2) isomorphic to V₄** (equivalently, the dihedral group D₂); it is **not** O(2) itself ([Knill, Harvard Math 22b, Unit 8: The orthogonal group](https://people.math.harvard.edu/~knill/teaching/math22b2019/handouts/lecture08.pdf)).
 
 What V₄ buys us:
 
@@ -103,7 +103,7 @@ The earlier line *"This audits the standard"* is **deprecated** as of v1.3.0-rc.
 Color matters in this system: gold for NORMATIVE, teal for NON-NORMATIVE, red for CRITICAL, amethyst for METACOGNITIVE. But color cannot do the work alone.
 
 - About **8% of males and 0.5% of females of Northern-European descent** have red-green color vision deficiency; rates vary by population ([PMC global review, 12385717](https://pmc.ncbi.nlm.nih.gov/articles/PMC12385717/)).
-- **WCAG 2.2 Success Criterion 1.4.1 (Use of Color)** prohibits color from being the only visual means of conveying information ([W3C SC 1.4.1](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html)).
+- **WCAG 2.2 Success Criterion 1.4.1 (Use of Color)** prohibits color from being the only visual means of conveying information ([W3C SC 1.4.1](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html)).
 - **Section 508 §302.3** requires at least one visual mode of operation that does not require user perception of color ([section508.gov](https://www.section508.gov/create/making-color-usage-accessible/)).
 - **CRITICAL** in particular is intentionally low-contrast: a red owl on a warm-red field. If color were the only carrier, CRITICAL would be unrecoverable for red-axis (protan) CVD users. So it cannot be the only carrier.
 
