@@ -1,0 +1,435 @@
+{
+  "CRIT": {
+    "composite_transparent_export": [
+      {
+        "destination": "assets/exports/CRIT-proof-transparent-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-3-critical-gold-master/OWL-3-CRITICAL-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "7161d44a97a2f2eb63a55fa2f74e0ba5a7b21f26cb81478d6f7ea71a8876cf40"
+      }
+    ],
+    "composite_transparent_master": [
+      {
+        "destination": "assets/masters/CRIT-proof-transparent-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-3-critical-gold-master/OWL-3-CRITICAL-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "7161d44a97a2f2eb63a55fa2f74e0ba5a7b21f26cb81478d6f7ea71a8876cf40"
+      }
+    ],
+    "composite_transparent_proof": [
+      {
+        "destination": "assets/proofs/CRIT-proof-transparent-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-3-critical-gold-master/OWL-3-CRITICAL-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "7161d44a97a2f2eb63a55fa2f74e0ba5a7b21f26cb81478d6f7ea71a8876cf40"
+      }
+    ],
+    "layer": [
+      {
+        "destination": "assets/layers/critical-owl/CRIT-L1-inner-field-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-3-critical-gold-master/layers/OWL-3-CRITICAL-L0-canonical-inner-field-deep-oxblood-371218-1080.png",
+        "source_sha256": "690910290880a1520b75a82ed4b1509f8d667435e0f9a70e4abfe50897c85886"
+      },
+      {
+        "destination": "assets/layers/critical-owl/CRIT-L1.5-inner-ring-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-3-critical-gold-master/layers/OWL-3-CRITICAL-L1-canonical-inner-ring-alert-red-preserved-1080.png",
+        "source_sha256": "8cfa87d9d6418ef0f80832bfe54c4cbdba3ff8fd4d5845e5eb635d20c4bd204d"
+      },
+      {
+        "destination": "assets/layers/critical-owl/CRIT-L2-meander-ring-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-3-critical-gold-master/layers/OWL-3-CRITICAL-L2-canonical-meander-ring-gold-preserved-1080.png",
+        "source_sha256": "01c1696068baea7107066b25b0cb0b9f466ba104d151850707e24fdc95ae402b"
+      },
+      {
+        "destination": "assets/layers/critical-owl/CRIT-L3-owl-body-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-3-critical-gold-master/layers/OWL-3-CRITICAL-L3-canonical-owl-critical-gold-branch-preserved-1080.png",
+        "source_sha256": "2b1ead7319ffeeb1c335e20a540d577197e206a1f9448ed10a14f958c2faab5c"
+      },
+      {
+        "destination": "assets/layers/critical-owl/CRIT-L4-outer-ring-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-3-critical-gold-master/layers/OWL-3-CRITICAL-L4-canonical-outer-ring-alert-red-preserved-1080.png",
+        "source_sha256": "ce948cc9a52d5c20eba4c99d405b605c937407ed6400d1e25f6362ac6e9a2544"
+      }
+    ],
+    "layer_proof_palette": [
+      {
+        "destination": "assets/proofs/CRIT-layer-proof-palette.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-3-critical-gold-master/proofs/OWL-3-CRITICAL-CANONICAL-LAYER-PROOF.png",
+        "source_sha256": "92b140d91286ad051b22253c01899088d293bb3dc61a00c61c4e9b864fd2996b"
+      }
+    ],
+    "layer_proof_palette_export": [
+      {
+        "destination": "assets/exports/CRIT-layer-proof-palette.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-3-critical-gold-master/proofs/OWL-3-CRITICAL-CANONICAL-LAYER-PROOF.png",
+        "source_sha256": "92b140d91286ad051b22253c01899088d293bb3dc61a00c61c4e9b864fd2996b"
+      }
+    ],
+    "master_tiff": [
+      {
+        "destination": "assets/masters/CRIT-MASTER-1080.tiff",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-3-critical-gold-master/OWL-3-CRITICAL-CANONICAL-MASTER-ASSET-1080.tiff",
+        "source_sha256": "0a5b8db4b45c9b9bbdb1290752a473bd19150f79734aeec0b08edaef47f713ab"
+      }
+    ],
+    "master_tiff_export": [
+      {
+        "destination": "assets/exports/CRIT-MASTER-1080.tiff",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-3-critical-gold-master/OWL-3-CRITICAL-CANONICAL-MASTER-ASSET-1080.tiff",
+        "source_sha256": "0a5b8db4b45c9b9bbdb1290752a473bd19150f79734aeec0b08edaef47f713ab"
+      }
+    ],
+    "release_540_dark": [
+      {
+        "destination": "assets/releases/540/CRIT-composite-dark-540.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-3-critical-gold-master/OWL-3-CRITICAL-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "7161d44a97a2f2eb63a55fa2f74e0ba5a7b21f26cb81478d6f7ea71a8876cf40",
+        "transform": "Lanczos 1080->540 + composite over #0D1117FF"
+      }
+    ],
+    "release_540_transparent": [
+      {
+        "destination": "assets/releases/540/CRIT-composite-transparent-540.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-3-critical-gold-master/OWL-3-CRITICAL-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "7161d44a97a2f2eb63a55fa2f74e0ba5a7b21f26cb81478d6f7ea71a8876cf40",
+        "transform": "Lanczos 1080->540"
+      }
+    ],
+    "release_540_white": [
+      {
+        "destination": "assets/releases/540/CRIT-composite-white-540.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-3-critical-gold-master/OWL-3-CRITICAL-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "7161d44a97a2f2eb63a55fa2f74e0ba5a7b21f26cb81478d6f7ea71a8876cf40",
+        "transform": "Lanczos 1080->540 + composite over #FFFFFFFF"
+      }
+    ]
+  },
+  "MASTER_PROOF_MONTAGE": {
+    "destination": "assets/proofs/OWL-SEMAPHORE-MASTER-PROOF.png",
+    "layout": "2x2 (NORM, NONNORM / CRIT, META) over white, 1080px tiles",
+    "sources": [
+      {
+        "path": "/home/user/workspace/owl_canonical_standardization/canonical/owl-1-normative-gold-master/OWL-1-NORMATIVE-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "03141182ea692c016d9a61dc6b8745974b228dc74e701dd60d3ac63d1a558aa9"
+      },
+      {
+        "path": "/home/user/workspace/owl_canonical_standardization/canonical/owl-2-non-normative-gold-master/OWL-2-NON-NORMATIVE-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "a0e995ecaa8bcc7e1a26b718be5d48d51ad88af9ff971e2b06878a5652179d00"
+      },
+      {
+        "path": "/home/user/workspace/owl_canonical_standardization/canonical/owl-3-critical-gold-master/OWL-3-CRITICAL-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "7161d44a97a2f2eb63a55fa2f74e0ba5a7b21f26cb81478d6f7ea71a8876cf40"
+      },
+      {
+        "path": "/home/user/workspace/owl_canonical_standardization/canonical/owl-4-metacognitive-gold-master/OWL-4-METACOGNITIVE-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "bf58a16ab02c009ff20eecdd30eb69e2aa23a0a06f01988f410fec5439f591b9"
+      }
+    ]
+  },
+  "META": {
+    "composite_transparent_export": [
+      {
+        "destination": "assets/exports/META-proof-transparent-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-4-metacognitive-gold-master/OWL-4-METACOGNITIVE-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "bf58a16ab02c009ff20eecdd30eb69e2aa23a0a06f01988f410fec5439f591b9"
+      }
+    ],
+    "composite_transparent_master": [
+      {
+        "destination": "assets/masters/META-proof-transparent-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-4-metacognitive-gold-master/OWL-4-METACOGNITIVE-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "bf58a16ab02c009ff20eecdd30eb69e2aa23a0a06f01988f410fec5439f591b9"
+      }
+    ],
+    "composite_transparent_proof": [
+      {
+        "destination": "assets/proofs/META-proof-transparent-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-4-metacognitive-gold-master/OWL-4-METACOGNITIVE-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "bf58a16ab02c009ff20eecdd30eb69e2aa23a0a06f01988f410fec5439f591b9"
+      }
+    ],
+    "layer": [
+      {
+        "destination": "assets/layers/metacognitive-owl/META-L1-inner-field-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-4-metacognitive-gold-master/layers/OWL-4-METACOGNITIVE-L1-canonical-inner-field-mid-tan-black-786042-1080.png",
+        "source_sha256": "59479018fed0e00a63ddc24af0c6213775fe4891bdcbc7d96dec306ac7820a20"
+      },
+      {
+        "destination": "assets/layers/metacognitive-owl/META-L1.5-inner-ring-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-4-metacognitive-gold-master/layers/OWL-4-METACOGNITIVE-L1_5-canonical-inner-ring-purple-preserved-1080.png",
+        "source_sha256": "0f5494510516fd29b53557f57b673fd5741d777e2e7869c48c6075a544231946"
+      },
+      {
+        "destination": "assets/layers/metacognitive-owl/META-L2-meander-ring-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-4-metacognitive-gold-master/layers/OWL-4-METACOGNITIVE-L2-canonical-meander-ring-gold-preserved-1080.png",
+        "source_sha256": "0056658d2ff43008d0b2b1c2efc2417dcf5fe702f0ae331fc7b9dda7ca90f84a"
+      },
+      {
+        "destination": "assets/layers/metacognitive-owl/META-L3-owl-body-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-4-metacognitive-gold-master/layers/OWL-4-METACOGNITIVE-L3-canonical-owl-purple-gold-branch-88pct-preserved-1080.png",
+        "source_sha256": "0df8ee98d105ccf0ab0b147c77242824c06b8bc616fdaaa6d1d3ca2a07170830"
+      },
+      {
+        "destination": "assets/layers/metacognitive-owl/META-L4-outer-ring-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-4-metacognitive-gold-master/layers/OWL-4-METACOGNITIVE-L4-canonical-outer-ring-purple-preserved-1080.png",
+        "source_sha256": "e2f1c7ef2b32558bfd790591d761b0f2949146f2957fd5d74ae3384af14e813e"
+      }
+    ],
+    "layer_proof_palette": [
+      {
+        "destination": "assets/proofs/META-layer-proof-palette.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-4-metacognitive-gold-master/proofs/OWL-4-METACOGNITIVE-CANONICAL-LAYER-PROOF.png",
+        "source_sha256": "79e6b187aef8278326d6fd59dcd58cec6103a96921f4808d7d83d74947c5a3d4"
+      }
+    ],
+    "layer_proof_palette_export": [
+      {
+        "destination": "assets/exports/META-layer-proof-palette.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-4-metacognitive-gold-master/proofs/OWL-4-METACOGNITIVE-CANONICAL-LAYER-PROOF.png",
+        "source_sha256": "79e6b187aef8278326d6fd59dcd58cec6103a96921f4808d7d83d74947c5a3d4"
+      }
+    ],
+    "master_tiff": [
+      {
+        "destination": "assets/masters/META-MASTER-1080.tiff",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-4-metacognitive-gold-master/OWL-4-METACOGNITIVE-CANONICAL-MASTER-ASSET-1080.tiff",
+        "source_sha256": "355426d808743206a36cd35c0b925028f42b804ce28d5dcc36e1481072dfe096"
+      }
+    ],
+    "master_tiff_export": [
+      {
+        "destination": "assets/exports/META-MASTER-1080.tiff",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-4-metacognitive-gold-master/OWL-4-METACOGNITIVE-CANONICAL-MASTER-ASSET-1080.tiff",
+        "source_sha256": "355426d808743206a36cd35c0b925028f42b804ce28d5dcc36e1481072dfe096"
+      }
+    ],
+    "release_540_dark": [
+      {
+        "destination": "assets/releases/540/META-composite-dark-540.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-4-metacognitive-gold-master/OWL-4-METACOGNITIVE-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "bf58a16ab02c009ff20eecdd30eb69e2aa23a0a06f01988f410fec5439f591b9",
+        "transform": "Lanczos 1080->540 + composite over #0D1117FF"
+      }
+    ],
+    "release_540_transparent": [
+      {
+        "destination": "assets/releases/540/META-composite-transparent-540.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-4-metacognitive-gold-master/OWL-4-METACOGNITIVE-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "bf58a16ab02c009ff20eecdd30eb69e2aa23a0a06f01988f410fec5439f591b9",
+        "transform": "Lanczos 1080->540"
+      }
+    ],
+    "release_540_white": [
+      {
+        "destination": "assets/releases/540/META-composite-white-540.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-4-metacognitive-gold-master/OWL-4-METACOGNITIVE-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "bf58a16ab02c009ff20eecdd30eb69e2aa23a0a06f01988f410fec5439f591b9",
+        "transform": "Lanczos 1080->540 + composite over #FFFFFFFF"
+      }
+    ]
+  },
+  "NONNORM": {
+    "composite_transparent_export": [
+      {
+        "destination": "assets/exports/NONNORM-proof-transparent-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-2-non-normative-gold-master/OWL-2-NON-NORMATIVE-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "a0e995ecaa8bcc7e1a26b718be5d48d51ad88af9ff971e2b06878a5652179d00"
+      }
+    ],
+    "composite_transparent_master": [
+      {
+        "destination": "assets/masters/NONNORM-proof-transparent-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-2-non-normative-gold-master/OWL-2-NON-NORMATIVE-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "a0e995ecaa8bcc7e1a26b718be5d48d51ad88af9ff971e2b06878a5652179d00"
+      }
+    ],
+    "composite_transparent_proof": [
+      {
+        "destination": "assets/proofs/NONNORM-proof-transparent-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-2-non-normative-gold-master/OWL-2-NON-NORMATIVE-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "a0e995ecaa8bcc7e1a26b718be5d48d51ad88af9ff971e2b06878a5652179d00"
+      }
+    ],
+    "layer": [
+      {
+        "destination": "assets/layers/nonnormative-owl/NONNORM-L0-inner-field-underpaint-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-2-non-normative-gold-master/layers/OWL-2-NON-NORMATIVE-L0-canonical-inner-field-underpaint-17-1080.png",
+        "source_sha256": "d84672d2826b7b70d950d902c61d9c660bcfe6f1953224c676ef1ac43e3d867a"
+      },
+      {
+        "destination": "assets/layers/nonnormative-owl/NONNORM-L1-inner-field-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-2-non-normative-gold-master/layers/OWL-2-NON-NORMATIVE-L1-canonical-inner-ring-teal-outward-17-1080.png",
+        "source_sha256": "11c124955391cd45c6577060ef2b98d0031a3374ab213bd2e1a44af99b7423be"
+      },
+      {
+        "destination": "assets/layers/nonnormative-owl/NONNORM-L2-meander-ring-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-2-non-normative-gold-master/layers/OWL-2-NON-NORMATIVE-L2-canonical-meander-ring-gold-preserved-1080.png",
+        "source_sha256": "01c1696068baea7107066b25b0cb0b9f466ba104d151850707e24fdc95ae402b"
+      },
+      {
+        "destination": "assets/layers/nonnormative-owl/NONNORM-L1.5-inner-ring-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-2-non-normative-gold-master/layers/OWL-2-NON-NORMATIVE-L2_5-canonical-inner-meander-black-edge-5-over-1080.png",
+        "source_sha256": "7b10ce3db48e6ba035380776831fd0608e6751625505faa5cd9696c4cc0a2f44"
+      },
+      {
+        "destination": "assets/layers/nonnormative-owl/NONNORM-L3-owl-body-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-2-non-normative-gold-master/layers/OWL-2-NON-NORMATIVE-L3-canonical-owl-teal-gold-branch-math97-preserved-1080.png",
+        "source_sha256": "b1440b6bb15bdf3e0c7bcf7d3999e35e30fc2836928efc2df16ce7ba219c8dd6"
+      },
+      {
+        "destination": "assets/layers/nonnormative-owl/NONNORM-L4-outer-ring-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-2-non-normative-gold-master/layers/OWL-2-NON-NORMATIVE-L4-canonical-outer-ring-teal-preserved-1080.png",
+        "source_sha256": "796659cb0d201fa5fabf80422a40ebe1155c0a58069d0e679eb8d6ffb2708a75"
+      }
+    ],
+    "layer_proof_palette": [
+      {
+        "destination": "assets/proofs/NONNORM-layer-proof-palette.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-2-non-normative-gold-master/proofs/OWL-2-NON-NORMATIVE-CANONICAL-LAYER-PROOF.png",
+        "source_sha256": "5578c5bd99dc54d305a4d1fc59a0c8a998b7533d6958113e9bad9aaf10a723f4"
+      }
+    ],
+    "layer_proof_palette_export": [
+      {
+        "destination": "assets/exports/NONNORM-layer-proof-palette.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-2-non-normative-gold-master/proofs/OWL-2-NON-NORMATIVE-CANONICAL-LAYER-PROOF.png",
+        "source_sha256": "5578c5bd99dc54d305a4d1fc59a0c8a998b7533d6958113e9bad9aaf10a723f4"
+      }
+    ],
+    "master_tiff": [
+      {
+        "destination": "assets/masters/NONNORM-MASTER-1080.tiff",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-2-non-normative-gold-master/OWL-2-NON-NORMATIVE-CANONICAL-MASTER-ASSET-1080.tiff",
+        "source_sha256": "d4b451d484ef10b6a679aa80a9cef92f18f5753985595379ee2dad4e6a09e4c2"
+      }
+    ],
+    "master_tiff_export": [
+      {
+        "destination": "assets/exports/NONNORM-MASTER-1080.tiff",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-2-non-normative-gold-master/OWL-2-NON-NORMATIVE-CANONICAL-MASTER-ASSET-1080.tiff",
+        "source_sha256": "d4b451d484ef10b6a679aa80a9cef92f18f5753985595379ee2dad4e6a09e4c2"
+      }
+    ],
+    "release_540_dark": [
+      {
+        "destination": "assets/releases/540/NONNORM-composite-dark-540.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-2-non-normative-gold-master/OWL-2-NON-NORMATIVE-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "a0e995ecaa8bcc7e1a26b718be5d48d51ad88af9ff971e2b06878a5652179d00",
+        "transform": "Lanczos 1080->540 + composite over #0D1117FF"
+      }
+    ],
+    "release_540_transparent": [
+      {
+        "destination": "assets/releases/540/NONNORM-composite-transparent-540.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-2-non-normative-gold-master/OWL-2-NON-NORMATIVE-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "a0e995ecaa8bcc7e1a26b718be5d48d51ad88af9ff971e2b06878a5652179d00",
+        "transform": "Lanczos 1080->540"
+      }
+    ],
+    "release_540_white": [
+      {
+        "destination": "assets/releases/540/NONNORM-composite-white-540.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-2-non-normative-gold-master/OWL-2-NON-NORMATIVE-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "a0e995ecaa8bcc7e1a26b718be5d48d51ad88af9ff971e2b06878a5652179d00",
+        "transform": "Lanczos 1080->540 + composite over #FFFFFFFF"
+      }
+    ]
+  },
+  "NORM": {
+    "composite_transparent_export": [
+      {
+        "destination": "assets/exports/NORM-proof-transparent-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-1-normative-gold-master/OWL-1-NORMATIVE-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "03141182ea692c016d9a61dc6b8745974b228dc74e701dd60d3ac63d1a558aa9"
+      }
+    ],
+    "composite_transparent_master": [
+      {
+        "destination": "assets/masters/NORM-proof-transparent-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-1-normative-gold-master/OWL-1-NORMATIVE-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "03141182ea692c016d9a61dc6b8745974b228dc74e701dd60d3ac63d1a558aa9"
+      }
+    ],
+    "composite_transparent_proof": [
+      {
+        "destination": "assets/proofs/NORM-proof-transparent-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-1-normative-gold-master/OWL-1-NORMATIVE-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "03141182ea692c016d9a61dc6b8745974b228dc74e701dd60d3ac63d1a558aa9"
+      }
+    ],
+    "layer": [
+      {
+        "destination": "assets/layers/normative-owl/NORM-L1-inner-field-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-1-normative-gold-master/layers/OWL-1-NORMATIVE-L1-canonical-inner-field-dark-preserved-1080.png",
+        "source_sha256": "09eaba6a59976961a300130872bb04e455fb89f55dc6a55d90fef7c5bcfec037"
+      },
+      {
+        "destination": "assets/layers/normative-owl/NORM-L2-meander-ring-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-1-normative-gold-master/layers/OWL-1-NORMATIVE-L2-canonical-meander-ring-gold-preserved-1080.png",
+        "source_sha256": "01c1696068baea7107066b25b0cb0b9f466ba104d151850707e24fdc95ae402b"
+      },
+      {
+        "destination": "assets/layers/normative-owl/NORM-L3-owl-body-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-1-normative-gold-master/layers/OWL-1-NORMATIVE-L3-canonical-owl-gold-parchment-B-preserved-1080.png",
+        "source_sha256": "81ed6ba9409cb21518b4bee45ee521783a021f1bcbffa4fd0e33b1f20faab185"
+      },
+      {
+        "destination": "assets/layers/normative-owl/NORM-L4-outer-ring-1080.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-1-normative-gold-master/layers/OWL-1-NORMATIVE-L4-canonical-outer-ring-gold-preserved-1080.png",
+        "source_sha256": "c8be5fd108a6e17ba7deabe05a868e2a059ccf7a813ab6731160f91666a9a196"
+      }
+    ],
+    "layer_proof_palette": [
+      {
+        "destination": "assets/proofs/NORM-layer-proof-palette.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-1-normative-gold-master/proofs/OWL-1-NORMATIVE-CANONICAL-LAYER-PROOF.png",
+        "source_sha256": "c493e2dd4441b92a6d44ef32fab741a10aaafd21c592d0cd101a8c17133da077"
+      }
+    ],
+    "layer_proof_palette_export": [
+      {
+        "destination": "assets/exports/NORM-layer-proof-palette.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-1-normative-gold-master/proofs/OWL-1-NORMATIVE-CANONICAL-LAYER-PROOF.png",
+        "source_sha256": "c493e2dd4441b92a6d44ef32fab741a10aaafd21c592d0cd101a8c17133da077"
+      }
+    ],
+    "master_tiff": [
+      {
+        "destination": "assets/masters/NORM-MASTER-1080.tiff",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-1-normative-gold-master/OWL-1-NORMATIVE-CANONICAL-MASTER-ASSET-1080.tiff",
+        "source_sha256": "ea0f98bbcaa7f37cf832152d2a1236a453468f38938bbf5a8c79a8e00b2081aa"
+      }
+    ],
+    "master_tiff_export": [
+      {
+        "destination": "assets/exports/NORM-MASTER-1080.tiff",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-1-normative-gold-master/OWL-1-NORMATIVE-CANONICAL-MASTER-ASSET-1080.tiff",
+        "source_sha256": "ea0f98bbcaa7f37cf832152d2a1236a453468f38938bbf5a8c79a8e00b2081aa"
+      }
+    ],
+    "release_540_dark": [
+      {
+        "destination": "assets/releases/540/NORM-composite-dark-540.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-1-normative-gold-master/OWL-1-NORMATIVE-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "03141182ea692c016d9a61dc6b8745974b228dc74e701dd60d3ac63d1a558aa9",
+        "transform": "Lanczos 1080->540 + composite over #0D1117FF"
+      }
+    ],
+    "release_540_transparent": [
+      {
+        "destination": "assets/releases/540/NORM-composite-transparent-540.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-1-normative-gold-master/OWL-1-NORMATIVE-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "03141182ea692c016d9a61dc6b8745974b228dc74e701dd60d3ac63d1a558aa9",
+        "transform": "Lanczos 1080->540"
+      }
+    ],
+    "release_540_white": [
+      {
+        "destination": "assets/releases/540/NORM-composite-white-540.png",
+        "source": "/home/user/workspace/owl_canonical_standardization/canonical/owl-1-normative-gold-master/OWL-1-NORMATIVE-CANONICAL-COMPOSITE-1080.png",
+        "source_sha256": "03141182ea692c016d9a61dc6b8745974b228dc74e701dd60d3ac63d1a558aa9",
+        "transform": "Lanczos 1080->540 + composite over #FFFFFFFF"
+      }
+    ]
+  },
+  "canonical_root": "/home/user/workspace/owl_canonical_standardization/canonical",
+  "generated_at_utc": "2026-05-23T03:30:57.074562+00:00",
+  "script": "scripts/sync_canonical_assets.py"
+}
