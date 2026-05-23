@@ -383,6 +383,40 @@
         "source_sha256": "c493e2dd4441b92a6d44ef32fab741a10aaafd21c592d0cd101a8c17133da077"
       }
     ],
+    "layer_proof_palette_clean": [
+      {
+        "destination": "assets/proofs/NORM-layer-proof-palette.png",
+        "source_composite": {
+          "path": "/home/user/workspace/owl_canonical_standardization/canonical/owl-1-normative-gold-master/OWL-1-NORMATIVE-CANONICAL-COMPOSITE-1080.png",
+          "source_sha256": "03141182ea692c016d9a61dc6b8745974b228dc74e701dd60d3ac63d1a558aa9"
+        },
+        "source_layers": [
+          {
+            "name": "NORM-L1-inner-field-1080.png",
+            "source_sha256": "09eaba6a59976961a300130872bb04e455fb89f55dc6a55d90fef7c5bcfec037"
+          },
+          {
+            "name": "NORM-L2-meander-ring-1080.png",
+            "source_sha256": "01c1696068baea7107066b25b0cb0b9f466ba104d151850707e24fdc95ae402b"
+          },
+          {
+            "name": "NORM-L3-owl-body-1080.png",
+            "source_sha256": "81ed6ba9409cb21518b4bee45ee521783a021f1bcbffa4fd0e33b1f20faab185"
+          },
+          {
+            "name": "NORM-L4-outer-ring-1080.png",
+            "source_sha256": "c8be5fd108a6e17ba7deabe05a868e2a059ccf7a813ab6731160f91666a9a196"
+          }
+        ],
+        "transform": "Render 3x2 clean palette of canonical layers + composite on near-black field (28, 28, 32) at 540px tiles. Used instead of the canonical layer-and-wing-line proof so the PDF contact sheet shows only the composed layers, not the geometry-audit overlays."
+      }
+    ],
+    "layer_proof_palette_clean_export": [
+      {
+        "destination": "assets/exports/NORM-layer-proof-palette.png",
+        "mirrors": "assets/proofs/NORM-layer-proof-palette.png"
+      }
+    ],
     "layer_proof_palette_export": [
       {
         "destination": "assets/exports/NORM-layer-proof-palette.png",
@@ -430,6 +464,6 @@
     ]
   },
   "canonical_root": "/home/user/workspace/owl_canonical_standardization/canonical",
-  "generated_at_utc": "2026-05-23T03:30:57.074562+00:00",
+  "generated_at_utc": "2026-05-23T04:06:05.906961+00:00",
   "script": "scripts/sync_canonical_assets.py"
 }

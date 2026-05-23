@@ -26,7 +26,7 @@ $$
 V_4 = \{I, \sigma_v, C_2, \sigma_h\}
 $$
 
-This is a finite subgroup of the orthogonal group \(O(2)\) isomorphic to V₄ (equivalently the dihedral group D₂); it is not O(2) itself ([Klein four-group, Wikipedia](https://en.wikipedia.org/wiki/Klein_four-group); [Knill, Harvard Math 22b, Unit 8: O(2)](https://people.math.harvard.edu/~knill/teaching/math22b2019/handouts/lecture08.pdf)).
+This is a finite subgroup of the orthogonal group \(O(2)\) isomorphic to V₄ (equivalently the dihedral group D₂); it is not O(2) itself ([Vierergruppe, Wolfram MathWorld](https://mathworld.wolfram.com/Vierergruppe.html); [Knill, Harvard Math 22b, Unit 8: The orthogonal group](https://people.math.harvard.edu/~knill/teaching/math22b2019/handouts/lecture08.pdf)).
 
 The NORMATIVE owl is the **identity element** of that system. It is the reference state from which all other states are derived.
 

@@ -44,7 +44,7 @@ $$
 V_4 = \{I, \sigma_v, C_2, \sigma_h\}
 $$
 
-This is a finite subgroup of the orthogonal group \(O(2)\) isomorphic to V₄ (equivalently the dihedral group D₂); it is not O(2) itself ([Klein four-group, Wikipedia](https://en.wikipedia.org/wiki/Klein_four-group); [nLab](https://ncatlab.org/nlab/show/Klein+four-group); [Knill, Harvard Math 22b, Unit 8: O(2)](https://people.math.harvard.edu/~knill/teaching/math22b2019/handouts/lecture08.pdf)).
+This is a finite subgroup of the orthogonal group \(O(2)\) isomorphic to V₄ (equivalently the dihedral group D₂); it is not O(2) itself ([Vierergruppe, Wolfram MathWorld](https://mathworld.wolfram.com/Vierergruppe.html); [nLab, Klein four-group](https://ncatlab.org/nlab/show/Klein+four-group); [Knill, Harvard Math 22b, Unit 8: The orthogonal group](https://people.math.harvard.edu/~knill/teaching/math22b2019/handouts/lecture08.pdf)).
 
 ### 2.2 Elements
 

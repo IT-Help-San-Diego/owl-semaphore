@@ -71,6 +71,21 @@ STATES = {
             "OWL-1-NORMATIVE-L3-canonical-owl-gold-parchment-B-preserved-1080.png": "NORM-L3-owl-body-1080.png",
             "OWL-1-NORMATIVE-L4-canonical-outer-ring-gold-preserved-1080.png": "NORM-L4-outer-ring-1080.png",
         },
+        # The canonical OWL-1 layer-proof is a "layer-and-wing-line proof" with
+        # zoom/inset overlays baked in for the geometry audit. For the PDF
+        # contact-sheet we want a clean palette of the layers + composite, in
+        # the same grid style as the OWL-2/3/4 proofs. Setting this flag tells
+        # build_clean_layer_proof() to render it from the layers + composite.
+        "build_clean_proof": True,
+        "title": "OWL-1 NORMATIVE — canonical layer proof",
+        "subtitle": "L1 inner field · L2 meander ring · L3 owl body · L4 outer ring · final composite",
+        "tile_labels": [
+            ("L1 inner field (dark)", "NORM-L1-inner-field-1080.png"),
+            ("L2 meander ring (gold)", "NORM-L2-meander-ring-1080.png"),
+            ("L3 owl body (gold / parchment B)", "NORM-L3-owl-body-1080.png"),
+            ("L4 outer ring (gold)", "NORM-L4-outer-ring-1080.png"),
+            ("final composite", None),  # composite added separately
+        ],
     },
     "NONNORM": {
         "folder": "owl-2-non-normative-gold-master",
@@ -113,6 +128,8 @@ STATES = {
 
 DARK_BG = (13, 17, 23, 255)   # GitHub dark canvas
 WHITE_BG = (255, 255, 255, 255)
+PROOF_BG = (28, 28, 32, 255)  # near-black for clean grid proofs (matches OWL-3/4 style)
+PROOF_LABEL_RGB = (210, 210, 215)
 
 
 def sha256(path: Path) -> str:
@@ -135,6 +152,100 @@ def downscale(img: Image.Image, side: int) -> Image.Image:
 
 def ensure_dir(p: Path) -> None:
     p.mkdir(parents=True, exist_ok=True)
+
+
+def _find_font(size: int):
+    """Best-effort sans-serif font lookup; falls back to PIL default."""
+    candidates = [
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+        "/Library/Fonts/Arial.ttf",
+        "/System/Library/Fonts/Helvetica.ttc",
+    ]
+    from PIL import ImageFont
+    for p in candidates:
+        try:
+            return ImageFont.truetype(p, size=size)
+        except (OSError, ValueError):
+            continue
+    return ImageFont.load_default()
+
+
+def build_clean_layer_proof(key: str, spec: dict, layer_dst_dir: Path,
+                             composite_src: Path, dst: Path,
+                             provenance: dict) -> None:
+    """Render a 3-col x 2-row contact-sheet palette: layers + final composite
+    on a near-black field, with small labels under each tile. Mirrors the
+    OWL-2/3/4 canonical proof layout but is generated from the canonical
+    layers + composite directly so OWL-1 doesn't ship the line-audit zoom
+    overlays.
+    """
+    from PIL import ImageDraw
+
+    tile = 540  # downscale 1080 -> 540 for the proof palette
+    cols, rows = 3, 2
+    margin = 40
+    label_h = 36
+    header_h = 110
+    gutter = 28
+    canvas_w = margin * 2 + cols * tile + (cols - 1) * gutter
+    canvas_h = header_h + margin + rows * (tile + label_h) + (rows - 1) * gutter + margin
+    canvas = Image.new("RGB", (canvas_w, canvas_h), PROOF_BG[:3])
+    draw = ImageDraw.Draw(canvas)
+
+    title_font = _find_font(28)
+    subtitle_font = _find_font(16)
+    label_font = _find_font(16)
+
+    draw.text((margin, 28), spec.get("title", f"OWL — {key} canonical layer proof"),
+              fill=PROOF_LABEL_RGB, font=title_font)
+    draw.text((margin, 28 + 36), spec.get("subtitle", ""),
+              fill=(170, 170, 180), font=subtitle_font)
+
+    tiles_spec = list(spec.get("tile_labels", []))
+    # Build (label, image) list
+    tiles: list[tuple[str, Image.Image]] = []
+    for label, fname in tiles_spec:
+        if fname is None:
+            img = Image.open(composite_src).convert("RGBA")
+        else:
+            img = Image.open(layer_dst_dir / fname).convert("RGBA")
+        img = img.resize((tile, tile), Image.LANCZOS)
+        tiles.append((label, img))
+
+    # Compose each tile onto the proof background so transparent layers read
+    # against the same dark field used by the OWL-3/4 canonical proofs.
+    for idx, (label, layer_img) in enumerate(tiles):
+        col, row = idx % cols, idx // cols
+        x = margin + col * (tile + gutter)
+        y = header_h + margin + row * (tile + label_h + gutter)
+        tile_bg = Image.new("RGBA", (tile, tile), PROOF_BG)
+        tile_bg.alpha_composite(layer_img)
+        canvas.paste(tile_bg.convert("RGB"), (x, y))
+        # Label centered under the tile
+        text_w = draw.textlength(label, font=label_font)
+        draw.text((x + (tile - text_w) / 2, y + tile + 6),
+                  label, fill=PROOF_LABEL_RGB, font=label_font)
+
+    ensure_dir(dst.parent)
+    canvas.save(dst, "PNG", optimize=True)
+    provenance.setdefault(key, {}).setdefault("layer_proof_palette_clean", []).append({
+        "destination": str(dst.relative_to(REPO)),
+        "source_layers": [
+            {"name": fname, "source_sha256": sha256(layer_dst_dir / fname)}
+            for _label, fname in tiles_spec if fname is not None
+        ],
+        "source_composite": {
+            "path": str(composite_src),
+            "source_sha256": sha256(composite_src),
+        },
+        "transform": (
+            f"Render {cols}x{rows} clean palette of canonical layers + composite "
+            f"on near-black field {PROOF_BG[:3]} at {tile}px tiles. "
+            "Used instead of the canonical layer-and-wing-line proof so the PDF "
+            "contact sheet shows only the composed layers, not the geometry-audit overlays."
+        ),
+    })
 
 
 def copy_file(src: Path, dst: Path, provenance: dict, role: str, key: str) -> None:
@@ -223,6 +334,20 @@ def sync_state(key: str, spec: dict, provenance: dict, *, check_only: bool) -> l
             raise SystemExit(f"Missing canonical layer: {src}")
         dst = layer_dst_dir / dst_name
         copy_file(src, dst, provenance, "layer", key)
+
+    # OWL-1 only: replace the canonical "layer-and-wing-line proof" (which has
+    # geometry-audit zoom overlays) with a clean grid palette generated from
+    # the canonical layers + composite. Other states keep their canonical
+    # proofs because those are already clean grids without overlays.
+    if spec.get("build_clean_proof"):
+        proof_dst = REPO / "assets" / "proofs" / f"{key}-layer-proof-palette.png"
+        export_dst = REPO / "assets" / "exports" / f"{key}-layer-proof-palette.png"
+        build_clean_layer_proof(key, spec, layer_dst_dir, composite_src, proof_dst, provenance)
+        shutil.copyfile(proof_dst, export_dst)
+        provenance.setdefault(key, {}).setdefault("layer_proof_palette_clean_export", []).append({
+            "destination": str(export_dst.relative_to(REPO)),
+            "mirrors": str(proof_dst.relative_to(REPO)),
+        })
 
     return diffs
 

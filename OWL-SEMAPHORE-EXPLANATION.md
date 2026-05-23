@@ -55,7 +55,7 @@ The two-state register collapses (3) and (4) into "not normative," which loses b
 
 The four states need to *close* under composition: doing any two of them in succession must land you back inside the same set. Otherwise the system would leak into unmarked, unspecified states, and the discipline would erode.
 
-The smallest finite group that fits the four-state behavior we need is the Klein four-group V₄ ([Wikipedia](https://en.wikipedia.org/wiki/Klein_four-group); [nLab](https://ncatlab.org/nlab/show/Klein+four-group)). In the visual plane it is realized by the symmetry group of a non-square rectangle: the identity, vertical reflection, horizontal reflection, and 180° rotation. It is a **finite subgroup of the orthogonal group O(2) isomorphic to V₄** (equivalently, the dihedral group D₂); it is **not** O(2) itself ([Knill, Harvard Math 22b, Unit 8: O(2)](https://people.math.harvard.edu/~knill/teaching/math22b2019/handouts/lecture08.pdf)).
+The smallest finite group that fits the four-state behavior we need is the Klein four-group V₄ ([Vierergruppe, Wolfram MathWorld](https://mathworld.wolfram.com/Vierergruppe.html); [nLab, Klein four-group](https://ncatlab.org/nlab/show/Klein+four-group)). In the visual plane it is realized by the symmetry group of a non-square rectangle: the identity, vertical reflection, horizontal reflection, and 180° rotation. It is a **finite subgroup of the orthogonal group O(2) isomorphic to V₄** (equivalently, the dihedral group D₂); it is **not** O(2) itself ([Knill, Harvard Math 22b, Unit 8: The orthogonal group](https://people.math.harvard.edu/~knill/teaching/math22b2019/handouts/lecture08.pdf)).
 
 What V₄ buys us:
 
