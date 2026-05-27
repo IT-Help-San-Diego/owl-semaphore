@@ -5,14 +5,14 @@ A finite algebra over epistemic states, implemented as a reproducible visual not
 
 ## Version 2.0.0
 
-> **Version notice.** This is the v2.0.0 final label. It refines explanatory language, fixes version drift, adds an explanation document, repairs the reproducible PDF pipeline, and tightens accessibility wording. **It does not change the V₄ algebra or the σₕ assignment for METACOGNITIVE.** The currently published Zenodo record remains v1.2.0 (DOI [10.5281/zenodo.19474599](https://doi.org/10.5281/zenodo.19474599)). The version DOI for v2.0.0 is `TBD_BY_ZENODO_ON_RELEASE` until Zenodo mints it.
+> **Version notice.** This is the v2.0.0 final label. It refines explanatory language, fixes version drift, adds an explanation document, repairs the reproducible PDF pipeline, and tightens accessibility wording. **It does not change the V₄ algebra or the σₕ assignment for METACOGNITIVE.** The v2.0.0 version DOI is [10.5281/zenodo.20418539](https://doi.org/10.5281/zenodo.20418539). The previous published version DOI (v1.2.0) remains [10.5281/zenodo.19474599](https://doi.org/10.5281/zenodo.19474599).
 
-[![Published Version DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19474599.svg)](https://doi.org/10.5281/zenodo.19474599)
+[![Version DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20418539.svg)](https://doi.org/10.5281/zenodo.20418539)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-- **Currently published version DOI (v1.2.0):** [10.5281/zenodo.19474599](https://doi.org/10.5281/zenodo.19474599)
+- **Version DOI (v2.0.0):** [10.5281/zenodo.20418539](https://doi.org/10.5281/zenodo.20418539)
 - **Concept DOI (all versions):** [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697)
-- **Version DOI (v2.0.0):** `TBD_BY_ZENODO_ON_RELEASE`
+- **Previous version DOI (v1.2.0):** [10.5281/zenodo.19474599](https://doi.org/10.5281/zenodo.19474599)
 - **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ## Canonical Sentence Stack (v2.0.0)
@@ -42,11 +42,11 @@ Every state's identity is recoverable from three redundant channels: **color + o
 
 ## Citation
 
-If you use the Owl Semaphore Badge System, please cite the most recently published version DOI (currently v1.2.0):
+If you use the Owl Semaphore Badge System, please cite the v2.0.0 version DOI:
 
-> Balboa, Carey James. *Owl Semaphore Badge System* (v1.2.0). Zenodo. https://doi.org/10.5281/zenodo.19474599
+> Balboa, Carey James. *Owl Semaphore Badge System* (v2.0.0). Zenodo. https://doi.org/10.5281/zenodo.20418539
 
-After v2.0.0 is published on Zenodo, replace the version DOI with the minted v2.0.0 DOI (currently `TBD_BY_ZENODO_ON_RELEASE`). Machine-readable citation metadata is in [`CITATION.cff`](CITATION.cff).
+The concept DOI [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697) resolves to the latest version. Machine-readable citation metadata is in [`CITATION.cff`](CITATION.cff).
 
 ## Reproducing the PDFs
 
@@ -139,17 +139,18 @@ NORM-composite-white-540.png
   "datePublished": "2026-04-07",
   "dateModified": "2026-05-16",
   "identifier": [
-    "https://doi.org/10.5281/zenodo.19474599",
-    "https://doi.org/10.5281/zenodo.19473697"
+    "https://doi.org/10.5281/zenodo.20418539",
+    "https://doi.org/10.5281/zenodo.19473697",
+    "https://doi.org/10.5281/zenodo.19474599"
   ],
-  "sameAs": "https://doi.org/10.5281/zenodo.19474599",
+  "sameAs": "https://doi.org/10.5281/zenodo.20418539",
   "programmingLanguage": "Not applicable",
   "author": {
     "@type": "Person",
     "name": "Carey James Balboa",
     "identifier": "https://orcid.org/0009-0000-5237-9065"
   },
-  "description": "A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants. Four-state classification (NORMATIVE, NON-NORMATIVE, CRITICAL, METACOGNITIVE) for DNS Tool documentation and related research artifacts. v2.0.0 is the current final label; the version DOI for v2.0.0 will be minted by Zenodo on release.",
+  "description": "A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants. Four-state classification (NORMATIVE, NON-NORMATIVE, CRITICAL, METACOGNITIVE) for DNS Tool documentation and related research artifacts. v2.0.0 version DOI: 10.5281/zenodo.20418539.",
   "keywords": [
     "Owl Semaphore",
     "DNS Tool",

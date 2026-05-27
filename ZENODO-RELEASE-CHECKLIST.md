@@ -79,10 +79,15 @@
 - [x] GitHub release created
 - [x] Zenodo ingestion confirmed
 - [x] concept DOI recorded: `10.5281/zenodo.19473697`
-- [x] version DOI recorded (v1.2.0): `10.5281/zenodo.19474599`
+- [x] previous version DOI recorded (v1.2.0): `10.5281/zenodo.19474599`
+- [x] version DOI recorded (v2.0.0): `10.5281/zenodo.20418539`
 - [x] DOI added back into:
   - [x] `README.md`
   - [x] `CITATION.cff`
+  - [x] `.zenodo.json`
+  - [x] `CHANGELOG.md`
+  - [x] `OWL-SEMAPHORE-EXPLANATION.md`
+  - [x] `generate_pdfs.py` and regenerated PDF page-one banner tuples
   - [ ] release notes
 
 ## 8. Post-Release
