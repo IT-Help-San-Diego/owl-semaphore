@@ -1,10 +1,10 @@
-"""Banner-tuple PDF integrity test (v2.0.0).
+"""Banner-tuple PDF integrity test (v2.0.1).
 
 Each generated PDF in the Owl Semaphore release embeds a single-line
 ``BANNER-TUPLE :: ...`` string on its title page that names the state, the
 operator/transform, the determinant, the coordinate mapping, the canonical
 quote, the version, and the DOI family (concept DOI + previously published
-version DOI + minted v2.0.0 version DOI).
+v2.0.0 version DOI + v2.0.1 version DOI placeholder pending Zenodo mint).
 
 This test extracts page-one text from each PDF via ``pdftotext -layout`` and
 verifies that the banner tuple is present and that every expected field is
@@ -27,10 +27,10 @@ import unittest
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-VERSION = "v2.0.0"
+VERSION = "v2.0.1"
 CONCEPT_DOI = "10.5281/zenodo.19473697"
-PUBLISHED_VERSION_DOI = "10.5281/zenodo.19474599"
-VERSION_DOI = "10.5281/zenodo.20418539"
+PUBLISHED_VERSION_DOI = "10.5281/zenodo.20418539"
+VERSION_DOI = "TBD_BY_ZENODO_ON_V2_0_1_RELEASE"
 
 # (state, transform substring, det sign, mapping substring, quote, pdf filename)
 EXPECTED = [
@@ -130,7 +130,7 @@ class BannerTupleTest(unittest.TestCase):
             (f"VERSION={VERSION}", f"{pdf_name} banner tuple does not report VERSION={VERSION}"),
             (f"CONCEPT-DOI={CONCEPT_DOI}", f"{pdf_name} banner tuple does not report CONCEPT-DOI={CONCEPT_DOI}"),
             (f"PUBLISHED-VERSION-DOI={PUBLISHED_VERSION_DOI}", f"{pdf_name} banner tuple does not report PUBLISHED-VERSION-DOI"),
-            (f"VERSION-DOI={VERSION_DOI}", f"{pdf_name} banner tuple does not report minted v2.0.0 VERSION-DOI"),
+            (f"VERSION-DOI={VERSION_DOI}", f"{pdf_name} banner tuple does not report v2.0.1 VERSION-DOI (pending Zenodo mint)"),
         ):
             self.assertIn(needle, text, message)
         if det is not None:
@@ -148,7 +148,7 @@ class BannerTupleTest(unittest.TestCase):
 
     def test_deprecated_quote_absent_from_meta_ledger(self):
         """The deprecated METACOGNITIVE wording 'This audits the standard.' must
-        not appear in the METACOGNITIVE PDF or the system PDF in v2.0.0."""
+        not appear in the METACOGNITIVE PDF or the system PDF in v2.0.1."""
         for pdf_name in ("OWL-4-METACOGNITIVE.pdf", "OWL-SEMAPHORE-SYSTEM.pdf"):
             pdf_path = os.path.join(REPO, pdf_name)
             if not os.path.exists(pdf_path):

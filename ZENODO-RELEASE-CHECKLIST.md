@@ -79,15 +79,17 @@
 - [x] GitHub release created
 - [x] Zenodo ingestion confirmed
 - [x] concept DOI recorded: `10.5281/zenodo.19473697`
-- [x] previous version DOI recorded (v1.2.0): `10.5281/zenodo.19474599`
-- [x] version DOI recorded (v2.0.0): `10.5281/zenodo.20418539`
-- [x] DOI added back into:
-  - [x] `README.md`
-  - [x] `CITATION.cff`
-  - [x] `.zenodo.json`
-  - [x] `CHANGELOG.md`
-  - [x] `OWL-SEMAPHORE-EXPLANATION.md`
-  - [x] `generate_pdfs.py` and regenerated PDF page-one banner tuples
+- [x] earlier version DOI recorded (v1.2.0): `10.5281/zenodo.19474599`
+- [x] previously published version DOI recorded (v2.0.0): `10.5281/zenodo.20418539`
+- [ ] version DOI recorded (v2.0.1): `TBD_BY_ZENODO_ON_V2_0_1_RELEASE` (Zenodo will mint on release)
+- [ ] DOI added back into (after v2.0.1 mint):
+  - [ ] `README.md`
+  - [ ] `CITATION.cff`
+  - [ ] `.zenodo.json`
+  - [ ] `CHANGELOG.md`
+  - [ ] `OWL-SEMAPHORE-EXPLANATION.md`
+  - [ ] `generate_pdfs.py` and regenerated PDF page-one banner tuples
+  - [ ] `tests/test_banner_tuple.py`
   - [ ] release notes
 
 ## 8. Post-Release

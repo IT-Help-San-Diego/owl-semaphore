@@ -4,7 +4,7 @@
 
 ## OWL 4 / METACOGNITIVE / Frame-Audit State (σₕ)
 
-### Version 2.0.0 (document subordinate to v2.0.0)
+### Version 2.0.1 (document subordinate to v2.0.1)
 
 ---
 
@@ -232,7 +232,7 @@ The owl must remain distinguishable from the field with sufficient luminance con
 
 ### 10.4 Accessibility — Color Is Not the Only Carrier
 
-In v2.0.0 the system explicitly states that **color cannot be the only carrier of state identity**. The METACOGNITIVE state — like every state — must be perceptually recoverable from at least three independent visual channels:
+Beginning in v2.0.0 (and carried through v2.0.1), the system explicitly states that **color cannot be the only carrier of state identity**. The METACOGNITIVE state — like every state — must be perceptually recoverable from at least three independent visual channels:
 
 1. **color** (amethyst / violet)
 2. **orientation** (upside-down, right-facing)
@@ -328,7 +328,7 @@ The earlier interpretive sentence *"This audits the standard"* is deprecated in 
 
 ## 17. Relationship to Other States
 
-| State | Operator | Quote (v2.0.0) |
+| State | Operator | Quote (v2.0.1) |
 | --- | --- | --- |
 | NORMATIVE | I | "This is the standard." |
 | NON-NORMATIVE | σᵥ | "This reflects the standard." |

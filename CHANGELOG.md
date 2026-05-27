@@ -8,6 +8,49 @@ Each release entry records the **canonical formal sentence used in that release*
 
 ---
 
+## [v2.0.1] — corrective patch release (Zenodo DOI pending; no tag in this PR)
+
+> v2.0.1 is a corrective patch release on top of v2.0.0. It fixes a story-table overflow in `OWL-SEMAPHORE-EXPLANATION.pdf` (PR #9) and stamps PDFs, source metadata, and tests as v2.0.1. The V₄ algebra, the σₕ assignment to METACOGNITIVE, the canonical formal sentence, the accessibility rule, and the asset set are unchanged from v2.0.0.
+
+**Canonical formal sentence (this release, unchanged from v2.0.0):**
+> *A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants.*
+
+**Canonical operational sentence (unchanged):** *A four-state visual system for marking how a claim, document, dataset, or finding should be evaluated before belief, challenge, or action.*
+
+**Canonical human sentence (unchanged):** *Four owls tell the reader what kind of thinking they are looking at: standard, exploration, inversion, or self-audit.*
+
+**Version DOI:** `TBD_BY_ZENODO_ON_V2_0_1_RELEASE` — to be minted by Zenodo on release.
+**Concept DOI:** [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697)
+**Previously published v2.0.0 version DOI:** [10.5281/zenodo.20418539](https://doi.org/10.5281/zenodo.20418539)
+**Earlier published v1.2.0 version DOI:** [10.5281/zenodo.19474599](https://doi.org/10.5281/zenodo.19474599) (retained for citation continuity)
+
+### Fixed
+
+- Story-table overflow in `OWL-SEMAPHORE-EXPLANATION.pdf` (merged as PR #9, commit `e77ba40`). The four front-loaded narrative stories now render within the page box without horizontal/vertical overflow.
+
+### Changed
+
+- Version stamps updated from `v2.0.0` to `v2.0.1` in `generate_pdfs.py` (`VERSION`, `RELEASE_LABEL`, `pdf_subject` strings, citation header, ledger footer, page-one banner-tuple `VERSION=` field), `tests/test_banner_tuple.py` (`VERSION`, `VERSION_DOI` placeholder), `README.md` (masthead, sentence stack heading, four-states heading, citation, JSON-LD block), `CITATION.cff`, `.zenodo.json`, `OWL-SEMAPHORE-EXPLANATION.md` masthead, `ZENODO-RELEASE-CHECKLIST.md`, and `INTEGRITY-MANIFEST.md`.
+- DOI family roles in metadata:
+  - Concept DOI `10.5281/zenodo.19473697` — unchanged.
+  - **v2.0.0 DOI `10.5281/zenodo.20418539`** — now recorded as the *previous published* version DOI (was the *current* version DOI in v2.0.0 metadata).
+  - **v1.2.0 DOI `10.5281/zenodo.19474599`** — retained as an *earlier published* version DOI for citation continuity (was the *previous* in v2.0.0 metadata).
+  - **v2.0.1 DOI** — placeholder `TBD_BY_ZENODO_ON_V2_0_1_RELEASE` (will be minted by Zenodo on release).
+- Regenerated all six PDFs via `make pdfs`; refreshed `RELEASE-HASHES.txt` and the generated section of `INTEGRITY-MANIFEST.md` via `make hashes && make manifest`.
+
+### Non-goals (explicit, v2.0.1)
+
+- V₄ algebra: unchanged.
+- σₕ ↔ METACOGNITIVE assignment: unchanged.
+- License (CC BY 4.0): unchanged.
+- Visual identity / state assignments / transform assignments: unchanged.
+- Canonical formal/operational/human sentences: unchanged.
+- Accessibility rule: unchanged.
+- Asset set under `assets/`: unchanged.
+- This PR does not perform the Zenodo upload, `git tag`, or GitHub release for v2.0.1; those steps happen separately. The v2.0.0 tag, the v2.0.0 GitHub Release, and the minted v2.0.0 DOI are not modified.
+
+---
+
 ## [v2.0.0] — final label (Zenodo DOI placeholder; no tag in this PR)
 
 > Internally, work on this entry began under the label `v1.3.0-rc`. That label was superseded by the final `v2.0.0` identity prior to publication; all visible labels in PDFs, README, citation metadata, and the generated manifest now read `v2.0.0`. Historical references to `v1.3.0-rc` are preserved only in the CHANGELOG narrative below where they are part of the audit trail.
