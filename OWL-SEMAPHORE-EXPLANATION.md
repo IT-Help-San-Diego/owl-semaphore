@@ -31,23 +31,34 @@ The four state specifications each open with a narrative story that bridges huma
 3. **Scientific use** — where this state already operates across fields.
 4. **Objections and verification** — the integrity, accessibility, and interpretation rules that protect the mark from misuse.
 
-The four stories are:
+The four stories, at a glance:
 
-| State | Story | Operator | One-line claim |
-| --- | --- | --- | --- |
-| **NORMATIVE** | *The Proven Ground* — stand upright, the room is the room. Newton's mechanics operated as the working framework for roughly two centuries before Einstein's relativity showed where it breaks down at high velocity, strong gravity, and small scales. | I, det = +1, (x,y) → (x,y) | The work has been done and the foundation holds — right now, the evidence supports it. |
-| **NON-NORMATIVE** | *Da Vinci's Wings* — stand in front of a mirror; you are still upright, but left and right have swapped. Leonardo's bird-flight notebooks were a rigorous exploratory record; powered flight came four centuries later, inside the accumulated history of aeronautics. | σᵥ, det = −1, (x,y) → (−x,y) | Rigorous exploration that has not finished yet — facing the other direction, without claiming to have replaced the canonical view. |
-| **CRITICAL** | *The Manhattan Moment* — do a handstand; both axes flip. Manhattan-Project physicists formally examined whether a nuclear detonation could ignite the atmosphere (LA-602) and ruled it out before action. | C₂, det = +1, (x,y) → (−x,−y) | Your own proof has reversed your position; a vanishingly unlikely catastrophic hypothesis must be resolved, not waved away. |
-| **METACOGNITIVE** | *The Observer's Mirror* — Gödel's incompleteness theorems established that a sufficiently powerful consistent formal system cannot prove its own consistency from within itself. A child bends over and looks between their legs and finds the lost object the upright frame was filtering out. | σₕ, det = −1, (x,y) → (x,−y) | Not a finding about the subject — a finding about the instrument. |
+| State | Operator | One-line claim |
+| --- | --- | --- |
+| **NORMATIVE** | I, det = +1, (x,y) → (x,y) | The work has been done and the foundation holds — right now, the evidence supports it. |
+| **NON-NORMATIVE** | σᵥ, det = −1, (x,y) → (−x,y) | Rigorous exploration that has not finished yet — facing the other direction, without claiming to have replaced the canonical view. |
+| **CRITICAL** | C₂, det = +1, (x,y) → (−x,−y) | Your own proof has reversed your position; a vanishingly unlikely catastrophic hypothesis must be resolved, not waved away. |
+| **METACOGNITIVE** | σₕ, det = −1, (x,y) → (x,−y) | Not a finding about the subject — a finding about the instrument. |
+
+The four story cards below give the human-intuition scene for each state. The full narrative — with citations and field-by-field terminology mappings — lives in the matching state document linked under each card.
+
+#### *The Proven Ground* — NORMATIVE (I, det = +1, (x,y) → (x,y))
+
+Stand upright, feet planted, facing forward. (x,y) → (x,y) — no transform. You see the room exactly as it is. Newton's mechanics operated as the working framework for roughly two centuries before Einstein's relativity showed where it breaks down at high velocity, strong gravity, and small scales. The owl stands upright when the work has been done and the foundation holds — not because it is permanently true, but because right now, the evidence supports it. Full narrative: [`OWL-1-NORMATIVE.md`](OWL-1-NORMATIVE.md) §1A.
+
+#### *Da Vinci's Wings* — NON-NORMATIVE (σᵥ, det = −1, (x,y) → (−x,y))
+
+Stand in front of a mirror. You are still upright, but left and right have swapped. Leonardo's bird-flight notebooks were a rigorous exploratory record; powered flight arrived four centuries later, inside the accumulated history of aeronautics — not as a direct line from his manuscripts, but inside the broader practice of non-normative work that had matured into something actionable. Full narrative: [`OWL-2-NON-NORMATIVE.md`](OWL-2-NON-NORMATIVE.md) §1A.
+
+#### *The Manhattan Moment* — CRITICAL (C₂, det = +1, (x,y) → (−x,−y))
+
+Do a handstand. Both axes flip. Manhattan-Project physicists formally examined whether a nuclear detonation could ignite the atmosphere; the question was studied in Los Alamos report LA-602 (1946) and ruled out before action. The discipline is the point: even a vanishingly unlikely catastrophic hypothesis must be resolved, not waved away. Full narrative: [`OWL-3-CRITICAL.md`](OWL-3-CRITICAL.md) §1A.
+
+#### *The Observer's Mirror* — METACOGNITIVE (σₕ, det = −1, (x,y) → (x,−y))
+
+Gödel's incompleteness theorems established that a sufficiently powerful consistent formal system cannot prove its own consistency from within itself. A child bends over and looks between their legs and finds the lost object the upright frame was filtering out — same room, σₕ on the frame. Robotics and sensor fusion use the same move: an instrument reports the world *through a coordinate frame*, and frame audits are a routine part of calibration discipline. Full narrative: [`OWL-4-METACOGNITIVE.md`](OWL-4-METACOGNITIVE.md) §1A.
 
 The Closing Bridge in §13 explains why these four maneuvers, taken together, are a notation for what every careful field already does.
-
-The full narrative for each state lives in its state document:
-
-- *The Proven Ground* — [`OWL-1-NORMATIVE.md`](OWL-1-NORMATIVE.md) §1A
-- *Da Vinci's Wings* — [`OWL-2-NON-NORMATIVE.md`](OWL-2-NON-NORMATIVE.md) §1A
-- *The Manhattan Moment* — [`OWL-3-CRITICAL.md`](OWL-3-CRITICAL.md) §1A
-- *The Observer's Mirror* — [`OWL-4-METACOGNITIVE.md`](OWL-4-METACOGNITIVE.md) §1A
 
 ---
 
