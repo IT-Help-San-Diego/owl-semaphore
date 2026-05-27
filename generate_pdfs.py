@@ -51,7 +51,7 @@ REPO_URL = "github.com/IT-Help-San-Diego/owl-semaphore"
 CONCEPT_DOI = "10.5281/zenodo.19473697"
 PRIOR_VERSION_DOI = "10.5281/zenodo.19474599"  # v1.2.0 (retained for citation continuity)
 PUBLISHED_VERSION_DOI = "10.5281/zenodo.20418539"  # v2.0.0 (previous published)
-VERSION_DOI = "TBD_BY_ZENODO_ON_V2_0_1_RELEASE"  # v2.0.1 (not minted yet)
+VERSION_DOI = "10.5281/zenodo.20419874"  # v2.0.1
 LICENSE = "CC-BY-4.0"
 
 # ── Document metadata ──────────────────────────────────────────────────────
