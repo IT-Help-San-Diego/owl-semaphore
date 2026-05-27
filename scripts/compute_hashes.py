@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compute SHA-3-512 hashes for tracked release artifacts (v2.0.0).
+"""Compute SHA-3-512 hashes for tracked release artifacts (v2.0.1).
 
 Writes RELEASE-HASHES.txt at the repository root, formatted compatibly with
 ``openssl dgst -sha3-512`` output, covering:
