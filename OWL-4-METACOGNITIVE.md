@@ -20,6 +20,24 @@ The purpose of this state is to enable structured inspection of perception, inte
 
 ---
 
+## 1A. The Story Before the Math — *The Observer's Mirror*
+
+> **T = σₕ &nbsp;·&nbsp; det = −1 &nbsp;·&nbsp; (x, y) → (x, −y)**
+
+Kurt Gödel's incompleteness theorems showed, formally, that no sufficiently powerful and consistent formal system can prove its own consistency from within itself ([Gödel, *Über formal unentscheidbare Sätze*, 1931, English translation](https://www.research.ibm.com/haifa/dept/svt/papers/godel.pdf); [Stanford Encyclopedia of Philosophy, "Gödel's Incompleteness Theorems"](https://plato.stanford.edu/entries/goedel-incompleteness/); [Nagel & Newman, *Gödel's Proof*, NYU Press, rev. 2001](https://nyupress.org/9780814758168/godels-proof/)). The METACOGNITIVE owl lives in the space that observation opens: thinking about your thinking, from a frame the original thinking could not reach on its own.
+
+A child drops a piece of gum on the floor and cannot find it. They have looked everywhere. They bend down, grab their ankles, and look between their legs. The room is the same room. Left is still left, right is still right — but up and down have inverted. That is σₕ: (x, y) → (x, −y).
+
+The adults in the room may think the child is being silly. The child has performed both a physical and a cognitive act to solve the problem: changing the frame of reference. The horizontal reflection is not only a metaphor; it can be a physical act. A different angle reveals what the original frame could not.
+
+The same shape appears in serious instrumentation work. Robotics, sensor fusion, and machine vision routinely apply frame transformations because instruments do not merely report the world; they report the world *through a coordinate frame* ([ROS REP 105, "Coordinate Frames for Mobile Platforms"](https://www.ros.org/reps/rep-0105.html); [Thrun, Burgard & Fox, *Probabilistic Robotics*, MIT Press, 2005](https://mitpress.mit.edu/9780262201629/probabilistic-robotics/)). The frame is part of the measurement. Calibration audits, methodology reviews, and the moment a scientist asks whether *the telescope itself* is introducing the anomaly are all σₕ in practice.
+
+The METACOGNITIVE owl is inverted because the frame of reference has flipped: this is not a finding about the subject, it is a finding about the instrument — including, in the human case, the analyst. The subject of analysis is unchanged; the evaluative frame has been deliberately inspected.
+
+This story is the human-intuition bridge to the mathematical formalism in §§2 onward. The deliberate ordering is story → transform → scientific use → objections/verification, so a reader who would argue this state from formal logic, from sensor calibration, or from cognitive science can each enter through the right door.
+
+---
+
 ## 2. System Context
 
 The Owl Semaphore is defined by the Klein four-group (a finite subgroup of the orthogonal group O(2) isomorphic to V₄, equivalently the dihedral group D₂):

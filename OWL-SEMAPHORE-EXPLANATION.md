@@ -12,6 +12,45 @@ The Owl Semaphore is a four-state visual system for marking how a claim, documen
 
 ---
 
+## 1A. Core Framing — Why This Notation Exists at All
+
+> The semaphore is not a filing system. It is a mirror of how human beings have always processed knowledge — from ancient Athens to modern laboratories. If it does not align with reality, psychology, psychiatry, the human spirit, human knowledge, computer science, data science, statistics, and 2,500 years of accumulated understanding, then it has failed. It must all align — not magically, but rigorously.
+
+That sentence is the load-bearing claim of the project. The four states are not novel inventions; they are a notation system for things human knowledge already does. Peer review separates normative from non-normative. CVE assignment flags critical. Methodology audits are metacognitive. The Owl Semaphore's job is to give these long-standing moves a **shared visual language** that survives translation across dashboards, PDFs, slide decks, and security advisories — all with the same four transforms from the Klein four-group.
+
+This means the project's correctness criterion is alignment, not novelty. Where the notation contradicts what an experienced psychiatrist, philosopher, statistician, computer scientist, or DNS engineer would already say about an artifact, the notation is wrong — not the field.
+
+---
+
+## 1B. How to Read This System — the Four Front-Loaded Stories
+
+The four state specifications each open with a narrative story that bridges human intuition to the mathematical formalism. The deliberate ordering inside each state document is:
+
+1. **Story** — an embodied or historical scene the reader can picture.
+2. **Transform** — the V₄ operator and its action on coordinates.
+3. **Scientific use** — where this state already operates across fields.
+4. **Objections and verification** — the integrity, accessibility, and interpretation rules that protect the mark from misuse.
+
+The four stories are:
+
+| State | Story | Operator | One-line claim |
+| --- | --- | --- | --- |
+| **NORMATIVE** | *The Proven Ground* — stand upright, the room is the room. Newton's mechanics operated as the working framework for roughly two centuries before Einstein's relativity showed where it breaks down at high velocity, strong gravity, and small scales. | I, det = +1, (x,y) → (x,y) | The work has been done and the foundation holds — right now, the evidence supports it. |
+| **NON-NORMATIVE** | *Da Vinci's Wings* — stand in front of a mirror; you are still upright, but left and right have swapped. Leonardo's bird-flight notebooks were a rigorous exploratory record; powered flight came four centuries later, inside the accumulated history of aeronautics. | σᵥ, det = −1, (x,y) → (−x,y) | Rigorous exploration that has not finished yet — facing the other direction, without claiming to have replaced the canonical view. |
+| **CRITICAL** | *The Manhattan Moment* — do a handstand; both axes flip. Manhattan-Project physicists formally examined whether a nuclear detonation could ignite the atmosphere (LA-602) and ruled it out before action. | C₂, det = +1, (x,y) → (−x,−y) | Your own proof has reversed your position; a vanishingly unlikely catastrophic hypothesis must be resolved, not waved away. |
+| **METACOGNITIVE** | *The Observer's Mirror* — Gödel's incompleteness theorems established that a sufficiently powerful consistent formal system cannot prove its own consistency from within itself. A child bends over and looks between their legs and finds the lost object the upright frame was filtering out. | σₕ, det = −1, (x,y) → (x,−y) | Not a finding about the subject — a finding about the instrument. |
+
+The Closing Bridge in §13 explains why these four maneuvers, taken together, are a notation for what every careful field already does.
+
+The full narrative for each state lives in its state document:
+
+- *The Proven Ground* — [`OWL-1-NORMATIVE.md`](OWL-1-NORMATIVE.md) §1A
+- *Da Vinci's Wings* — [`OWL-2-NON-NORMATIVE.md`](OWL-2-NON-NORMATIVE.md) §1A
+- *The Manhattan Moment* — [`OWL-3-CRITICAL.md`](OWL-3-CRITICAL.md) §1A
+- *The Observer's Mirror* — [`OWL-4-METACOGNITIVE.md`](OWL-4-METACOGNITIVE.md) §1A
+
+---
+
 ## 2. Where the Owl Semaphore came from — DNS Tool
 
 The Owl Semaphore was not invented to decorate pages. It grew inside the [DNS Tool](https://dnstool.it-help.tech/owl-semaphore) — a long-running research and operations effort that needed to mark, with discipline, the difference between what is observed and what is inferred, between what is asserted and what is audited, and between what is standard and what is exploratory.
@@ -117,17 +156,24 @@ This is the project's "color is not the only carrier" rule. It is design-level c
 
 ---
 
-## 8. Who the Owl Semaphore is for — audience archetypes
+## 8. Who the Owl Semaphore is for — audience archetypes (ordered entry doors)
 
-DNS Tool's hardest design problem was not technical. It was that several expert cultures had to read the same artifacts without alienating each other. The Owl Semaphore is one of the answers: a notation that lets each archetype find what it needs without flattening the others. The archetypes are roughly:
+DNS Tool's hardest design problem was not technical. It was that several expert cultures had to read the same artifacts without alienating each other. The Owl Semaphore is one of the answers: a notation that lets each archetype find what it needs without flattening the others.
 
-- **Hackers and operators** want proof and reproducibility; they read the integrity manifest and the SHA-3-512 hashes.
-- **OSINT and intelligence analysts** want sourcing discipline; they read the citations and confidence language. ICD 203 analytic tradecraft is treated as a reference framework, not as a binding external requirement ([ICD 203](https://www.dni.gov/files/documents/ICD/ICD-203.pdf); [ICD 208](https://www.dni.gov/files/documents/ICD/ICD-208-Maximizing-the-Utility-of-Analytic-Products-2017-01-09.pdf)).
-- **DNS engineers** want protocol correctness; they read the standards and the rules of engagement.
-- **Standards/RFC readers** want normative discipline; they read the labels and the BCP 14 keyword usage.
-- **Data scientists** want explicit visual variables and accessible color; they read Bertin and WCAG.
-- **Serious operators** want explicit rules for when to stop, escalate, or audit; they read the interpretation doctrine.
-- **Public readers** want a memorable shape and a clear story; they read the four-owl ledger.
+The ordering below is intentional: it moves from the most skeptical readers who want proof artifacts in hand, through the readers who want discipline-of-method, through the readers who want correctness against an external register, and finally to the reader who only wants a memorable shape. Every archetype is told *which entry door* to use — story, transform, scientific use, or objections-and-verification — so they can argue the PDF from the layer that matches their training without being forced through someone else's.
+
+1. **Hackers and operators** — entry door: *objections and verification*. They want proof and reproducibility; they read the integrity manifest, the SHA-3-512 hashes, and the banner-tuple test. The four stories are background colour for them, not the load-bearing argument.
+2. **OSINT and intelligence analysts** — entry door: *scientific use and citation discipline*. They want sourcing discipline; they read the citations and confidence language. ICD 203 analytic tradecraft is treated as a reference framework, not as a binding external requirement ([ICD 203](https://www.dni.gov/files/documents/ICD/ICD-203.pdf); [ICD 208](https://www.dni.gov/files/documents/ICD/ICD-208-Maximizing-the-Utility-of-Analytic-Products-2017-01-09.pdf)). The Manhattan-Project example in *The Manhattan Moment* is in their idiom: "examine the catastrophic hypothesis, even if remote, before acting."
+3. **DNS engineers and protocol implementers** — entry door: *transform*. They want protocol correctness; they read the standards and the rules of engagement. The V₄ Cayley table is the part they will argue.
+4. **Standards / RFC readers** — entry door: *transform plus objections*. They want normative discipline; they read the BCP 14 keyword usage and the deprecation note for *"This audits the standard."* The stories are illustrative, not normative.
+5. **Cybersecurity and incident responders** — entry door: *story → scientific use*. The *Manhattan Moment* story names *0-day* explicitly as the cybersecurity instantiation of CRITICAL; they will argue the C₂ owl from CVE workflow before they argue it from group theory ([CISA, "Known Exploited Vulnerabilities Catalog"](https://www.cisa.gov/known-exploited-vulnerabilities-catalog); [NIST, *Zero-day attack* glossary](https://csrc.nist.gov/glossary/term/zero_day_attack)).
+6. **Psychiatrists, psychologists, and cognitive scientists** — entry door: *story → scientific use*. *The Manhattan Moment* names *ego-dystonic*; *The Observer's Mirror* names *metacognition* and Gödelian self-reference. These readers argue from clinical and cognitive grounds first; the V₄ algebra is a notation overlay, not a claim about cognition itself ([APA Dictionary of Psychology, "ego-dystonic"](https://dictionary.apa.org/ego-dystonic); [metacognitive reflection review, PMC 11368986](https://pmc.ncbi.nlm.nih.gov/articles/PMC11368986/)).
+7. **Philosophers and formal logicians** — entry door: *story → transform*. *The Observer's Mirror* opens with Gödel's incompleteness theorems; *The Manhattan Moment* names *aporia*. These readers argue the algebra against its own consistency before they argue its applications ([SEP, "Gödel's Incompleteness Theorems"](https://plato.stanford.edu/entries/goedel-incompleteness/); [SEP, "Aporia" via Socratic method](https://plato.stanford.edu/entries/socratic-method/)).
+8. **Roboticists, sensor-fusion and machine-vision practitioners** — entry door: *scientific use*. *The Observer's Mirror* states the σₕ posture in their idiom: an instrument reports the world *through a coordinate frame*, and frame audits are a routine part of calibration discipline ([ROS REP 105](https://www.ros.org/reps/rep-0105.html); [Thrun, Burgard & Fox, *Probabilistic Robotics*](https://mitpress.mit.edu/9780262201629/probabilistic-robotics/)).
+9. **Data scientists and visualization practitioners** — entry door: *transform plus accessibility*. They want explicit visual variables and accessible colour; they read Bertin's retinal variables, Moody's dual-coding, and WCAG SC 1.4.1.
+10. **Historians of science and engineering** — entry door: *story*. *The Proven Ground* and *Da Vinci's Wings* are written carefully to avoid the most common overclaiming patterns (no direct lineage from Leonardo to Kitty Hawk; no assertion that Newtonian mechanics was "wrong" before relativity).
+11. **Serious operators and incident managers** — entry door: *objections-and-verification*. They want explicit rules for when to stop, escalate, or audit; they read the interpretation doctrine.
+12. **Public readers and onboarding audiences** — entry door: *story → four-owl ledger*. They want a memorable shape and a clear story; the four stories are written for them first.
 
 The four-state algebra was designed to be the smallest set that lets each of these archetypes act differently without breaking the others' rules.
 
@@ -170,3 +216,13 @@ The Owl Semaphore marks the **state of thought before action**. It is the visibl
 ## 12. Closing
 
 The Owl Semaphore tells the reader what kind of thinking they are looking at. Four owls, four V₄ transforms, four colors, four orientations, four labels — and one rule that ties the whole thing together: *the system encodes position, not truth.* When the METACOGNITIVE owl is present, the system has just done something the system most needs to be able to do: **think about its own thinking.**
+
+---
+
+## 13. Closing Bridge — Why This Matters
+
+> Why does this matter? Every field of human knowledge already operates with these four states — they just lack a shared visual language. Peer review separates normative from non-normative. CVEs flag critical. Methodology audits are metacognitive. The Owl Semaphore gives 2,500 years of epistemology a notation system that works on a dashboard, a PDF, a slide deck, and a security advisory — all with the same four transforms from the Klein four-group.
+
+The four front-loaded stories — *The Proven Ground*, *Da Vinci's Wings*, *The Manhattan Moment*, and *The Observer's Mirror* — are deliberately drawn from physics, art-and-engineering history, nuclear safety, and formal logic respectively. That spread is not decorative. It is the operational claim of the project: a notation that does not align across reality, psychology, psychiatry, the human spirit, human knowledge, computer science, data science, statistics, and 2,500 years of accumulated understanding has failed. It must all align — not magically, but rigorously.
+
+When it does, the payoff is small and concrete: a reader who has never seen this system before can look at a marked artifact and immediately know whether they are reading a baseline, an exploration, an inversion, or a frame-audit — and a reader who has spent thirty years in one of the contributing fields can still argue every line on the page from their own training without being told to set their expertise aside.

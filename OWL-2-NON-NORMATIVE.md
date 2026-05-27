@@ -18,6 +18,22 @@ The goal is to preserve rigor while allowing controlled deviation from the basel
 
 ---
 
+## 1A. The Story Before the Math — *Da Vinci's Wings*
+
+> **T = σᵥ &nbsp;·&nbsp; det = −1 &nbsp;·&nbsp; (x, y) → (−x, y)**
+
+Stand in front of a mirror. You are still upright — up is still up, down is still down — but left and right have swapped. That is a vertical-axis reflection: (x, y) → (−x, y). Not a rotation — a mirror image.
+
+When Leonardo da Vinci spent years studying birds and sketching wing mechanics — preserved in the *Codex on the Flight of Birds* and related manuscripts now held by the Biblioteca Reale di Torino ([Library of Congress, *Codex on the Flight of Birds*](https://www.loc.gov/item/2021667428/); [Smithsonian Air and Space, "Leonardo da Vinci's Codex on the Flight of Birds"](https://airandspace.si.edu/multimedia-gallery/leonardo-da-vincis-codex-flight-birds)) — he was facing the other direction from the prevailing assumption that powered human flight was beyond reach. His machines did not become practical aircraft. What he left behind was a rigorous exploratory record: anatomical observation, geometric reasoning, and structured speculation.
+
+The first powered, sustained, controlled heavier-than-air flight is attributed to the Wright Brothers at Kitty Hawk on 17 December 1903 ([Library of Congress, Wright Brothers collection](https://www.loc.gov/collections/wilbur-and-orville-wright-papers/about-this-collection/); [Smithsonian National Air and Space Museum, *1903 Wright Flyer*](https://airandspace.si.edu/collection-objects/1903-wright-flyer/nasm_A19610048000)). That success arrived four centuries after Leonardo, inside an accumulated aeronautical history of gliders, propulsion experiments, and aerodynamic theory — not as a direct line from his notebooks, but inside the broader practice of non-normative work that had matured into something actionable. The historical claim made here is the modest one: structured, rigorous exploration that has not yet succeeded is still part of the engine of progress.
+
+The NON-NORMATIVE owl marks that posture — the mirror state, facing what the canonical view has its back to, **without claiming to have replaced the canonical view yet.** It is reflection, not rejection. Non-normative work is the engine of progress: rigorous exploration that has not finished yet.
+
+This story is the human-intuition bridge to the mathematical formalism in §§2 onward. The deliberate ordering is story → transform → scientific use → objections/verification, so a reader who would argue the σᵥ state from intuition, from history-of-science, or from the V₄ algebra can each enter through the right door.
+
+---
+
 ## 2. System Context
 
 The Owl Semaphore system is defined by the Klein four-group:

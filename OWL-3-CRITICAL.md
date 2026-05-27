@@ -18,6 +18,29 @@ The purpose of this state is to enable structured adversarial analysis without a
 
 ---
 
+## 1A. The Story Before the Math — *The Manhattan Moment*
+
+> **T = C₂ &nbsp;·&nbsp; det = +1 &nbsp;·&nbsp; (x, y) → (−x, −y)**
+
+Do a handstand. Both axes flip — left becomes right, up becomes down. (x, y) → (−x, −y). The blood rushes to your head. You cannot hold it for long. That is the Critical state: total inversion under pressure.
+
+During the Manhattan Project, physicists examined a catastrophic hypothesis raised by Edward Teller — whether a nuclear detonation could ignite the Earth's atmosphere or oceans. The question was studied formally in a 1946 Los Alamos report (LA-602) by Konopinski, Marvin, and Teller, which concluded the ignition scenario was not possible under the conditions of the planned device; the matter was revisited in later historical analysis ([Konopinski, Marvin, Teller, *Ignition of the Atmosphere with Nuclear Bombs*, LA-602, 1946 (Los Alamos)](https://sgp.fas.org/othergov/doe/lanl/docs1/00329010.pdf); see also [Reines, "The Early Days of Experimental Neutrino Physics," *Science*, 1979](https://www.science.org/doi/10.1126/science.203.4375.11) and historical review in [Rhodes, *The Making of the Atomic Bomb*, 1986, ch. 16](https://www.simonandschuster.com/books/The-Making-of-the-Atomic-Bomb/Richard-Rhodes/9781451677614)). The concern was examined and ruled out, not expected. The discipline here is the point: even a vanishingly unlikely catastrophic hypothesis must be **resolved** before action, not waved away.
+
+That is the Critical posture. Not because the analysis is wrong; because your own proof, taken seriously, has reversed your position and the situation demands a structured resolution before you proceed.
+
+The same shape recurs across fields under different names:
+
+- **Psychiatry** calls the experience of an internally generated but unwanted thought *ego-dystonic* ([American Psychiatric Association, *DSM-5-TR*, glossary entry "ego-dystonic"](https://www.psychiatry.org/psychiatrists/practice/dsm); [APA Dictionary of Psychology, "ego-dystonic"](https://dictionary.apa.org/ego-dystonic)).
+- **Philosophy** calls impasse *aporia* ([Stanford Encyclopedia of Philosophy, "Aporia"](https://plato.stanford.edu/entries/socratic-method/)).
+- **Engineering** calls it a *show-stopper*.
+- **Cybersecurity** calls it a *0-day* — an unpatched, actively exploitable vulnerability whose disclosure window has not opened ([CISA, "Known Exploited Vulnerabilities Catalog"](https://www.cisa.gov/known-exploited-vulnerabilities-catalog); [NIST, *Zero-day vulnerability* glossary entry](https://csrc.nist.gov/glossary/term/zero_day_attack)).
+
+The CRITICAL owl is inverted because your own proof has reversed your position — and the system needs to be told, visibly, that adversarial analysis or falsification has been applied. The mark says "this has been examined under inversion," not "this is wrong."
+
+This story is the human-intuition bridge to the mathematical formalism in §§2 onward. The deliberate ordering is story → transform → scientific use → objections/verification, so a reader who would argue this state from incident response, from formal logic, or from clinical/cognitive grounds can each enter through the right door.
+
+---
+
 ## 2. System Context
 
 The Owl Semaphore is defined by the Klein four-group:
