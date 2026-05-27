@@ -20,6 +20,12 @@ The objective is a system that is:
 - operationally reproducible
 - resistant to ambiguity and drift
 
+### 1.0 Core Framing (informative preamble)
+
+> The semaphore is not a filing system. It is a mirror of how human beings have always processed knowledge — from ancient Athens to modern laboratories. If it does not align with reality, psychology, psychiatry, the human spirit, human knowledge, computer science, data science, statistics, and 2,500 years of accumulated understanding, then it has failed. It must all align — not magically, but rigorously.
+
+This preamble is informative. It states the project's external-alignment criterion: the four states are a notation system for things human knowledge already does — peer review separates normative from non-normative; CVEs flag critical; methodology audits are metacognitive — not a novel taxonomy. Where the notation contradicts a careful practitioner's existing terminology, the notation is wrong, not the field. The four front-loaded stories in the state specifications (*The Proven Ground*, *Da Vinci's Wings*, *The Manhattan Moment*, *The Observer's Mirror*) are the human-intuition bridge to the V₄ algebra defined in §2 below; see [`OWL-SEMAPHORE-EXPLANATION.md`](OWL-SEMAPHORE-EXPLANATION.md) §1B for the ordered reading guide and §13 for the closing bridge.
+
 ### 1.1 Canonical Sentence Stack (v2.0.0)
 
 The project uses a three-layer canonical sentence stack so that the same concept can be expressed at the level of mathematics, operation, and human story without drifting between documents:

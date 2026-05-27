@@ -18,6 +18,20 @@ The goal is simple: the mark must be reproducible, auditable, mathematically coh
 
 ---
 
+## 1A. The Story Before the Math — *The Proven Ground*
+
+> **T = I &nbsp;·&nbsp; det = +1 &nbsp;·&nbsp; (x, y) → (x, y)**
+
+Stand upright, feet planted, facing forward. (x, y) → (x, y) — no transform. You see the room exactly as it is.
+
+Newton's *Principia* set the operational framework for terrestrial and celestial mechanics for roughly two centuries before Einstein's special and general relativity showed where its assumptions break down at high velocity, strong gravity, and small scales ([Newton, *Philosophiae Naturalis Principia Mathematica*, 1687](https://www.britannica.com/topic/Philosophiae-Naturalis-Principia-Mathematica); [Einstein, "On the Electrodynamics of Moving Bodies," *Annalen der Physik*, 1905, via the Einstein Papers Project](https://einsteinpapers.press.princeton.edu/vol2-trans/154)). During that long working period Newtonian mechanics was **Normative** — tested, verified, operational, and predictively reliable inside its domain. After Einstein, it remained operationally normative within that domain, with a stated boundary beyond which a different framework takes over.
+
+The owl stands upright when the work has been done and the foundation holds — not because it is permanently true, but because right now, the evidence supports it. The NORMATIVE owl is the carrier of that posture: *this is the standard, until evidence requires otherwise.*
+
+This story is the human-intuition bridge to the mathematical formalism in §§2–24 below. The story → transform → scientific use → objections-and-verification ordering is deliberate: a skeptical reader can enter through whichever layer matches their training.
+
+---
+
 ## 2. System Context
 
 The Owl Semaphore is a visual epistemic notation system based on the Owl of Athena. Its discrete state space is modeled as the Klein four-group:
