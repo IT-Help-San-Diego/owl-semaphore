@@ -31,14 +31,39 @@ The four state specifications each open with a narrative story that bridges huma
 3. **Scientific use** — where this state already operates across fields.
 4. **Objections and verification** — the integrity, accessibility, and interpretation rules that protect the mark from misuse.
 
-The four stories are:
+The four stories follow, each with its state name, the V₄ operator, the story itself, and a one-line claim.
 
-| State | Story | Operator | One-line claim |
-| --- | --- | --- | --- |
-| **NORMATIVE** | *The Proven Ground* — stand upright, the room is the room. Newton's mechanics operated as the working framework for roughly two centuries before Einstein's relativity showed where it breaks down at high velocity, strong gravity, and small scales. | I, det = +1, (x,y) → (x,y) | The work has been done and the foundation holds — right now, the evidence supports it. |
-| **NON-NORMATIVE** | *Da Vinci's Wings* — stand in front of a mirror; you are still upright, but left and right have swapped. Leonardo's bird-flight notebooks were a rigorous exploratory record; powered flight came four centuries later, inside the accumulated history of aeronautics. | σᵥ, det = −1, (x,y) → (−x,y) | Rigorous exploration that has not finished yet — facing the other direction, without claiming to have replaced the canonical view. |
-| **CRITICAL** | *The Manhattan Moment* — do a handstand; both axes flip. Manhattan-Project physicists formally examined whether a nuclear detonation could ignite the atmosphere (LA-602) and ruled it out before action. | C₂, det = +1, (x,y) → (−x,−y) | Your own proof has reversed your position; a vanishingly unlikely catastrophic hypothesis must be resolved, not waved away. |
-| **METACOGNITIVE** | *The Observer's Mirror* — Gödel's incompleteness theorems established that a sufficiently powerful consistent formal system cannot prove its own consistency from within itself. A child bends over and looks between their legs and finds the lost object the upright frame was filtering out. | σₕ, det = −1, (x,y) → (x,−y) | Not a finding about the subject — a finding about the instrument. |
+### NORMATIVE — *The Proven Ground*
+
+**Operator:** I, det = +1, (x,y) → (x,y).
+
+Stand upright, the room is the room. Newton's mechanics operated as the working framework for roughly two centuries before Einstein's relativity showed where it breaks down at high velocity, strong gravity, and small scales.
+
+*One-line claim: the work has been done and the foundation holds — right now, the evidence supports it.*
+
+### NON-NORMATIVE — *Da Vinci's Wings*
+
+**Operator:** σᵥ, det = −1, (x,y) → (−x,y).
+
+Stand in front of a mirror; you are still upright, but left and right have swapped. Leonardo's bird-flight notebooks were a rigorous exploratory record; powered flight came four centuries later, inside the accumulated history of aeronautics.
+
+*One-line claim: rigorous exploration that has not finished yet — facing the other direction, without claiming to have replaced the canonical view.*
+
+### CRITICAL — *The Manhattan Moment*
+
+**Operator:** C₂, det = +1, (x,y) → (−x,−y).
+
+Do a handstand; both axes flip. Manhattan-Project physicists formally examined whether a nuclear detonation could ignite the atmosphere (LA-602) and ruled it out before action.
+
+*One-line claim: your own proof has reversed your position; a vanishingly unlikely catastrophic hypothesis must be resolved, not waved away.*
+
+### METACOGNITIVE — *The Observer's Mirror*
+
+**Operator:** σₕ, det = −1, (x,y) → (x,−y).
+
+Gödel's incompleteness theorems established that a sufficiently powerful consistent formal system cannot prove its own consistency from within itself. A child bends over and looks between their legs and finds the lost object the upright frame was filtering out.
+
+*One-line claim: not a finding about the subject — a finding about the instrument.*
 
 The Closing Bridge in §13 explains why these four maneuvers, taken together, are a notation for what every careful field already does.
 
