@@ -3,8 +3,8 @@
 Each generated PDF in the Owl Semaphore release embeds a single-line
 ``BANNER-TUPLE :: ...`` string on its title page that names the state, the
 operator/transform, the determinant, the coordinate mapping, the canonical
-quote, the version, and the DOI family (concept DOI + published version DOI +
-release-candidate version DOI placeholder).
+quote, the version, and the DOI family (concept DOI + previously published
+version DOI + minted v2.0.0 version DOI).
 
 This test extracts page-one text from each PDF via ``pdftotext -layout`` and
 verifies that the banner tuple is present and that every expected field is
@@ -30,7 +30,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VERSION = "v2.0.0"
 CONCEPT_DOI = "10.5281/zenodo.19473697"
 PUBLISHED_VERSION_DOI = "10.5281/zenodo.19474599"
-RC_VERSION_DOI = "TBD_BY_ZENODO_ON_RELEASE"
+VERSION_DOI = "10.5281/zenodo.20418539"
 
 # (state, transform substring, det sign, mapping substring, quote, pdf filename)
 EXPECTED = [
@@ -130,7 +130,7 @@ class BannerTupleTest(unittest.TestCase):
             (f"VERSION={VERSION}", f"{pdf_name} banner tuple does not report VERSION={VERSION}"),
             (f"CONCEPT-DOI={CONCEPT_DOI}", f"{pdf_name} banner tuple does not report CONCEPT-DOI={CONCEPT_DOI}"),
             (f"PUBLISHED-VERSION-DOI={PUBLISHED_VERSION_DOI}", f"{pdf_name} banner tuple does not report PUBLISHED-VERSION-DOI"),
-            (f"RC-VERSION-DOI={RC_VERSION_DOI}", f"{pdf_name} banner tuple does not report RC-VERSION-DOI placeholder"),
+            (f"VERSION-DOI={VERSION_DOI}", f"{pdf_name} banner tuple does not report minted v2.0.0 VERSION-DOI"),
         ):
             self.assertIn(needle, text, message)
         if det is not None:

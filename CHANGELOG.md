@@ -19,7 +19,8 @@ Each release entry records the **canonical formal sentence used in that release*
 
 **Canonical human sentence:** *Four owls tell the reader what kind of thinking they are looking at: standard, exploration, inversion, or self-audit.*
 
-**Version DOI:** `TBD_BY_ZENODO_ON_RELEASE` — Zenodo has not yet minted the v2.0.0 version DOI.
+**Version DOI:** [10.5281/zenodo.20418539](https://doi.org/10.5281/zenodo.20418539) — minted by Zenodo on release from immutable tag/main SHA `a8c147783827c40dd063b5249557eb6ffbea8a4d`.
+**Concept DOI:** [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697)
 
 ### Added
 
@@ -33,7 +34,7 @@ Each release entry records the **canonical formal sentence used in that release*
 - Cayley table for V₄ in `OWL-SEMAPHORE-SYSTEM.md` §2.3 — making the group structure verifiable rather than asserted.
 - Accessibility rule **(normative)**: state identity must be triple-redundant through color **+ orientation + textual label/context**. Color cannot be the only carrier. Applies in particular to the CRITICAL (red-on-red) state and is restated for each state spec.
 - DNS Tool bridge links from README and from the explanation doc to the Owl Semaphore, confidence, corpus, and publications pages.
-- Concept-DOI badge / explicit `TBD_BY_ZENODO_ON_RELEASE` placeholder for the v2.0.0 version DOI in README, CITATION.cff, and `.zenodo.json`.
+- Concept-DOI badge and minted v2.0.0 version DOI (`10.5281/zenodo.20418539`) in README, CITATION.cff, and `.zenodo.json`.
 
 ### Changed
 
@@ -44,7 +45,7 @@ Each release entry records the **canonical formal sentence used in that release*
 - `generate_pdfs.py` extended: per-page header, embedded PDF metadata, citation footer, v2.0.0 version string in footer and ledger, METACOGNITIVE ledger quote updated.
 - `INTEGRITY-MANIFEST.md` populated: `TO_BE_COMPUTED` placeholders for tracked specification files replaced with actual SHA-3-512 hashes computed from the current branch; integrity records now also cover the generated PDFs and the new explanation document and CHANGELOG.
 - `RELEASE-HASHES.txt` extended to include SHA-3-512 hashes for the generated PDFs in addition to the 540 px release assets.
-- `CITATION.cff` and `.zenodo.json` carry an unreleased-version banner pointing at `TBD_BY_ZENODO_ON_RELEASE` for v2.0.0, with the currently published v1.2.0 DOI retained for citation continuity.
+- `CITATION.cff` and `.zenodo.json` carry the minted v2.0.0 version DOI (`10.5281/zenodo.20418539`), with the v1.2.0 DOI retained as the previous-version identifier for citation continuity.
 
 ### Removed / Deprecated
 
