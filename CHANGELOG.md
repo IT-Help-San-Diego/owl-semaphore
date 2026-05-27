@@ -8,7 +8,9 @@ Each release entry records the **canonical formal sentence used in that release*
 
 ---
 
-## [Unreleased — v1.3.0-rc] — release candidate (no Zenodo DOI minted, no tag)
+## [v2.0.0] — final label (Zenodo DOI placeholder; no tag in this PR)
+
+> Internally, work on this entry began under the label `v1.3.0-rc`. That label was superseded by the final `v2.0.0` identity prior to publication; all visible labels in PDFs, README, citation metadata, and the generated manifest now read `v2.0.0`. Historical references to `v1.3.0-rc` are preserved only in the CHANGELOG narrative below where they are part of the audit trail.
 
 **Canonical formal sentence (this release):**
 > *A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants.*
@@ -17,7 +19,7 @@ Each release entry records the **canonical formal sentence used in that release*
 
 **Canonical human sentence:** *Four owls tell the reader what kind of thinking they are looking at: standard, exploration, inversion, or self-audit.*
 
-**Version DOI:** `TBD_BY_ZENODO_ON_RELEASE` — Zenodo has not minted the v1.3.0 version DOI; this branch is a release candidate.
+**Version DOI:** `TBD_BY_ZENODO_ON_RELEASE` — Zenodo has not yet minted the v2.0.0 version DOI.
 
 ### Added
 
@@ -31,31 +33,31 @@ Each release entry records the **canonical formal sentence used in that release*
 - Cayley table for V₄ in `OWL-SEMAPHORE-SYSTEM.md` §2.3 — making the group structure verifiable rather than asserted.
 - Accessibility rule **(normative)**: state identity must be triple-redundant through color **+ orientation + textual label/context**. Color cannot be the only carrier. Applies in particular to the CRITICAL (red-on-red) state and is restated for each state spec.
 - DNS Tool bridge links from README and from the explanation doc to the Owl Semaphore, confidence, corpus, and publications pages.
-- Concept-DOI badge / explicit `TBD_BY_ZENODO_ON_RELEASE` placeholder for the v1.3.0 version DOI in README, CITATION.cff, and `.zenodo.json`.
+- Concept-DOI badge / explicit `TBD_BY_ZENODO_ON_RELEASE` placeholder for the v2.0.0 version DOI in README, CITATION.cff, and `.zenodo.json`.
 
 ### Changed
 
-- **METACOGNITIVE wording reconciled.** The earlier interpretive line *"This audits the standard"* is deprecated. The v1.3.0-rc canonical phrasing is **"The observer audits the frame"** (normative voice) and **"Thinking examines its own frame"** (explanatory voice). The σₕ assignment, V₄ algebra, and asset rules are unchanged. The change is in §1, §3, §4.2, §15 of `OWL-4-METACOGNITIVE.md`, §4.2 and §11 of `OWL-SEMAPHORE-SYSTEM.md`, the README state table, and the four-state ledger printed on every PDF.
+- **METACOGNITIVE wording reconciled.** The earlier interpretive line *"This audits the standard"* is deprecated. The v2.0.0 canonical phrasing is **"The observer audits the frame"** (normative voice) and **"Thinking examines its own frame"** (explanatory voice). The σₕ assignment, V₄ algebra, and asset rules are unchanged. The change is in §1, §3, §4.2, §15 of `OWL-4-METACOGNITIVE.md`, §4.2 and §11 of `OWL-SEMAPHORE-SYSTEM.md`, the README state table, and the four-state ledger printed on every PDF.
 - **Canonical formal sentence reconciled.** Two earlier forms existed: *"implemented as a reproducible visual system with enforced invariants"* (former README masthead) and *"mapped into a visual system with strict invariants"* (former §11 of the system spec). They are unified to *"implemented as a reproducible visual notation system with enforced invariants."* The word **notation** is the substantive addition; it tracks the DNS Tool description of the system as a "visual epistemic notation system" and the cognitive-science distinction between a notation and arbitrary artwork.
-- **Version drift fixed.** All four state specs (`OWL-1` through `OWL-4`) previously labeled themselves "Version 1.0 Draft" while the package metadata said v1.2.0. Each state spec is now stamped as a v1.3.0-rc release-candidate subordinate document. The system spec is stamped v1.3.0-rc directly.
+- **Version drift fixed.** All four state specs (`OWL-1` through `OWL-4`) previously labeled themselves "Version 1.0 Draft" while the package metadata said v1.2.0. Each state spec is now stamped as a v2.0.0 subordinate document. The system spec is stamped v2.0.0 directly.
 - **O(2) language softened** in §2 of the system spec and §2 of OWL-1-NORMATIVE: the four transforms form a *finite subgroup of O(2) isomorphic to V₄ (equivalently the dihedral group D₂)*, not O(2) itself.
-- `generate_pdfs.py` extended: per-page header, embedded PDF metadata, citation footer, v1.3.0-rc version string in footer and ledger, METACOGNITIVE ledger quote updated.
+- `generate_pdfs.py` extended: per-page header, embedded PDF metadata, citation footer, v2.0.0 version string in footer and ledger, METACOGNITIVE ledger quote updated.
 - `INTEGRITY-MANIFEST.md` populated: `TO_BE_COMPUTED` placeholders for tracked specification files replaced with actual SHA-3-512 hashes computed from the current branch; integrity records now also cover the generated PDFs and the new explanation document and CHANGELOG.
 - `RELEASE-HASHES.txt` extended to include SHA-3-512 hashes for the generated PDFs in addition to the 540 px release assets.
-- `CITATION.cff` and `.zenodo.json` carry an unreleased-version banner pointing at `TBD_BY_ZENODO_ON_RELEASE` for v1.3.0, with the currently published v1.2.0 DOI retained for citation continuity.
+- `CITATION.cff` and `.zenodo.json` carry an unreleased-version banner pointing at `TBD_BY_ZENODO_ON_RELEASE` for v2.0.0, with the currently published v1.2.0 DOI retained for citation continuity.
 
 ### Removed / Deprecated
 
 - The interpretive sentence *"This audits the standard"* is removed from normative contexts (system spec, METACOGNITIVE spec, PDF four-state ledger). It is referenced only as a deprecated alias in `OWL-4-METACOGNITIVE.md` §15.3 and in this changelog.
 - The `TO_BE_COMPUTED` placeholders in `INTEGRITY-MANIFEST.md` §11.1 for tracked specification files are removed; asset records under §11.2 retain `TO_BE_VERIFIED` / `TO_BE_COMPUTED` markers where asset measurement is still pending in this release candidate.
 
-### Non-goals (explicit, v1.3.0-rc)
+### Non-goals (explicit, v2.0.0)
 
 - V₄ algebra: unchanged.
 - σₕ ↔ METACOGNITIVE assignment: unchanged.
 - License (CC BY 4.0): unchanged.
 - Visual identity / state assignments / transform assignments: unchanged.
-- No Zenodo upload, no `git tag`, no PR merge for v1.3.0 from this branch.
+- This PR does not perform the Zenodo upload, `git tag`, or GitHub release for v2.0.0; those steps happen separately.
 
 ---
 
@@ -73,8 +75,8 @@ Each release entry records the **canonical formal sentence used in that release*
 
 ### Notes
 
-- v1.2.0 carried two slightly different canonical sentences in two different files; v1.3.0-rc reconciles them.
-- The METACOGNITIVE interpretive line in v1.2.0 was *"This audits the standard,"* which v1.3.0-rc deprecates.
+- v1.2.0 carried two slightly different canonical sentences in two different files; v2.0.0 reconciles them.
+- The METACOGNITIVE interpretive line in v1.2.0 was *"This audits the standard,"* which v2.0.0 deprecates.
 - Generated PDFs were committed but were not produced from a single-command reproducible pipeline.
 - Specification documents in `OWL-1` through `OWL-4` carried "Version 1.0 Draft" labels even though the package was v1.2.0.
 

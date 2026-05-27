@@ -1,6 +1,6 @@
 # OWL SEMAPHORE — EXPLANATION
 
-## (Informative companion to the System Specification — v1.3.0-rc)
+## (Informative companion to the System Specification — v2.0.0)
 
 > This document is **informative**, not normative. It tells the origin story, the design rationale, and the audience reasoning that produced the Owl Semaphore. The normative algebra and asset rules live in [`OWL-SEMAPHORE-SYSTEM.md`](OWL-SEMAPHORE-SYSTEM.md) and the four state specifications. Where this document offers warmer wording (especially for METACOGNITIVE), the normative spec retains the scientifically precise version.
 
@@ -91,7 +91,7 @@ This release adopts the canonical phrasing:
 - **Scientific / normative voice:** *"The observer audits the frame."* (used in [`OWL-SEMAPHORE-SYSTEM.md`](OWL-SEMAPHORE-SYSTEM.md), [`OWL-4-METACOGNITIVE.md`](OWL-4-METACOGNITIVE.md), the four-state ledger on every generated PDF, the README state table)
 - **Warmer explanatory voice:** *"Thinking examines its own frame."* (used in this explanation, in teaching materials, in introductory bridges)
 
-The earlier line *"This audits the standard"* is **deprecated** as of v1.3.0-rc. It conflated *frame-audit* with *standard-audit* and read as if the auditor and the audited were both external — the opposite of what the state encodes. Two things are worth keeping clear:
+The earlier line *"This audits the standard"* is **deprecated** as of v2.0.0. It conflated *frame-audit* with *standard-audit* and read as if the auditor and the audited were both external — the opposite of what the state encodes. Two things are worth keeping clear:
 
 - **Metacognitive prompts surface bias; they do not eliminate it.** The cognitive-science literature is explicit on this point; the Owl Semaphore must not claim more than that ([metacognitive reflection review, PMC 11368986](https://pmc.ncbi.nlm.nih.gov/articles/PMC11368986/); ICD 203 analytic standards, §B [ODNI](https://www.dni.gov/files/documents/ICD/ICD-203.pdf)).
 - **METACOGNITIVE is observer-level, not object-level.** A CRITICAL owl inverts the *object's* assumptions; a METACOGNITIVE owl inverts the *observer's* frame. They are different operators in V₄ and they encode different work.
@@ -163,7 +163,7 @@ The Owl Semaphore marks the **state of thought before action**. It is the visibl
 - DNS Tool publications: https://dnstool.it-help.tech/publications
 - Currently published Zenodo record (v1.2.0): https://doi.org/10.5281/zenodo.19474599
 - Concept DOI (all versions): https://doi.org/10.5281/zenodo.19473697
-- v1.3.0 version DOI: `TBD_BY_ZENODO_ON_RELEASE` (not yet minted; this branch is a release candidate)
+- v2.0.0 version DOI: `TBD_BY_ZENODO_ON_RELEASE` (not yet minted on Zenodo)
 
 ---
 

@@ -4,7 +4,7 @@
 
 ## OWL 4 / METACOGNITIVE / Frame-Audit State (σₕ)
 
-### Version 1.3.0-rc (release candidate; document subordinate to v1.3.0-rc)
+### Version 2.0.0 (document subordinate to v2.0.0)
 
 ---
 
@@ -16,7 +16,7 @@ This is not a philosophical overlay. It is a mathematically defined operator (σ
 
 The purpose of this state is to enable structured inspection of perception, interpretation, and the analytical process itself. In short: METACOGNITIVE marks **thinking about thinking** ([Flavell 1979 / metacognition review, PMC 11368986](https://pmc.ncbi.nlm.nih.gov/articles/PMC11368986/)).
 
-> **Canonical phrasing.** Across this release the METACOGNITIVE state is described as **"The observer audits the frame"** in normative/scientific contexts and **"Thinking examines its own frame"** in explanatory/teaching contexts. Earlier wording — *"This audits the standard"* — is deprecated as of v1.3.0-rc because it failed to convey that the audit is directed at the observer's own evaluative frame (thinking about thinking), not at an external object.
+> **Canonical phrasing.** Across this release the METACOGNITIVE state is described as **"The observer audits the frame"** in normative/scientific contexts and **"Thinking examines its own frame"** in explanatory/teaching contexts. Earlier wording — *"This audits the standard"* — is deprecated as of v2.0.0 because it failed to convey that the audit is directed at the observer's own evaluative frame (thinking about thinking), not at an external object.
 
 ---
 
@@ -214,7 +214,7 @@ The owl must remain distinguishable from the field with sufficient luminance con
 
 ### 10.4 Accessibility — Color Is Not the Only Carrier
 
-In v1.3.0-rc the system explicitly states that **color cannot be the only carrier of state identity**. The METACOGNITIVE state — like every state — must be perceptually recoverable from at least three independent visual channels:
+In v2.0.0 the system explicitly states that **color cannot be the only carrier of state identity**. The METACOGNITIVE state — like every state — must be perceptually recoverable from at least three independent visual channels:
 
 1. **color** (amethyst / violet)
 2. **orientation** (upside-down, right-facing)
@@ -295,7 +295,7 @@ It does not imply alternative interpretation (NON-NORMATIVE) or adversarial crit
 
 ### 15.3 Deprecation Note
 
-The earlier interpretive sentence *"This audits the standard"* is deprecated in v1.3.0-rc. It was insufficient because *"the standard"* read as an external object — the opposite of frame-audit. The canonical replacement is *"The observer audits the frame"* (normative voice) or *"Thinking examines its own frame"* (explanatory voice).
+The earlier interpretive sentence *"This audits the standard"* is deprecated in v2.0.0. It was insufficient because *"the standard"* read as an external object — the opposite of frame-audit. The canonical replacement is *"The observer audits the frame"* (normative voice) or *"Thinking examines its own frame"* (explanatory voice).
 
 ---
 
@@ -310,7 +310,7 @@ The earlier interpretive sentence *"This audits the standard"* is deprecated in 
 
 ## 17. Relationship to Other States
 
-| State | Operator | Quote (v1.3.0-rc) |
+| State | Operator | Quote (v2.0.0) |
 | --- | --- | --- |
 | NORMATIVE | I | "This is the standard." |
 | NON-NORMATIVE | σᵥ | "This reflects the standard." |

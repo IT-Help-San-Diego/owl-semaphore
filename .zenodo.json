@@ -1,8 +1,8 @@
 {
   "title": "Owl Semaphore Badge System",
-  "version": "v1.3.0-rc",
+  "version": "v2.0.0",
   "upload_type": "software",
-  "description": "Release candidate for Owl Semaphore v1.3.0. Refines the METACOGNITIVE interpretive phrasing to 'The observer audits the frame' (deprecating 'This audits the standard'), reconciles the canonical formal sentence onto 'A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants', makes the accessibility rule (color is not the only carrier; state identity is recoverable from color + orientation + textual label) normative, adds an explanation document with the DNS Tool origin story and archetype rationale, ships a single-command reproducible PDF pipeline with per-page owl headers and embedded PDF metadata, adds a CHANGELOG with the canonical sentence per version, populates SHA-3-512 hashes for tracked specifications and PDFs, and adds a banner-tuple integrity test that verifies state, transform, determinant, mapping, version, and DOI family from generated PDFs. The Klein-four-group (V4) algebra and the sigma_h assignment to METACOGNITIVE are unchanged from v1.2.0. v1.3.0 has not yet been minted on Zenodo; the version DOI placeholder is TBD_BY_ZENODO_ON_RELEASE.",
+  "description": "Owl Semaphore v2.0.0. Refines the METACOGNITIVE interpretive phrasing to 'The observer audits the frame' (deprecating 'This audits the standard'), reconciles the canonical formal sentence onto 'A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants', makes the accessibility rule (color is not the only carrier; state identity is recoverable from color + orientation + textual label) normative, adds an explanation document with the DNS Tool origin story and archetype rationale, ships a single-command reproducible PDF pipeline with per-page owl headers and embedded PDF metadata, adds a CHANGELOG with the canonical sentence per version, populates SHA-3-512 hashes for tracked specifications and PDFs, and adds a banner-tuple integrity test that verifies state, transform, determinant, mapping, version, and DOI family from generated PDFs. The Klein-four-group (V4) algebra and the sigma_h assignment to METACOGNITIVE are unchanged from v1.2.0. v2.0.0 has not yet been minted on Zenodo; the version DOI placeholder is TBD_BY_ZENODO_ON_RELEASE.",
   "creators": [
     {
       "name": "Balboa, Carey James",
@@ -39,5 +39,5 @@
       "scheme": "doi"
     }
   ],
-  "notes": "v1.3.0 version DOI placeholder: TBD_BY_ZENODO_ON_RELEASE. This .zenodo.json describes the release candidate; the file is not yet attached to a Zenodo deposit. The most recently published version DOI is 10.5281/zenodo.19474599 (v1.2.0)."
+  "notes": "v2.0.0 version DOI placeholder: TBD_BY_ZENODO_ON_RELEASE. This .zenodo.json describes v2.0.0; the file is not yet attached to a Zenodo deposit. The most recently published version DOI is 10.5281/zenodo.19474599 (v1.2.0)."
 }

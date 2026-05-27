@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate publication-grade PDFs for the Owl Semaphore system (v1.3.0-rc).
+Generate publication-grade PDFs for the Owl Semaphore system (v2.0.0).
 
 Produces, with one command, five PDFs:
   - OWL-SEMAPHORE-SYSTEM.pdf
@@ -41,10 +41,10 @@ except ImportError:  # pragma: no cover - handled at runtime
 
 REPO = os.path.dirname(os.path.abspath(__file__))
 
-# ── Project-wide metadata (v1.3.0-rc) ───────────────────────────────────────
+# ── Project-wide metadata (v2.0.0) ──────────────────────────────────────────
 
-VERSION = "1.3.0-rc"
-RELEASE_LABEL = "v1.3.0-rc"
+VERSION = "2.0.0"
+RELEASE_LABEL = "v2.0.0"
 AUTHOR = "Carey James Balboa"
 ORCID = "0009-0000-5237-9065"
 REPO_URL = "github.com/IT-Help-San-Diego/owl-semaphore"
@@ -71,7 +71,7 @@ DOCS = [
         "quote": '"This is the standard."',
         "standard_ref": "RFC 2119 MUST / SHALL",
         "contact_caption": "Owl Semaphore System — Master Proof",
-        "pdf_subject": "Owl Semaphore System Specification (v1.3.0-rc)",
+        "pdf_subject": "Owl Semaphore System Specification (v2.0.0)",
     },
     {
         "md": "OWL-SEMAPHORE-EXPLANATION.md",
@@ -88,7 +88,7 @@ DOCS = [
         "quote": '"Thinking examines its own frame."',
         "standard_ref": "Informative / Explanatory",
         "contact_caption": "Owl Semaphore System — Master Proof",
-        "pdf_subject": "Owl Semaphore Explanation (informative companion, v1.3.0-rc)",
+        "pdf_subject": "Owl Semaphore Explanation (informative companion, v2.0.0)",
     },
     {
         "md": "OWL-1-NORMATIVE.md",
@@ -105,7 +105,7 @@ DOCS = [
         "quote": '"This is the standard."',
         "standard_ref": "RFC 2119 MUST / SHALL",
         "contact_caption": "Normative — Layer Proof Palette",
-        "pdf_subject": "Owl Semaphore — Normative state specification (OWL 1 / I, v1.3.0-rc)",
+        "pdf_subject": "Owl Semaphore — Normative state specification (OWL 1 / I, v2.0.0)",
     },
     {
         "md": "OWL-2-NON-NORMATIVE.md",
@@ -122,7 +122,7 @@ DOCS = [
         "quote": '"This reflects the standard."',
         "standard_ref": "Informative / Advisory (NOTE)",
         "contact_caption": "Non-Normative — Layer Proof Palette",
-        "pdf_subject": "Owl Semaphore — Non-Normative state specification (OWL 2 / sigma_v, v1.3.0-rc)",
+        "pdf_subject": "Owl Semaphore — Non-Normative state specification (OWL 2 / sigma_v, v2.0.0)",
     },
     {
         "md": "OWL-3-CRITICAL.md",
@@ -139,7 +139,7 @@ DOCS = [
         "quote": '"This inverts the standard."',
         "standard_ref": "RFC 2119 MUST NOT / SHALL NOT",
         "contact_caption": "Critical — Layer Proof Palette",
-        "pdf_subject": "Owl Semaphore — Critical state specification (OWL 3 / C2, v1.3.0-rc)",
+        "pdf_subject": "Owl Semaphore — Critical state specification (OWL 3 / C2, v2.0.0)",
     },
     {
         "md": "OWL-4-METACOGNITIVE.md",
@@ -156,7 +156,7 @@ DOCS = [
         "quote": '"The observer audits the frame."',
         "standard_ref": "Epistemic / Framework (META)",
         "contact_caption": "Metacognitive — Layer Proof Palette",
-        "pdf_subject": "Owl Semaphore — Metacognitive state specification (OWL 4 / sigma_h, v1.3.0-rc)",
+        "pdf_subject": "Owl Semaphore — Metacognitive state specification (OWL 4 / sigma_h, v2.0.0)",
     },
 ]
 
@@ -452,7 +452,7 @@ def build_typst_document(doc: dict, body_typst: str) -> str:
   #v(8pt)
   #text(size: 8pt, fill: luma(140))[
     Owl Semaphore {RELEASE_LABEL} · {REPO_URL} \\
-    Concept DOI {CONCEPT_DOI} · v1.2.0 DOI {PUBLISHED_VERSION_DOI} · v1.3.0 DOI {VERSION_DOI_RC} \\
+    Concept DOI {CONCEPT_DOI} · v1.2.0 DOI {PUBLISHED_VERSION_DOI} · v2.0.0 DOI {VERSION_DOI_RC} \\
     (c) 2024-2026 IT Help San Diego Inc. · Licensed under {LICENSE}
   ]
 ]
