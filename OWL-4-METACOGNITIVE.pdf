@@ -4,7 +4,7 @@
 << /Lang (en) /MarkInfo << /Marked true /Suspects false >> /Metadata 3 0 R /Outlines 4 0 R /Pages 5 0 R /StructTreeRoot 6 0 R /Type /Catalog /ViewerPreferences << /Direction /L2R >> >>
 endobj
 2 0 obj
-<< /Author (Carey James Balboa) /CreationDate (D:20260527205224+00'00) /Creator (owl-semaphore/generate_pdfs.py v2.0.0) /Keywords (Owl Semaphore, Klein four-group, V4, epistemic notation, METACOGNITIVE, DNS Tool, accessibility, metacognition, v2.0.0) /ModDate (D:20260527205224+00'00) /Producer (typst \(via python-typst\) + pikepdf) /Subject (Owl Semaphore \204 Metacognitive state specification \(OWL 4 / sigma_h, v2.0.0\)) /Title (Owl Semaphore \204 Metacognitive \(v2.0.0\)) >>
+<< /Author (Carey James Balboa) /CreationDate (D:20260527213511+00'00) /Creator (owl-semaphore/generate_pdfs.py v2.0.0) /Keywords (Owl Semaphore, Klein four-group, V4, epistemic notation, METACOGNITIVE, DNS Tool, accessibility, metacognition, v2.0.0) /ModDate (D:20260527213511+00'00) /Producer (typst \(via python-typst\) + pikepdf) /Subject (Owl Semaphore \204 Metacognitive state specification \(OWL 4 / sigma_h, v2.0.0\)) /Title (Owl Semaphore \204 Metacognitive \(v2.0.0\)) >>
 endobj
 3 0 obj
 << /Subtype /XML /Type /Metadata /Length 2221 >>
@@ -30,11 +30,11 @@ stream
           <rdf:li>en</rdf:li>
         </rdf:Bag>
       </dc:language>
-      <xmp:ModifyDate>2026-05-27T20:52:24+00:00</xmp:ModifyDate>
-      <xmp:CreateDate>2026-05-27T20:52:24+00:00</xmp:CreateDate>
+      <xmp:ModifyDate>2026-05-27T21:35:11+00:00</xmp:ModifyDate>
+      <xmp:CreateDate>2026-05-27T21:35:11+00:00</xmp:CreateDate>
       <xmpTPg:NPages>11</xmpTPg:NPages>
       <dc:format>application/pdf</dc:format>
-      <xmpMM:InstanceID>uBJp3NT/UBfraM43U5xiLQ==</xmpMM:InstanceID>
+      <xmpMM:InstanceID>OiDcRNdyNataSuHAK+yqFA==</xmpMM:InstanceID>
       <xmpMM:DocumentID>2HPIedBjpvoxqH0vY10ZFQ==</xmpMM:DocumentID>
       <xmpMM:RenditionClass>proof</xmpMM:RenditionClass>
       <pdf:PDFVersion>1.7</pdf:PDFVersion>
@@ -10578,7 +10578,7 @@ xref
 0002167620 00000 n 
 0002167735 00000 n 
 0002167781 00000 n 
-trailer << /Info 2 0 R /Root 1 0 R /Size 691 /ID [<324850496564426a70766f78714830765931305a46513d3d><97fde89ef835f646b063dc2e80b685b2>] >>
+trailer << /Info 2 0 R /Root 1 0 R /Size 691 /ID [<324850496564426a70766f78714830765931305a46513d3d><df0d04a9e747df0ee3002d8312af12ef>] >>
 startxref
 2167827
 %%EOF
