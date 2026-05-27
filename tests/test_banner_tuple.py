@@ -30,7 +30,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VERSION = "v2.0.1"
 CONCEPT_DOI = "10.5281/zenodo.19473697"
 PUBLISHED_VERSION_DOI = "10.5281/zenodo.20418539"
-VERSION_DOI = "TBD_BY_ZENODO_ON_V2_0_1_RELEASE"
+VERSION_DOI = "10.5281/zenodo.20419874"
 
 # (state, transform substring, det sign, mapping substring, quote, pdf filename)
 EXPECTED = [

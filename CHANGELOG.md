@@ -8,7 +8,7 @@ Each release entry records the **canonical formal sentence used in that release*
 
 ---
 
-## [v2.0.1] — corrective patch release (Zenodo DOI pending; no tag in this PR)
+## [v2.0.1] — corrective patch release
 
 > v2.0.1 is a corrective patch release on top of v2.0.0. It fixes a story-table overflow in `OWL-SEMAPHORE-EXPLANATION.pdf` (PR #9) and stamps PDFs, source metadata, and tests as v2.0.1. The V₄ algebra, the σₕ assignment to METACOGNITIVE, the canonical formal sentence, the accessibility rule, and the asset set are unchanged from v2.0.0.
 
@@ -19,7 +19,7 @@ Each release entry records the **canonical formal sentence used in that release*
 
 **Canonical human sentence (unchanged):** *Four owls tell the reader what kind of thinking they are looking at: standard, exploration, inversion, or self-audit.*
 
-**Version DOI:** `TBD_BY_ZENODO_ON_V2_0_1_RELEASE` — to be minted by Zenodo on release.
+**Version DOI:** [10.5281/zenodo.20419874](https://doi.org/10.5281/zenodo.20419874)
 **Concept DOI:** [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697)
 **Previously published v2.0.0 version DOI:** [10.5281/zenodo.20418539](https://doi.org/10.5281/zenodo.20418539)
 **Earlier published v1.2.0 version DOI:** [10.5281/zenodo.19474599](https://doi.org/10.5281/zenodo.19474599) (retained for citation continuity)
@@ -35,7 +35,7 @@ Each release entry records the **canonical formal sentence used in that release*
   - Concept DOI `10.5281/zenodo.19473697` — unchanged.
   - **v2.0.0 DOI `10.5281/zenodo.20418539`** — now recorded as the *previous published* version DOI (was the *current* version DOI in v2.0.0 metadata).
   - **v1.2.0 DOI `10.5281/zenodo.19474599`** — retained as an *earlier published* version DOI for citation continuity (was the *previous* in v2.0.0 metadata).
-  - **v2.0.1 DOI** — placeholder `TBD_BY_ZENODO_ON_V2_0_1_RELEASE` (will be minted by Zenodo on release).
+  - **v2.0.1 DOI `10.5281/zenodo.20419874`** — minted by Zenodo for the v2.0.1 release (back-filled in this PR).
 - Regenerated all six PDFs via `make pdfs`; refreshed `RELEASE-HASHES.txt` and the generated section of `INTEGRITY-MANIFEST.md` via `make hashes && make manifest`.
 
 ### Non-goals (explicit, v2.0.1)

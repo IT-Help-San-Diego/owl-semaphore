@@ -5,12 +5,12 @@ A finite algebra over epistemic states, implemented as a reproducible visual not
 
 ## Version 2.0.1
 
-> **Version notice.** v2.0.1 is a corrective patch release on top of v2.0.0. It fixes a story-table overflow in `OWL-SEMAPHORE-EXPLANATION.pdf` and stamps PDFs, source metadata, and tests as v2.0.1. **It does not change the V₄ algebra, the σₕ assignment for METACOGNITIVE, the canonical formal sentence, the accessibility rule, or the asset set.** The v2.0.1 version DOI will be minted by Zenodo on release; until then it is recorded as `TBD_BY_ZENODO_ON_V2_0_1_RELEASE`. The previously published v2.0.0 version DOI is [10.5281/zenodo.20418539](https://doi.org/10.5281/zenodo.20418539).
+> **Version notice.** v2.0.1 is a corrective patch release on top of v2.0.0. It fixes a story-table overflow in `OWL-SEMAPHORE-EXPLANATION.pdf` and stamps PDFs, source metadata, and tests as v2.0.1. **It does not change the V₄ algebra, the σₕ assignment for METACOGNITIVE, the canonical formal sentence, the accessibility rule, or the asset set.** The v2.0.1 version DOI is [10.5281/zenodo.20419874](https://doi.org/10.5281/zenodo.20419874). The previously published v2.0.0 version DOI is [10.5281/zenodo.20418539](https://doi.org/10.5281/zenodo.20418539).
 
 [![Concept DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19473697.svg)](https://doi.org/10.5281/zenodo.19473697)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-- **Version DOI (v2.0.1):** `TBD_BY_ZENODO_ON_V2_0_1_RELEASE` (to be minted by Zenodo on release)
+- **Version DOI (v2.0.1):** [10.5281/zenodo.20419874](https://doi.org/10.5281/zenodo.20419874)
 - **Concept DOI (all versions):** [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697)
 - **Previous version DOI (v2.0.0):** [10.5281/zenodo.20418539](https://doi.org/10.5281/zenodo.20418539)
 - **Earlier version DOI (v1.2.0):** [10.5281/zenodo.19474599](https://doi.org/10.5281/zenodo.19474599)
@@ -43,9 +43,9 @@ Every state's identity is recoverable from three redundant channels: **color + o
 
 ## Citation
 
-If you use the Owl Semaphore Badge System, please cite the v2.0.1 version DOI once Zenodo mints it; until then, cite the concept DOI (which resolves to the latest version) or the previously published v2.0.0 version DOI:
+If you use the Owl Semaphore Badge System, please cite the v2.0.1 version DOI:
 
-> Balboa, Carey James. *Owl Semaphore Badge System* (v2.0.1). Zenodo. (DOI: `TBD_BY_ZENODO_ON_V2_0_1_RELEASE`)
+> Balboa, Carey James. *Owl Semaphore Badge System* (v2.0.1). Zenodo. https://doi.org/10.5281/zenodo.20419874
 >
 > Previously published version: Balboa, Carey James. *Owl Semaphore Badge System* (v2.0.0). Zenodo. https://doi.org/10.5281/zenodo.20418539
 
@@ -143,6 +143,7 @@ NORM-composite-white-540.png
   "dateModified": "2026-05-27",
   "identifier": [
     "https://doi.org/10.5281/zenodo.19473697",
+    "https://doi.org/10.5281/zenodo.20419874",
     "https://doi.org/10.5281/zenodo.20418539",
     "https://doi.org/10.5281/zenodo.19474599"
   ],
@@ -153,7 +154,7 @@ NORM-composite-white-540.png
     "name": "Carey James Balboa",
     "identifier": "https://orcid.org/0009-0000-5237-9065"
   },
-  "description": "A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants. Four-state classification (NORMATIVE, NON-NORMATIVE, CRITICAL, METACOGNITIVE) for DNS Tool documentation and related research artifacts. v2.0.1 is a corrective patch release on top of v2.0.0; the v2.0.1 version DOI will be minted by Zenodo on release. Previously published v2.0.0 version DOI: 10.5281/zenodo.20418539.",
+  "description": "A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants. Four-state classification (NORMATIVE, NON-NORMATIVE, CRITICAL, METACOGNITIVE) for DNS Tool documentation and related research artifacts. v2.0.1 is a corrective patch release on top of v2.0.0; the v2.0.1 version DOI is 10.5281/zenodo.20419874. Previously published v2.0.0 version DOI: 10.5281/zenodo.20418539.",
   "keywords": [
     "Owl Semaphore",
     "DNS Tool",
