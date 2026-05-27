@@ -3,19 +3,19 @@
 # OWL SEMAPHORE — SYSTEM SPECIFICATION
 A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants.
 
-## Version 1.3.0-rc (release candidate)
+## Version 2.0.0
 
-> **Release-candidate notice.** This branch is the v1.3.0 release candidate. It refines explanatory language, fixes version drift, adds an explanation document, repairs the reproducible PDF pipeline, and tightens accessibility wording. **It does not change the V₄ algebra or the σₕ assignment for METACOGNITIVE.** No Zenodo upload, no release tag, and no merge has occurred for v1.3.0. The currently published Zenodo record remains v1.2.0 (DOI [10.5281/zenodo.19474599](https://doi.org/10.5281/zenodo.19474599)). The version DOI for v1.3.0 is `TBD_BY_ZENODO_ON_RELEASE`.
+> **Version notice.** This is the v2.0.0 final label. It refines explanatory language, fixes version drift, adds an explanation document, repairs the reproducible PDF pipeline, and tightens accessibility wording. **It does not change the V₄ algebra or the σₕ assignment for METACOGNITIVE.** The currently published Zenodo record remains v1.2.0 (DOI [10.5281/zenodo.19474599](https://doi.org/10.5281/zenodo.19474599)). The version DOI for v2.0.0 is `TBD_BY_ZENODO_ON_RELEASE` until Zenodo mints it.
 
 [![Published Version DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19474599.svg)](https://doi.org/10.5281/zenodo.19474599)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 - **Currently published version DOI (v1.2.0):** [10.5281/zenodo.19474599](https://doi.org/10.5281/zenodo.19474599)
 - **Concept DOI (all versions):** [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697)
-- **Release-candidate version DOI (v1.3.0):** `TBD_BY_ZENODO_ON_RELEASE`
+- **Version DOI (v2.0.0):** `TBD_BY_ZENODO_ON_RELEASE`
 - **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
-## Canonical Sentence Stack (v1.3.0-rc)
+## Canonical Sentence Stack (v2.0.0)
 
 | Layer | Sentence | Use |
 | --- | --- | --- |
@@ -25,7 +25,7 @@ A finite algebra over epistemic states, implemented as a reproducible visual not
 
 See [`CHANGELOG.md`](CHANGELOG.md) for the per-version canonical sentence history.
 
-## The Four States (v1.3.0-rc)
+## The Four States (v2.0.0)
 
 | State | Operator | Determinant | Quote (normative) | Standards register |
 | --- | --- | --- | --- | --- |
@@ -34,7 +34,7 @@ See [`CHANGELOG.md`](CHANGELOG.md) for the per-version canonical sentence histor
 | CRITICAL | C₂ | +1 | *"This inverts the standard."* | RFC 2119 MUST NOT / SHALL NOT |
 | METACOGNITIVE | σₕ | −1 | **"The observer audits the frame."** | Epistemic / Framework (META) |
 
-The METACOGNITIVE phrasing is refined in v1.3.0-rc. The earlier line *"This audits the standard"* is deprecated because it failed to express *thinking examining its own frame*. See [`OWL-4-METACOGNITIVE.md`](OWL-4-METACOGNITIVE.md) §1 and [`OWL-SEMAPHORE-EXPLANATION.md`](OWL-SEMAPHORE-EXPLANATION.md) for the warmer explanatory variant *"Thinking examines its own frame."*
+The METACOGNITIVE phrasing is refined in v2.0.0. The earlier line *"This audits the standard"* is deprecated because it failed to express *thinking examining its own frame*. See [`OWL-4-METACOGNITIVE.md`](OWL-4-METACOGNITIVE.md) §1 and [`OWL-SEMAPHORE-EXPLANATION.md`](OWL-SEMAPHORE-EXPLANATION.md) for the warmer explanatory variant *"Thinking examines its own frame."*
 
 ## Accessibility — Color Is Not the Only Carrier
 
@@ -46,7 +46,7 @@ If you use the Owl Semaphore Badge System, please cite the most recently publish
 
 > Balboa, Carey James. *Owl Semaphore Badge System* (v1.2.0). Zenodo. https://doi.org/10.5281/zenodo.19474599
 
-After v1.3.0 is published on Zenodo, replace the version DOI with the minted v1.3.0 DOI (currently `TBD_BY_ZENODO_ON_RELEASE`). Machine-readable citation metadata is in [`CITATION.cff`](CITATION.cff).
+After v2.0.0 is published on Zenodo, replace the version DOI with the minted v2.0.0 DOI (currently `TBD_BY_ZENODO_ON_RELEASE`). Machine-readable citation metadata is in [`CITATION.cff`](CITATION.cff).
 
 ## Reproducing the PDFs
 
@@ -72,7 +72,7 @@ owl-semaphore/
 ├── README.md
 ├── CHANGELOG.md
 ├── OWL-SEMAPHORE-SYSTEM.md
-├── OWL-SEMAPHORE-EXPLANATION.md       (new in v1.3.0-rc)
+├── OWL-SEMAPHORE-EXPLANATION.md       (new in v2.0.0)
 ├── OWL-1-NORMATIVE.md
 ├── OWL-2-NON-NORMATIVE.md
 ├── OWL-3-CRITICAL.md
@@ -81,10 +81,10 @@ owl-semaphore/
 ├── RELEASE-HASHES.txt
 ├── CITATION.cff
 ├── .zenodo.json
-├── Makefile                            (new in v1.3.0-rc)
+├── Makefile                            (new in v2.0.0)
 ├── generate_pdfs.py
 ├── tests/
-│   └── test_banner_tuple.py            (new in v1.3.0-rc)
+│   └── test_banner_tuple.py            (new in v2.0.0)
 └── assets/
     ├── exports/
     ├── layers/
@@ -133,7 +133,7 @@ NORM-composite-white-540.png
   "@context": "https://schema.org",
   "@type": "SoftwareSourceCode",
   "name": "Owl Semaphore Badge System",
-  "version": "1.3.0-rc",
+  "version": "2.0.0",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "codeRepository": "https://github.com/IT-Help-San-Diego/owl-semaphore",
   "datePublished": "2026-04-07",
@@ -149,7 +149,7 @@ NORM-composite-white-540.png
     "name": "Carey James Balboa",
     "identifier": "https://orcid.org/0009-0000-5237-9065"
   },
-  "description": "A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants. Four-state classification (NORMATIVE, NON-NORMATIVE, CRITICAL, METACOGNITIVE) for DNS Tool documentation and related research artifacts. v1.3.0-rc is a release candidate; the version DOI for v1.3.0 will be minted by Zenodo on release.",
+  "description": "A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants. Four-state classification (NORMATIVE, NON-NORMATIVE, CRITICAL, METACOGNITIVE) for DNS Tool documentation and related research artifacts. v2.0.0 is the current final label; the version DOI for v2.0.0 will be minted by Zenodo on release.",
   "keywords": [
     "Owl Semaphore",
     "DNS Tool",
@@ -162,7 +162,7 @@ NORM-composite-white-540.png
     "metacognition",
     "accessibility"
   ],
-  "releaseNotes": "v1.3.0-rc — release-candidate refinements: METACOGNITIVE phrasing reconciled to 'The observer audits the frame'; accessibility rule (color is not the only carrier) made normative; OWL-SEMAPHORE-EXPLANATION.md added; CHANGELOG.md added; Makefile-based one-command PDF regeneration with embedded PDF metadata and per-page owl headers; integrity manifest reconciled with computed SHA-3-512 hashes for markdown and generated PDFs; banner-tuple test added. V4 algebra and σh assignment are unchanged.",
+  "releaseNotes": "v2.0.0 — final-label refinements: METACOGNITIVE phrasing reconciled to 'The observer audits the frame'; accessibility rule (color is not the only carrier) made normative; OWL-SEMAPHORE-EXPLANATION.md added; CHANGELOG.md added; Makefile-based one-command PDF regeneration with embedded PDF metadata and per-page owl headers; integrity manifest reconciled with computed SHA-3-512 hashes for markdown and generated PDFs; banner-tuple test added. V4 algebra and σh assignment are unchanged.",
   "isAccessibleForFree": true
 }
 </script>

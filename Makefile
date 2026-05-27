@@ -1,4 +1,4 @@
-# Owl Semaphore — Makefile (v1.3.0-rc)
+# Owl Semaphore — Makefile (v2.0.0)
 #
 # Single entry point for regenerating PDFs, recomputing hashes, rewriting the
 # integrity manifest section that depends on those hashes, and running tests.

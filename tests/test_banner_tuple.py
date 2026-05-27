@@ -1,4 +1,4 @@
-"""Banner-tuple PDF integrity test (v1.3.0-rc).
+"""Banner-tuple PDF integrity test (v2.0.0).
 
 Each generated PDF in the Owl Semaphore release embeds a single-line
 ``BANNER-TUPLE :: ...`` string on its title page that names the state, the
@@ -27,7 +27,7 @@ import unittest
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-VERSION = "v1.3.0-rc"
+VERSION = "v2.0.0"
 CONCEPT_DOI = "10.5281/zenodo.19473697"
 PUBLISHED_VERSION_DOI = "10.5281/zenodo.19474599"
 RC_VERSION_DOI = "TBD_BY_ZENODO_ON_RELEASE"
@@ -103,12 +103,12 @@ def _normalize(text: str) -> str:
     """Collapse soft-wrapped pdftotext output to a single search-friendly string.
 
     pdftotext can break the small Courier banner-tuple line in the middle of a
-    token (e.g. ``CONCEPT-DOI`` may appear as ``CONCEPT-\\n  DOI``). We undo
-    that by stripping hyphen-then-whitespace boundaries, then collapsing any
-    remaining whitespace to single spaces.
+    token at a hyphen (e.g. ``CONCEPT-\\n  DOI``) or at a slash (e.g.
+    ``10.5281/\\n  zenodo.19473697``). We undo both by stripping whitespace that
+    follows a hyphen or slash, then collapsing any remaining whitespace to
+    single spaces.
     """
-    # Remove whitespace that follows a hyphen inside a token (rejoin CONCEPT- DOI)
-    rejoined = re.sub(r"-\s+", "-", text)
+    rejoined = re.sub(r"([-/])\s+", r"\1", text)
     return re.sub(r"\s+", " ", rejoined)
 
 
@@ -148,7 +148,7 @@ class BannerTupleTest(unittest.TestCase):
 
     def test_deprecated_quote_absent_from_meta_ledger(self):
         """The deprecated METACOGNITIVE wording 'This audits the standard.' must
-        not appear in the METACOGNITIVE PDF or the system PDF in v1.3.0-rc."""
+        not appear in the METACOGNITIVE PDF or the system PDF in v2.0.0."""
         for pdf_name in ("OWL-4-METACOGNITIVE.pdf", "OWL-SEMAPHORE-SYSTEM.pdf"):
             pdf_path = os.path.join(REPO, pdf_name)
             if not os.path.exists(pdf_path):
