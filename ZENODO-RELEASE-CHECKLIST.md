@@ -74,15 +74,17 @@
 
 ## 7. Zenodo Preparation
 
+> **Convention (effective v2.0.2).** The archived source snapshot for each release cites the **stable concept DOI**, which Zenodo resolves to the latest published version. The version-specific DOI for the *current* release is recorded in the GitHub release notes after Zenodo mints it; it is intentionally **not** back-filled into source files, PDFs, or tests. This convention removes the prior back-fill-after-mint step and keeps each release's source snapshot final on its own terms.
+
 - [x] Zenodo account connected to GitHub
 - [x] repository enabled in Zenodo
 - [x] GitHub release created
 - [x] Zenodo ingestion confirmed
-- [x] concept DOI recorded: `10.5281/zenodo.19473697`
-- [x] earlier version DOI recorded (v1.2.0): `10.5281/zenodo.19474599`
-- [x] previously published version DOI recorded (v2.0.0): `10.5281/zenodo.20418539`
-- [x] version DOI recorded (v2.0.1): `10.5281/zenodo.20419874`
-- [x] DOI added back into (after v2.0.1 mint):
+- [x] concept DOI recorded (citing DOI for the source snapshot of every release): `10.5281/zenodo.19473697`
+- [x] previous published version DOI recorded (v2.0.1): `10.5281/zenodo.20419874`
+- [x] earlier published version DOI recorded (v2.0.0): `10.5281/zenodo.20418539`
+- [x] earlier published version DOI recorded (v1.2.0): `10.5281/zenodo.19474599`
+- [ ] v2.0.2 version-specific DOI: recorded in the GitHub release notes after Zenodo mints it (not back-filled into source). Files that already cite the concept DOI as the source's citing DOI:
   - [x] `README.md`
   - [x] `CITATION.cff`
   - [x] `.zenodo.json`
@@ -90,7 +92,6 @@
   - [x] `OWL-SEMAPHORE-EXPLANATION.md`
   - [x] `generate_pdfs.py` and regenerated PDF page-one banner tuples
   - [x] `tests/test_banner_tuple.py`
-  - [x] release notes
 
 ## 8. Post-Release
 

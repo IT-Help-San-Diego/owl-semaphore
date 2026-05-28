@@ -1,10 +1,12 @@
-"""Banner-tuple PDF integrity test (v2.0.1).
+"""Banner-tuple PDF integrity test (v2.0.2).
 
 Each generated PDF in the Owl Semaphore release embeds a single-line
 ``BANNER-TUPLE :: ...`` string on its title page that names the state, the
 operator/transform, the determinant, the coordinate mapping, the canonical
-quote, the version, and the DOI family (concept DOI + previously published
-v2.0.0 version DOI + v2.0.1 version DOI placeholder pending Zenodo mint).
+quote, the version, the concept DOI, and the previous-published version DOI
+(v2.0.1). The v2.0.2 version-specific DOI is minted by Zenodo at release time
+and recorded in the GitHub release notes; the source snapshot deliberately
+cites the stable concept DOI rather than the unminted version DOI.
 
 This test extracts page-one text from each PDF via ``pdftotext -layout`` and
 verifies that the banner tuple is present and that every expected field is
@@ -27,10 +29,9 @@ import unittest
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-VERSION = "v2.0.1"
+VERSION = "v2.0.2"
 CONCEPT_DOI = "10.5281/zenodo.19473697"
-PUBLISHED_VERSION_DOI = "10.5281/zenodo.20418539"
-VERSION_DOI = "10.5281/zenodo.20419874"
+PREVIOUS_VERSION_DOI = "10.5281/zenodo.20419874"  # v2.0.1 (previous published)
 
 # (state, transform substring, det sign, mapping substring, quote, pdf filename)
 EXPECTED = [
@@ -129,8 +130,7 @@ class BannerTupleTest(unittest.TestCase):
             (_normalize(quote), f"{pdf_name} banner tuple does not contain canonical quote {quote}"),
             (f"VERSION={VERSION}", f"{pdf_name} banner tuple does not report VERSION={VERSION}"),
             (f"CONCEPT-DOI={CONCEPT_DOI}", f"{pdf_name} banner tuple does not report CONCEPT-DOI={CONCEPT_DOI}"),
-            (f"PUBLISHED-VERSION-DOI={PUBLISHED_VERSION_DOI}", f"{pdf_name} banner tuple does not report PUBLISHED-VERSION-DOI"),
-            (f"VERSION-DOI={VERSION_DOI}", f"{pdf_name} banner tuple does not report v2.0.1 VERSION-DOI (pending Zenodo mint)"),
+            (f"PREVIOUS-VERSION-DOI={PREVIOUS_VERSION_DOI}", f"{pdf_name} banner tuple does not report PREVIOUS-VERSION-DOI={PREVIOUS_VERSION_DOI} (v2.0.1)"),
         ):
             self.assertIn(needle, text, message)
         if det is not None:
@@ -148,7 +148,7 @@ class BannerTupleTest(unittest.TestCase):
 
     def test_deprecated_quote_absent_from_meta_ledger(self):
         """The deprecated METACOGNITIVE wording 'This audits the standard.' must
-        not appear in the METACOGNITIVE PDF or the system PDF in v2.0.1."""
+        not appear in the METACOGNITIVE PDF or the system PDF in v2.0.2."""
         for pdf_name in ("OWL-4-METACOGNITIVE.pdf", "OWL-SEMAPHORE-SYSTEM.pdf"):
             pdf_path = os.path.join(REPO, pdf_name)
             if not os.path.exists(pdf_path):

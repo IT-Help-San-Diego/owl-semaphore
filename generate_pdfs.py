@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate publication-grade PDFs for the Owl Semaphore system (v2.0.1).
+Generate publication-grade PDFs for the Owl Semaphore system (v2.0.2).
 
 Produces, with one command, five PDFs:
   - OWL-SEMAPHORE-SYSTEM.pdf
@@ -41,17 +41,26 @@ except ImportError:  # pragma: no cover - handled at runtime
 
 REPO = os.path.dirname(os.path.abspath(__file__))
 
-# ── Project-wide metadata (v2.0.1) ──────────────────────────────────────────
+# ── Project-wide metadata (v2.0.2) ──────────────────────────────────────────
+#
+# DOI strategy for v2.0.2 source snapshot: the archived source cites the stable
+# concept DOI (which resolves to the latest published version on Zenodo). The
+# v2.0.2 version-specific DOI is minted by Zenodo at release time and recorded
+# in the GitHub release notes; it is intentionally not baked into the source so
+# that this snapshot is final on its own terms and does not require a follow-up
+# back-fill cycle. The v2.0.1, v2.0.0, and v1.2.0 version DOIs are listed below
+# as previously published versions for citation continuity.
 
-VERSION = "2.0.1"
-RELEASE_LABEL = "v2.0.1"
+VERSION = "2.0.2"
+RELEASE_LABEL = "v2.0.2"
 AUTHOR = "Carey James Balboa"
 ORCID = "0009-0000-5237-9065"
 REPO_URL = "github.com/IT-Help-San-Diego/owl-semaphore"
-CONCEPT_DOI = "10.5281/zenodo.19473697"
-PRIOR_VERSION_DOI = "10.5281/zenodo.19474599"  # v1.2.0 (retained for citation continuity)
-PUBLISHED_VERSION_DOI = "10.5281/zenodo.20418539"  # v2.0.0 (previous published)
-VERSION_DOI = "10.5281/zenodo.20419874"  # v2.0.1
+CONCEPT_DOI = "10.5281/zenodo.19473697"  # all-versions concept DOI (resolves to latest)
+CITING_DOI = CONCEPT_DOI  # DOI used to cite v2.0.2; concept DOI by design
+PREVIOUS_VERSION_DOI = "10.5281/zenodo.20419874"  # v2.0.1 (previous published)
+PRIOR_V200_DOI = "10.5281/zenodo.20418539"  # v2.0.0 (earlier published)
+PRIOR_V120_DOI = "10.5281/zenodo.19474599"  # v1.2.0 (earlier published)
 LICENSE = "CC-BY-4.0"
 
 # ── Document metadata ──────────────────────────────────────────────────────
@@ -72,7 +81,7 @@ DOCS = [
         "quote": '"This is the standard."',
         "standard_ref": "RFC 2119 MUST / SHALL",
         "contact_caption": "Owl Semaphore System — Master Proof",
-        "pdf_subject": "Owl Semaphore System Specification (v2.0.1)",
+        "pdf_subject": "Owl Semaphore System Specification (v2.0.2)",
     },
     {
         "md": "OWL-SEMAPHORE-EXPLANATION.md",
@@ -89,7 +98,7 @@ DOCS = [
         "quote": '"Thinking examines its own frame."',
         "standard_ref": "Informative / Explanatory",
         "contact_caption": "Owl Semaphore System — Master Proof",
-        "pdf_subject": "Owl Semaphore Explanation (informative companion, v2.0.1)",
+        "pdf_subject": "Owl Semaphore Explanation (informative companion, v2.0.2)",
     },
     {
         "md": "OWL-1-NORMATIVE.md",
@@ -106,7 +115,7 @@ DOCS = [
         "quote": '"This is the standard."',
         "standard_ref": "RFC 2119 MUST / SHALL",
         "contact_caption": "Normative — Layer Proof Palette",
-        "pdf_subject": "Owl Semaphore — Normative state specification (OWL 1 / I, v2.0.1)",
+        "pdf_subject": "Owl Semaphore — Normative state specification (OWL 1 / I, v2.0.2)",
     },
     {
         "md": "OWL-2-NON-NORMATIVE.md",
@@ -123,7 +132,7 @@ DOCS = [
         "quote": '"This reflects the standard."',
         "standard_ref": "Informative / Advisory (NOTE)",
         "contact_caption": "Non-Normative — Layer Proof Palette",
-        "pdf_subject": "Owl Semaphore — Non-Normative state specification (OWL 2 / sigma_v, v2.0.1)",
+        "pdf_subject": "Owl Semaphore — Non-Normative state specification (OWL 2 / sigma_v, v2.0.2)",
     },
     {
         "md": "OWL-3-CRITICAL.md",
@@ -140,7 +149,7 @@ DOCS = [
         "quote": '"This inverts the standard."',
         "standard_ref": "RFC 2119 MUST NOT / SHALL NOT",
         "contact_caption": "Critical — Layer Proof Palette",
-        "pdf_subject": "Owl Semaphore — Critical state specification (OWL 3 / C2, v2.0.1)",
+        "pdf_subject": "Owl Semaphore — Critical state specification (OWL 3 / C2, v2.0.2)",
     },
     {
         "md": "OWL-4-METACOGNITIVE.md",
@@ -157,7 +166,7 @@ DOCS = [
         "quote": '"The observer audits the frame."',
         "standard_ref": "Epistemic / Framework (META)",
         "contact_caption": "Metacognitive — Layer Proof Palette",
-        "pdf_subject": "Owl Semaphore — Metacognitive state specification (OWL 4 / sigma_h, v2.0.1)",
+        "pdf_subject": "Owl Semaphore — Metacognitive state specification (OWL 4 / sigma_h, v2.0.2)",
     },
 ]
 
@@ -240,11 +249,15 @@ def build_typst_document(doc: dict, body_typst: str) -> str:
 
     # Stable banner-tuple line — every PDF page-1 must contain this exact string
     # so the banner-tuple test can verify it.
+    # The banner tuple cites the concept DOI (stable, resolves to the latest
+    # published version) plus the previous-published version DOI (v2.0.1). The
+    # v2.0.2 version-specific DOI is minted by Zenodo at release and lives in
+    # release notes — it is intentionally omitted from the source snapshot to
+    # avoid a back-fill cycle.
     banner_tuple = (
         f"BANNER-TUPLE :: STATE={state_token} :: TRANSFORM={mathline} :: "
         f"QUOTE={quote} :: VERSION={RELEASE_LABEL} :: CONCEPT-DOI={CONCEPT_DOI} :: "
-        f"PUBLISHED-VERSION-DOI={PUBLISHED_VERSION_DOI} :: "
-        f"VERSION-DOI={VERSION_DOI}"
+        f"PREVIOUS-VERSION-DOI={PREVIOUS_VERSION_DOI}"
     )
 
     return f'''// Owl Semaphore PDF — generated by generate_pdfs.py ({RELEASE_LABEL})
@@ -363,7 +376,7 @@ def build_typst_document(doc: dict, body_typst: str) -> str:
   #v(6pt)
   #text(size: 8.5pt, fill: luma(120))[
     ORCID {ORCID} #h(12pt) CONCEPT-DOI {CONCEPT_DOI} \\
-    PUBLISHED-VERSION-DOI {PUBLISHED_VERSION_DOI} (v2.0.0) #h(12pt) VERSION-DOI {VERSION_DOI} \\
+    PREVIOUS-VERSION-DOI {PREVIOUS_VERSION_DOI} (v2.0.1) #h(12pt) PRIOR-V2.0.0-DOI {PRIOR_V200_DOI} \\
     SOURCE {REPO_URL} #h(12pt) VERSION {RELEASE_LABEL} · LICENSE {LICENSE}
   ]
   #v(8pt)
@@ -453,7 +466,7 @@ def build_typst_document(doc: dict, body_typst: str) -> str:
   #v(8pt)
   #text(size: 8pt, fill: luma(140))[
     Owl Semaphore {RELEASE_LABEL} · {REPO_URL} \\
-    Concept DOI {CONCEPT_DOI} · v1.2.0 DOI {PRIOR_VERSION_DOI} · v2.0.0 DOI {PUBLISHED_VERSION_DOI} · v2.0.1 DOI {VERSION_DOI} \\
+    Concept DOI {CONCEPT_DOI} · v1.2.0 DOI {PRIOR_V120_DOI} · v2.0.0 DOI {PRIOR_V200_DOI} · v2.0.1 DOI {PREVIOUS_VERSION_DOI} \\
     (c) 2024-2026 IT Help San Diego Inc. · Licensed under {LICENSE}
   ]
 ]
