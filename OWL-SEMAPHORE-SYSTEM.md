@@ -22,9 +22,9 @@ The objective is a system that is:
 
 ### 1.0 Core Framing (informative preamble)
 
-> The semaphore is not a filing system. It is a mirror of how human beings have always processed knowledge — from ancient Athens to modern laboratories. If it does not align with reality, psychology, psychiatry, the human spirit, human knowledge, computer science, data science, statistics, and 2,500 years of accumulated understanding, then it has failed. It must all align — not magically, but rigorously.
+> The semaphore is a visual notation. Its design target is *compatibility* with established mathematics, accessibility practice, and carefully bounded analogies from epistemology and cognitive science — not a theory of everything, and not a claim over the whole of human knowledge.
 
-This preamble is informative. It states the project's external-alignment criterion: the four states are a notation system for things human knowledge already does — peer review separates normative from non-normative; CVEs flag critical; methodology audits are metacognitive — not a novel taxonomy. Where the notation contradicts a careful practitioner's existing terminology, the notation is wrong, not the field. The four front-loaded stories in the state specifications (*The Proven Ground*, *Da Vinci's Wings*, *The Manhattan Moment*, *The Observer's Mirror*) are the human-intuition bridge to the V₄ algebra defined in §2 below; see [`OWL-SEMAPHORE-EXPLANATION.md`](OWL-SEMAPHORE-EXPLANATION.md) §1B for the ordered reading guide and §13 for the closing bridge.
+This preamble is informative. It states the project's external-compatibility criterion: the four states are a notation system for moves that several mature fields already make — peer review separates normative from non-normative; CVEs flag critical; methodology audits are metacognitive — not a novel taxonomy. Where the notation contradicts a careful practitioner's existing terminology in psychiatry, philosophy, statistics, computer science, or accessibility, the notation is wrong, not the field. The four front-loaded stories in the state specifications (*The Proven Ground*, *Da Vinci's Wings*, *The Manhattan Moment*, *The Observer's Mirror*) are the human-intuition bridge to the V₄ algebra defined in §2 below; see [`OWL-SEMAPHORE-EXPLANATION.md`](OWL-SEMAPHORE-EXPLANATION.md) §1B for the ordered reading guide and §13 for the closing bridge.
 
 ### 1.1 Canonical Sentence Stack (v2.0.1)
 
@@ -282,7 +282,7 @@ This sentence is the single formal canonical definition for v2.0.1, unchanged fr
 
 ## 12. Normative-Language Discipline
 
-Where the Owl Semaphore documents use the RFC 2119 / RFC 8174 keywords (MUST, MUST NOT, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RECOMMENDED, NOT RECOMMENDED, MAY, OPTIONAL), they carry their BCP 14 meaning **only when they appear in all capitals** ([RFC 2119](https://www.rfc-editor.org/rfc/rfc2119); [RFC 8174](https://www.rfc-editor.org/rfc/rfc8174)). Lowercase forms ("must", "should", "may") carry ordinary English meanings.
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14 ([RFC 2119](https://www.rfc-editor.org/rfc/rfc2119); [RFC 8174](https://www.rfc-editor.org/rfc/rfc8174)) **when, and only when, they appear in all capitals, as shown here**. Lowercase forms ("must", "should", "may") carry ordinary English meanings.
 
 Sections labeled "(normative)" form part of the canonical specification; sections labeled "(informative)" or "(explanatory)" provide context only and do not extend the algebra.
 

@@ -8,6 +8,33 @@ Each release entry records the **canonical formal sentence used in that release*
 
 ---
 
+## [Unreleased] — science/citation remediation (post v2.0.1)
+
+> Editorial remediation patch staged on top of v2.0.1. **No change** to the V₄ algebra, the σₕ assignment to METACOGNITIVE, the canonical formal sentence, the accessibility rule, the asset set, or any DOI. **No release has been cut for this changeset yet**; if accepted, it implies a future v2.0.2 patch release.
+
+### Changed (editorial; no normative algebra changes)
+
+- **RFC 2119 / RFC 8174 / BCP 14 boilerplate.** Reworded the keyword-use paragraph in `OWL-SEMAPHORE-SYSTEM.md` to use the canonical "when, and only when, they appear in all capitals, as shown here" form citing both RFC 2119 and RFC 8174 / BCP 14. The companion line in `OWL-SEMAPHORE-EXPLANATION.md` was aligned with the same phrasing.
+- **V₄ / O(2) / SO(2) distinction.** Existing language already named V₄ as a *finite subgroup of O(2)* (equivalently D₂); the audit confirmed that reflections are included so the subgroup sits in O(2), **not** in the rotation-only SO(2). The text is preserved; no change required.
+- **Metacognition and ICD 203.** In `OWL-4-METACOGNITIVE.md` §3.3 and `OWL-SEMAPHORE-EXPLANATION.md` §6, explicitly noted that ICD 203 does **not** use the word *metacognition* but functionally parallels metacognitive self-monitoring by requiring methods that reveal and mitigate the impact of assumptions and cognitive biases. Flavell 1979 (via PMC 11368986) retained as the metacognition reference.
+- **Bertin / visual variables.** In `OWL-SEMAPHORE-EXPLANATION.md` §5, replaced "retinal variables" inline with "visual variables" and added an explicit note that Bertin identified **six** retinal variables (size, value, texture, color, orientation, shape) in addition to the two planar position dimensions; motion/dynamics was added by later literature, not by Bertin.
+- **CVD prevalence.** Re-verified that all surviving prevalence numbers (~8% male / ~0.5% female) are qualified as **Northern-European descent**, with "rates vary by population." This was already the case in the v2.0.1 corpus; no further changes were required.
+- **Aporia.** In `OWL-3-CRITICAL.md` §1A and `OWL-SEMAPHORE-EXPLANATION.md` §8, *aporia* is now qualified as **Platonic / productive-perplexity** and explicitly **not equivalent** to CRITICAL.
+- **Through-the-legs / child illustration.** In `OWL-1-NORMATIVE.md` §20, `OWL-4-METACOGNITIVE.md` §5, and `OWL-SEMAPHORE-EXPLANATION.md`, marked the maneuver as a **heuristic illustration of perceptual frame disruption**, not formal psychophysical evidence and not rigorous support for epistemic auditing.
+- **Gödel.** In `OWL-4-METACOGNITIVE.md` §1A and `OWL-SEMAPHORE-EXPLANATION.md`, restricted Gödel's incompleteness theorems to a **structural analogy only**, with an explicit statement that they do not ground or prove anything about metacognitive psychology or color ontology and are not offered as validation.
+- **Ego-dystonic.** In `OWL-3-CRITICAL.md` §1A and `OWL-SEMAPHORE-EXPLANATION.md`, replaced *ego-dystonic* as the primary label with safer language (**frame-discrepant finding**, **state incongruence**, **dissonant signal**), and where the term is retained, noted that it is a clinical descriptor — not a current formal diagnostic category — and **not equivalent to CRITICAL**.
+- **Newton / Einstein.** In `OWL-1-NORMATIVE.md` §1A and `OWL-SEMAPHORE-EXPLANATION.md` §1B, rephrased so general relativity **extends and contains** Newtonian mechanics as a limiting case rather than simply replacing or falsifying it; explicitly defined *normative* as "operationally validated within a stated domain and scope," not "true everywhere."
+- **Core framing.** In `OWL-SEMAPHORE-EXPLANATION.md` §1A and `OWL-SEMAPHORE-SYSTEM.md` §1.0, removed the "must align with the human spirit / 2,500 years of accumulated understanding" framing and reframed the project as a visual notation whose design target is **compatibility** with established mathematics, accessibility practice, and carefully bounded analogies from epistemology and cognitive science — not a theory of everything and not a claim over the whole of human knowledge.
+
+### Verification
+
+- `make pdfs` regenerates all five PDFs from the edited sources.
+- `make hashes` and `make manifest` re-stamp `RELEASE-HASHES.txt` and `INTEGRITY-MANIFEST.md`.
+- `make test` (banner-tuple integrity test) still passes — the four canonical math tuples are unchanged: NORMATIVE I/+1/(x,y)→(x,y); NON-NORMATIVE σᵥ/−1/(x,y)→(−x,y); CRITICAL C₂/+1/(x,y)→(−x,−y); METACOGNITIVE σₕ/−1/(x,y)→(x,−y).
+- No Wikipedia URLs anywhere in the corpus; no stale `TBD` placeholders.
+
+---
+
 ## [v2.0.1] — corrective patch release
 
 > v2.0.1 is a corrective patch release on top of v2.0.0. It fixes a story-table overflow in `OWL-SEMAPHORE-EXPLANATION.pdf` (PR #9) and stamps PDFs, source metadata, and tests as v2.0.1. The V₄ algebra, the σₕ assignment to METACOGNITIVE, the canonical formal sentence, the accessibility rule, and the asset set are unchanged from v2.0.0.

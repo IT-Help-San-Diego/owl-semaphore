@@ -30,8 +30,8 @@ That is the Critical posture. Not because the analysis is wrong; because your ow
 
 The same shape recurs across fields under different names:
 
-- **Psychiatry** calls the experience of an internally generated but unwanted thought *ego-dystonic* ([American Psychiatric Association, *DSM-5-TR*, glossary entry "ego-dystonic"](https://www.psychiatry.org/psychiatrists/practice/dsm); [APA Dictionary of Psychology, "ego-dystonic"](https://dictionary.apa.org/ego-dystonic)).
-- **Philosophy** calls impasse *aporia* ([Stanford Encyclopedia of Philosophy, "Aporia"](https://plato.stanford.edu/entries/socratic-method/)).
+- **Cognitive / clinical psychology** describes such an experience as a **frame-discrepant finding** or **state incongruence** — a dissonant signal between one's own conclusion and one's prior expectation. Older clinical literature used the descriptor *ego-dystonic*; that term is a clinical descriptor, not a current formal diagnostic category, and it is **not** equivalent to the CRITICAL state ([APA Dictionary of Psychology, "ego-dystonic"](https://dictionary.apa.org/ego-dystonic)).
+- **Philosophy**, in the Platonic / Socratic register, calls *productive perplexity* **aporia** — a state of generative impasse that drives further inquiry. Aporia is an analogy here, not an equivalent of CRITICAL ([Stanford Encyclopedia of Philosophy, "Aporia" via Socratic method](https://plato.stanford.edu/entries/socratic-method/)).
 - **Engineering** calls it a *show-stopper*.
 - **Cybersecurity** calls it a *0-day* — an unpatched, actively exploitable vulnerability whose disclosure window has not opened ([CISA, "Known Exploited Vulnerabilities Catalog"](https://www.cisa.gov/known-exploited-vulnerabilities-catalog); [NIST, *Zero-day vulnerability* glossary entry](https://csrc.nist.gov/glossary/term/zero_day_attack)).
 
