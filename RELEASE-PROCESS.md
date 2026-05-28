@@ -173,9 +173,12 @@ After PR #13 is merged into `main`:
    git push origin refs/tags/v2.0.2
    ```
    The `release-assets.yml` workflow fires on tag push and builds the
-   canonical release bundle (`owl-semaphore-v2.0.2.zip`). That workflow
-   only attaches assets to the GitHub Release it creates — it does not
-   talk to Zenodo.
+   canonical release bundle (`owl-semaphore-v2.0.2.zip`). The bundle
+   contents are defined by `RELEASE-BUNDLE-MANIFEST.txt` at the repo
+   root (single source of truth); the workflow reads that manifest and
+   `tests/test_release_bundle.py` enforces in CI that every required
+   release artifact is listed. That workflow only attaches assets to the
+   GitHub Release it creates — it does not talk to Zenodo.
 2. **Prepare the manual Zenodo draft for upload.** Open the Zenodo draft
    that has the reserved DOI minted on it (for v2.0.2:
    `https://zenodo.org/uploads/20433053`). Confirm the version field is
