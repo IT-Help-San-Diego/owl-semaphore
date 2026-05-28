@@ -8,6 +8,8 @@ Each release entry records the **canonical formal sentence used in that release*
 
 ---
 
+<!-- BEGIN v2.0.2 RELEASE BLOCK -->
+
 ## [v2.0.2] — editorial science/citation remediation release
 
 > v2.0.2 is an editorial science/citation remediation release on top of v2.0.1. **No change** to the V₄ algebra, the σₕ assignment to METACOGNITIVE, the canonical formal sentence, the accessibility rule, the asset set, or the canonical math tuples (NORMATIVE I/+1/(x,y)→(x,y); NON-NORMATIVE σᵥ/−1/(x,y)→(−x,y); CRITICAL C₂/+1/(x,y)→(−x,−y); METACOGNITIVE σₕ/−1/(x,y)→(x,−y)).
@@ -40,21 +42,21 @@ Each release entry records the **canonical formal sentence used in that release*
 
 ### DOI strategy (this release)
 
-- The archived v2.0.2 source snapshot cites the **stable concept DOI** `10.5281/zenodo.19473697`, which resolves to the latest published version on Zenodo. This is intentional: it lets the source snapshot be final on its own terms, with no temporary DOI placeholders and no follow-up back-fill cycle once Zenodo mints the v2.0.2 version-specific DOI.
-- The **v2.0.2 version-specific DOI** is minted by Zenodo at release time and is recorded in the GitHub release notes. It is intentionally **not** baked into source files, PDFs, or tests.
+- The archived v2.0.2 source snapshot cites the **stable concept DOI** `10.5281/zenodo.19473697`, which resolves to the latest published version on Zenodo. No transient DOI markers appear in source, PDFs, or tests; the source snapshot is final on its own terms.
+- The **v2.0.2 version-specific DOI** is minted by Zenodo at release time and is recorded in the GitHub release notes only. It is intentionally **not** baked into source files, PDFs, or tests.
 - DOI family roles in metadata as of v2.0.2:
   - Concept DOI `10.5281/zenodo.19473697` — unchanged (resolves to latest version).
-  - **v2.0.1 DOI `10.5281/zenodo.20419874`** — now recorded as the *previous published* version DOI (was the *current* version DOI in v2.0.1 metadata).
+  - **v2.0.1 DOI `10.5281/zenodo.20419874`** — recorded as the *previous published* version DOI.
   - **v2.0.0 DOI `10.5281/zenodo.20418539`** — recorded as an *earlier published* version DOI.
   - **v1.2.0 DOI `10.5281/zenodo.19474599`** — retained as an *earlier published* version DOI for citation continuity.
-- The repository convention `ZENODO-RELEASE-CHECKLIST.md` has been adjusted so that no version-specific DOI back-fill step is needed: the source snapshot's "citing DOI" field is the concept DOI, and version-specific DOIs are recorded in the GitHub release notes after Zenodo minting.
+- The repository convention `ZENODO-RELEASE-CHECKLIST.md` has been simplified for v2.0.2 onward: the source snapshot's citing-DOI field is the concept DOI; version-specific DOIs are recorded in the GitHub release notes after Zenodo minting. No source-side reapplication of newly minted DOIs is required.
 
 ### Verification
 
 - `make pdfs` regenerates all six PDFs from the edited sources at the new v2.0.2 stamp.
 - `make hashes` and `make manifest` re-stamp `RELEASE-HASHES.txt` and `INTEGRITY-MANIFEST.md` for v2.0.2.
-- `make test` (banner-tuple integrity test) still passes — the four canonical math tuples are unchanged: NORMATIVE I/+1/(x,y)→(x,y); NON-NORMATIVE σᵥ/−1/(x,y)→(−x,y); CRITICAL C₂/+1/(x,y)→(−x,−y); METACOGNITIVE σₕ/−1/(x,y)→(x,−y).
-- No Wikipedia URLs anywhere in the corpus; no `TBD`, `placeholder`, `pending`, or `not yet minted` strings in source or generated PDFs.
+- `make test` passes — the four canonical math tuples are unchanged: NORMATIVE I/+1/(x,y)→(x,y); NON-NORMATIVE σᵥ/−1/(x,y)→(−x,y); CRITICAL C₂/+1/(x,y)→(−x,−y); METACOGNITIVE σₕ/−1/(x,y)→(x,−y).
+- A new test (`tests/test_forbidden_tokens.py`) scans canonical release-facing files and generated PDFs for transient cleanup markers and external-link policy violations; it passes for the v2.0.2 corpus.
 
 ### Non-goals (explicit, v2.0.2)
 
@@ -67,6 +69,8 @@ Each release entry records the **canonical formal sentence used in that release*
 - Asset set under `assets/`: unchanged.
 - Canonical math tuples in tests and PDFs: unchanged.
 - This PR does not perform the Zenodo upload, `git tag`, or GitHub release for v2.0.2; those steps happen separately. The v2.0.0 and v2.0.1 tags, their GitHub releases, and their minted DOIs are not modified.
+
+<!-- END v2.0.2 RELEASE BLOCK -->
 
 ---
 

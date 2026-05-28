@@ -32,7 +32,7 @@ The project uses a three-layer canonical sentence stack so that the same concept
 
 | Layer | Canonical sentence | Use |
 | --- | --- | --- |
-| Formal | *A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants.* | README, system spec, Zenodo metadata draft, citation abstract |
+| Formal | *A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants.* | README, system spec, Zenodo deposit metadata, citation abstract |
 | Operational | *A four-state visual system for marking how a claim, document, dataset, or finding should be evaluated before belief, challenge, or action.* | Explanation document, public overview, DNS Tool bridge |
 | Human | *Four owls tell the reader what kind of thinking they are looking at: standard, exploration, inversion, or self-audit.* | Story sections, teaching material |
 

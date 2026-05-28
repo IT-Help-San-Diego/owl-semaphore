@@ -74,7 +74,7 @@
 
 ## 7. Zenodo Preparation
 
-> **Convention (effective v2.0.2).** The archived source snapshot for each release cites the **stable concept DOI**, which Zenodo resolves to the latest published version. The version-specific DOI for the *current* release is recorded in the GitHub release notes after Zenodo mints it; it is intentionally **not** back-filled into source files, PDFs, or tests. This convention removes the prior back-fill-after-mint step and keeps each release's source snapshot final on its own terms.
+> **Convention (effective v2.0.2).** The archived source snapshot for each release cites the **stable concept DOI**, which Zenodo resolves to the latest published version. The version-specific DOI for the *current* release is recorded in the GitHub release notes after Zenodo mints it, and source files, PDFs, and tests are not edited after the release tag. This convention keeps each release's source snapshot final on its own terms and removes any source-side reapplication step.
 
 - [x] Zenodo account connected to GitHub
 - [x] repository enabled in Zenodo
@@ -84,7 +84,7 @@
 - [x] previous published version DOI recorded (v2.0.1): `10.5281/zenodo.20419874`
 - [x] earlier published version DOI recorded (v2.0.0): `10.5281/zenodo.20418539`
 - [x] earlier published version DOI recorded (v1.2.0): `10.5281/zenodo.19474599`
-- [ ] v2.0.2 version-specific DOI: recorded in the GitHub release notes after Zenodo mints it (not back-filled into source). Files that already cite the concept DOI as the source's citing DOI:
+- [ ] v2.0.2 version-specific DOI: recorded in the GitHub release notes only after Zenodo mints it. Files that already cite the concept DOI as the source's citing DOI:
   - [x] `README.md`
   - [x] `CITATION.cff`
   - [x] `.zenodo.json`

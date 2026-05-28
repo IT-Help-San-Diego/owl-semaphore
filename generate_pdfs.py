@@ -43,13 +43,13 @@ REPO = os.path.dirname(os.path.abspath(__file__))
 
 # ── Project-wide metadata (v2.0.2) ──────────────────────────────────────────
 #
-# DOI strategy for v2.0.2 source snapshot: the archived source cites the stable
-# concept DOI (which resolves to the latest published version on Zenodo). The
-# v2.0.2 version-specific DOI is minted by Zenodo at release time and recorded
-# in the GitHub release notes; it is intentionally not baked into the source so
-# that this snapshot is final on its own terms and does not require a follow-up
-# back-fill cycle. The v2.0.1, v2.0.0, and v1.2.0 version DOIs are listed below
-# as previously published versions for citation continuity.
+# DOI strategy for the v2.0.2 source snapshot: the archived source cites the
+# stable concept DOI, which Zenodo resolves to the latest published version.
+# The v2.0.2 version-specific DOI is minted by Zenodo at release time and is
+# recorded in the GitHub release notes only; it is intentionally not embedded
+# in the source so that the snapshot is final on its own terms. The v2.0.1,
+# v2.0.0, and v1.2.0 version DOIs are listed below as previously published
+# versions for citation continuity.
 
 VERSION = "2.0.2"
 RELEASE_LABEL = "v2.0.2"
@@ -252,8 +252,8 @@ def build_typst_document(doc: dict, body_typst: str) -> str:
     # The banner tuple cites the concept DOI (stable, resolves to the latest
     # published version) plus the previous-published version DOI (v2.0.1). The
     # v2.0.2 version-specific DOI is minted by Zenodo at release and lives in
-    # release notes — it is intentionally omitted from the source snapshot to
-    # avoid a back-fill cycle.
+    # the GitHub release notes only; it is intentionally omitted from the
+    # source snapshot.
     banner_tuple = (
         f"BANNER-TUPLE :: STATE={state_token} :: TRANSFORM={mathline} :: "
         f"QUOTE={quote} :: VERSION={RELEASE_LABEL} :: CONCEPT-DOI={CONCEPT_DOI} :: "
