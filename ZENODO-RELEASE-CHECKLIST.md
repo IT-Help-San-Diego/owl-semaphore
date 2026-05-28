@@ -74,7 +74,7 @@
 
 ## 7. Zenodo Preparation
 
-> **Convention (effective v2.0.2).** The archived source snapshot for each release cites the **stable concept DOI**, which Zenodo resolves to the latest published version. The version-specific DOI for the *current* release is recorded in the GitHub release notes after Zenodo mints it, and source files, PDFs, and tests are not edited after the release tag. This convention keeps each release's source snapshot final on its own terms and removes any source-side reapplication step.
+> **Convention (effective v2.0.2).** The archived source snapshot for each release cites the **stable concept DOI**, which Zenodo resolves to the latest published version. The version-specific DOI for the *current* release is recorded in the GitHub release notes after Zenodo mints it, and source files, PDFs, and tests are not edited after the release tag. This convention keeps each release's source snapshot final on its own terms and removes any source-side reapplication step. The full publication recipe — including the manual release workflow that creates the tag, publishes the GitHub release, and captures the minted version-specific DOI into the release notes — lives in `RELEASE-PROCESS.md`.
 
 - [x] Zenodo account connected to GitHub
 - [x] repository enabled in Zenodo

@@ -1,0 +1,269 @@
+name: Release (manual, tag + publish + Zenodo DOI capture)
+
+# Manually dispatched release pipeline for Owl Semaphore.
+#
+# Companion to `.github/workflows/release-assets.yml`, which fires on
+# tag push to build and attach the canonical release bundle. This
+# workflow drives the human steps that come before that tag push:
+#
+#   1. Validate that the supplied version is new and that the target SHA
+#      passes the forbidden-token + banner-tuple test gates.
+#   2. Create the annotated tag at the supplied SHA and push it.
+#   3. Create the GitHub Release at that tag, with notes assembled from
+#      the matching CHANGELOG.md release block.
+#   4. Poll Zenodo's public API for the version-specific DOI minted by
+#      the existing GitHub <-> Zenodo integration, then append it as a
+#      single line to the GitHub release notes via the default
+#      GITHUB_TOKEN. No source file is edited; no follow-up PR runs.
+#
+# This workflow is intentionally manual (workflow_dispatch). It does not
+# fire automatically on PR merge: a release is a deliberate human action
+# even when the source side is already final on main.
+#
+# This workflow needs no secrets beyond the default GITHUB_TOKEN. Zenodo
+# polling uses only the public Zenodo REST API and requires no token.
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version tag (e.g. v2.0.2). Must start with v and must not already exist."
+        required: true
+        type: string
+      target_sha:
+        description: "Commit SHA on main to tag for this release (typically the release-prep PR merge commit)."
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    env:
+      VERSION: ${{ github.event.inputs.version }}
+      TARGET_SHA: ${{ github.event.inputs.target_sha }}
+      # Concept DOI used for Zenodo lookups; resolves to the latest version.
+      CONCEPT_RECORD_ID: "19473697"
+
+    steps:
+      - name: Validate inputs
+        run: |
+          set -euo pipefail
+          if [[ ! "${VERSION}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::version input must look like vX.Y.Z (got: ${VERSION})"
+            exit 1
+          fi
+          if [[ -z "${TARGET_SHA}" ]]; then
+            echo "::error::target_sha input is required"
+            exit 1
+          fi
+
+      - name: Checkout target SHA
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.inputs.target_sha }}
+          fetch-depth: 0
+
+      - name: Guard — tag must not already exist
+        run: |
+          set -euo pipefail
+          if git rev-parse -q --verify "refs/tags/${VERSION}" >/dev/null; then
+            echo "::error::Tag ${VERSION} already exists on this repository. Refusing to retag."
+            exit 1
+          fi
+          if git ls-remote --exit-code --tags origin "refs/tags/${VERSION}" >/dev/null 2>&1; then
+            echo "::error::Tag ${VERSION} already exists on origin. Refusing to retag."
+            exit 1
+          fi
+
+      - name: Guard — CHANGELOG block for this version must exist
+        run: |
+          set -euo pipefail
+          BEGIN="<!-- BEGIN ${VERSION} RELEASE BLOCK -->"
+          END="<!-- END ${VERSION} RELEASE BLOCK -->"
+          if ! grep -qF "${BEGIN}" CHANGELOG.md; then
+            echo "::error::CHANGELOG.md is missing release-block begin marker: ${BEGIN}"
+            exit 1
+          fi
+          if ! grep -qF "${END}" CHANGELOG.md; then
+            echo "::error::CHANGELOG.md is missing release-block end marker: ${END}"
+            exit 1
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install build + verification deps
+        run: |
+          set -euo pipefail
+          python3 -m pip install --upgrade pip
+          python3 -m pip install typst
+          sudo apt-get update -y
+          sudo apt-get install -y pandoc qpdf poppler-utils
+
+      - name: Guard — forbidden-token + banner-tuple tests on target SHA
+        run: |
+          set -euo pipefail
+          # Generate PDFs so the forbidden-token PDF scan runs in full.
+          make pdfs
+          make test
+
+      - name: Extract release notes from CHANGELOG block
+        id: notes
+        run: |
+          set -euo pipefail
+          BEGIN="<!-- BEGIN ${VERSION} RELEASE BLOCK -->"
+          END="<!-- END ${VERSION} RELEASE BLOCK -->"
+          python3 - <<'PY' > /tmp/release-notes.md
+          import os, re
+          version = os.environ["VERSION"]
+          begin = f"<!-- BEGIN {version} RELEASE BLOCK -->"
+          end = f"<!-- END {version} RELEASE BLOCK -->"
+          with open("CHANGELOG.md", "r", encoding="utf-8") as f:
+              text = f.read()
+          b = text.index(begin) + len(begin)
+          e = text.index(end)
+          print(text[b:e].strip())
+          PY
+          echo "notes_path=/tmp/release-notes.md" >> "$GITHUB_OUTPUT"
+
+      - name: Configure git identity for tag
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Create and push annotated tag at target SHA
+        run: |
+          set -euo pipefail
+          git tag -a "${VERSION}" "${TARGET_SHA}" -m "Owl Semaphore ${VERSION}"
+          git push origin "refs/tags/${VERSION}"
+
+      - name: Create GitHub Release
+        id: gh_release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.VERSION }}
+          name: Owl Semaphore ${{ env.VERSION }}
+          body_path: /tmp/release-notes.md
+          # Published release, not a pre-release. The tag-push workflow
+          # (release-assets.yml) will attach the canonical zipped bundle.
+          prerelease: false
+          make_latest: "true"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Poll Zenodo for the newly minted version-specific DOI
+        id: zenodo
+        # The repository is connected to Zenodo; publishing the release
+        # above triggers Zenodo ingestion. This step polls Zenodo's public
+        # REST API for a version-specific DOI tagged with VERSION. If it
+        # appears in the polling budget, we record it. If not, we exit
+        # success and leave a console note: the DOI can still be appended
+        # to the release notes by hand without any source-side change.
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, os, sys, time, urllib.request
+
+          concept_id = os.environ["CONCEPT_RECORD_ID"]
+          version    = os.environ["VERSION"]
+          # Zenodo public API. No token required for reads.
+          versions_url = f"https://zenodo.org/api/records/{concept_id}/versions?size=25&sort=-mostrecent"
+
+          deadline = time.time() + 30 * 60  # 30-minute budget
+          interval = 30                      # poll every 30s
+          minted_doi = ""
+
+          while time.time() < deadline:
+              try:
+                  req = urllib.request.Request(versions_url, headers={"Accept": "application/json"})
+                  with urllib.request.urlopen(req, timeout=30) as resp:
+                      data = json.loads(resp.read().decode("utf-8"))
+              except Exception as exc:
+                  print(f"[zenodo-poll] transient fetch error: {exc}", file=sys.stderr)
+                  time.sleep(interval)
+                  continue
+
+              hits = (data.get("hits") or {}).get("hits") or []
+              # Match by version metadata first; fall back to title scan.
+              for rec in hits:
+                  md = rec.get("metadata") or {}
+                  rec_version = (md.get("version") or "").strip()
+                  rec_title   = (md.get("title")   or "")
+                  doi = rec.get("doi") or md.get("doi") or ""
+                  v_no_v = version.lstrip("v")
+                  if rec_version in (version, v_no_v) or version in rec_title or v_no_v in rec_title:
+                      if doi:
+                          minted_doi = doi
+                          break
+
+              if minted_doi:
+                  break
+
+              print(f"[zenodo-poll] no version DOI yet for {version}; sleeping {interval}s", flush=True)
+              time.sleep(interval)
+
+          out = os.environ.get("GITHUB_OUTPUT")
+          if out:
+              with open(out, "a", encoding="utf-8") as f:
+                  f.write(f"minted_doi={minted_doi}\n")
+          if not minted_doi:
+              print(f"[zenodo-poll] polling budget elapsed; no version DOI captured. "
+                    f"Append the DOI to the release notes by hand from the Zenodo dashboard.")
+              sys.exit(0)
+          print(f"[zenodo-poll] captured minted DOI for {version}: {minted_doi}")
+          PY
+
+      - name: Append minted DOI to GitHub release notes
+        if: steps.zenodo.outputs.minted_doi != ''
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MINTED_DOI: ${{ steps.zenodo.outputs.minted_doi }}
+        run: |
+          set -euo pipefail
+          # Fetch existing release notes and append the minted DOI as a
+          # single trailing line. No source file is edited; no new tag
+          # is created; no new commit is made.
+          python3 - <<'PY'
+          import json, os, sys, urllib.request
+
+          repo    = os.environ["GITHUB_REPOSITORY"]
+          token   = os.environ["GITHUB_TOKEN"]
+          version = os.environ["VERSION"]
+          doi     = os.environ["MINTED_DOI"]
+
+          base    = f"https://api.github.com/repos/{repo}"
+          headers = {
+              "Authorization": f"Bearer {token}",
+              "Accept":        "application/vnd.github+json",
+              "User-Agent":    "owl-semaphore-release-workflow",
+          }
+
+          def gh(method, url, body=None):
+              data = None
+              if body is not None:
+                  data = json.dumps(body).encode("utf-8")
+                  headers_local = dict(headers, **{"Content-Type": "application/json"})
+              else:
+                  headers_local = headers
+              req = urllib.request.Request(url, data=data, headers=headers_local, method=method)
+              with urllib.request.urlopen(req, timeout=30) as resp:
+                  raw = resp.read().decode("utf-8")
+              return json.loads(raw) if raw else {}
+
+          rel = gh("GET", f"{base}/releases/tags/{version}")
+          body = rel.get("body") or ""
+          line = f"{version} version DOI: {doi}"
+          if line in body:
+              print(f"[release-notes] {line} already present; nothing to do.")
+              sys.exit(0)
+          new_body = body.rstrip() + f"\n\n---\n\n{line}\n"
+          gh("PATCH", f"{base}/releases/{rel['id']}", {"body": new_body})
+          print(f"[release-notes] appended: {line}")
+          PY
