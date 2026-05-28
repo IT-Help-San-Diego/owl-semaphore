@@ -21,7 +21,8 @@ Each release entry records the **canonical formal sentence used in that release*
 
 **Canonical human sentence (unchanged):** *Four owls tell the reader what kind of thinking they are looking at: standard, exploration, inversion, or self-audit.*
 
-**Citing DOI for v2.0.2 (source snapshot):** [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697) — the concept DOI, which resolves to the latest published version. The v2.0.2 version-specific DOI is minted by Zenodo on release and recorded in the GitHub release notes.
+**Citing DOI for v2.0.2 (version-specific):** [10.5281/zenodo.20433053](https://doi.org/10.5281/zenodo.20433053) — reserved on Zenodo before release and embedded directly in source, PDFs, and metadata so the exact version DOI appears inside every published artifact.
+**Concept DOI (all versions):** [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697) — resolves to the latest published version.
 **Previous published version DOI (v2.0.1):** [10.5281/zenodo.20419874](https://doi.org/10.5281/zenodo.20419874)
 **Earlier published version DOI (v2.0.0):** [10.5281/zenodo.20418539](https://doi.org/10.5281/zenodo.20418539)
 **Earlier published version DOI (v1.2.0):** [10.5281/zenodo.19474599](https://doi.org/10.5281/zenodo.19474599)
@@ -42,14 +43,15 @@ Each release entry records the **canonical formal sentence used in that release*
 
 ### DOI strategy (this release)
 
-- The archived v2.0.2 source snapshot cites the **stable concept DOI** `10.5281/zenodo.19473697`, which resolves to the latest published version on Zenodo. No transient DOI markers appear in source, PDFs, or tests; the source snapshot is final on its own terms.
-- The **v2.0.2 version-specific DOI** is minted by Zenodo at release time and is recorded in the GitHub release notes only. It is intentionally **not** baked into source files, PDFs, or tests.
+- The v2.0.2 version-specific DOI `10.5281/zenodo.20433053` is **reserved on Zenodo before release** and embedded directly into source files, PDFs, and metadata. The exact version DOI therefore appears inside every published artifact that Zenodo archives. No transient DOI markers appear in source, PDFs, or tests; the source snapshot is final on its own terms.
+- The **concept DOI `10.5281/zenodo.19473697`** is preserved as the all-versions DOI for cross-version citation; it resolves to the latest published version on Zenodo.
 - DOI family roles in metadata as of v2.0.2:
+  - **v2.0.2 DOI `10.5281/zenodo.20433053`** — version-specific citing DOI for v2.0.2 (reserved on Zenodo before release; embedded in source and PDFs).
   - Concept DOI `10.5281/zenodo.19473697` — unchanged (resolves to latest version).
   - **v2.0.1 DOI `10.5281/zenodo.20419874`** — recorded as the *previous published* version DOI.
   - **v2.0.0 DOI `10.5281/zenodo.20418539`** — recorded as an *earlier published* version DOI.
   - **v1.2.0 DOI `10.5281/zenodo.19474599`** — retained as an *earlier published* version DOI for citation continuity.
-- The repository convention `ZENODO-RELEASE-CHECKLIST.md` has been simplified for v2.0.2 onward: the source snapshot's citing-DOI field is the concept DOI; version-specific DOIs are recorded in the GitHub release notes after Zenodo minting. No source-side reapplication of newly minted DOIs is required.
+- The repository convention (`RELEASE-PROCESS.md`, `ZENODO-RELEASE-CHECKLIST.md`) documents the reserve-DOI-first workflow: create a Zenodo new-version draft for the concept record, reserve the version DOI, embed it in source/PDFs/metadata, merge the release-prep PR, create the tag and GitHub Release, upload the exact release files to the same Zenodo draft, and publish the draft. The manual workflow does not auto-publish a separate Zenodo record via GitHub auto-ingest, so there is exactly one Zenodo record per release.
 
 ### Verification
 

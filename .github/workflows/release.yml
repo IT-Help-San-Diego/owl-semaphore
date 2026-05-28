@@ -1,52 +1,59 @@
-name: Release (manual, tag + publish + Zenodo DOI capture)
+name: Release (manual, pre-flight verification — no auto-publish)
 
-# Manually dispatched release pipeline for Owl Semaphore.
+# Manually dispatched pre-flight verification workflow for Owl Semaphore.
 #
-# Companion to `.github/workflows/release-assets.yml`, which fires on
-# tag push to build and attach the canonical release bundle. This
-# workflow drives the human steps that come before that tag push:
+# Effective v2.0.2, the project uses a reserve-DOI-first Zenodo release
+# workflow: the version-specific DOI is reserved on a Zenodo new-version
+# record BEFORE the release-prep PR is finalized, and that reserved DOI is
+# embedded into source, PDFs, and metadata. The repository is connected to
+# Zenodo via the GitHub-Zenodo integration; if a GitHub Release were
+# created while that integration is enabled, Zenodo would auto-ingest a
+# second record with a different version DOI, producing a duplicate
+# Zenodo record for the same release.
 #
-#   1. Validate that the supplied version is new and that the target SHA
-#      passes the forbidden-token + banner-tuple test gates.
-#   2. Create the annotated tag at the supplied SHA and push it.
-#   3. Create the GitHub Release at that tag, with notes assembled from
-#      the matching CHANGELOG.md release block.
-#   4. Poll Zenodo's public API for the version-specific DOI minted by
-#      the existing GitHub <-> Zenodo integration, then append it as a
-#      single line to the GitHub release notes via the default
-#      GITHUB_TOKEN. No source file is edited; no follow-up PR runs.
+# This workflow therefore intentionally does NOT:
 #
-# This workflow is intentionally manual (workflow_dispatch). It does not
-# fire automatically on PR merge: a release is a deliberate human action
-# even when the source side is already final on main.
+#   - create a GitHub Release
+#   - push a tag to origin
+#   - call any Zenodo API
 #
-# This workflow needs no secrets beyond the default GITHUB_TOKEN. Zenodo
-# polling uses only the public Zenodo REST API and requires no token.
+# It only performs verifications the operator should pass before running
+# the publish steps described in `RELEASE-PROCESS.md` §4:
+#
+#   1. Validate that the supplied version looks like vX.Y.Z and is new.
+#   2. Confirm the target SHA's CHANGELOG has a release block for that
+#      version.
+#   3. Build PDFs at the target SHA and run `make test`, so the
+#      banner-tuple + forbidden-token tests pass before any human action.
+#
+# The actual tag creation, GitHub Release creation, and Zenodo
+# new-version-record publication are performed by hand following
+# `RELEASE-PROCESS.md` §4. That procedure also covers temporarily
+# disabling the Zenodo GitHub integration so the manual Zenodo record
+# with the reserved DOI is the only Zenodo record for the release.
 
 on:
   workflow_dispatch:
     inputs:
       version:
-        description: "Release version tag (e.g. v2.0.2). Must start with v and must not already exist."
+        description: "Release version tag to pre-flight (e.g. v2.0.2). Must start with v and must not already exist as a tag."
         required: true
         type: string
       target_sha:
-        description: "Commit SHA on main to tag for this release (typically the release-prep PR merge commit)."
+        description: "Commit SHA on main to verify for this release (typically the release-prep PR merge commit)."
         required: true
         type: string
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  release:
+  preflight:
     runs-on: ubuntu-latest
 
     env:
       VERSION: ${{ github.event.inputs.version }}
       TARGET_SHA: ${{ github.event.inputs.target_sha }}
-      # Concept DOI used for Zenodo lookups; resolves to the latest version.
-      CONCEPT_RECORD_ID: "19473697"
 
     steps:
       - name: Validate inputs
@@ -113,157 +120,31 @@ jobs:
           make pdfs
           make test
 
-      - name: Extract release notes from CHANGELOG block
-        id: notes
+      - name: Print human follow-up steps
         run: |
-          set -euo pipefail
-          BEGIN="<!-- BEGIN ${VERSION} RELEASE BLOCK -->"
-          END="<!-- END ${VERSION} RELEASE BLOCK -->"
-          python3 - <<'PY' > /tmp/release-notes.md
-          import os, re
-          version = os.environ["VERSION"]
-          begin = f"<!-- BEGIN {version} RELEASE BLOCK -->"
-          end = f"<!-- END {version} RELEASE BLOCK -->"
-          with open("CHANGELOG.md", "r", encoding="utf-8") as f:
-              text = f.read()
-          b = text.index(begin) + len(begin)
-          e = text.index(end)
-          print(text[b:e].strip())
-          PY
-          echo "notes_path=/tmp/release-notes.md" >> "$GITHUB_OUTPUT"
+          cat <<'EOF'
+          ============================================================
+          Pre-flight verification passed for ${VERSION} @ ${TARGET_SHA}.
 
-      - name: Configure git identity for tag
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-      - name: Create and push annotated tag at target SHA
-        run: |
-          set -euo pipefail
-          git tag -a "${VERSION}" "${TARGET_SHA}" -m "Owl Semaphore ${VERSION}"
-          git push origin "refs/tags/${VERSION}"
-
-      - name: Create GitHub Release
-        id: gh_release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: ${{ env.VERSION }}
-          name: Owl Semaphore ${{ env.VERSION }}
-          body_path: /tmp/release-notes.md
-          # Published release, not a pre-release. The tag-push workflow
-          # (release-assets.yml) will attach the canonical zipped bundle.
-          prerelease: false
-          make_latest: "true"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Poll Zenodo for the newly minted version-specific DOI
-        id: zenodo
-        # The repository is connected to Zenodo; publishing the release
-        # above triggers Zenodo ingestion. This step polls Zenodo's public
-        # REST API for a version-specific DOI tagged with VERSION. If it
-        # appears in the polling budget, we record it. If not, we exit
-        # success and leave a console note: the DOI can still be appended
-        # to the release notes by hand without any source-side change.
-        continue-on-error: true
-        run: |
-          set -euo pipefail
-          python3 - <<'PY'
-          import json, os, sys, time, urllib.request
-
-          concept_id = os.environ["CONCEPT_RECORD_ID"]
-          version    = os.environ["VERSION"]
-          # Zenodo public API. No token required for reads.
-          versions_url = f"https://zenodo.org/api/records/{concept_id}/versions?size=25&sort=-mostrecent"
-
-          deadline = time.time() + 30 * 60  # 30-minute budget
-          interval = 30                      # poll every 30s
-          minted_doi = ""
-
-          while time.time() < deadline:
-              try:
-                  req = urllib.request.Request(versions_url, headers={"Accept": "application/json"})
-                  with urllib.request.urlopen(req, timeout=30) as resp:
-                      data = json.loads(resp.read().decode("utf-8"))
-              except Exception as exc:
-                  print(f"[zenodo-poll] transient fetch error: {exc}", file=sys.stderr)
-                  time.sleep(interval)
-                  continue
-
-              hits = (data.get("hits") or {}).get("hits") or []
-              # Match by version metadata first; fall back to title scan.
-              for rec in hits:
-                  md = rec.get("metadata") or {}
-                  rec_version = (md.get("version") or "").strip()
-                  rec_title   = (md.get("title")   or "")
-                  doi = rec.get("doi") or md.get("doi") or ""
-                  v_no_v = version.lstrip("v")
-                  if rec_version in (version, v_no_v) or version in rec_title or v_no_v in rec_title:
-                      if doi:
-                          minted_doi = doi
-                          break
-
-              if minted_doi:
-                  break
-
-              print(f"[zenodo-poll] no version DOI yet for {version}; sleeping {interval}s", flush=True)
-              time.sleep(interval)
-
-          out = os.environ.get("GITHUB_OUTPUT")
-          if out:
-              with open(out, "a", encoding="utf-8") as f:
-                  f.write(f"minted_doi={minted_doi}\n")
-          if not minted_doi:
-              print(f"[zenodo-poll] polling budget elapsed; no version DOI captured. "
-                    f"Append the DOI to the release notes by hand from the Zenodo dashboard.")
-              sys.exit(0)
-          print(f"[zenodo-poll] captured minted DOI for {version}: {minted_doi}")
-          PY
-
-      - name: Append minted DOI to GitHub release notes
-        if: steps.zenodo.outputs.minted_doi != ''
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MINTED_DOI: ${{ steps.zenodo.outputs.minted_doi }}
-        run: |
-          set -euo pipefail
-          # Fetch existing release notes and append the minted DOI as a
-          # single trailing line. No source file is edited; no new tag
-          # is created; no new commit is made.
-          python3 - <<'PY'
-          import json, os, sys, urllib.request
-
-          repo    = os.environ["GITHUB_REPOSITORY"]
-          token   = os.environ["GITHUB_TOKEN"]
-          version = os.environ["VERSION"]
-          doi     = os.environ["MINTED_DOI"]
-
-          base    = f"https://api.github.com/repos/{repo}"
-          headers = {
-              "Authorization": f"Bearer {token}",
-              "Accept":        "application/vnd.github+json",
-              "User-Agent":    "owl-semaphore-release-workflow",
-          }
-
-          def gh(method, url, body=None):
-              data = None
-              if body is not None:
-                  data = json.dumps(body).encode("utf-8")
-                  headers_local = dict(headers, **{"Content-Type": "application/json"})
-              else:
-                  headers_local = headers
-              req = urllib.request.Request(url, data=data, headers=headers_local, method=method)
-              with urllib.request.urlopen(req, timeout=30) as resp:
-                  raw = resp.read().decode("utf-8")
-              return json.loads(raw) if raw else {}
-
-          rel = gh("GET", f"{base}/releases/tags/{version}")
-          body = rel.get("body") or ""
-          line = f"{version} version DOI: {doi}"
-          if line in body:
-              print(f"[release-notes] {line} already present; nothing to do.")
-              sys.exit(0)
-          new_body = body.rstrip() + f"\n\n---\n\n{line}\n"
-          gh("PATCH", f"{base}/releases/{rel['id']}", {"body": new_body})
-          print(f"[release-notes] appended: {line}")
-          PY
+          NEXT STEPS (manual, per RELEASE-PROCESS.md §4):
+            1. Temporarily disable the owl-semaphore repository toggle
+               in the Zenodo > GitHub settings panel, so the upcoming
+               GitHub Release does not trigger a duplicate Zenodo
+               record via auto-ingest.
+            2. Create and push the annotated tag at ${TARGET_SHA}:
+                 git tag -a ${VERSION} ${TARGET_SHA} -m "Owl Semaphore ${VERSION}"
+                 git push origin refs/tags/${VERSION}
+               This fires release-assets.yml, which builds and attaches
+               the owl-semaphore-${VERSION}.zip bundle to the GitHub
+               Release it creates.
+            3. Upload the byte-identical release files into the Zenodo
+               new-version record that holds the reserved version DOI
+               for this release.
+            4. Publish the Zenodo new-version record from the Zenodo UI.
+            5. Verify there is exactly one Zenodo record for ${VERSION}
+               and that its DOI matches the reserved DOI embedded in
+               the source/PDFs/metadata at ${TARGET_SHA}.
+            6. Re-enable the Zenodo > GitHub repository toggle if
+               future releases will continue to use the integration.
+          ============================================================
+          EOF

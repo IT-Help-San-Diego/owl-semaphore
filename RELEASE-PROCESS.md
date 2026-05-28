@@ -2,22 +2,32 @@
 
 This document is the single authoritative recipe for publishing a new
 Owl Semaphore release. It is written so that one merge of the release-prep
-PR (e.g. PR #13 for v2.0.2) followed by one run of the manual release
-workflow produces a clean, reproducible release — without any follow-up
-"back-fill" PR, without transient markers in canonical source or PDFs,
-and with the matching Zenodo record citing the same documents that the
-GitHub release publishes.
+PR (e.g. PR #13 for v2.0.2) followed by a small, deterministic set of
+human steps produces a clean, reproducible release in which the exact
+reserved version-specific DOI appears inside every published artifact —
+without any post-release source-side reapplication, without transient
+markers in canonical source or PDFs, and without producing a duplicate
+Zenodo record via GitHub auto-ingest.
 
-The process has two halves:
+The process has three halves:
 
-1. **Source-side** — handled by the release-prep PR. Bumps version stamps,
-   regenerates PDFs/hashes/manifest, and lands the editorial changes for
-   the release. The source snapshot for the release is final at merge.
-2. **Tag + publish-side** — handled by the manual workflow in
-   `.github/workflows/release.yml`. Creates the annotated tag, the GitHub
-   release, triggers Zenodo ingestion (via the existing GitHub ↔ Zenodo
-   integration), and once Zenodo has minted the version-specific DOI,
-   records that DOI in the GitHub release notes only.
+1. **Pre-source-side (Zenodo reserve DOI).** Before opening or finalizing
+   the release-prep PR, create a Zenodo *new-version* draft for the
+   concept record and reserve the version DOI. The reserved DOI is the
+   value that gets embedded into source, PDFs, and metadata.
+2. **Source-side (release-prep PR).** Bumps version stamps, embeds the
+   reserved version-specific DOI in `generate_pdfs.py`, `CITATION.cff`,
+   `.zenodo.json`, `README.md`, the `CHANGELOG.md` release block, all
+   canonical `OWL-*.md` source, `INTEGRITY-MANIFEST.md`, and the
+   banner-tuple test. Regenerates PDFs / hashes / manifest. The source
+   snapshot for the release is final at merge.
+3. **Tag + publish-side (manual, guard-railed).** Creates the annotated
+   tag, the GitHub Release, and **uploads the exact released files into
+   the same Zenodo draft that the reserved DOI was minted on**, then
+   publishes that Zenodo draft. The repository's GitHub auto-ingest path
+   to Zenodo is intentionally avoided for this release so that the
+   reserved DOI is the canonical (and only) Zenodo record for the
+   release.
 
 No source files, PDFs, or tests are edited after the release tag.
 
@@ -25,48 +35,103 @@ No source files, PDFs, or tests are edited after the release tag.
 
 ## 1. DOI strategy (canonical, effective v2.0.2)
 
-This is the convention every release follows from v2.0.2 onward. It is
-captured here so future maintainers do not re-derive it.
+This is the convention every release follows from v2.0.2 onward.
 
-- The archived source snapshot for each release cites the **stable concept
-  DOI** `10.5281/zenodo.19473697`. Zenodo resolves the concept DOI to the
-  latest published version, so the source snapshot's citing DOI remains
-  stable and correct across releases without rewriting.
-- The **version-specific DOI** for the current release is minted by Zenodo
-  when the GitHub release is published. That minted DOI is recorded in the
-  GitHub release notes only — it is intentionally **not** baked into source
-  files, PDFs, `CITATION.cff`, `.zenodo.json`, `INTEGRITY-MANIFEST.md`, or
-  the test suite. This eliminates the post-release source-side reapplication
-  cycle that earlier releases required.
+- The **version-specific DOI** for the release is reserved on a Zenodo
+  *new-version* draft of the concept record (concept DOI
+  `10.5281/zenodo.19473697`) **before** the release-prep PR is finalized.
+  The reserved DOI is embedded directly into source files, PDFs, and
+  metadata: `generate_pdfs.py`, `CITATION.cff`, `.zenodo.json`,
+  `README.md`, `CHANGELOG.md` (current release block),
+  `OWL-SEMAPHORE-EXPLANATION.md`, `INTEGRITY-MANIFEST.md`, and the
+  banner-tuple test. The exact version DOI therefore appears inside every
+  PDF page-one banner tuple and footer, every metadata file, and every
+  published artifact Zenodo archives.
+- The **concept DOI `10.5281/zenodo.19473697`** is preserved as the
+  *all-versions* DOI for cross-version citation. It is unchanged across
+  releases and resolves to the latest published version.
 - Previously published version DOIs (v2.0.1: `10.5281/zenodo.20419874`;
   v2.0.0: `10.5281/zenodo.20418539`; v1.2.0: `10.5281/zenodo.19474599`)
   remain recorded as historical "previous published version" entries in
   `CITATION.cff`, `.zenodo.json`, and the CHANGELOG. They are not rewritten
   when a new version is minted.
-- If a *future* project (not Owl Semaphore) ever requires the version-specific
-  DOI to appear inside the uploaded PDFs themselves, Zenodo supports
-  reserving a DOI before upload. In that workflow the DOI is reserved on
-  Zenodo first, written into the PDF source, the PDF is regenerated, and
-  only then is the GitHub release published. Owl Semaphore does **not** use
-  the reserve-DOI-first workflow because the concept-DOI strategy above
-  removes the requirement that drove it.
+- For v2.0.2 specifically: the reserved version DOI is
+  `10.5281/zenodo.20433053`, on Zenodo draft URL
+  `https://zenodo.org/uploads/20433053`.
+
+This convention eliminates the post-release source-side reapplication
+cycle that earlier releases (v2.0.0, v2.0.1) required, because the
+version DOI is known before the PDFs are generated.
 
 ---
 
-## 2. Source-side: the release-prep PR
+## 2. Avoiding duplicate Zenodo records (GitHub auto-ingest)
+
+This repository is connected to Zenodo via the GitHub ↔ Zenodo
+integration. By default, publishing a GitHub Release triggers Zenodo to
+auto-ingest the release and **mint a brand-new version DOI**, which is
+*different* from the DOI reserved on the manual Zenodo draft. That would
+produce two Zenodo records for the same release — one whose files match
+what the source/PDFs cite (the reserved DOI), and one created by
+auto-ingest with a different DOI. Citation integrity requires exactly one
+Zenodo record per release.
+
+The v2.0.2 release process therefore intentionally **does not** trigger
+the GitHub auto-ingest path. The operator follows one of these mutually
+exclusive paths:
+
+### Path A (recommended for v2.0.2 — manual Zenodo draft is canonical)
+
+The reserved Zenodo draft already has the version DOI minted on it. The
+operator uploads the exact released files into the same draft and
+publishes the draft from the Zenodo UI. The GitHub Release is still
+created (so users can find the source and tag), but no auto-ingest is
+allowed to fire toward Zenodo for this release. Practical ways to keep
+auto-ingest from firing a second time include:
+
+- Temporarily disabling the repository in the Zenodo *GitHub* settings
+  panel before publishing the GitHub Release, and re-enabling it
+  afterwards. (No tokens are needed for this; it is a UI toggle on the
+  Zenodo side.)
+- Or, if the repository must stay enabled, watching the Zenodo dashboard
+  during step 5 of §4 and immediately discarding any unpublished
+  duplicate Zenodo draft that the integration creates, before it can be
+  published. Zenodo allows unpublished drafts to be discarded; published
+  records cannot be deleted, so the operator must act before the
+  duplicate is finalized.
+
+Path A is the recommended path for v2.0.2 because the reserved DOI
+`10.5281/zenodo.20433053` is already embedded in the released PDFs and
+metadata. The release is only valid if the published Zenodo record uses
+that exact DOI.
+
+### Path B (future releases — switch fully to manual)
+
+For future releases the project may choose to disable the GitHub ↔ Zenodo
+auto-ingest integration entirely and rely on the manual draft + publish
+flow described above. That path eliminates the duplicate-record race
+condition by construction. Switching paths is a project policy decision
+documented in this file; the source-side files do not change.
+
+---
+
+## 3. Source-side: the release-prep PR
 
 Each release-prep PR (e.g. PR #13 for v2.0.2) does, in one pass:
 
-- Bump `VERSION` / `RELEASE_LABEL` in `generate_pdfs.py`.
+- Reserve the version-specific DOI on a Zenodo *new-version* draft of the
+  concept record **before** finalizing the PR. Record the draft URL and
+  the reserved DOI in the PR description so reviewers can verify.
+- Bump `VERSION` / `RELEASE_LABEL` in `generate_pdfs.py` and update
+  `VERSION_DOI` to the reserved version DOI.
 - Bump version stamps in `README.md`, `CITATION.cff`, `.zenodo.json`,
   `CHANGELOG.md`, `INTEGRITY-MANIFEST.md`, all six `OWL-*.md` sources,
   `OWL-SEMAPHORE-SYSTEM.md`, `OWL-SEMAPHORE-EXPLANATION.md`, the
   `Makefile`, `scripts/compute_hashes.py`, `scripts/update_manifest.py`,
   and `tests/test_banner_tuple.py`.
-- Update DOI references in source to point at the **concept DOI** and the
-  prior published version DOI(s). Do **not** write the new release's
-  version-specific DOI into source — it does not exist yet, and even after
-  Zenodo mints it, source is not back-filled.
+- Update DOI references in source to embed the reserved version DOI as
+  the citing DOI, preserve the concept DOI as the all-versions DOI, and
+  preserve the previously published version DOIs unchanged.
 - Promote any `[Unreleased]` block of `CHANGELOG.md` into the new
   `[vX.Y.Z]` block, wrapped by the matching
   `<!-- BEGIN vX.Y.Z RELEASE BLOCK -->` / `<!-- END vX.Y.Z RELEASE BLOCK -->`
@@ -80,125 +145,106 @@ Each release-prep PR (e.g. PR #13 for v2.0.2) does, in one pass:
   make test
   ```
 - Confirm `make test` passes — the banner-tuple test verifies every PDF
-  carries the new version stamp and the canonical math tuples; the
+  carries the new version stamp, the reserved version DOI, the concept
+  DOI, the previous version DOI, and the canonical math tuples; the
   forbidden-token test verifies no transient cleanup markers leaked into
   canonical release-facing files or PDFs.
 
 When the prep PR merges, the `main` branch contains the final source
-snapshot for the release. No further source edits happen for this release.
+snapshot for the release, with the reserved version DOI baked into every
+published artifact. No further source edits happen for this release.
 
 ---
 
-## 3. Tag + publish-side: the manual release workflow
+## 4. Tag + publish-side: human steps (no auto-ingest)
 
-The manual workflow lives at `.github/workflows/release.yml` and is
-dispatched by hand from the GitHub Actions tab (or via `gh workflow run`).
+The v2.0.2 release publish flow is intentionally a small set of explicit
+human steps, not an automated workflow that publishes a GitHub Release
+and lets Zenodo auto-ingest mint a second DOI.
 
-It takes two inputs:
+After PR #13 is merged into `main`:
 
-- `version` — required, e.g. `v2.0.2`. Must start with `v` and must not
-  already exist as a tag on the repository.
-- `target_sha` — required, the merge-commit SHA on `main` to tag. Pinning
-  the SHA explicitly prevents accidentally tagging a later commit if `main`
-  advanced between merge and dispatch.
-
-The workflow runs, in order:
-
-1. **Checkout** the supplied `target_sha`.
-2. **Guard: tag does not exist.** If the supplied `version` already exists
-   as a tag, the workflow fails immediately.
-3. **Guard: clean forbidden-token + banner-tuple tests on `target_sha`.**
-   The workflow runs `make test` against the checked-out SHA. If any
-   canonical release-facing file or PDF contains a transient cleanup
-   marker, or any PDF banner tuple disagrees with the expected math
-   tuples, the workflow fails before any tag, release, or upload happens.
-4. **Create the annotated tag at `target_sha`** and push it to origin.
-   The tag message is the release title.
-5. **Build the release bundle.** Reuses the same file set as
-   `release-assets.yml` for tag-triggered builds: every canonical `.md`,
-   every PDF, `LICENSE`, `INTEGRITY-MANIFEST.md`, `RELEASE-HASHES.txt`,
-   `VALIDATION-SCRIPT-SPEC.md`, and `assets/`. The bundle is zipped as
-   `owl-semaphore-${version}.zip`.
-6. **Create the GitHub Release** at the new tag. The release notes are
-   assembled from the matching `<!-- BEGIN vX.Y.Z RELEASE BLOCK -->` /
-   `<!-- END vX.Y.Z RELEASE BLOCK -->` section of `CHANGELOG.md`. The
-   release is created as a normal, published release; it is not a
-   pre-release and it is not a workflow holding area.
-7. **Trigger Zenodo ingestion.** Publishing the GitHub release fires the
-   existing GitHub ↔ Zenodo integration, which produces a new Zenodo
-   record and mints a version-specific DOI for the release.
-8. **Wait for Zenodo to mint the version-specific DOI.** The workflow
-   polls the Zenodo public REST API for the concept record
-   (`10.5281/zenodo.19473697`) until either a new version-specific DOI
-   appears for the current `version` or a polling budget elapses. Polling
-   uses only the public Zenodo API and requires no Zenodo token in the
-   workflow.
-9. **Record the minted DOI in the GitHub release notes.** When polling
-   resolves, the workflow appends a single line to the existing release
-   notes via the GitHub REST API using the default `GITHUB_TOKEN`:
+1. **Tag the release at the merge commit.**
    ```
-   v2.0.2 version DOI: 10.5281/zenodo.<minted>
+   git fetch origin
+   git checkout main
+   git pull --ff-only origin main
+   git tag -a v2.0.2 <MERGE_COMMIT_SHA> -m "Owl Semaphore v2.0.2"
+   git push origin refs/tags/v2.0.2
    ```
-   No source file is edited. No new commit is made. No new tag is created.
-10. **If polling did not resolve in budget**, the workflow exits non-fatal
-    with a console note. The minted DOI can be added by hand to the release
-    notes later — still without any source-side change.
+   The `release-assets.yml` workflow fires on tag push and builds the
+   canonical release bundle (`owl-semaphore-v2.0.2.zip`). That workflow
+   only attaches assets to the GitHub Release it creates — it does not
+   talk to Zenodo.
+2. **Prepare the manual Zenodo draft for upload.** Open the Zenodo draft
+   that has the reserved DOI minted on it (for v2.0.2:
+   `https://zenodo.org/uploads/20433053`). Confirm the version field is
+   `v2.0.2`, the DOI is `10.5281/zenodo.20433053`, and the metadata
+   matches `.zenodo.json` from the merge commit.
+3. **Avoid GitHub auto-ingest before creating the GitHub Release.** In
+   the Zenodo *GitHub* settings panel, temporarily disable the
+   `owl-semaphore` repository toggle. (Re-enable it after step 7 if
+   future releases will continue to use the integration.) This step
+   prevents the GitHub Release in step 4 from triggering a second
+   Zenodo ingestion that would mint a different DOI.
+4. **Create the GitHub Release at the tag.** Title it
+   `Owl Semaphore v2.0.2`. Use the `[v2.0.2]` block of `CHANGELOG.md` as
+   the release notes. The release notes already cite the reserved DOI
+   `10.5281/zenodo.20433053`; no additional DOI line needs to be appended.
+5. **Upload the exact released files to the Zenodo draft.** Use the
+   `owl-semaphore-v2.0.2.zip` bundle produced by `release-assets.yml`
+   (or, equivalently, the individual canonical PDFs / source markdown /
+   LICENSE / manifest / hashes attached to the GitHub Release). The
+   uploaded files must be byte-identical to the files at the tagged
+   commit; do not regenerate them locally.
+6. **Publish the Zenodo draft from the Zenodo UI.** Confirm the published
+   Zenodo record has DOI `10.5281/zenodo.20433053` and that the files
+   match the GitHub Release bundle.
+7. **Verify there is exactly one Zenodo record for v2.0.2.** Open the
+   concept record's "Versions" tab and confirm the v2.0.2 entry is the
+   one with DOI `10.5281/zenodo.20433053`. If a duplicate draft was
+   auto-created by GitHub-Zenodo, discard it (drafts can be deleted).
+8. **Optional: re-enable the Zenodo GitHub integration** for future
+   releases. The next release-prep PR's pre-source step will again
+   reserve a DOI on a fresh Zenodo draft, and this procedure repeats.
 
 ---
 
-## 4. Why no follow-up cleanup PR is required
+## 5. Why no follow-up cleanup PR is required
 
-Earlier releases (v2.0.0, v2.0.1) used a "back-fill" PR after the Zenodo
-DOI was minted, to rewrite the version-specific DOI into source files,
-PDFs, and metadata. v2.0.2 eliminates that step:
+Earlier releases (v2.0.0, v2.0.1) used a post-release source-side
+reapplication PR after the Zenodo DOI was minted, to rewrite the
+version-specific DOI into source files, PDFs, and metadata. v2.0.2
+eliminates that step:
 
-- The source's citing DOI is the **concept DOI**, which is stable across
-  releases.
-- The version-specific DOI lives in the GitHub release notes, where it can
-  be appended by the workflow (or, as a fallback, by hand) without
-  re-tagging, re-merging, or amending any source file.
+- The version-specific DOI is reserved on Zenodo **before** PDFs are
+  generated, so it is embedded directly into source, PDFs, and metadata
+  on the first pass.
 - The forbidden-token test (`tests/test_forbidden_tokens.py`) enforces
   that no transient cleanup marker (`TBD`, `placeholder`,
-  `not yet minted`, `temporary`, `back-fill`, etc.) leaks into canonical
+  `not yet minted`, `temporary`, etc.) leaks into canonical
   release-facing files or PDFs. The current-release block of
   `CHANGELOG.md` is also scanned. Old releases' CHANGELOG entries are
   outside the scanned block and are preserved verbatim.
 
-The forbidden-token test deliberately does not scan `.github/workflows/`.
-Action vocabulary such as the GitHub API's pre-release flag must remain
-usable in workflow code without leaking false positives into source.
-Whenever the workflow uses such vocabulary in passing, comments prefer
-the neutral phrasing "staged" or "awaiting DOI" so the workflow's intent
-is still readable.
+The forbidden-token test deliberately does not scan `.github/workflows/`
+or process documentation (`RELEASE-PROCESS.md`,
+`ZENODO-RELEASE-CHECKLIST.md`), because vocabulary used to *forbid* such
+markers must remain usable in those files without leaking false positives.
 
 ---
 
-## 5. Recommended human steps for v2.0.2
+## 6. Recommended human steps for v2.0.2
 
-After PR #13 is merged to `main`:
+After PR #13 is merged to `main`, follow §4 step-by-step.
 
-1. From the GitHub Actions tab, run the **Release** workflow
-   (`release.yml`) with:
-   - `version`: `v2.0.2`
-   - `target_sha`: the merge-commit SHA of PR #13 into `main`
-2. Watch the workflow run. The early steps (guard checks, `make test` on
-   the target SHA, tag creation, GitHub release creation) complete in
-   under a few minutes. The Zenodo polling step then waits for the
-   GitHub ↔ Zenodo integration to ingest the new release and mint the
-   version-specific DOI.
-3. When the workflow's Zenodo-polling step completes, confirm on the
-   Zenodo dashboard that the v2.0.2 record was created and the
-   version-specific DOI was minted, and confirm the GitHub release notes
-   now end with a single `v2.0.2 version DOI: ...` line.
-4. If polling timed out (Zenodo can take longer than the polling budget
-   under load), copy the minted DOI from the Zenodo dashboard and append
-   the same `v2.0.2 version DOI: 10.5281/zenodo.<minted>` line to the
-   GitHub release notes by hand. Do **not** open a source-side back-fill
-   PR; the source snapshot is final at the merge commit.
-5. Verify:
-   - The v2.0.2 Zenodo landing page resolves and renders correctly.
-   - `CITATION.cff` cffinit-lints clean (it already cites the concept
-     DOI).
-   - The v2.0.0 and v2.0.1 tags, releases, and DOIs are untouched.
+- The Zenodo draft URL for v2.0.2 is `https://zenodo.org/uploads/20433053`.
+- The reserved v2.0.2 version DOI is `10.5281/zenodo.20433053`.
+- The concept DOI is `10.5281/zenodo.19473697`.
+- The previous-published version DOI (v2.0.1) is
+  `10.5281/zenodo.20419874`.
+- The earlier-published version DOIs (v2.0.0, v1.2.0) are
+  `10.5281/zenodo.20418539` and `10.5281/zenodo.19474599`.
 
-That is the entire v2.0.2 publication recipe.
+The v2.0.0 and v2.0.1 tags, their GitHub Releases, and their published
+Zenodo DOIs are not modified by the v2.0.2 release.

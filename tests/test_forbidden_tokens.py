@@ -42,6 +42,14 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Matching is case-insensitive and substring-based; multi-word tokens are
 # matched as substrings on the lowercased text so internal whitespace is
 # treated literally.
+#
+# Note (v2.0.2): the word "draft" is intentionally NOT a forbidden token
+# any more, because the reserve-DOI-first release workflow legitimately
+# refers to "Zenodo new-version drafts" in process documentation
+# (`ZENODO-RELEASE-CHECKLIST.md`, `RELEASE-PROCESS.md`). The durable
+# transient-marker list below stays tightly focused on cleanup markers
+# (TBD, placeholder, pending, not yet minted, temporary, to_be_*, the
+# back-fill family) and the no-Wikipedia external-link rule.
 FORBIDDEN_TOKENS = (
     "TBD",
     "placeholder",
@@ -49,7 +57,6 @@ FORBIDDEN_TOKENS = (
     "not yet minted",
     "temporary",
     "Wikipedia",
-    "draft",
     "TO_BE_COMPUTED",
     "TO_BE_VERIFIED",
     "TO_BE_MEASURED",

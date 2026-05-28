@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use the Owl Semaphore system, please cite the concept DOI (10.5281/zenodo.19473697), which resolves to the latest published version. The previous published version DOI (v2.0.1) is 10.5281/zenodo.20419874; earlier published version DOIs (v2.0.0, v1.2.0) are 10.5281/zenodo.20418539 and 10.5281/zenodo.19474599 respectively."
+message: "If you use the Owl Semaphore system, please cite the v2.0.2 version-specific DOI (10.5281/zenodo.20433053). The concept DOI 10.5281/zenodo.19473697 resolves to the latest published version. The previous published version DOI (v2.0.1) is 10.5281/zenodo.20419874; earlier published version DOIs (v2.0.0, v1.2.0) are 10.5281/zenodo.20418539 and 10.5281/zenodo.19474599 respectively."
 title: "Owl Semaphore Badge System"
 type: software
 authors:
@@ -11,11 +11,14 @@ date-released: 2026-05-28
 license: "CC-BY-4.0"
 repository-code: "https://github.com/IT-Help-San-Diego/owl-semaphore"
 url: "https://github.com/IT-Help-San-Diego/owl-semaphore"
-doi: "10.5281/zenodo.19473697"
+doi: "10.5281/zenodo.20433053"
 identifiers:
   - type: doi
+    value: "10.5281/zenodo.20433053"
+    description: "v2.0.2 version-specific DOI for the Owl Semaphore Badge System; the citing DOI for v2.0.2."
+  - type: doi
     value: "10.5281/zenodo.19473697"
-    description: "Concept DOI (all versions) for the Owl Semaphore Badge System. This is the citing DOI for v2.0.2; it resolves to the latest published version."
+    description: "Concept DOI (all versions) for the Owl Semaphore Badge System. Resolves to the latest published version."
   - type: doi
     value: "10.5281/zenodo.20419874"
     description: "Previously published version DOI (v2.0.1), retained for citation continuity."
@@ -48,4 +51,4 @@ preferred-citation:
   license: "CC-BY-4.0"
   repository-code: "https://github.com/IT-Help-San-Diego/owl-semaphore"
   url: "https://github.com/IT-Help-San-Diego/owl-semaphore"
-  doi: "10.5281/zenodo.19473697"
+  doi: "10.5281/zenodo.20433053"
