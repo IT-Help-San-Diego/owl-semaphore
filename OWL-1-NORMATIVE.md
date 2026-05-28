@@ -4,7 +4,7 @@
 
 ## OWL 1 / NORMATIVE / Identity State
 
-### Version 2.0.1 (document subordinate to v2.0.1)
+### Version 2.0.2 (document subordinate to v2.0.2)
 
 ---
 
@@ -617,7 +617,7 @@ In the through-the-legs demonstration:
 
 This is exactly the logic of the METACOGNITIVE state.
 
-The observer audits the frame. (See OWL-4-METACOGNITIVE for the normative phrasing rule; the canonical sentence for METACOGNITIVE — set in v2.0.0 and carried through v2.0.1 — is *"The observer audits the frame,"* with the warmer explanatory variant *"Thinking examines its own frame."*)
+The observer audits the frame. (See OWL-4-METACOGNITIVE for the normative phrasing rule; the canonical sentence for METACOGNITIVE — set in v2.0.0 and carried through v2.0.2 — is *"The observer audits the frame,"* with the warmer explanatory variant *"Thinking examines its own frame."*)
 
 ### 20.5 Relation to Pattern Recognition
 

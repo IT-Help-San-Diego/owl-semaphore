@@ -2,7 +2,7 @@
 
 # OWL SEMAPHORE — SYSTEM SPECIFICATION
 A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants.
-## Version 2.0.1
+## Version 2.0.2
 
 ---
 
@@ -26,17 +26,17 @@ The objective is a system that is:
 
 This preamble is informative. It states the project's external-compatibility criterion: the four states are a notation system for moves that several mature fields already make — peer review separates normative from non-normative; CVEs flag critical; methodology audits are metacognitive — not a novel taxonomy. Where the notation contradicts a careful practitioner's existing terminology in psychiatry, philosophy, statistics, computer science, or accessibility, the notation is wrong, not the field. The four front-loaded stories in the state specifications (*The Proven Ground*, *Da Vinci's Wings*, *The Manhattan Moment*, *The Observer's Mirror*) are the human-intuition bridge to the V₄ algebra defined in §2 below; see [`OWL-SEMAPHORE-EXPLANATION.md`](OWL-SEMAPHORE-EXPLANATION.md) §1B for the ordered reading guide and §13 for the closing bridge.
 
-### 1.1 Canonical Sentence Stack (v2.0.1)
+### 1.1 Canonical Sentence Stack (v2.0.2)
 
 The project uses a three-layer canonical sentence stack so that the same concept can be expressed at the level of mathematics, operation, and human story without drifting between documents:
 
 | Layer | Canonical sentence | Use |
 | --- | --- | --- |
-| Formal | *A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants.* | README, system spec, Zenodo metadata draft, citation abstract |
+| Formal | *A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants.* | README, system spec, Zenodo deposit metadata, citation abstract |
 | Operational | *A four-state visual system for marking how a claim, document, dataset, or finding should be evaluated before belief, challenge, or action.* | Explanation document, public overview, DNS Tool bridge |
 | Human | *Four owls tell the reader what kind of thinking they are looking at: standard, exploration, inversion, or self-audit.* | Story sections, teaching material |
 
-Earlier inconsistent forms — *"mapped into a visual system with strict invariants"* (former §11) and *"implemented as a reproducible visual system with enforced invariants"* (former README masthead) — were reconciled in v2.0.0 onto the canonical formal sentence above, and that reconciliation is unchanged in v2.0.1.
+Earlier inconsistent forms — *"mapped into a visual system with strict invariants"* (former §11) and *"implemented as a reproducible visual system with enforced invariants"* (former README masthead) — were reconciled in v2.0.0 onto the canonical formal sentence above, and that reconciliation is unchanged through v2.0.2.
 
 ---
 
@@ -61,7 +61,7 @@ This is a finite subgroup of the orthogonal group \(O(2)\) isomorphic to V₄ (e
 | CRITICAL | C₂ | (x,y) → (-x,-y) | +1 |
 | METACOGNITIVE | σₕ | (x,y) → (x,-y) | -1 |
 
-The σₕ assignment to METACOGNITIVE is unchanged from v1.2.0. The interpretive wording was refined in v2.0.0 (see §4) and is unchanged in v2.0.1.
+The σₕ assignment to METACOGNITIVE is unchanged from v1.2.0. The interpretive wording was refined in v2.0.0 (see §4) and is unchanged through v2.0.2.
 
 ### 2.3 Closure (Cayley Table)
 
@@ -123,7 +123,7 @@ The system separates three levels:
 2. observer
 3. evaluative frame
 
-### 4.2 State Mapping (Normative Phrasing — v2.0.1)
+### 4.2 State Mapping (Normative Phrasing — v2.0.2)
 
 | State | Quote (scientific / normative) | Meaning |
 |------|--------|--------|
@@ -132,7 +132,7 @@ The system separates three levels:
 | CRITICAL | *"This inverts the standard."* | inverted assumptions |
 | METACOGNITIVE | *"The observer audits the frame."* | observer audits its own evaluative frame — thinking about thinking |
 
-> **Note on the METACOGNITIVE phrasing.** The earlier line *"This audits the standard"* is deprecated as of v2.0.0 and remains deprecated in v2.0.1. The audit at METACOGNITIVE is directed at the **observer's own evaluative frame**, not at the standard as an external object. The explanatory variant — *"Thinking examines its own frame"* — appears in the warmer-voiced [OWL-SEMAPHORE-EXPLANATION.md](OWL-SEMAPHORE-EXPLANATION.md). This refinement aligns the language with the cognitive-science meaning of metacognition: monitoring and regulation of one's own cognitive process ([metacognitive reflection review, PMC 11368986](https://pmc.ncbi.nlm.nih.gov/articles/PMC11368986/)).
+> **Note on the METACOGNITIVE phrasing.** The earlier line *"This audits the standard"* is deprecated as of v2.0.0 and remains deprecated through v2.0.2. The audit at METACOGNITIVE is directed at the **observer's own evaluative frame**, not at the standard as an external object. The explanatory variant — *"Thinking examines its own frame"* — appears in the warmer-voiced [OWL-SEMAPHORE-EXPLANATION.md](OWL-SEMAPHORE-EXPLANATION.md). This refinement aligns the language with the cognitive-science meaning of metacognition: monitoring and regulation of one's own cognitive process ([metacognitive reflection review, PMC 11368986](https://pmc.ncbi.nlm.nih.gov/articles/PMC11368986/)).
 
 ### 4.3 Critical Distinction
 
@@ -199,7 +199,7 @@ Each state is assigned a distinct color space region:
 
 Color is semantic, not decorative.
 
-### 7.2 Accessibility — Triple-Redundant Encoding (v2.0.1, normative)
+### 7.2 Accessibility — Triple-Redundant Encoding (v2.0.2, normative)
 
 **Color is not the only carrier.** State identity must remain recoverable when color is removed (grayscale rendering, color vision deficiency, or low-vision contexts). Every state in the Owl Semaphore is therefore encoded through at least three independent channels:
 
@@ -211,7 +211,7 @@ This satisfies the design intent of **WCAG 2.2 SC 1.4.1 (Use of Color, Level A)*
 
 Red-green color vision deficiency affects approximately 8% of males and 0.5% of females of Northern European descent; rates vary by population ([PMC global CVD review, 12385717](https://pmc.ncbi.nlm.nih.gov/articles/PMC12385717/)).
 
-Full WCAG 2.2 Level AA empirical conformance testing (automated checks, CVD simulation, user testing) is scoped to a future release; v2.0.1 carries forward the design rule and its compliance intent established in v2.0.0.
+Full WCAG 2.2 Level AA empirical conformance testing (automated checks, CVD simulation, user testing) is scoped to a future release; v2.0.2 carries forward the design rule and its compliance intent established in v2.0.0.
 
 ---
 
@@ -270,13 +270,13 @@ If the system is used to imply certainty rather than epistemic position, it is b
 
 ---
 
-## 11. Core Principle (Reconciled, v2.0.1)
+## 11. Core Principle (Reconciled, v2.0.2)
 
 This system is defined as:
 
 > **A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants.**
 
-This sentence is the single formal canonical definition for v2.0.1, unchanged from v2.0.0. It supersedes both *"implemented as a reproducible visual system with enforced invariants"* and *"mapped into a visual system with strict invariants"*. See [CHANGELOG.md](CHANGELOG.md) for the per-version canonical-sentence history.
+This sentence is the single formal canonical definition for v2.0.2, unchanged from v2.0.0. It supersedes both *"implemented as a reproducible visual system with enforced invariants"* and *"mapped into a visual system with strict invariants"*. See [CHANGELOG.md](CHANGELOG.md) for the per-version canonical-sentence history.
 
 ---
 

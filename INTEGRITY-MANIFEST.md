@@ -2,9 +2,9 @@
 
 # OWL SEMAPHORE — INTEGRITY MANIFEST
 
-## Version 2.0.1
+## Version 2.0.2
 
-> Stamped v2.0.1 for the corrective patch release. The structure is unchanged from v2.0.0: tracked specification files carry SHA-3-512 digests; the explanation document, CHANGELOG, regenerated PDFs, and assets are covered. Asset-record `TO_BE_COMPUTED` / `TO_BE_VERIFIED` markers for master / layer / export PNGs remain where measurement is still pending. The generated-hash block at the bottom of this file is overwritten by `scripts/update_manifest.py` from `RELEASE-HASHES.txt`; do not hand-edit it. The hand-edited `sha3_512:` values under §11.1 will be recomputed and replaced as part of `make hashes` + `make manifest` for v2.0.1 (the markdown content of the spec files changes only in version stamps where applicable).
+> Stamped v2.0.2 for the editorial science/citation remediation release. The structure is unchanged from v2.0.1: tracked specification files carry SHA-3-512 digests; the explanation document, CHANGELOG, regenerated PDFs, and assets are covered. The asset-record markers under §11.2 for master / layer / export PNGs are carried forward unchanged from the v2.0.1 manifest. The generated-hash block at the bottom of this file is overwritten by `scripts/update_manifest.py` from `RELEASE-HASHES.txt`; do not hand-edit it. The hand-edited `sha3_512:` values under §11.1 are recomputed and replaced as part of `make hashes` + `make manifest` for v2.0.2 (the markdown content of the spec files changes in version stamps and editorial science/citation remediation passes).
 
 ---
 
@@ -308,7 +308,7 @@ Populate the following sections as files are finalized.
   transform_class: n/a
   sha3_512: 6ad12fa6764a00e084871587a9eb8e44bf8a82b9476e5ee568d12ad080e01aadba209a4679657ce9ca6863019e79da15108ca4516db55c0b83ed448e0f04c99a
   status: WORKING
-  notes: Root system specification (v2.0.1)
+  notes: Root system specification (v2.0.2)
 
 - path: OWL-1-NORMATIVE.md
   role: state specification
@@ -320,7 +320,7 @@ Populate the following sections as files are finalized.
   transform_class: I
   sha3_512: e6e4f4080013a7d39a5c18e1ef8a652f445f942033caed55a1e6ba27aea9cd460ca93c53b76ef959c6abd83f7c3476f67c42a971f5b8d00668e4e74ffaedb26b
   status: WORKING
-  notes: Normative state specification (v2.0.1)
+  notes: Normative state specification (v2.0.2)
 
 - path: OWL-2-NON-NORMATIVE.md
   role: state specification
@@ -332,7 +332,7 @@ Populate the following sections as files are finalized.
   transform_class: σᵥ
   sha3_512: 7bbd6be9cbedfeee729cc4315da9c119f583f5bf7917cedaca305c99516344d6b08851eb62449331b76c3192ebb5e5522ccd53a165e17b5993bc757ec66d6d04
   status: WORKING
-  notes: Non-normative state specification (v2.0.1)
+  notes: Non-normative state specification (v2.0.2)
 
 - path: OWL-3-CRITICAL.md
   role: state specification
@@ -344,7 +344,7 @@ Populate the following sections as files are finalized.
   transform_class: C₂
   sha3_512: 6ae4dee406c5036ac6f09abbf0027dbf08fc530e1ca472e66b3a18efc98cb5a3999984bc41d6a2c43645c42838a1a05c3238f1dd2b098a07a3242a37f1c7681b
   status: WORKING
-  notes: Critical state specification (v2.0.1)
+  notes: Critical state specification (v2.0.2)
 
 - path: OWL-4-METACOGNITIVE.md
   role: state specification
@@ -356,7 +356,7 @@ Populate the following sections as files are finalized.
   transform_class: σₕ
   sha3_512: f9a3b89a8186fc8021812365929ea95160b6ebb42bcc516e099022fb27b710ee23455a144693a3674dcd5898b5e43030e7adbbab5e90d4badccbd45ff7780877
   status: WORKING
-  notes: Metacognitive state specification (v2.0.1) — phrasing "The observer audits the frame" carried over from v2.0.0
+  notes: Metacognitive state specification (v2.0.2) — phrasing "The observer audits the frame" carried over from v2.0.0
 
 - path: README.md
   role: repository overview
@@ -368,7 +368,7 @@ Populate the following sections as files are finalized.
   transform_class: n/a
   sha3_512: e95475ffc9dd155ae6cf1cb1e1d01192c40007499560547589569a4ccd88bec81bedabcb2bb3825d05be017a7afb8bd4532f2dfc1de685bc5b7c42db1e5e8d13
   status: WORKING
-  notes: Publication-facing repository overview (v2.0.1)
+  notes: Publication-facing repository overview (v2.0.2)
 
 - path: CITATION.cff
   role: citation metadata
@@ -380,26 +380,12 @@ Populate the following sections as files are finalized.
   transform_class: n/a
   sha3_512: a77849fbcc7e2efc098324fa2daf6b7a13f7393dc906c01a2e3dd186f2e361659c055c76f6cef289748c1559b3e5239d996969f0266d2a3f83858c4f98a6f49f
   status: WORKING
-  notes: Citation metadata (v2.0.1); v2.0.1 version DOI 10.5281/zenodo.20419874; v2.0.0 version DOI 10.5281/zenodo.20418539 retained as previously published
+  notes: Citation metadata (v2.0.2); cites v2.0.2 version-specific DOI 10.5281/zenodo.20433053 (reserved on Zenodo before release); concept DOI 10.5281/zenodo.19473697 (resolves to latest); v2.0.1 version DOI 10.5281/zenodo.20419874 retained as previous published; v2.0.0 version DOI 10.5281/zenodo.20418539 retained as earlier published
 ```
 
 ### 11.2 Asset Records
 
-Add finalized asset records here using the same format once the masters, layers, and exports are frozen and hashed.
-
-```text
-- path: assets/masters/...
-  role: master asset
-  state: ...
-  type: image
-  dimensions: TO_BE_MEASURED
-  mode: TO_BE_MEASURED
-  alpha_status: TO_BE_VERIFIED
-  transform_class: TO_BE_VERIFIED
-  sha3_512: TO_BE_COMPUTED
-  status: WORKING
-  notes: pending validation
-```
+Finalized asset records are added here, one entry per asset, using the canonical record format defined in §10. Each entry records the concrete measurements (`dimensions`, `mode`, `alpha_status`, `transform_class`) and the SHA-3-512 digest of the asset file, with a one-line `notes` field describing the asset's role in the release. Entries are added as assets are frozen and hashed; the v2.0.2 release does not introduce new asset entries because the asset set under `assets/` is unchanged from v2.0.1.
 
 ---
 
@@ -472,7 +458,7 @@ SHA3-512: 140c7b67ca5c2d6e3cfcaa8faecaeb81517a1c47e447c888cf55b0d88d27b7f23cd932
 
 <!-- BEGIN GENERATED HASHES -->
 
-## Generated Hash Records (v2.0.1)
+## Generated Hash Records (v2.0.2)
 
 The block below is regenerated by `scripts/update_manifest.py` from
 `RELEASE-HASHES.txt`. Do not hand-edit between the markers.
@@ -490,23 +476,23 @@ assets/releases/540/NONNORM-composite-white-540.png: 7ef0e888ff009aff3fc0bbde3d7
 assets/releases/540/NORM-composite-dark-540.png: 95b34b154ac026c966eb039041b3c83a1e3da4da8321d99c2c6ba885d7225a11a022a202993383cb99477db8b98f48e2bda1a833ff2b8ca882cb2108cea0ec11
 assets/releases/540/NORM-composite-transparent-540.png: e7447d169d2980ae1cd1ecaf50e4cefddfc1798ed018e08a8b865f2bb12d32ed5a1114e54bfb79cd9bacb39589a65053c9b34c2e5e7b25df4d94fc9547c20587
 assets/releases/540/NORM-composite-white-540.png: d2a24e049ae0fe0531fe19973a4ac6456291beb951565eab0dd61746b298a91bd8b5bc151983abb8a803b42af73d41bb7e26ac418fd921fdbacb12fa8ce212a5
-OWL-SEMAPHORE-SYSTEM.pdf: c7dbf213551ba660a8cbeef96bd0df7657512d2f2b87d8cc9862f1c08513f54fabf85585de7be32683136724fae1d766af8a043979c5ae459e3c493046fcf384
-OWL-SEMAPHORE-EXPLANATION.pdf: 24c36b8c115497d85158c435cc812e74534c35f98859f85625e26cde83ed730bf769592e1824e917ca576125766f18763e88aa123168676be7f0a052b0e9fe9a
-OWL-1-NORMATIVE.pdf: d07d342470a5f6aa3af5c1e0a07fa11f10ce473a54604c7d660fb47b3394b38b2e0355f29443b605efc188c3eb678882a39b730da796578c82d2681f2e289767
-OWL-2-NON-NORMATIVE.pdf: 5472e118f384caf2526a784b1a3ef839d98e9fd6eb74081d1785ef87aa962c4db684c5608cc3a8697c75277a154196109cf3636f8072e2cda9ff6ea90974ced5
-OWL-3-CRITICAL.pdf: 4fe30bf11f2708d449f322e8e41e487a6e1c11a85f637f4000d95880100d0e62ea04272353f9aaa93032dd9193d7522579624037b6716beff598ece21dee6bf6
-OWL-4-METACOGNITIVE.pdf: f3a95421e4baad48b5a3ac0c39cfd219c66516ba2d42eb7c31007660c838c360cf3d8e712d5cbfcfb335b538b3dca7ae46cc96a526ec7f6ead0d17728e29bd44
-README.md: b9865c2364d6db4dd0992b6af2bbf2c500c3f24460e4983dd1916e37721bf23a8f96521de87ca12abedaba49e60e42411d1a70e670b6724170f08a032730b7cb
-CHANGELOG.md: 1ab6b1026ba1b69688ba98515e48b6bb31582f3ed921d674ef718aba9938818c4a504e1586b070967f9cb73d432bf1a55cdfc27175cca32ed80aa376cbfd371c
-OWL-SEMAPHORE-SYSTEM.md: 3b5282e724d3dda12a48c586125c92dc331efe813c295eb35f8654c1fdd5252194210ccfef331ce2f81e11fffdad4502666223cf227a9337fd961e67011bd022
-OWL-SEMAPHORE-EXPLANATION.md: c232d801ff157f4371915ab601bff50ee928264f3724f8306f80b206497aecf57b582ecbf87800a67bce312bc43517d533daf748e6ea8dd4faf0e5f9eb776ec7
-OWL-1-NORMATIVE.md: 69c10d14c79591b0df5eb9e8536341521f9925468f5008823c9474381c084c870af37753a72d6ba55c75c4565b21bdf271e1a456ec84bd616ea595ec4a651064
-OWL-2-NON-NORMATIVE.md: 7bbd6be9cbedfeee729cc4315da9c119f583f5bf7917cedaca305c99516344d6b08851eb62449331b76c3192ebb5e5522ccd53a165e17b5993bc757ec66d6d04
-OWL-3-CRITICAL.md: 31df97d38a6772e5f862afdca36c8dee0019957c431fbf568b04dc7b12d11d4e0a472de02ba29cdbdf0ea960af3db3e97fda613e930041631f8bd56e443d0954
-OWL-4-METACOGNITIVE.md: 4db324abf16ebe2a188c3b673cff7844d3d4d3cbffd2a1a0d1771ebf67d88a9e4f71d22f91eca6280fc83c6e78cab0518eecaed8d856e3bc490f43839c694a8f
-INTEGRITY-MANIFEST.md: d0c98eb1a2011a9d682e0582f9f2bfafff77a50fc5dcc10404cf8336c57249a7edca1d9bfd12bf667ffc5a4ecd6b3c5b1e006ea0ea186d1d910fd19882cf7606
-CITATION.cff: c6075ae3e19a52f6b876c4ffa20d84806ba9f0ca6e5a4b47bf65bd78ab94fbebf3f60bf6a734c725ddf97b19a04ab01d4dfbd90cdc756369793af3871d6d1149
-.zenodo.json: f4c890fb9effaee7c0a872f02d46be0fda5804c7de310ffef114aeba97279bc511772f66508b533d34afdebfdc674c9751f9b9260d7d68fecca3b20d627402b1
+OWL-SEMAPHORE-SYSTEM.pdf: 13089f3d10d181e62f9680f1a36ca5deac709845b8e4a9d71e99412f5f6cf73fcfc09643a9e4d8ce1f8ca50b33e25fa65e3e5bfa9194f00bfc7fd9fba21ec84c
+OWL-SEMAPHORE-EXPLANATION.pdf: 9aa70f550131db26df835bdb5ab9021c553acc61b6df831685b4d74514a2f83fb226fa0e3075324dd7d8654537bbbd0556cb8072b992164819d7f117402c0acc
+OWL-1-NORMATIVE.pdf: 99e1cd74f44bcfa9f27c173355cfbeca8fea4a5f1b4254a0148b0d9dfb38b84774830cb26b52d5474fdae92dbcc1fdadd5b3bf605d048825638d5039304925bd
+OWL-2-NON-NORMATIVE.pdf: 438beef3e807a925a6a4dbffbf18f70d8f51648b42006efb082e0b83c38b59f7eb1ecdf33ad08f14db6d293c2fcbca1a34b62ecda457952261af3e4de5be422d
+OWL-3-CRITICAL.pdf: 42fcd553a855cd696659c98ccb47a066a9aa3e00b8f7bb20578697ae7cf9201b8aa382db145c7e140a5a52cb2f564612609ef1ba8d3c16d7dadb14d6c348b236
+OWL-4-METACOGNITIVE.pdf: f7a4ac9f56278900038ce26e19ce0c68b8295d6c785ddb493ac9046c1a25cbc4fa1605315806b736063b2b933e6856e03a6fff0a99a2e02d49314cb03a20e8c4
+README.md: 74d81373b0d66c52c67fef6c30f313e5c517eea1c1f214d822c417a23b469936aaf5b696c33e9de7accf2fbd7b05ca7742f09e08e309ebe618cf20c5cb058039
+CHANGELOG.md: 5dfffd4164c390d461349f8f3a131e1c82a88ca5ff74eb79ec32d1dd11c1f9fbaa97393a9266d779b368ebee1bd9300e9c5f59f588d583d676c3e7a9886d6a19
+OWL-SEMAPHORE-SYSTEM.md: f720720666e50313a35453785ec9e866bac4c1b6ee985b3478681836cd5559728b02303fbd80e76159b40652ab5826bfc7e991abcb100b7b366f5c9949d4417d
+OWL-SEMAPHORE-EXPLANATION.md: f04cca9c5c35a7cbf7f73516ee0567080390c982d05c78da57c644d10ff721e78aa77a897c00a903863a7335d45e5b4f43dbc8706402a422dda2a53fd498646f
+OWL-1-NORMATIVE.md: 24b39e5d2ed32f44e60761176134bbb5b05ff7ecf956fd45dc3c34095cae8e5e32cfebd88935d78dd1ab3129e55840a9bf3c897d9844f5487af9a352cd08fedb
+OWL-2-NON-NORMATIVE.md: a78e64f28ee791d7622a2cd09edea0ed30d54032f4315ef435196903a2aed7d999cf2c765a81beba9bac49428ffa18353c17abbc0a6cb39ae245bb4d4eb8e864
+OWL-3-CRITICAL.md: b48a660379abe85cf82bba3a7399975a9c467d73a1f800a899d32c2a39c8fec68c8dcd85fe12850186ad9909ac6eaa572edb1a0399c084f5e9ede0e13c822993
+OWL-4-METACOGNITIVE.md: 68f29bf9526375635146d8823a04b6410f4dd81d6eacc3657bf4d79b0172ff776a7f3eb04ca79299eef2f8bfe0599e4dbcd5ec9b9b22e0f22c8d46c7006ff1af
+INTEGRITY-MANIFEST.md: 8d94ef1d3f099896048cf0dbf7584e0944c9df0c7a5bd4d4c6b40279e6d3e92b69d7b88252971228b5c71ac8e04b2f5bfaae7296faa21120aac5dc136a777a8d
+CITATION.cff: d4a48c05366334b818d520ef11ab4faca9e4e8c7091da4f3e641ff421f1fdbf4de44f4da3291b260f1577051b68a650a137e3a85818993dfbd99f8916f29c7d9
+.zenodo.json: 8cd68476662825bcb2292a070fca5ac3f136b418dbc93d9b34d81d5f62efa456bdc8411cb237e17893f0d2be2cf8f7b2d22a0226e3fa5cf8d6c406ef9e2c1d5f
 ```
 
 <!-- END GENERATED HASHES -->

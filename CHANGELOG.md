@@ -8,9 +8,24 @@ Each release entry records the **canonical formal sentence used in that release*
 
 ---
 
-## [Unreleased] — science/citation remediation (post v2.0.1)
+<!-- BEGIN v2.0.2 RELEASE BLOCK -->
 
-> Editorial remediation patch staged on top of v2.0.1. **No change** to the V₄ algebra, the σₕ assignment to METACOGNITIVE, the canonical formal sentence, the accessibility rule, the asset set, or any DOI. **No release has been cut for this changeset yet**; if accepted, it implies a future v2.0.2 patch release.
+## [v2.0.2] — editorial science/citation remediation release
+
+> v2.0.2 is an editorial science/citation remediation release on top of v2.0.1. **No change** to the V₄ algebra, the σₕ assignment to METACOGNITIVE, the canonical formal sentence, the accessibility rule, the asset set, or the canonical math tuples (NORMATIVE I/+1/(x,y)→(x,y); NON-NORMATIVE σᵥ/−1/(x,y)→(−x,y); CRITICAL C₂/+1/(x,y)→(−x,−y); METACOGNITIVE σₕ/−1/(x,y)→(x,−y)).
+
+**Canonical formal sentence (this release, unchanged from v2.0.0):**
+> *A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants.*
+
+**Canonical operational sentence (unchanged):** *A four-state visual system for marking how a claim, document, dataset, or finding should be evaluated before belief, challenge, or action.*
+
+**Canonical human sentence (unchanged):** *Four owls tell the reader what kind of thinking they are looking at: standard, exploration, inversion, or self-audit.*
+
+**Citing DOI for v2.0.2 (version-specific):** [10.5281/zenodo.20433053](https://doi.org/10.5281/zenodo.20433053) — reserved on Zenodo before release and embedded directly in source, PDFs, and metadata so the exact version DOI appears inside every published artifact.
+**Concept DOI (all versions):** [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697) — resolves to the latest published version.
+**Previous published version DOI (v2.0.1):** [10.5281/zenodo.20419874](https://doi.org/10.5281/zenodo.20419874)
+**Earlier published version DOI (v2.0.0):** [10.5281/zenodo.20418539](https://doi.org/10.5281/zenodo.20418539)
+**Earlier published version DOI (v1.2.0):** [10.5281/zenodo.19474599](https://doi.org/10.5281/zenodo.19474599)
 
 ### Changed (editorial; no normative algebra changes)
 
@@ -26,12 +41,38 @@ Each release entry records the **canonical formal sentence used in that release*
 - **Newton / Einstein.** In `OWL-1-NORMATIVE.md` §1A and `OWL-SEMAPHORE-EXPLANATION.md` §1B, rephrased so general relativity **extends and contains** Newtonian mechanics as a limiting case rather than simply replacing or falsifying it; explicitly defined *normative* as "operationally validated within a stated domain and scope," not "true everywhere."
 - **Core framing.** In `OWL-SEMAPHORE-EXPLANATION.md` §1A and `OWL-SEMAPHORE-SYSTEM.md` §1.0, removed the "must align with the human spirit / 2,500 years of accumulated understanding" framing and reframed the project as a visual notation whose design target is **compatibility** with established mathematics, accessibility practice, and carefully bounded analogies from epistemology and cognitive science — not a theory of everything and not a claim over the whole of human knowledge.
 
+### DOI strategy (this release)
+
+- The v2.0.2 version-specific DOI `10.5281/zenodo.20433053` is **reserved on Zenodo before release** and embedded directly into source files, PDFs, and metadata. The exact version DOI therefore appears inside every published artifact that Zenodo archives. No transient DOI markers appear in source, PDFs, or tests; the source snapshot is final on its own terms.
+- The **concept DOI `10.5281/zenodo.19473697`** is preserved as the all-versions DOI for cross-version citation; it resolves to the latest published version on Zenodo.
+- DOI family roles in metadata as of v2.0.2:
+  - **v2.0.2 DOI `10.5281/zenodo.20433053`** — version-specific citing DOI for v2.0.2 (reserved on Zenodo before release; embedded in source and PDFs).
+  - Concept DOI `10.5281/zenodo.19473697` — unchanged (resolves to latest version).
+  - **v2.0.1 DOI `10.5281/zenodo.20419874`** — recorded as the *previous published* version DOI.
+  - **v2.0.0 DOI `10.5281/zenodo.20418539`** — recorded as an *earlier published* version DOI.
+  - **v1.2.0 DOI `10.5281/zenodo.19474599`** — retained as an *earlier published* version DOI for citation continuity.
+- The repository convention (`RELEASE-PROCESS.md`, `ZENODO-RELEASE-CHECKLIST.md`) documents the reserve-DOI-first workflow: create a Zenodo new-version draft for the concept record, reserve the version DOI, embed it in source/PDFs/metadata, merge the release-prep PR, create the tag and GitHub Release, upload the exact release files to the same Zenodo draft, and publish the draft. The manual workflow does not auto-publish a separate Zenodo record via GitHub auto-ingest, so there is exactly one Zenodo record per release.
+
 ### Verification
 
-- `make pdfs` regenerates all five PDFs from the edited sources.
-- `make hashes` and `make manifest` re-stamp `RELEASE-HASHES.txt` and `INTEGRITY-MANIFEST.md`.
-- `make test` (banner-tuple integrity test) still passes — the four canonical math tuples are unchanged: NORMATIVE I/+1/(x,y)→(x,y); NON-NORMATIVE σᵥ/−1/(x,y)→(−x,y); CRITICAL C₂/+1/(x,y)→(−x,−y); METACOGNITIVE σₕ/−1/(x,y)→(x,−y).
-- No Wikipedia URLs anywhere in the corpus; no stale `TBD` placeholders.
+- `make pdfs` regenerates all six PDFs from the edited sources at the new v2.0.2 stamp.
+- `make hashes` and `make manifest` re-stamp `RELEASE-HASHES.txt` and `INTEGRITY-MANIFEST.md` for v2.0.2.
+- `make test` passes — the four canonical math tuples are unchanged: NORMATIVE I/+1/(x,y)→(x,y); NON-NORMATIVE σᵥ/−1/(x,y)→(−x,y); CRITICAL C₂/+1/(x,y)→(−x,−y); METACOGNITIVE σₕ/−1/(x,y)→(x,−y).
+- A new test (`tests/test_forbidden_tokens.py`) scans canonical release-facing files and generated PDFs for transient cleanup markers and external-link policy violations; it passes for the v2.0.2 corpus.
+
+### Non-goals (explicit, v2.0.2)
+
+- V₄ algebra: unchanged.
+- σₕ ↔ METACOGNITIVE assignment: unchanged.
+- License (CC BY 4.0): unchanged.
+- Visual identity / state assignments / transform assignments: unchanged.
+- Canonical formal/operational/human sentences: unchanged.
+- Accessibility rule: unchanged.
+- Asset set under `assets/`: unchanged.
+- Canonical math tuples in tests and PDFs: unchanged.
+- This PR does not perform the Zenodo upload, `git tag`, or GitHub release for v2.0.2; those steps happen separately. The v2.0.0 and v2.0.1 tags, their GitHub releases, and their minted DOIs are not modified.
+
+<!-- END v2.0.2 RELEASE BLOCK -->
 
 ---
 

@@ -63,34 +63,39 @@
 
 ## 6. GitHub Release Preparation
 
-- [ ] Git tag created (example: `v1.0.0`)
+- [ ] Git tag created (example: `v2.0.2`)
 - [ ] release title prepared
 - [ ] release notes prepared
 - [ ] release notes include:
-  - [ ] first formal publication of Owl Semaphore
-  - [ ] four-state V₄ structure
-  - [ ] asset integrity and invariants
+  - [ ] reserved version-specific DOI for this release
+  - [ ] concept DOI as the all-versions DOI
+  - [ ] previously published version DOIs
+  - [ ] four-state V₄ structure summary
   - [ ] relationship to DNS Tool as implementation context
 
-## 7. Zenodo Preparation
+## 7. Zenodo Preparation (canonical convention, v2.0.2 onward)
+
+> **Convention (effective v2.0.2).** The release-specific version DOI is **reserved on Zenodo before the release** by creating a Zenodo new-version record for the concept DOI and capturing the reserved version DOI from that record. The reserved version DOI is then embedded directly into source files, PDFs, and metadata so the exact version DOI appears inside every published artifact. The same Zenodo new-version record is published from the Zenodo UI after the GitHub Release is created, so exactly one Zenodo record per release exists. The GitHub-Zenodo auto-ingest path is intentionally side-stepped for this release to avoid producing a duplicate Zenodo record with a different DOI. The full publication recipe lives in `RELEASE-PROCESS.md`.
 
 - [x] Zenodo account connected to GitHub
-- [x] repository enabled in Zenodo
-- [x] GitHub release created
-- [x] Zenodo ingestion confirmed
-- [x] concept DOI recorded: `10.5281/zenodo.19473697`
-- [x] earlier version DOI recorded (v1.2.0): `10.5281/zenodo.19474599`
-- [x] previously published version DOI recorded (v2.0.0): `10.5281/zenodo.20418539`
-- [x] version DOI recorded (v2.0.1): `10.5281/zenodo.20419874`
-- [x] DOI added back into (after v2.0.1 mint):
+- [x] repository enabled in Zenodo (and temporarily disabled before the GitHub Release for this release, then re-enabled afterwards, per `RELEASE-PROCESS.md` §4)
+- [x] concept DOI recorded (all-versions DOI for cross-version citation): `10.5281/zenodo.19473697`
+- [x] previously published version DOI recorded (v2.0.1): `10.5281/zenodo.20419874`
+- [x] earlier published version DOI recorded (v2.0.0): `10.5281/zenodo.20418539`
+- [x] earlier published version DOI recorded (v1.2.0): `10.5281/zenodo.19474599`
+- [x] v2.0.2 version-specific DOI reserved on Zenodo before release: `10.5281/zenodo.20433053`
+- [x] Reserved v2.0.2 version DOI embedded in source/PDFs/metadata:
   - [x] `README.md`
   - [x] `CITATION.cff`
   - [x] `.zenodo.json`
   - [x] `CHANGELOG.md`
   - [x] `OWL-SEMAPHORE-EXPLANATION.md`
+  - [x] `INTEGRITY-MANIFEST.md`
   - [x] `generate_pdfs.py` and regenerated PDF page-one banner tuples
   - [x] `tests/test_banner_tuple.py`
-  - [x] release notes
+- [ ] Files matching the merge commit uploaded to the Zenodo new-version record that holds the reserved DOI
+- [ ] Zenodo new-version record published from the Zenodo UI
+- [ ] Zenodo "Versions" tab confirms exactly one v2.0.2 record with DOI `10.5281/zenodo.20433053`
 
 ## 8. Post-Release
 

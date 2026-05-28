@@ -4,7 +4,7 @@
 
 ## OWL 3 / CRITICAL / Inversion State (C₂)
 
-### Version 2.0.1 (document subordinate to v2.0.1)
+### Version 2.0.2 (document subordinate to v2.0.2)
 
 ---
 
@@ -198,7 +198,7 @@ This forces deliberate inspection rather than passive recognition.
 
 ### 9.4 Accessibility — Color Is Not the Only Carrier
 
-The CRITICAL palette is intentionally close to a red-on-red regime, which would be unrecoverable for users with red-axis (protan) color vision deficiency if color were the only carrier of state identity ([PMC global CVD review, 12385717](https://pmc.ncbi.nlm.nih.gov/articles/PMC12385717/)). Therefore, beginning in v2.0.0 (and carried through v2.0.1), the system explicitly requires that CRITICAL identity be perceptually recoverable from at least three independent channels:
+The CRITICAL palette is intentionally close to a red-on-red regime, which would be unrecoverable for users with red-axis (protan) color vision deficiency if color were the only carrier of state identity ([PMC global CVD review, 12385717](https://pmc.ncbi.nlm.nih.gov/articles/PMC12385717/)). Therefore, beginning in v2.0.0 (and carried through v2.0.2), the system explicitly requires that CRITICAL identity be perceptually recoverable from at least three independent channels:
 
 1. **color** (red palette)
 2. **orientation** (upside-down, left-facing — defined by C₂)

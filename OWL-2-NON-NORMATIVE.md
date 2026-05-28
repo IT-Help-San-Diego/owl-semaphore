@@ -4,7 +4,7 @@
 
 ## OWL 2 / NON-NORMATIVE / Reflection State (σᵥ)
 
-### Version 2.0.1 (document subordinate to v2.0.1)
+### Version 2.0.2 (document subordinate to v2.0.2)
 
 ---
 

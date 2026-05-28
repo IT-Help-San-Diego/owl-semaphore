@@ -1,0 +1,150 @@
+name: Release (manual, pre-flight verification — no auto-publish)
+
+# Manually dispatched pre-flight verification workflow for Owl Semaphore.
+#
+# Effective v2.0.2, the project uses a reserve-DOI-first Zenodo release
+# workflow: the version-specific DOI is reserved on a Zenodo new-version
+# record BEFORE the release-prep PR is finalized, and that reserved DOI is
+# embedded into source, PDFs, and metadata. The repository is connected to
+# Zenodo via the GitHub-Zenodo integration; if a GitHub Release were
+# created while that integration is enabled, Zenodo would auto-ingest a
+# second record with a different version DOI, producing a duplicate
+# Zenodo record for the same release.
+#
+# This workflow therefore intentionally does NOT:
+#
+#   - create a GitHub Release
+#   - push a tag to origin
+#   - call any Zenodo API
+#
+# It only performs verifications the operator should pass before running
+# the publish steps described in `RELEASE-PROCESS.md` §4:
+#
+#   1. Validate that the supplied version looks like vX.Y.Z and is new.
+#   2. Confirm the target SHA's CHANGELOG has a release block for that
+#      version.
+#   3. Build PDFs at the target SHA and run `make test`, so the
+#      banner-tuple + forbidden-token tests pass before any human action.
+#
+# The actual tag creation, GitHub Release creation, and Zenodo
+# new-version-record publication are performed by hand following
+# `RELEASE-PROCESS.md` §4. That procedure also covers temporarily
+# disabling the Zenodo GitHub integration so the manual Zenodo record
+# with the reserved DOI is the only Zenodo record for the release.
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version tag to pre-flight (e.g. v2.0.2). Must start with v and must not already exist as a tag."
+        required: true
+        type: string
+      target_sha:
+        description: "Commit SHA on main to verify for this release (typically the release-prep PR merge commit)."
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+
+    env:
+      VERSION: ${{ github.event.inputs.version }}
+      TARGET_SHA: ${{ github.event.inputs.target_sha }}
+
+    steps:
+      - name: Validate inputs
+        run: |
+          set -euo pipefail
+          if [[ ! "${VERSION}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::version input must look like vX.Y.Z (got: ${VERSION})"
+            exit 1
+          fi
+          if [[ -z "${TARGET_SHA}" ]]; then
+            echo "::error::target_sha input is required"
+            exit 1
+          fi
+
+      - name: Checkout target SHA
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.inputs.target_sha }}
+          fetch-depth: 0
+
+      - name: Guard — tag must not already exist
+        run: |
+          set -euo pipefail
+          if git rev-parse -q --verify "refs/tags/${VERSION}" >/dev/null; then
+            echo "::error::Tag ${VERSION} already exists on this repository. Refusing to retag."
+            exit 1
+          fi
+          if git ls-remote --exit-code --tags origin "refs/tags/${VERSION}" >/dev/null 2>&1; then
+            echo "::error::Tag ${VERSION} already exists on origin. Refusing to retag."
+            exit 1
+          fi
+
+      - name: Guard — CHANGELOG block for this version must exist
+        run: |
+          set -euo pipefail
+          BEGIN="<!-- BEGIN ${VERSION} RELEASE BLOCK -->"
+          END="<!-- END ${VERSION} RELEASE BLOCK -->"
+          if ! grep -qF "${BEGIN}" CHANGELOG.md; then
+            echo "::error::CHANGELOG.md is missing release-block begin marker: ${BEGIN}"
+            exit 1
+          fi
+          if ! grep -qF "${END}" CHANGELOG.md; then
+            echo "::error::CHANGELOG.md is missing release-block end marker: ${END}"
+            exit 1
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install build + verification deps
+        run: |
+          set -euo pipefail
+          python3 -m pip install --upgrade pip
+          python3 -m pip install typst
+          sudo apt-get update -y
+          sudo apt-get install -y pandoc qpdf poppler-utils
+
+      - name: Guard — forbidden-token + banner-tuple tests on target SHA
+        run: |
+          set -euo pipefail
+          # Generate PDFs so the forbidden-token PDF scan runs in full.
+          make pdfs
+          make test
+
+      - name: Print human follow-up steps
+        run: |
+          cat <<'EOF'
+          ============================================================
+          Pre-flight verification passed for ${VERSION} @ ${TARGET_SHA}.
+
+          NEXT STEPS (manual, per RELEASE-PROCESS.md §4):
+            1. Temporarily disable the owl-semaphore repository toggle
+               in the Zenodo > GitHub settings panel, so the upcoming
+               GitHub Release does not trigger a duplicate Zenodo
+               record via auto-ingest.
+            2. Create and push the annotated tag at ${TARGET_SHA}:
+                 git tag -a ${VERSION} ${TARGET_SHA} -m "Owl Semaphore ${VERSION}"
+                 git push origin refs/tags/${VERSION}
+               This fires release-assets.yml, which builds and attaches
+               the owl-semaphore-${VERSION}.zip bundle to the GitHub
+               Release it creates.
+            3. Upload the byte-identical release files into the Zenodo
+               new-version record that holds the reserved version DOI
+               for this release.
+            4. Publish the Zenodo new-version record from the Zenodo UI.
+            5. Verify there is exactly one Zenodo record for ${VERSION}
+               and that its DOI matches the reserved DOI embedded in
+               the source/PDFs/metadata at ${TARGET_SHA}.
+            6. Re-enable the Zenodo > GitHub repository toggle if
+               future releases will continue to use the integration.
+          ============================================================
+          EOF

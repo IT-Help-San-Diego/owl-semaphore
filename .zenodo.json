@@ -1,8 +1,8 @@
 {
   "title": "Owl Semaphore Badge System",
-  "version": "v2.0.1",
+  "version": "v2.0.2",
   "upload_type": "software",
-  "description": "Owl Semaphore v2.0.1. Corrective patch release on top of v2.0.0: fixes a story-table overflow in OWL-SEMAPHORE-EXPLANATION.pdf and stamps PDFs, source metadata, and tests as v2.0.1. No changes to the V4 algebra, the sigma_h assignment to METACOGNITIVE, the canonical formal sentence, the accessibility rule, the asset set, or the DOI family roles. Concept DOI: 10.5281/zenodo.19473697. Previously published v2.0.0 version DOI: 10.5281/zenodo.20418539. The v2.0.1 version DOI will be minted by Zenodo on release.",
+  "description": "Owl Semaphore v2.0.2. Editorial science/citation remediation release on top of v2.0.1: restricts the Goedel reference to a structural analogy; softens or qualifies clinical language (ego-dystonic, aporia); reframes Newton/Einstein as a limiting-case relation; aligns the metacognition / ICD 203 framing as a functional parallel rather than identity; adopts canonical RFC 2119 / RFC 8174 / BCP 14 boilerplate; names Bertin's six retinal variables explicitly; qualifies CVD prevalence as Northern-European-descent; removes metaphysical overclaim from the core framing; preserves the EXPLANATION story-table overflow fix from v2.0.1. No changes to the V4 algebra, the sigma_h assignment to METACOGNITIVE, the canonical formal sentence, the accessibility rule, the asset set, or the canonical math tuples. The v2.0.2 version-specific DOI 10.5281/zenodo.20433053 is reserved on Zenodo before release and embedded directly in source files, PDFs, and metadata. Concept DOI (all versions): 10.5281/zenodo.19473697. Previous published version DOI (v2.0.1): 10.5281/zenodo.20419874. Earlier published version DOIs: 10.5281/zenodo.20418539 (v2.0.0), 10.5281/zenodo.19474599 (v1.2.0).",
   "creators": [
     {
       "name": "Balboa, Carey James",
@@ -34,6 +34,11 @@
       "scheme": "doi"
     },
     {
+      "identifier": "10.5281/zenodo.20419874",
+      "relation": "isPreviousVersionOf",
+      "scheme": "doi"
+    },
+    {
       "identifier": "10.5281/zenodo.20418539",
       "relation": "isPreviousVersionOf",
       "scheme": "doi"
@@ -44,5 +49,5 @@
       "scheme": "doi"
     }
   ],
-  "notes": "v2.0.1 version DOI: 10.5281/zenodo.20419874. Concept DOI: 10.5281/zenodo.19473697. Previously published v2.0.0 version DOI: 10.5281/zenodo.20418539. Earlier published v1.2.0 version DOI: 10.5281/zenodo.19474599 (retained for citation continuity)."
+  "notes": "Citing DOI for v2.0.2: the reserved version-specific DOI 10.5281/zenodo.20433053. Concept DOI (all versions): 10.5281/zenodo.19473697 (resolves to latest version). Previous published version DOI (v2.0.1): 10.5281/zenodo.20419874. Earlier published version DOIs: 10.5281/zenodo.20418539 (v2.0.0); 10.5281/zenodo.19474599 (v1.2.0, retained for citation continuity)."
 }
