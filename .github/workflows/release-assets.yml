@@ -1,5 +1,15 @@
 name: Build and Publish Release Bundle
 
+# Builds the canonical GitHub release bundle (`owl-semaphore-<TAG>.zip`) on
+# tag push.
+#
+# The list of files that must appear in the bundle is defined by
+# `RELEASE-BUNDLE-MANIFEST.txt` at the repo root. That file is the single
+# source of truth — the steps below read it and assemble the bundle from
+# it. To add a new canonical release artifact, edit the manifest, not this
+# workflow. `tests/test_release_bundle.py` enforces in CI that every path
+# listed in the manifest exists at the tagged commit.
+
 on:
   push:
     tags:
@@ -19,49 +29,84 @@ jobs:
       - name: Get tag name
         run: echo "TAG=${GITHUB_REF_NAME}" >> $GITHUB_ENV
 
-      - name: Validate required files
+      - name: Validate required files (from RELEASE-BUNDLE-MANIFEST.txt)
         run: |
-          set -e
-          test -d assets
-          test -f LICENSE
-          test -f INTEGRITY-MANIFEST.md
-          test -f OWL-1-NORMATIVE.md
-          test -f OWL-2-NON-NORMATIVE.md
-          test -f OWL-3-CRITICAL.md
-          test -f OWL-4-METACOGNITIVE.md
-          test -f OWL-SEMAPHORE-SYSTEM.md
-          test -f OWL-1-NORMATIVE.pdf
-          test -f OWL-2-NON-NORMATIVE.pdf
-          test -f OWL-3-CRITICAL.pdf
-          test -f OWL-4-METACOGNITIVE.pdf
-          test -f OWL-SEMAPHORE-SYSTEM.pdf
-          test -f RELEASE-HASHES.txt
-          test -f VALIDATION-SCRIPT-SPEC.md
+          set -euo pipefail
+          test -f RELEASE-BUNDLE-MANIFEST.txt
+          missing=0
+          while IFS= read -r raw; do
+            entry="${raw%%#*}"
+            entry="$(echo "$entry" | sed -e 's/[[:space:]]*$//' -e 's/^[[:space:]]*//')"
+            [ -z "$entry" ] && continue
+            if [[ "$entry" == */ ]]; then
+              if [ ! -d "${entry%/}" ]; then
+                echo "::error::missing directory required by RELEASE-BUNDLE-MANIFEST.txt: $entry"
+                missing=1
+              fi
+            else
+              if [ ! -f "$entry" ]; then
+                echo "::error::missing file required by RELEASE-BUNDLE-MANIFEST.txt: $entry"
+                missing=1
+              fi
+            fi
+          done < RELEASE-BUNDLE-MANIFEST.txt
+          if [ "$missing" -ne 0 ]; then
+            exit 1
+          fi
 
       - name: Build bundle
         run: |
-          set -e
+          set -euo pipefail
 
           BUNDLE="owl-semaphore-${TAG}"
           mkdir "${BUNDLE}"
 
-          cp -R assets "${BUNDLE}/"
-          cp LICENSE "${BUNDLE}/"
-          cp INTEGRITY-MANIFEST.md "${BUNDLE}/"
-          cp OWL-1-NORMATIVE.md "${BUNDLE}/"
-          cp OWL-2-NON-NORMATIVE.md "${BUNDLE}/"
-          cp OWL-3-CRITICAL.md "${BUNDLE}/"
-          cp OWL-4-METACOGNITIVE.md "${BUNDLE}/"
-          cp OWL-SEMAPHORE-SYSTEM.md "${BUNDLE}/"
-          cp OWL-1-NORMATIVE.pdf "${BUNDLE}/"
-          cp OWL-2-NON-NORMATIVE.pdf "${BUNDLE}/"
-          cp OWL-3-CRITICAL.pdf "${BUNDLE}/"
-          cp OWL-4-METACOGNITIVE.pdf "${BUNDLE}/"
-          cp OWL-SEMAPHORE-SYSTEM.pdf "${BUNDLE}/"
-          cp RELEASE-HASHES.txt "${BUNDLE}/"
-          cp VALIDATION-SCRIPT-SPEC.md "${BUNDLE}/"
+          while IFS= read -r raw; do
+            entry="${raw%%#*}"
+            entry="$(echo "$entry" | sed -e 's/[[:space:]]*$//' -e 's/^[[:space:]]*//')"
+            [ -z "$entry" ] && continue
+            if [[ "$entry" == */ ]]; then
+              cp -R "${entry%/}" "${BUNDLE}/"
+            else
+              # Preserve parent directory structure for nested files.
+              parent="$(dirname "$entry")"
+              if [ "$parent" != "." ]; then
+                mkdir -p "${BUNDLE}/${parent}"
+              fi
+              cp "$entry" "${BUNDLE}/${entry}"
+            fi
+          done < RELEASE-BUNDLE-MANIFEST.txt
+
+          # Ship the manifest itself inside the bundle so downstream
+          # consumers can reproduce the expected file list.
+          cp RELEASE-BUNDLE-MANIFEST.txt "${BUNDLE}/"
 
           zip -r "${BUNDLE}.zip" "${BUNDLE}"
+
+      - name: Verify bundle contents match manifest
+        run: |
+          set -euo pipefail
+          BUNDLE="owl-semaphore-${TAG}"
+          fail=0
+          while IFS= read -r raw; do
+            entry="${raw%%#*}"
+            entry="$(echo "$entry" | sed -e 's/[[:space:]]*$//' -e 's/^[[:space:]]*//')"
+            [ -z "$entry" ] && continue
+            if [[ "$entry" == */ ]]; then
+              if [ ! -d "${BUNDLE}/${entry%/}" ]; then
+                echo "::error::bundle missing directory: $entry"
+                fail=1
+              fi
+            else
+              if [ ! -f "${BUNDLE}/${entry}" ]; then
+                echo "::error::bundle missing file: $entry"
+                fail=1
+              fi
+            fi
+          done < RELEASE-BUNDLE-MANIFEST.txt
+          if [ "$fail" -ne 0 ]; then
+            exit 1
+          fi
 
       - name: Create GitHub Release + upload bundle
         uses: softprops/action-gh-release@v2
