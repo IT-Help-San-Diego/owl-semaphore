@@ -24,7 +24,7 @@ The purpose of this state is to enable structured inspection of perception, inte
 
 > **T = σₕ &nbsp;·&nbsp; det = −1 &nbsp;·&nbsp; (x, y) → (x, −y)**
 
-Kurt Gödel's incompleteness theorems showed, formally, that no sufficiently powerful and consistent formal system can prove its own consistency from within itself ([Gödel, *Über formal unentscheidbare Sätze*, 1931, English translation](https://www.research.ibm.com/haifa/dept/svt/papers/godel.pdf); [Stanford Encyclopedia of Philosophy, "Gödel's Incompleteness Theorems"](https://plato.stanford.edu/entries/goedel-incompleteness/); [Nagel & Newman, *Gödel's Proof*, NYU Press, rev. 2001](https://nyupress.org/9780814758168/godels-proof/)). The METACOGNITIVE owl lives in the space that observation opens: thinking about your thinking, from a frame the original thinking could not reach on its own.
+Kurt Gödel's incompleteness theorems showed, formally, that no sufficiently powerful and consistent formal system can prove its own consistency from within itself ([Gödel, *Über formal unentscheidbare Sätze*, 1931, English translation](https://www.research.ibm.com/haifa/dept/svt/papers/godel.pdf); [Stanford Encyclopedia of Philosophy, "Gödel's Incompleteness Theorems"](https://plato.stanford.edu/entries/goedel-incompleteness/); [Nagel & Newman, *Gödel's Proof*, NYU Press, rev. 2001](https://nyupress.org/9780814758168/godels-proof/)). We invoke Gödel here as a **structural analogy only**: it does not ground or prove anything about metacognitive psychology, color ontology, or the correctness of the Owl Semaphore, and it is not offered as validation of any empirical claim. With that boundary noted, the METACOGNITIVE owl lives in the space that *observation* opens: thinking about your thinking, from a frame the original thinking could not reach on its own.
 
 A child drops a piece of gum on the floor and cannot find it. They have looked everywhere. They bend down, grab their ankles, and look between their legs. The room is the same room. Left is still left, right is still right — but up and down have inverted. That is σₕ: (x, y) → (x, −y).
 
@@ -82,7 +82,7 @@ In one sentence: **the observer audits the frame.**
 - not subject change (the object of analysis is unchanged)
 - not alternative interpretation (that is NON-NORMATIVE)
 - not adversarial inversion (that is CRITICAL)
-- not a claim that metacognition eliminates bias; metacognitive prompts can surface and partially mitigate cognitive biases but do not remove them ([ICD 203 §B](https://www.dni.gov/files/documents/ICD/ICD-203.pdf))
+- not a claim that metacognition eliminates bias; metacognitive prompts can surface and partially mitigate cognitive biases but do not remove them ([Flavell 1979 / metacognition review, PMC 11368986](https://pmc.ncbi.nlm.nih.gov/articles/PMC11368986/)). ICD 203 does **not** use the word *metacognition*, but its analytic-tradecraft requirements — methods that reveal and mitigate the impact of assumptions and cognitive biases — functionally parallel metacognitive self-monitoring ([ICD 203, §B](https://www.dni.gov/files/documents/ICD/ICD-203.pdf)).
 
 It is **observer-level analysis**, not object-level modification.
 
@@ -130,11 +130,11 @@ This places METACOGNITIVE on the reflection axis orthogonal to NON-NORMATIVE wit
 
 ---
 
-## 5. Physical Instantiation (Canonical Demonstration)
+## 5. Physical Instantiation (Heuristic Illustration)
 
 ### 5.1 Operational Description
 
-A concrete physical demonstration of the METACOGNITIVE state is:
+The following maneuver is offered as a **heuristic illustration of perceptual frame disruption** — not as rigorous psychophysical evidence and not as formal support for epistemic auditing. With that boundary noted, a concrete physical illustration of the METACOGNITIVE state is:
 
 1. Search a room in the upright position
 2. Fail to detect the target

@@ -24,9 +24,9 @@ The goal is simple: the mark must be reproducible, auditable, mathematically coh
 
 Stand upright, feet planted, facing forward. (x, y) → (x, y) — no transform. You see the room exactly as it is.
 
-Newton's *Principia* set the operational framework for terrestrial and celestial mechanics for roughly two centuries before Einstein's special and general relativity showed where its assumptions break down at high velocity, strong gravity, and small scales ([Newton, *Philosophiae Naturalis Principia Mathematica*, 1687](https://www.britannica.com/topic/Philosophiae-Naturalis-Principia-Mathematica); [Einstein, "On the Electrodynamics of Moving Bodies," *Annalen der Physik*, 1905, via the Einstein Papers Project](https://einsteinpapers.press.princeton.edu/vol2-trans/154)). During that long working period Newtonian mechanics was **Normative** — tested, verified, operational, and predictively reliable inside its domain. After Einstein, it remained operationally normative within that domain, with a stated boundary beyond which a different framework takes over.
+Newton's *Principia* set the operational framework for terrestrial and celestial mechanics for roughly two centuries ([Newton, *Philosophiae Naturalis Principia Mathematica*, 1687](https://www.britannica.com/topic/Philosophiae-Naturalis-Principia-Mathematica)). Einstein's special and general relativity then *extended and contained* Newtonian mechanics as a limiting case at low velocity and weak gravity, rather than simply replacing or falsifying it ([Einstein, "On the Electrodynamics of Moving Bodies," *Annalen der Physik*, 1905, via the Einstein Papers Project](https://einsteinpapers.press.princeton.edu/vol2-trans/154)). During the long working period before relativity, Newtonian mechanics was **Normative** — tested, verified, operational, and predictively reliable inside its domain. After Einstein, it remains operationally normative within that domain, with a stated boundary beyond which a different framework takes over.
 
-The owl stands upright when the work has been done and the foundation holds — not because it is permanently true, but because right now, the evidence supports it. The NORMATIVE owl is the carrier of that posture: *this is the standard, until evidence requires otherwise.*
+This is exactly what "normative" means in the Owl Semaphore: **operationally validated within a stated domain and scope**, not "true everywhere." The owl stands upright when the work has been done and the foundation holds — not because it is permanently true, but because within its scope, right now, the evidence supports it. The NORMATIVE owl is the carrier of that posture: *this is the standard, within its scope, until evidence requires otherwise.*
 
 This story is the human-intuition bridge to the mathematical formalism in §§2–24 below. The story → transform → scientific use → objections-and-verification ordering is deliberate: a skeptical reader can enter through whichever layer matches their training.
 
@@ -560,15 +560,15 @@ The normative state therefore has a privileged status: it is not merely one opti
 
 ---
 
-A concrete physical demonstration of the METACOGNITIVE state is the act of searching a room in the ordinary upright position, failing to detect the target, then bending over and viewing the same room upside down through the legs.
+A concrete physical illustration of the METACOGNITIVE state is the act of searching a room in the ordinary upright position, failing to detect the target, then bending over and viewing the same room upside down through the legs. This illustration is offered as a heuristic for perceptual frame disruption — not as formal psychophysical evidence and not as rigorous support for epistemic auditing.
 
-## 20. Physical Instantiation of σₕ: The Through-the-Legs Demonstration
+## 20. Physical Instantiation of σₕ: The Through-the-Legs Heuristic
 
 ### 20.1 Operational Description
 
-A concrete physical demonstration of the METACOGNITIVE state is the act of searching a room in the ordinary upright position, failing to detect the target, then bending over and viewing the same room upside down through the legs.
+A concrete physical illustration of the METACOGNITIVE state is the act of searching a room in the ordinary upright position, failing to detect the target, then bending over and viewing the same room upside down through the legs. The maneuver is a **heuristic illustration of perceptual frame disruption**; it is not rigorous psychophysical evidence and it does not formally ground epistemic auditing.
 
-This is not a loose metaphor. It is a direct embodied analogue of the horizontal reflection operator:
+With that boundary noted, it is a memorable embodied analogue of the horizontal reflection operator:
 
 $$
 \sigma_h : (x,y) \mapsto (x,-y)
@@ -604,9 +604,9 @@ In plain terms: the observer forces the pattern-recognition system to stop coast
 
 ### 20.4 Epistemic Meaning
 
-That is why this maneuver is a correct physical analogue for metacognition.
+That is why this maneuver is offered as an illustrative analogue for metacognition. It is a memorable bridge to the formal definition, not a proof of it.
 
-Metacognition is not merely "thinking hard" or narrating one's feelings about thought. It is the deliberate inspection of the machinery of evaluation itself.
+Metacognition is not merely "thinking hard" or narrating one's feelings about thought. It is the deliberate inspection of the machinery of evaluation itself ([Flavell 1979 / metacognition review, PMC 11368986](https://pmc.ncbi.nlm.nih.gov/articles/PMC11368986/)).
 
 In the through-the-legs demonstration:
 
