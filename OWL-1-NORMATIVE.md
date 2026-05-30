@@ -4,7 +4,7 @@
 
 ## OWL 1 / NORMATIVE / Identity State
 
-### Version 2.0.2 (document subordinate to v2.0.2)
+### Version 3.0.0 (document subordinate to v3.0.0)
 
 ---
 
@@ -27,6 +27,8 @@ Stand upright, feet planted, facing forward. (x, y) → (x, y) — no transform.
 Newton's *Principia* set the operational framework for terrestrial and celestial mechanics for roughly two centuries ([Newton, *Philosophiae Naturalis Principia Mathematica*, 1687](https://www.britannica.com/topic/Philosophiae-Naturalis-Principia-Mathematica)). Einstein's special and general relativity then *extended and contained* Newtonian mechanics as a limiting case at low velocity and weak gravity, rather than simply replacing or falsifying it ([Einstein, "On the Electrodynamics of Moving Bodies," *Annalen der Physik*, 1905, via the Einstein Papers Project](https://einsteinpapers.press.princeton.edu/vol2-trans/154)). During the long working period before relativity, Newtonian mechanics was **Normative** — tested, verified, operational, and predictively reliable inside its domain. After Einstein, it remains operationally normative within that domain, with a stated boundary beyond which a different framework takes over.
 
 This is exactly what "normative" means in the Owl Semaphore: **operationally validated within a stated domain and scope**, not "true everywhere." The owl stands upright when the work has been done and the foundation holds — not because it is permanently true, but because within its scope, right now, the evidence supports it. The NORMATIVE owl is the carrier of that posture: *this is the standard, within its scope, until evidence requires otherwise.*
+
+**Bridge — from the story to the operator.** *The Proven Ground* is not decoration; it is a compressed statement of the formal mapping below. The upright, forward-facing posture — "the room is the room" — is exactly the identity transform **I**: (x, y) → (x, y), determinant +1, no reflection and no rotation (§4). Newton standing as the operational baseline for two centuries, then surviving as a domain-bounded limiting case, *is* what identity encodes here: NORMATIVE is the reference state from which every other state is derived, valid as the operational baseline within a stated domain — **not a claim of permanent or universal truth**. The owl stands upright because, within its scope and until evidence requires otherwise, the foundation holds. Read the story as the intuition and §4 as its formalization; they are the same claim at two resolutions.
 
 This story is the human-intuition bridge to the mathematical formalism in §§2–24 below. The story → transform → scientific use → objections-and-verification ordering is deliberate: a skeptical reader can enter through whichever layer matches their training.
 
@@ -617,7 +619,7 @@ In the through-the-legs demonstration:
 
 This is exactly the logic of the METACOGNITIVE state.
 
-The observer audits the frame. (See OWL-4-METACOGNITIVE for the normative phrasing rule; the canonical sentence for METACOGNITIVE — set in v2.0.0 and carried through v2.0.2 — is *"The observer audits the frame,"* with the warmer explanatory variant *"Thinking examines its own frame."*)
+The observer audits the frame. (See OWL-4-METACOGNITIVE for the normative phrasing rule; the canonical sentence for METACOGNITIVE — set in v2.0.0 and carried through v3.0.0 — is *"The observer audits the frame,"* with the warmer explanatory variant *"Thinking examines its own frame."*)
 
 ### 20.5 Relation to Pattern Recognition
 
@@ -734,6 +736,12 @@ V_4 = \{I, \sigma_v, C_2, \sigma_h\} \subset O(2),
 $$
 
 and serves as the reference state for transform, comparison, and interpretive classification.
+
+---
+
+## 23A. Limitations and Scope
+
+NORMATIVE is the most easily over-read state, so its boundaries are stated explicitly. The identity transform marks an *operational baseline within a stated domain* — not metaphysical truth, not infallibility, and not immunity from revision (see §3.3). A NORMATIVE owl says "this is the standard, within its scope, until evidence requires otherwise"; it does not certify that the underlying claim is correct everywhere, nor does it rank the claim above dissent. Like the system as a whole, this state is a coarse, four-way classifier of epistemic stance (see §12A of [`OWL-SEMAPHORE-SYSTEM.md`](OWL-SEMAPHORE-SYSTEM.md)): it encodes *that* something is treated as baseline, not *how confident* anyone is, and its epistemic utility — that practitioners reliably agree on what counts as NORMATIVE — is a design hypothesis not yet empirically validated. Applying the badge is itself an evaluative act and remains open to challenge.
 
 ---
 

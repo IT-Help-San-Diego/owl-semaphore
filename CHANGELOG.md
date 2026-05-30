@@ -8,6 +8,70 @@ Each release entry records the **canonical formal sentence used in that release*
 
 ---
 
+<!-- BEGIN v3.0.0 RELEASE BLOCK -->
+
+## [v3.0.0] — structural and scientific remediation release
+
+> v3.0.0 is a **structural and scientific** remediation release on top of v2.0.2 — **not a visual redesign.** **No change** to the V₄ algebra, the four canonical state-operator tuples, the σₕ assignment to METACOGNITIVE, the canonical formal sentence, the accessibility rule, the color/orientation semantics, or the approved asset set (NORMATIVE I/+1/(x,y)→(x,y); NON-NORMATIVE σᵥ/−1/(x,y)→(−x,y); CRITICAL C₂/+1/(x,y)→(−x,−y); METACOGNITIVE σₕ/−1/(x,y)→(x,−y)). The MAJOR version bump reflects the addition of normative justification and limitations sections that materially expand the specification's argument surface, not a break in the algebra.
+
+**Canonical formal sentence (this release, unchanged from v2.0.0):**
+> *A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants.*
+
+**Canonical operational sentence (unchanged):** *A four-state visual system for marking how a claim, document, dataset, or finding should be evaluated before belief, challenge, or action.*
+
+**Canonical human sentence (unchanged):** *Four owls tell the reader what kind of thinking they are looking at: standard, exploration, inversion, or self-audit.*
+
+**Citing DOI for the v3.0.0 source snapshot:** [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697) — the concept (all-versions) DOI, which resolves to the latest published version. The v3.0.0 version-specific DOI is reserved on Zenodo as a single controlled release step (see `RELEASE-PROCESS.md`); the concept DOI is the citing DOI embedded in source, PDFs, and metadata until that reservation is performed, so no transient DOI markers appear anywhere in the corpus.
+**Concept DOI (all versions):** [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697) — resolves to the latest published version.
+**Previous published version DOI (v2.0.2):** [10.5281/zenodo.20433053](https://doi.org/10.5281/zenodo.20433053)
+**Earlier published version DOI (v2.0.1):** [10.5281/zenodo.20419874](https://doi.org/10.5281/zenodo.20419874)
+**Earlier published version DOI (v2.0.0):** [10.5281/zenodo.20418539](https://doi.org/10.5281/zenodo.20418539)
+**Earlier published version DOI (v1.2.0):** [10.5281/zenodo.19474599](https://doi.org/10.5281/zenodo.19474599)
+
+### Added (normative)
+
+- **Formal Justification for V₄ Structure** — new §4A in `OWL-SEMAPHORE-SYSTEM.md`, placed after the operator and epistemic definitions (§2–§4) and before the application examples (§5). It argues why there are exactly four states (two independent binary distinctions — orientation of stance and locus of audit — closed under composition force the fourth state; three states are not closed; six or eight add redundant generators with no distinct referent); why the Klein four-group rather than the cyclic group C₄ (every state move is its own inverse, g² = I) or a non-abelian group (the two distinctions commute); and why an operator algebra rather than a continuous scale (the frame-audit axis is orthogonal to a confidence dial and a scale has no closure check) or a flat label taxonomy (which asserts rather than checks structure). Includes a comparison table of V₄ against binary, three-label, C₄, D₃/S₃, D₄, continuous-scale, and flat-taxonomy alternatives on parsimony, compositionality, constraint-verifiability, transition-modeling, and empirical-tractability.
+- **Limitations and Scope Boundaries** — new §12A in `OWL-SEMAPHORE-SYSTEM.md`, before the Closing Statement: the four states are deliberately coarse (a classifier of stance, not a confidence measure); the epistemic partition has no empirical validation yet (no inter-rater reliability or user study); and the iconography, palette, and orientation conventions are culturally situated and depend on a learned key, with misreading risk highest where a badge is seen without its label.
+- **Why Four States: The Exclusion Argument** — new §1C in `OWL-SEMAPHORE-EXPLANATION.md`, after "What the Owl Semaphore is" and the front-loaded stories, before §2: a plain-language companion to System §4A (why not a binary, why not three states — closure forces the fourth, why not six/eight, why not a continuous scale), plus a new §1C.1 use-boundary / ethics subsection (states are epistemic-stance labels not authority labels; NON-NORMATIVE and CRITICAL must not be used to suppress dissent; whoever classifies is accountable and the classification is always contestable).
+- **Per-state bridge paragraphs** — each of `OWL-1-NORMATIVE.md`, `OWL-2-NON-NORMATIVE.md`, `OWL-3-CRITICAL.md`, and `OWL-4-METACOGNITIVE.md` now carries a bold **Bridge — from the story to the operator** paragraph immediately after its §1A story, connecting the narrative to the formal operator mapping: NORMATIVE → identity I, operational baseline, domain-bounded not permanently true; NON-NORMATIVE → σᵥ vertical-axis reflection, alternative orientation preserving the vertical reference while reversing lateral stance, legitimate exploration not failure; CRITICAL → C₂ full inversion (both axes), proof turned against the current stance, falsification/show-stopper/crisis with no psychiatric overclaim; METACOGNITIVE → σₕ horizontal reflection, frame/instrument audit, observer changes relation to the evidence, Gödel illustrative only.
+- **Per-state limitations notes** — each of the four owl specifications now carries a concise **Limitations and Scope** section near its end, stating the state's specific misuse risks and cross-referencing System §12A and Explanation §1C.1.
+
+### Changed (editorial)
+
+- Version stamps advanced to v3.0.0 across `OWL-SEMAPHORE-SYSTEM.md`, `OWL-SEMAPHORE-EXPLANATION.md`, the four owl specifications, `README.md`, `CITATION.cff`, `.zenodo.json`, `INTEGRITY-MANIFEST.md`, the Makefile, the hash/manifest scripts, and the banner-tuple / forbidden-token tests. The deprecation history of *"This audits the standard"* (deprecated since v2.0.0) is preserved and now reads "carried through v3.0.0."
+
+### DOI strategy (this release)
+
+- The **concept DOI `10.5281/zenodo.19473697`** (all versions; resolves to latest) is the citing DOI embedded in the v3.0.0 source snapshot, PDFs, and metadata. No invented or transient version DOI is used.
+- The **v3.0.0 version-specific DOI is reserved on Zenodo as a single controlled release step** documented in `RELEASE-PROCESS.md` and `ZENODO-RELEASE-CHECKLIST.md`. When that reservation is performed, the operator sets `VERSION_DOI` in `generate_pdfs.py` (and the matching constant in `tests/test_banner_tuple.py`) to the reserved value and re-runs `make pdfs hashes manifest test` as one controlled step.
+- DOI family roles in metadata as of v3.0.0:
+  - Concept DOI `10.5281/zenodo.19473697` — all-versions / citing DOI for the v3.0.0 source snapshot.
+  - **v2.0.2 DOI `10.5281/zenodo.20433053`** — recorded as the *previous published* version DOI.
+  - **v2.0.1 DOI `10.5281/zenodo.20419874`** — recorded as an *earlier published* version DOI.
+  - **v2.0.0 DOI `10.5281/zenodo.20418539`** — recorded as an *earlier published* version DOI.
+  - **v1.2.0 DOI `10.5281/zenodo.19474599`** — retained as an *earlier published* version DOI for citation continuity.
+
+### Verification
+
+- `make pdfs` regenerates all six PDFs from the edited sources at the v3.0.0 stamp.
+- `make hashes` and `make manifest` re-stamp `RELEASE-HASHES.txt` and `INTEGRITY-MANIFEST.md` for v3.0.0.
+- `make test` passes — the four canonical math tuples are unchanged: NORMATIVE I/+1/(x,y)→(x,y); NON-NORMATIVE σᵥ/−1/(x,y)→(−x,y); CRITICAL C₂/+1/(x,y)→(−x,−y); METACOGNITIVE σₕ/−1/(x,y)→(x,−y). The banner-tuple and forbidden-token tests are updated to the v3.0.0 stamp and DOI roles and pass against the v3.0.0 corpus.
+
+### Non-goals (explicit, v3.0.0)
+
+- V₄ algebra: unchanged.
+- σₕ ↔ METACOGNITIVE assignment: unchanged.
+- License (CC BY 4.0): unchanged.
+- Visual identity / state assignments / transform assignments / approved asset set: unchanged.
+- Canonical formal / operational / human sentences: unchanged.
+- Accessibility rule (triple-redundant encoding): unchanged.
+- Canonical math tuples in tests and PDFs: unchanged.
+- This PR does not perform the Zenodo upload, `git tag`, or GitHub release for v3.0.0; those steps happen separately. Existing tags, GitHub releases, and minted DOIs for prior versions are not modified.
+
+<!-- END v3.0.0 RELEASE BLOCK -->
+
+---
+
 <!-- BEGIN v2.0.2 RELEASE BLOCK -->
 
 ## [v2.0.2] — editorial science/citation remediation release

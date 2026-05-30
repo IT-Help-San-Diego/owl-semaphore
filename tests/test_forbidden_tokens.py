@@ -1,6 +1,6 @@
 """Forbidden-token / transient-marker scan for canonical release-facing files.
 
-Owl Semaphore v2.0.2+ treats source files, generated PDFs, and machine-readable
+Owl Semaphore v2.0.2+ (current release v3.0.0) treats source files, generated PDFs, and machine-readable
 metadata as final, archival artifacts. The repository convention is that no
 transient cleanup tokens appear in those artifacts: no draft DOI markers, no
 "to be computed" / "to be measured" / "to be verified" sentinels, no Wikipedia
@@ -12,7 +12,7 @@ This test enforces that convention. It scans:
     (README, CITATION.cff, .zenodo.json, INTEGRITY-MANIFEST, the OWL specs,
     the explanation, the Zenodo release checklist, the Makefile).
   - The current-release block of CHANGELOG.md, delimited by the HTML markers
-    ``<!-- BEGIN v2.0.2 RELEASE BLOCK -->`` and ``<!-- END v2.0.2 RELEASE
+    ``<!-- BEGIN v3.0.0 RELEASE BLOCK -->`` and ``<!-- END v3.0.0 RELEASE
     BLOCK -->``. Historical entries for older releases live outside that
     block and are intentionally preserved verbatim.
   - The full text of every generated PDF in the release set, as extracted by
@@ -82,8 +82,8 @@ RELEASE_FACING_FILES = (
 )
 
 CHANGELOG_PATH = "CHANGELOG.md"
-CHANGELOG_BEGIN_MARKER = "<!-- BEGIN v2.0.2 RELEASE BLOCK -->"
-CHANGELOG_END_MARKER = "<!-- END v2.0.2 RELEASE BLOCK -->"
+CHANGELOG_BEGIN_MARKER = "<!-- BEGIN v3.0.0 RELEASE BLOCK -->"
+CHANGELOG_END_MARKER = "<!-- END v3.0.0 RELEASE BLOCK -->"
 
 PDF_FILES = (
     "OWL-SEMAPHORE-SYSTEM.pdf",
@@ -126,13 +126,13 @@ def _extract_pdf_text(pdf_path: str) -> str:
     return out.stdout
 
 
-def _read_changelog_v202_block() -> str:
+def _read_changelog_current_block() -> str:
     path = os.path.join(REPO, CHANGELOG_PATH)
     with open(path, "r", encoding="utf-8") as f:
         text = f.read()
     if CHANGELOG_BEGIN_MARKER not in text or CHANGELOG_END_MARKER not in text:
         raise AssertionError(
-            f"{CHANGELOG_PATH} is missing the v2.0.2 release-block markers "
+            f"{CHANGELOG_PATH} is missing the v3.0.0 release-block markers "
             f"{CHANGELOG_BEGIN_MARKER!r} and {CHANGELOG_END_MARKER!r}"
         )
     begin = text.index(CHANGELOG_BEGIN_MARKER) + len(CHANGELOG_BEGIN_MARKER)
@@ -155,8 +155,8 @@ class ForbiddenTokenTest(unittest.TestCase):
         self.assertEqual(all_hits, [], "\n".join(all_hits) or "no hits")
 
     def test_changelog_current_release_block_has_no_forbidden_tokens(self):
-        block = _read_changelog_v202_block()
-        hits = _scan_text(block, f"{CHANGELOG_PATH} (v2.0.2 block)")
+        block = _read_changelog_current_block()
+        hits = _scan_text(block, f"{CHANGELOG_PATH} (v3.0.0 block)")
         self.assertEqual(hits, [], "\n".join(hits) or "no hits")
 
     def test_canonical_pdfs_have_no_forbidden_tokens(self):

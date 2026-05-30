@@ -4,7 +4,7 @@
 
 ## OWL 3 / CRITICAL / Inversion State (C₂)
 
-### Version 2.0.2 (document subordinate to v2.0.2)
+### Version 3.0.0 (document subordinate to v3.0.0)
 
 ---
 
@@ -36,6 +36,8 @@ The same shape recurs across fields under different names:
 - **Cybersecurity** calls it a *0-day* — an unpatched, actively exploitable vulnerability whose disclosure window has not opened ([CISA, "Known Exploited Vulnerabilities Catalog"](https://www.cisa.gov/known-exploited-vulnerabilities-catalog); [NIST, *Zero-day vulnerability* glossary entry](https://csrc.nist.gov/glossary/term/zero_day_attack)).
 
 The CRITICAL owl is inverted because your own proof has reversed your position — and the system needs to be told, visibly, that adversarial analysis or falsification has been applied. The mark says "this has been examined under inversion," not "this is wrong."
+
+**Bridge — from the story to the operator.** The handstand in *The Manhattan Moment* is a precise statement of the formal mapping. Both axes flipping — left/right *and* up/down — is exactly the 180° rotation **C₂**: (x, y) → (−x, −y), determinant +1 (§4). The +1 determinant matters and distinguishes CRITICAL from the reflections: C₂ is not a mirror but a *full inversion*, both axes reversed together — your own proof, taken seriously, has turned against your current stance. That is the formal content of "falsification," "show-stopper," "crisis," "0-day": a structured resolution is required before proceeding. The mark records that **adversarial analysis or falsification has been applied** — *not* that the claim is wrong, and **not** a clinical or psychiatric judgment about any person; the cognitive/clinical terms in the story (including the older *ego-dystonic* descriptor) are illustrative analogies only, never equivalents of the state. Read the story as the intuition and §4 as its formalization; they are the same claim at two resolutions.
 
 This story is the human-intuition bridge to the mathematical formalism in §§2 onward. The deliberate ordering is story → transform → scientific use → objections/verification, so a reader who would argue this state from incident response, from formal logic, or from clinical/cognitive grounds can each enter through the right door.
 
@@ -198,7 +200,7 @@ This forces deliberate inspection rather than passive recognition.
 
 ### 9.4 Accessibility — Color Is Not the Only Carrier
 
-The CRITICAL palette is intentionally close to a red-on-red regime, which would be unrecoverable for users with red-axis (protan) color vision deficiency if color were the only carrier of state identity ([PMC global CVD review, 12385717](https://pmc.ncbi.nlm.nih.gov/articles/PMC12385717/)). Therefore, beginning in v2.0.0 (and carried through v2.0.2), the system explicitly requires that CRITICAL identity be perceptually recoverable from at least three independent channels:
+The CRITICAL palette is intentionally close to a red-on-red regime, which would be unrecoverable for users with red-axis (protan) color vision deficiency if color were the only carrier of state identity ([PMC global CVD review, 12385717](https://pmc.ncbi.nlm.nih.gov/articles/PMC12385717/)). Therefore, beginning in v2.0.0 (and carried through v3.0.0), the system explicitly requires that CRITICAL identity be perceptually recoverable from at least three independent channels:
 
 1. **color** (red palette)
 2. **orientation** (upside-down, left-facing — defined by C₂)
@@ -306,6 +308,12 @@ with
 $$
 T = C_2
 $$
+
+---
+
+## 17A. Limitations and Scope
+
+CRITICAL is the state most prone to overclaiming, so its boundaries are firm. The mark means "this has been examined under inversion / subjected to adversarial or falsification analysis," **not** "this is wrong" and **not** a moral or clinical condemnation. The clinical and philosophical analogies in §1A (*ego-dystonic*, *aporia*) are illustrative only and deliberately conservative; the state's authoritative vocabulary is falsification, adversarial review, crisis/incident response, and show-stopper — never a psychiatric diagnosis of a person. Like the system as a whole, this is a coarse four-way stance classifier (see §12A of [`OWL-SEMAPHORE-SYSTEM.md`](OWL-SEMAPHORE-SYSTEM.md)): it does not grade severity, its inter-annotator reliability is not yet empirically validated, and — as with NON-NORMATIVE — it must not be used to suppress dissent (see §1C.1 of [`OWL-SEMAPHORE-EXPLANATION.md`](OWL-SEMAPHORE-EXPLANATION.md)). Applying the badge is itself a contestable evaluative act.
 
 ---
 

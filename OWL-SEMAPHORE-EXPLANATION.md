@@ -1,6 +1,6 @@
 # OWL SEMAPHORE — EXPLANATION
 
-## (Informative companion to the System Specification — v2.0.2)
+## (Informative companion to the System Specification — v3.0.0)
 
 > This document is **informative**, not normative. It tells the origin story, the design rationale, and the audience reasoning that produced the Owl Semaphore. The normative algebra and asset rules live in [`OWL-SEMAPHORE-SYSTEM.md`](OWL-SEMAPHORE-SYSTEM.md) and the four state specifications. Where this document offers warmer wording (especially for METACOGNITIVE), the normative spec retains the scientifically precise version.
 
@@ -73,6 +73,30 @@ The full narrative for each state lives in its state document:
 - *Da Vinci's Wings* — [`OWL-2-NON-NORMATIVE.md`](OWL-2-NON-NORMATIVE.md) §1A
 - *The Manhattan Moment* — [`OWL-3-CRITICAL.md`](OWL-3-CRITICAL.md) §1A
 - *The Observer's Mirror* — [`OWL-4-METACOGNITIVE.md`](OWL-4-METACOGNITIVE.md) §1A
+
+---
+
+## 1C. Why Four States: The Exclusion Argument
+
+Before meeting the four owls individually, it helps to see *why there are exactly four* — no fewer, no more. The number is not chosen for tidiness. It is forced. (The normative version of this argument, with the group theory spelled out, is §4A of [`OWL-SEMAPHORE-SYSTEM.md`](OWL-SEMAPHORE-SYSTEM.md); this is the plain-language companion.)
+
+**Why not a binary (two states).** Standards culture is comfortable with just *normative* and *non-normative* — follows-the-rule versus doesn't. That binary is real and useful, but it cannot say anything about the observer. It has no way to mark "the analysis turned its own proof against itself" (CRITICAL) or "the problem is the lens I'm looking through" (METACOGNITIVE). A binary collapses two genuinely different failure modes into one bucket labeled "not normative," and a reader who only sees that bucket cannot tell whether to *challenge the claim* or *audit themselves*. Two states under-describe the work.
+
+**Why not three states.** Suppose you try to stop at three — say NORMATIVE, NON-NORMATIVE, and METACOGNITIVE. The moment you have a lateral reflection (the σᵥ move, "facing the other way") and a frame audit (the σₕ move, "flip the observer's frame"), you have two independent reflections. Doing one and then the other produces a *third, distinct* result — a full 180° inversion (C₂). That composite is not optional decoration; it is what the first two moves *make* when combined. **Closure forces the fourth state into existence.** A three-state system is mathematically incomplete: it names some moves but not the move its own moves generate. CRITICAL is not added to round out the set — it is the unavoidable product of the other two.
+
+**Why not six or eight states.** If four is forced, why not keep going? Because the next larger symmetry groups (six- and eight-element ones) only add generators that have *no new epistemic meaning*. They re-describe the same two underlying yes/no distinctions — stance orientation and locus of audit — under more names. Extra states would be redundant labels, not new kinds of thinking. They cost clarity and buy nothing. Four is the point where the set is both *complete* (closed) and *non-redundant* (no spare states).
+
+**Why not a continuous scale.** A confidence dial from 0 to 1 is a fine tool for *how sure* you are, but it runs along a single axis. The frame-audit move is not "more skeptical" — it is *sideways* to confidence: it questions the instrument, not the reading. You cannot reach METACOGNITIVE by sliding a normativity slider, because it lives on a different axis entirely. A scale also has no closure check: nothing stops it drifting into unmarked, undefined territory. The four-state algebra deliberately trades fine resolution for a closed, checkable set of *kinds* of move. (Where you genuinely need a confidence gradient, run it alongside the semaphore — the two answer different questions.)
+
+So the four owls are the unique answer to two independent binary distinctions, closed under composition: complete, non-redundant, and on the right axes.
+
+### 1C.1 Use boundaries — who classifies, and what the states are not
+
+Because the semaphore marks *how something is being evaluated*, it can be misused as an instrument of authority. Three boundaries keep it honest:
+
+- **The states are epistemic-stance labels, not authority labels.** A NORMATIVE owl means "operationally validated within a stated domain," not "approved by the people in charge." A CRITICAL owl means "subjected to adversarial or falsification analysis," not "condemned." Reading the badges as a chain of command inverts their purpose; the system encodes position, not rank, and never truth (see §10).
+- **NON-NORMATIVE and CRITICAL must not be used to suppress dissent.** The whole reason NON-NORMATIVE exists as a *distinct, legitimate* state — rather than collapsing into "wrong" — is to protect structured exploration that disagrees with the baseline. Tagging a dissenting analysis NON-NORMATIVE or CRITICAL to dismiss it, rather than to describe the evaluative move actually performed, is a misuse of the notation. The mark describes the analysis; it does not license ignoring it.
+- **Whoever classifies is accountable for the classification.** Applying an owl is itself an evaluative act, and it can be wrong. The honest use is to make the classifier's reasoning *more* visible and arguable (which state, on what evidence, within what domain), not to settle a question by fiat. A reader is always entitled to contest the badge — and the triple-redundant label exists partly so the claim being made is explicit enough to contest.
 
 ---
 
@@ -232,9 +256,9 @@ The Owl Semaphore marks the **state of thought before action**. It is the visibl
 - DNS Tool confidence framework: https://dnstool.it-help.tech/confidence
 - DNS Tool corpus (where Owl Semaphore functions as the live legend): https://dnstool.it-help.tech/corpus
 - DNS Tool publications: https://dnstool.it-help.tech/publications
-- v2.0.2 version-specific DOI (citing DOI for v2.0.2): https://doi.org/10.5281/zenodo.20433053
-- Concept DOI (all versions): https://doi.org/10.5281/zenodo.19473697
-- Previous published version DOI (v2.0.1): https://doi.org/10.5281/zenodo.20419874
+- Concept DOI (all versions, resolves to the latest published version; the citing DOI for the v3.0.0 source snapshot until the v3.0.0 version-specific DOI is reserved on Zenodo): https://doi.org/10.5281/zenodo.19473697
+- Previous published version DOI (v2.0.2): https://doi.org/10.5281/zenodo.20433053
+- Earlier published version DOI (v2.0.1): https://doi.org/10.5281/zenodo.20419874
 - Earlier published version DOI (v2.0.0): https://doi.org/10.5281/zenodo.20418539
 - Earlier published version DOI (v1.2.0): https://doi.org/10.5281/zenodo.19474599
 
