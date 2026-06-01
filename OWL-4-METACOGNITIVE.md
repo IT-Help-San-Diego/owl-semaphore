@@ -4,7 +4,7 @@
 
 ## OWL 4 / METACOGNITIVE / Frame-Audit State (σₕ)
 
-### Version 2.0.2 (document subordinate to v2.0.2)
+### Version 3.0.0 (document subordinate to v3.0.0)
 
 ---
 
@@ -33,6 +33,8 @@ The adults in the room may think the child is being silly. The child has perform
 The same shape appears in serious instrumentation work. Robotics, sensor fusion, and machine vision routinely apply frame transformations because instruments do not merely report the world; they report the world *through a coordinate frame* ([ROS REP 105, "Coordinate Frames for Mobile Platforms"](https://www.ros.org/reps/rep-0105.html); [Thrun, Burgard & Fox, *Probabilistic Robotics*, MIT Press, 2005](https://mitpress.mit.edu/9780262201629/probabilistic-robotics/)). The frame is part of the measurement. Calibration audits, methodology reviews, and the moment a scientist asks whether *the telescope itself* is introducing the anomaly are all σₕ in practice.
 
 The METACOGNITIVE owl is inverted because the frame of reference has flipped: this is not a finding about the subject, it is a finding about the instrument — including, in the human case, the analyst. The subject of analysis is unchanged; the evaluative frame has been deliberately inspected.
+
+**Bridge — from the story to the operator.** The child looking between their legs is a precise statement of the formal mapping. Left stays left while up and down invert — that is exactly the horizontal reflection **σₕ**: (x, y) → (x, −y), determinant −1 (§4). The det = −1 (orientation reversal, shared with NON-NORMATIVE's σᵥ) is what separates this state from CRITICAL: METACOGNITIVE is a *reflection of the observer's frame*, not an inversion of the object. The object — the room, the data, the claim — is unchanged; what moves is the **observer's relation to the evidence**: the instrument, the coordinate frame, the analytic lens is itself put under audit. That is the formal content of "the observer audits the frame." Gödel is invoked in §1A as a **structural analogy only** — a picture of needing a frame outside the original one — never as proof of any claim about cognition. Read the story as the intuition and §4 as its formalization; they are the same claim at two resolutions.
 
 This story is the human-intuition bridge to the mathematical formalism in §§2 onward. The deliberate ordering is story → transform → scientific use → objections/verification, so a reader who would argue this state from formal logic, from sensor calibration, or from cognitive science can each enter through the right door.
 
@@ -232,7 +234,7 @@ The owl must remain distinguishable from the field with sufficient luminance con
 
 ### 10.4 Accessibility — Color Is Not the Only Carrier
 
-Beginning in v2.0.0 (and carried through v2.0.2), the system explicitly states that **color cannot be the only carrier of state identity**. The METACOGNITIVE state — like every state — must be perceptually recoverable from at least three independent visual channels:
+Beginning in v2.0.0 (and carried through v3.0.0), the system explicitly states that **color cannot be the only carrier of state identity**. The METACOGNITIVE state — like every state — must be perceptually recoverable from at least three independent visual channels:
 
 1. **color** (amethyst / violet)
 2. **orientation** (upside-down, right-facing)
@@ -328,7 +330,7 @@ The earlier interpretive sentence *"This audits the standard"* is deprecated in 
 
 ## 17. Relationship to Other States
 
-| State | Operator | Quote (v2.0.2) |
+| State | Operator | Quote (v3.0.0) |
 | --- | --- | --- |
 | NORMATIVE | I | "This is the standard." |
 | NON-NORMATIVE | σᵥ | "This reflects the standard." |
@@ -350,6 +352,12 @@ with
 $$
 T = \sigma_h
 $$
+
+---
+
+## 18A. Limitations and Scope
+
+METACOGNITIVE is the state whose label is easiest to over-read, so its boundaries are explicit. σₕ audits the *observer's frame*, not the object — it is an observer-level reflection (det = −1), distinct from CRITICAL's object-level inversion. The mark says the evaluative frame was deliberately inspected; it does **not** claim the inspection succeeded, that bias was removed, or that the result is correct. Metacognitive prompts surface bias; they do not eliminate it. Gödel and the through-the-legs maneuver are structural/heuristic analogies only — illustrations of "needing a frame outside the original one," never formal proof of any claim about cognition. Like the system as a whole, this is a coarse four-way stance classifier (see §12A of [`OWL-SEMAPHORE-SYSTEM.md`](OWL-SEMAPHORE-SYSTEM.md)): its inter-annotator reliability is not yet empirically validated, and applying the badge is itself a contestable evaluative act.
 
 ---
 

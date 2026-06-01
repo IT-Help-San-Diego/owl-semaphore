@@ -9,6 +9,38 @@ without any post-release source-side reapplication, without transient
 markers in canonical source or PDFs, and without producing a duplicate
 Zenodo record via GitHub auto-ingest.
 
+> **v3.0.0 status (DOI reserved and embedded).** The v3.0.0
+> version-specific DOI **`10.5281/zenodo.20468727`** has been reserved on
+> a Zenodo new-version draft of the concept record and is embedded as the
+> citing DOI in `generate_pdfs.py`, the PDFs, `CITATION.cff`,
+> `.zenodo.json`, `README.md`, and the CHANGELOG release block. The
+> concept DOI `10.5281/zenodo.19473697` (all-versions; resolves to the
+> latest published version) is preserved as the durable cross-version
+> citation target. The reserve-and-swap controlled step (§0 below) is
+> **complete**; the only remaining DOI-related action is to upload the
+> released files to the reserved Zenodo draft
+> (`https://zenodo.org/uploads/20468727`) and publish it (§4).
+
+---
+
+## 0. v3.0.0 controlled DOI step (reserve + swap) — COMPLETE
+
+This controlled step has been performed for v3.0.0. It is recorded here
+for provenance:
+
+1. On Zenodo, a *new-version* draft of the concept record (concept DOI
+   `10.5281/zenodo.19473697`) was created and the v3.0.0 version DOI
+   **`10.5281/zenodo.20468727`** was reserved. Draft URL:
+   `https://zenodo.org/uploads/20468727`.
+2. The reserved DOI was set as `VERSION_DOI` in `generate_pdfs.py` and as
+   the matching constant in `tests/test_banner_tuple.py`.
+3. `make pdfs hashes manifest test` was re-run once. The banner-tuple test
+   asserts the reserved version DOI; the forbidden-token test passes
+   because a real DOI is not a transient marker.
+4. The remaining action is the tag + publish steps in §4: upload the
+   released files into the same Zenodo draft the DOI was reserved on, then
+   publish that draft.
+
 The process has three halves:
 
 1. **Pre-source-side (Zenodo reserve DOI).** Before opening or finalizing

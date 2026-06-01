@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate publication-grade PDFs for the Owl Semaphore system (v2.0.2).
+Generate publication-grade PDFs for the Owl Semaphore system (v3.0.0).
 
 Produces, with one command, five PDFs:
   - OWL-SEMAPHORE-SYSTEM.pdf
@@ -41,26 +41,29 @@ except ImportError:  # pragma: no cover - handled at runtime
 
 REPO = os.path.dirname(os.path.abspath(__file__))
 
-# ── Project-wide metadata (v2.0.2) ──────────────────────────────────────────
+# ── Project-wide metadata (v3.0.0) ──────────────────────────────────────────
 #
-# DOI strategy for the v2.0.2 source snapshot: the v2.0.2 version-specific
-# DOI is reserved on Zenodo before the release and embedded directly into
-# source, PDFs, and metadata as the citing DOI. The concept DOI is preserved
-# as the all-versions DOI for cross-version citation. Earlier published
-# version DOIs (v2.0.1, v2.0.0, v1.2.0) remain recorded as historical
-# entries for citation continuity. The reserve-DOI-first workflow ensures
-# the exact v2.0.2 Version DOI appears inside the published PDFs that
-# Zenodo archives.
+# DOI strategy for the v3.0.0 release. v3.0.0 is a structural / scientific
+# remediation release. The v3.0.0 version-specific DOI has been reserved on
+# Zenodo (new-version draft of the concept record) and is embedded here as
+# the citing DOI for the release, so it appears inside every PDF banner
+# tuple, footer, and metadata file. The concept DOI is preserved separately
+# as the durable all-versions DOI that resolves to the latest published
+# version.
+#
+# Earlier published version DOIs (v2.0.2, v2.0.1, v2.0.0, v1.2.0) remain
+# recorded as historical entries for citation continuity.
 
-VERSION = "2.0.2"
-RELEASE_LABEL = "v2.0.2"
+VERSION = "3.0.0"
+RELEASE_LABEL = "v3.0.0"
 AUTHOR = "Carey James Balboa"
 ORCID = "0009-0000-5237-9065"
 REPO_URL = "github.com/IT-Help-San-Diego/owl-semaphore"
-VERSION_DOI = "10.5281/zenodo.20433053"  # v2.0.2 reserved version-specific DOI
-CITING_DOI = VERSION_DOI  # DOI used to cite v2.0.2; the reserved version DOI
 CONCEPT_DOI = "10.5281/zenodo.19473697"  # all-versions concept DOI (resolves to latest)
-PREVIOUS_VERSION_DOI = "10.5281/zenodo.20419874"  # v2.0.1 (previous published)
+VERSION_DOI = "10.5281/zenodo.20468727"  # v3.0.0 version-specific DOI (reserved on Zenodo)
+CITING_DOI = VERSION_DOI
+PREVIOUS_VERSION_DOI = "10.5281/zenodo.20433053"  # v2.0.2 (previous published)
+PRIOR_V201_DOI = "10.5281/zenodo.20419874"  # v2.0.1 (earlier published)
 PRIOR_V200_DOI = "10.5281/zenodo.20418539"  # v2.0.0 (earlier published)
 PRIOR_V120_DOI = "10.5281/zenodo.19474599"  # v1.2.0 (earlier published)
 LICENSE = "CC-BY-4.0"
@@ -83,7 +86,7 @@ DOCS = [
         "quote": '"This is the standard."',
         "standard_ref": "RFC 2119 MUST / SHALL",
         "contact_caption": "Owl Semaphore System — Master Proof",
-        "pdf_subject": "Owl Semaphore System Specification (v2.0.2)",
+        "pdf_subject": "Owl Semaphore System Specification (v3.0.0)",
     },
     {
         "md": "OWL-SEMAPHORE-EXPLANATION.md",
@@ -100,7 +103,7 @@ DOCS = [
         "quote": '"Thinking examines its own frame."',
         "standard_ref": "Informative / Explanatory",
         "contact_caption": "Owl Semaphore System — Master Proof",
-        "pdf_subject": "Owl Semaphore Explanation (informative companion, v2.0.2)",
+        "pdf_subject": "Owl Semaphore Explanation (informative companion, v3.0.0)",
     },
     {
         "md": "OWL-1-NORMATIVE.md",
@@ -117,7 +120,7 @@ DOCS = [
         "quote": '"This is the standard."',
         "standard_ref": "RFC 2119 MUST / SHALL",
         "contact_caption": "Normative — Layer Proof Palette",
-        "pdf_subject": "Owl Semaphore — Normative state specification (OWL 1 / I, v2.0.2)",
+        "pdf_subject": "Owl Semaphore — Normative state specification (OWL 1 / I, v3.0.0)",
     },
     {
         "md": "OWL-2-NON-NORMATIVE.md",
@@ -134,7 +137,7 @@ DOCS = [
         "quote": '"This reflects the standard."',
         "standard_ref": "Informative / Advisory (NOTE)",
         "contact_caption": "Non-Normative — Layer Proof Palette",
-        "pdf_subject": "Owl Semaphore — Non-Normative state specification (OWL 2 / sigma_v, v2.0.2)",
+        "pdf_subject": "Owl Semaphore — Non-Normative state specification (OWL 2 / sigma_v, v3.0.0)",
     },
     {
         "md": "OWL-3-CRITICAL.md",
@@ -151,7 +154,7 @@ DOCS = [
         "quote": '"This inverts the standard."',
         "standard_ref": "RFC 2119 MUST NOT / SHALL NOT",
         "contact_caption": "Critical — Layer Proof Palette",
-        "pdf_subject": "Owl Semaphore — Critical state specification (OWL 3 / C2, v2.0.2)",
+        "pdf_subject": "Owl Semaphore — Critical state specification (OWL 3 / C2, v3.0.0)",
     },
     {
         "md": "OWL-4-METACOGNITIVE.md",
@@ -168,7 +171,7 @@ DOCS = [
         "quote": '"The observer audits the frame."',
         "standard_ref": "Epistemic / Framework (META)",
         "contact_caption": "Metacognitive — Layer Proof Palette",
-        "pdf_subject": "Owl Semaphore — Metacognitive state specification (OWL 4 / sigma_h, v2.0.2)",
+        "pdf_subject": "Owl Semaphore — Metacognitive state specification (OWL 4 / sigma_h, v3.0.0)",
     },
 ]
 
@@ -251,9 +254,9 @@ def build_typst_document(doc: dict, body_typst: str) -> str:
 
     # Stable banner-tuple line — every PDF page-1 must contain this exact string
     # so the banner-tuple test can verify it.
-    # The banner tuple cites the v2.0.2 reserved version-specific DOI as the
+    # The banner tuple cites the reserved v3.0.0 version-specific DOI as the
     # primary VERSION-DOI, the concept DOI as the all-versions DOI, and the
-    # previous-published version DOI (v2.0.1) for citation continuity.
+    # previous-published version DOI (v2.0.2) for citation continuity.
     banner_tuple = (
         f"BANNER-TUPLE :: STATE={state_token} :: TRANSFORM={mathline} :: "
         f"QUOTE={quote} :: VERSION={RELEASE_LABEL} :: VERSION-DOI={VERSION_DOI} :: "
@@ -376,8 +379,8 @@ def build_typst_document(doc: dict, body_typst: str) -> str:
   #v(6pt)
   #text(size: 8.5pt, fill: luma(120))[
     ORCID {ORCID} #h(12pt) VERSION-DOI {VERSION_DOI} ({RELEASE_LABEL}) \\
-    CONCEPT-DOI {CONCEPT_DOI} #h(12pt) PREVIOUS-VERSION-DOI {PREVIOUS_VERSION_DOI} (v2.0.1) \\
-    PRIOR-V2.0.0-DOI {PRIOR_V200_DOI} #h(12pt) PRIOR-V1.2.0-DOI {PRIOR_V120_DOI} \\
+    CONCEPT-DOI {CONCEPT_DOI} #h(12pt) PREVIOUS-VERSION-DOI {PREVIOUS_VERSION_DOI} (v2.0.2) \\
+    PRIOR-V2.0.1-DOI {PRIOR_V201_DOI} #h(12pt) PRIOR-V2.0.0-DOI {PRIOR_V200_DOI} #h(12pt) PRIOR-V1.2.0-DOI {PRIOR_V120_DOI} \\
     SOURCE {REPO_URL} #h(12pt) VERSION {RELEASE_LABEL} · LICENSE {LICENSE}
   ]
   #v(8pt)
@@ -467,7 +470,7 @@ def build_typst_document(doc: dict, body_typst: str) -> str:
   #v(8pt)
   #text(size: 8pt, fill: luma(140))[
     Owl Semaphore {RELEASE_LABEL} · {REPO_URL} \\
-    {RELEASE_LABEL} DOI {VERSION_DOI} · Concept DOI {CONCEPT_DOI} · v2.0.1 DOI {PREVIOUS_VERSION_DOI} · v2.0.0 DOI {PRIOR_V200_DOI} · v1.2.0 DOI {PRIOR_V120_DOI} \\
+    {RELEASE_LABEL} citing DOI {VERSION_DOI} · Concept DOI {CONCEPT_DOI} · v2.0.2 DOI {PREVIOUS_VERSION_DOI} · v2.0.1 DOI {PRIOR_V201_DOI} · v2.0.0 DOI {PRIOR_V200_DOI} · v1.2.0 DOI {PRIOR_V120_DOI} \\
     (c) 2024-2026 IT Help San Diego Inc. · Licensed under {LICENSE}
   ]
 ]

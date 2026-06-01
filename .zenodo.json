@@ -1,8 +1,8 @@
 {
   "title": "Owl Semaphore Badge System",
-  "version": "v2.0.2",
+  "version": "v3.0.0",
   "upload_type": "software",
-  "description": "Owl Semaphore v2.0.2. Editorial science/citation remediation release on top of v2.0.1: restricts the Goedel reference to a structural analogy; softens or qualifies clinical language (ego-dystonic, aporia); reframes Newton/Einstein as a limiting-case relation; aligns the metacognition / ICD 203 framing as a functional parallel rather than identity; adopts canonical RFC 2119 / RFC 8174 / BCP 14 boilerplate; names Bertin's six retinal variables explicitly; qualifies CVD prevalence as Northern-European-descent; removes metaphysical overclaim from the core framing; preserves the EXPLANATION story-table overflow fix from v2.0.1. No changes to the V4 algebra, the sigma_h assignment to METACOGNITIVE, the canonical formal sentence, the accessibility rule, the asset set, or the canonical math tuples. The v2.0.2 version-specific DOI 10.5281/zenodo.20433053 is reserved on Zenodo before release and embedded directly in source files, PDFs, and metadata. Concept DOI (all versions): 10.5281/zenodo.19473697. Previous published version DOI (v2.0.1): 10.5281/zenodo.20419874. Earlier published version DOIs: 10.5281/zenodo.20418539 (v2.0.0), 10.5281/zenodo.19474599 (v1.2.0).",
+  "description": "Owl Semaphore v3.0.0. Structural and scientific remediation release on top of v2.0.2 (not a visual redesign). Adds a normative Formal Justification for the V4 structure: why exactly four states and not two, three, six, or eight (closure under composition forces the fourth state); why the Klein four-group rather than the cyclic group C4 (every state move is self-inverse) or a non-abelian group (the two distinctions commute); why an operator algebra rather than a continuous scale or a flat label taxonomy; with a comparison table on parsimony, compositionality, constraint-verifiability, transition-modeling, and empirical-tractability. Adds a normative Limitations and Scope Boundaries section (four-state coarseness, absence of empirical validation to date, cultural-specificity / semantic-interpretation risk), an Exclusion Argument plus explicit use-boundary and ethics guidance in the explanation, and per-state bridge paragraphs and limitations notes in the four owl specifications. No changes to the V4 algebra, the four canonical state-operator tuples, the sigma_h assignment to METACOGNITIVE, the canonical formal sentence, the triple-redundant accessibility rule, the color/orientation semantics, or the approved asset set. The v3.0.0 version-specific DOI is 10.5281/zenodo.20468727 (reserved on Zenodo); the concept DOI 10.5281/zenodo.19473697 resolves to the latest published version. Previous published version DOI (v2.0.2): 10.5281/zenodo.20433053. Earlier published version DOIs: 10.5281/zenodo.20419874 (v2.0.1), 10.5281/zenodo.20418539 (v2.0.0), 10.5281/zenodo.19474599 (v1.2.0).",
   "creators": [
     {
       "name": "Balboa, Carey James",
@@ -34,20 +34,25 @@
       "scheme": "doi"
     },
     {
+      "identifier": "10.5281/zenodo.20433053",
+      "relation": "isNewVersionOf",
+      "scheme": "doi"
+    },
+    {
       "identifier": "10.5281/zenodo.20419874",
-      "relation": "isPreviousVersionOf",
+      "relation": "isNewVersionOf",
       "scheme": "doi"
     },
     {
       "identifier": "10.5281/zenodo.20418539",
-      "relation": "isPreviousVersionOf",
+      "relation": "isNewVersionOf",
       "scheme": "doi"
     },
     {
       "identifier": "10.5281/zenodo.19474599",
-      "relation": "isPreviousVersionOf",
+      "relation": "isNewVersionOf",
       "scheme": "doi"
     }
   ],
-  "notes": "Citing DOI for v2.0.2: the reserved version-specific DOI 10.5281/zenodo.20433053. Concept DOI (all versions): 10.5281/zenodo.19473697 (resolves to latest version). Previous published version DOI (v2.0.1): 10.5281/zenodo.20419874. Earlier published version DOIs: 10.5281/zenodo.20418539 (v2.0.0); 10.5281/zenodo.19474599 (v1.2.0, retained for citation continuity)."
+  "notes": "Version-specific DOI for v3.0.0: 10.5281/zenodo.20468727 (reserved on Zenodo). Concept DOI 10.5281/zenodo.19473697 resolves to the latest published version. Previous published version DOI (v2.0.2): 10.5281/zenodo.20433053. Earlier published version DOIs: 10.5281/zenodo.20419874 (v2.0.1); 10.5281/zenodo.20418539 (v2.0.0); 10.5281/zenodo.19474599 (v1.2.0, retained for citation continuity)."
 }

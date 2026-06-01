@@ -3,22 +3,23 @@
 # OWL SEMAPHORE — SYSTEM SPECIFICATION
 A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants.
 
-## Version 2.0.2
+## Version 3.0.0
 
-> **Version notice.** v2.0.2 is an editorial science/citation remediation release on top of v2.0.1. It restricts the Gödel reference to a structural analogy; qualifies clinical language (ego-dystonic, aporia); reframes Newton/Einstein as a limiting-case relation; aligns the metacognition / ICD 203 framing as a functional parallel; adopts canonical RFC 2119 / RFC 8174 / BCP 14 boilerplate; names Bertin's six retinal variables explicitly; qualifies CVD prevalence as Northern-European descent; removes any metaphysical overclaim from the core framing; and preserves the EXPLANATION story-table overflow fix from v2.0.1. **It does not change the V₄ algebra, the σₕ assignment for METACOGNITIVE, the canonical formal sentence, the accessibility rule, the asset set, or the canonical math tuples.** The archived v2.0.2 source snapshot embeds the v2.0.2 version-specific DOI [10.5281/zenodo.20433053](https://doi.org/10.5281/zenodo.20433053), reserved on Zenodo before release; the concept DOI [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697) is the all-versions DOI and resolves to the latest published version.
+> **Version notice.** v3.0.0 is a structural and scientific remediation release on top of v2.0.2 — **not a visual redesign.** It adds a normative *Formal Justification for the V₄ Structure* (why exactly four states and not two, three, six, or eight — closure under composition forces the fourth state; why the Klein four-group rather than the cyclic group C₄ or a non-abelian group; why an operator algebra rather than a continuous scale or a flat label taxonomy; with a comparison table), a normative *Limitations and Scope Boundaries* section (four-state coarseness, no empirical validation yet, cultural-specificity / semantic-interpretation risk), an *Exclusion Argument* and explicit use-boundary / ethics guidance in the explanation, and per-state bridge paragraphs and limitations notes in the four owl specifications. **It does not change the V₄ algebra, the four canonical state-operator tuples, the σₕ assignment for METACOGNITIVE, the canonical formal sentence, the accessibility rule, the color/orientation semantics, or the approved asset set.** The v3.0.0 version-specific DOI [10.5281/zenodo.20468727](https://doi.org/10.5281/zenodo.20468727) is reserved on Zenodo and embedded as the citing DOI throughout the v3.0.0 source, PDFs, and metadata; the concept DOI [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697) is the all-versions DOI that resolves to the latest published version.
 
-[![v2.0.2 Version DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20433053.svg)](https://doi.org/10.5281/zenodo.20433053)
+[![Version DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20468727.svg)](https://doi.org/10.5281/zenodo.20468727)
 [![Concept DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19473697.svg)](https://doi.org/10.5281/zenodo.19473697)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-- **Citing DOI for v2.0.2 (version-specific):** [10.5281/zenodo.20433053](https://doi.org/10.5281/zenodo.20433053)
+- **Version DOI (v3.0.0):** [10.5281/zenodo.20468727](https://doi.org/10.5281/zenodo.20468727) — the version-specific DOI for this release; the citing DOI embedded in the v3.0.0 source, PDFs, and metadata
 - **Concept DOI (all versions):** [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697) — resolves to the latest published version
-- **Previous version DOI (v2.0.1):** [10.5281/zenodo.20419874](https://doi.org/10.5281/zenodo.20419874)
+- **Previous version DOI (v2.0.2):** [10.5281/zenodo.20433053](https://doi.org/10.5281/zenodo.20433053)
+- **Earlier version DOI (v2.0.1):** [10.5281/zenodo.20419874](https://doi.org/10.5281/zenodo.20419874)
 - **Earlier version DOI (v2.0.0):** [10.5281/zenodo.20418539](https://doi.org/10.5281/zenodo.20418539)
 - **Earlier version DOI (v1.2.0):** [10.5281/zenodo.19474599](https://doi.org/10.5281/zenodo.19474599)
 - **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
-## Canonical Sentence Stack (v2.0.2)
+## Canonical Sentence Stack (v3.0.0)
 
 | Layer | Sentence | Use |
 | --- | --- | --- |
@@ -28,7 +29,7 @@ A finite algebra over epistemic states, implemented as a reproducible visual not
 
 See [`CHANGELOG.md`](CHANGELOG.md) for the per-version canonical sentence history.
 
-## The Four States (v2.0.2)
+## The Four States (v3.0.0)
 
 | State | Operator | Determinant | Quote (normative) | Standards register |
 | --- | --- | --- | --- | --- |
@@ -37,7 +38,7 @@ See [`CHANGELOG.md`](CHANGELOG.md) for the per-version canonical sentence histor
 | CRITICAL | C₂ | +1 | *"This inverts the standard."* | RFC 2119 MUST NOT / SHALL NOT |
 | METACOGNITIVE | σₕ | −1 | **"The observer audits the frame."** | Epistemic / Framework (META) |
 
-The METACOGNITIVE phrasing was refined in v2.0.0 and is unchanged through v2.0.2. The earlier line *"This audits the standard"* is deprecated because it failed to express *thinking examining its own frame*. See [`OWL-4-METACOGNITIVE.md`](OWL-4-METACOGNITIVE.md) §1 and [`OWL-SEMAPHORE-EXPLANATION.md`](OWL-SEMAPHORE-EXPLANATION.md) for the warmer explanatory variant *"Thinking examines its own frame."*
+The METACOGNITIVE phrasing was refined in v2.0.0 and is unchanged through v3.0.0. The earlier line *"This audits the standard"* is deprecated because it failed to express *thinking examining its own frame*. See [`OWL-4-METACOGNITIVE.md`](OWL-4-METACOGNITIVE.md) §1 and [`OWL-SEMAPHORE-EXPLANATION.md`](OWL-SEMAPHORE-EXPLANATION.md) for the warmer explanatory variant *"Thinking examines its own frame."*
 
 ## Accessibility — Color Is Not the Only Carrier
 
@@ -45,16 +46,19 @@ Every state's identity is recoverable from three redundant channels: **color + o
 
 ## Citation
 
-If you use the Owl Semaphore Badge System, please cite the v2.0.2 version-specific DOI:
+If you use the Owl Semaphore Badge System, cite the v3.0.0 version-specific DOI for this exact release, or the concept DOI for cross-version citation (it resolves to the latest published version):
 
-> Balboa, Carey James. *Owl Semaphore Badge System* (v2.0.2). Zenodo. https://doi.org/10.5281/zenodo.20433053
+> Balboa, Carey James. *Owl Semaphore Badge System* (v3.0.0). Zenodo. https://doi.org/10.5281/zenodo.20468727
+>
+> Concept DOI (all versions): https://doi.org/10.5281/zenodo.19473697
 >
 > Previously published versions:
 >
+> - Balboa, Carey James. *Owl Semaphore Badge System* (v2.0.2). Zenodo. https://doi.org/10.5281/zenodo.20433053
 > - Balboa, Carey James. *Owl Semaphore Badge System* (v2.0.1). Zenodo. https://doi.org/10.5281/zenodo.20419874
 > - Balboa, Carey James. *Owl Semaphore Badge System* (v2.0.0). Zenodo. https://doi.org/10.5281/zenodo.20418539
 
-The v2.0.2 version-specific DOI [10.5281/zenodo.20433053](https://doi.org/10.5281/zenodo.20433053) is reserved on Zenodo before release and embedded directly in source files, PDFs, and metadata. The concept DOI [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697) is the all-versions DOI for cross-version citation and resolves to the latest published version. Machine-readable citation metadata is in [`CITATION.cff`](CITATION.cff).
+The version-specific DOI [10.5281/zenodo.20468727](https://doi.org/10.5281/zenodo.20468727) is the citing DOI embedded in the v3.0.0 source, PDFs, and metadata. The concept DOI [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697) is the all-versions DOI for cross-version citation and resolves to the latest published version. Machine-readable citation metadata is in [`CITATION.cff`](CITATION.cff).
 
 ## Reproducing the PDFs
 
@@ -101,6 +105,53 @@ owl-semaphore/
     └── releases/
 ```
 
+## Citation Package Structure (Zotero / Zenodo attachments)
+
+For reference managers (Zotero) and the Zenodo record, the canonical
+citation package is **fourteen attachments**: six readable PDFs plus eight
+canonical image assets (four composite previews + four layered master TIFFs).
+Suggested display names are given so the package reads cleanly in a library:
+
+**Six readable PDFs** (the human- and machine-readable specifications):
+
+| File | Suggested display name |
+| --- | --- |
+| `OWL-SEMAPHORE-SYSTEM.pdf` | Owl Semaphore — System Specification |
+| `OWL-SEMAPHORE-EXPLANATION.pdf` | Owl Semaphore — Explanation |
+| `OWL-1-NORMATIVE.pdf` | Owl Semaphore — 1 NORMATIVE |
+| `OWL-2-NON-NORMATIVE.pdf` | Owl Semaphore — 2 NON-NORMATIVE |
+| `OWL-3-CRITICAL.pdf` | Owl Semaphore — 3 CRITICAL |
+| `OWL-4-METACOGNITIVE.pdf` | Owl Semaphore — 4 METACOGNITIVE |
+
+**Four canonical composite previews** (transparent PNG, 540 px — render
+correctly in any image viewer and are the at-a-glance state previews):
+
+| File | Suggested display name |
+| --- | --- |
+| `assets/releases/540/NORM-composite-transparent-540.png` | Owl Semaphore — NORMATIVE preview |
+| `assets/releases/540/NONNORM-composite-transparent-540.png` | Owl Semaphore — NON-NORMATIVE preview |
+| `assets/releases/540/CRIT-composite-transparent-540.png` | Owl Semaphore — CRITICAL preview |
+| `assets/releases/540/META-composite-transparent-540.png` | Owl Semaphore — METACOGNITIVE preview |
+
+**Four canonical LAYERED master assets** (multi-layer TIFF, 1080 px — the
+authoritative editable masters that carry the full layer model):
+
+| File | Suggested display name |
+| --- | --- |
+| `assets/masters/NORM-MASTER-1080.tiff` | Owl Semaphore — NORMATIVE master (layered) |
+| `assets/masters/NONNORM-MASTER-1080.tiff` | Owl Semaphore — NON-NORMATIVE master (layered) |
+| `assets/masters/CRIT-MASTER-1080.tiff` | Owl Semaphore — CRITICAL master (layered) |
+| `assets/masters/META-MASTER-1080.tiff` | Owl Semaphore — METACOGNITIVE master (layered) |
+
+> **Note on the layered master TIFFs.** The four `*-MASTER-1080.tiff` files
+> are **layered** masters. Some quick-look / thumbnail viewers flatten only
+> the first layer and may therefore preview these files as black, empty, or
+> incomplete. This is a viewer limitation, not a defect in the file — the
+> full composite is present in the layers and renders correctly in a
+> layer-aware editor (e.g. GIMP, Photoshop, Affinity). The transparent
+> composite previews above are provided for at-a-glance viewing precisely so
+> that no one has to open a layered master just to see a state.
+
 ## Related Resources
 
 - DNS Tool Owl Semaphore page: https://dnstool.it-help.tech/owl-semaphore
@@ -141,26 +192,27 @@ NORM-composite-white-540.png
   "@context": "https://schema.org",
   "@type": "SoftwareSourceCode",
   "name": "Owl Semaphore Badge System",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "codeRepository": "https://github.com/IT-Help-San-Diego/owl-semaphore",
   "datePublished": "2026-04-07",
-  "dateModified": "2026-05-28",
+  "dateModified": "2026-05-30",
   "identifier": [
-    "https://doi.org/10.5281/zenodo.20433053",
+    "https://doi.org/10.5281/zenodo.20468727",
     "https://doi.org/10.5281/zenodo.19473697",
+    "https://doi.org/10.5281/zenodo.20433053",
     "https://doi.org/10.5281/zenodo.20419874",
     "https://doi.org/10.5281/zenodo.20418539",
     "https://doi.org/10.5281/zenodo.19474599"
   ],
-  "sameAs": "https://doi.org/10.5281/zenodo.20433053",
+  "sameAs": "https://doi.org/10.5281/zenodo.20468727",
   "programmingLanguage": "Not applicable",
   "author": {
     "@type": "Person",
     "name": "Carey James Balboa",
     "identifier": "https://orcid.org/0009-0000-5237-9065"
   },
-  "description": "A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants. Four-state classification (NORMATIVE, NON-NORMATIVE, CRITICAL, METACOGNITIVE) for DNS Tool documentation and related research artifacts. v2.0.2 is an editorial science/citation remediation release on top of v2.0.1. The v2.0.2 source snapshot embeds the v2.0.2 version-specific DOI 10.5281/zenodo.20433053, reserved on Zenodo before release. The concept DOI 10.5281/zenodo.19473697 is the all-versions DOI and resolves to the latest published version. Previous published version DOI (v2.0.1): 10.5281/zenodo.20419874.",
+  "description": "A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants. Four-state classification (NORMATIVE, NON-NORMATIVE, CRITICAL, METACOGNITIVE) for DNS Tool documentation and related research artifacts. v3.0.0 is a structural and scientific remediation release on top of v2.0.2 that adds a normative Formal Justification for the V4 structure, a normative Limitations and Scope Boundaries section, an Exclusion Argument with use-boundary/ethics guidance, and per-state bridge and limitations paragraphs, with no change to the V4 algebra, the canonical state-operator tuples, the canonical formal sentence, the accessibility rule, or the asset set. The v3.0.0 version-specific DOI 10.5281/zenodo.20468727 (reserved on Zenodo) is the citing DOI embedded in the v3.0.0 source, PDFs, and metadata. The concept DOI 10.5281/zenodo.19473697 is the all-versions DOI that resolves to the latest published version. Previous published version DOI (v2.0.2): 10.5281/zenodo.20433053.",
   "keywords": [
     "Owl Semaphore",
     "DNS Tool",
@@ -173,7 +225,7 @@ NORM-composite-white-540.png
     "metacognition",
     "accessibility"
   ],
-  "releaseNotes": "v2.0.2 — editorial science/citation remediation release on top of v2.0.1. Restricts the Gödel reference to a structural analogy; qualifies clinical language (ego-dystonic, aporia); reframes Newton/Einstein as a limiting-case relation; aligns the metacognition / ICD 203 framing as a functional parallel; adopts canonical RFC 2119 / RFC 8174 / BCP 14 boilerplate; names Bertin's six retinal variables explicitly; qualifies CVD prevalence as Northern-European descent; removes metaphysical overclaim from the core framing; preserves the EXPLANATION story-table overflow fix from v2.0.1. V4 algebra, σh assignment to METACOGNITIVE, canonical formal sentence, accessibility rule, asset set, and canonical math tuples are unchanged from v2.0.1.",
+  "releaseNotes": "v3.0.0 — structural and scientific remediation release on top of v2.0.2 (not a visual redesign). Adds a normative Formal Justification for the V4 structure (why four states and not two/three/six/eight; why the Klein four-group rather than C4 or a non-abelian group; why an operator algebra rather than a continuous scale or flat label set; with a comparison table on parsimony, compositionality, constraint-verifiability, transition-modeling, and empirical-tractability); a normative Limitations and Scope Boundaries section (four-state coarseness, no empirical validation yet, cultural-specificity/semantic-interpretation risk); an Exclusion Argument and explicit use-boundary/ethics guidance in the explanation; and per-state bridge paragraphs and limitations notes in the four owl specifications. The V4 algebra, the four canonical state-operator tuples, the σh assignment to METACOGNITIVE, the canonical formal sentence, the accessibility rule, the color/orientation semantics, and the asset set are unchanged from v2.0.2.",
   "isAccessibleForFree": true
 }
 </script>

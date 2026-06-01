@@ -1,34 +1,37 @@
 cff-version: 1.2.0
-message: "If you use the Owl Semaphore system, please cite the v2.0.2 version-specific DOI (10.5281/zenodo.20433053). The concept DOI 10.5281/zenodo.19473697 resolves to the latest published version. The previous published version DOI (v2.0.1) is 10.5281/zenodo.20419874; earlier published version DOIs (v2.0.0, v1.2.0) are 10.5281/zenodo.20418539 and 10.5281/zenodo.19474599 respectively."
+message: "If you use the Owl Semaphore system, please cite the version-specific DOI 10.5281/zenodo.20468727 (v3.0.0), or the concept DOI 10.5281/zenodo.19473697, which resolves to the latest published version. The previous published version DOI (v2.0.2) is 10.5281/zenodo.20433053; earlier published version DOIs (v2.0.1, v2.0.0, v1.2.0) are 10.5281/zenodo.20419874, 10.5281/zenodo.20418539, and 10.5281/zenodo.19474599 respectively."
 title: "Owl Semaphore Badge System"
 type: software
 authors:
   - family-names: "Balboa"
     given-names: "Carey James"
     orcid: "https://orcid.org/0009-0000-5237-9065"
-version: "v2.0.2"
-date-released: 2026-05-28
+version: "v3.0.0"
+date-released: 2026-05-30
 license: "CC-BY-4.0"
 repository-code: "https://github.com/IT-Help-San-Diego/owl-semaphore"
 url: "https://github.com/IT-Help-San-Diego/owl-semaphore"
-doi: "10.5281/zenodo.20433053"
+doi: "10.5281/zenodo.20468727"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.20433053"
-    description: "v2.0.2 version-specific DOI for the Owl Semaphore Badge System; the citing DOI for v2.0.2."
+    value: "10.5281/zenodo.20468727"
+    description: "Version-specific DOI for v3.0.0 of the Owl Semaphore Badge System, reserved on Zenodo."
   - type: doi
     value: "10.5281/zenodo.19473697"
     description: "Concept DOI (all versions) for the Owl Semaphore Badge System. Resolves to the latest published version."
   - type: doi
+    value: "10.5281/zenodo.20433053"
+    description: "Previously published version DOI (v2.0.2), retained for citation continuity."
+  - type: doi
     value: "10.5281/zenodo.20419874"
-    description: "Previously published version DOI (v2.0.1), retained for citation continuity."
+    description: "Earlier published version DOI (v2.0.1), retained for citation continuity."
   - type: doi
     value: "10.5281/zenodo.20418539"
     description: "Earlier published version DOI (v2.0.0), retained for citation continuity."
   - type: doi
     value: "10.5281/zenodo.19474599"
     description: "Earlier published version DOI (v1.2.0), retained for citation continuity."
-abstract: "A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants. Four-state classification (NORMATIVE / NON-NORMATIVE / CRITICAL / METACOGNITIVE) realised as the Klein four-group V4, encoded redundantly through color, orientation, and textual label. v2.0.2 is an editorial science/citation remediation release on top of v2.0.1: it restricts the Goedel reference to a structural analogy, softens or qualifies clinical language (ego-dystonic, aporia), reframes Newton/Einstein as a limiting-case relation, aligns the metacognition / ICD 203 framing as a functional parallel rather than identity, adopts the canonical RFC 2119 / RFC 8174 / BCP 14 boilerplate, names Bertin's six retinal variables explicitly, qualifies CVD prevalence as Northern-European-descent, fixes EXPLANATION story-table overflow carryover, and removes any metaphysical overclaim from the core framing. The V4 algebra, the sigma_h assignment to METACOGNITIVE, the canonical formal sentence, the accessibility rule, and the asset set are unchanged from v2.0.1."
+abstract: "A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants. Four-state classification (NORMATIVE / NON-NORMATIVE / CRITICAL / METACOGNITIVE) realised as the Klein four-group V4, encoded redundantly through color, orientation, and textual label. v3.0.0 is a structural and scientific remediation release on top of v2.0.2. It adds a normative Formal Justification for the V4 structure (why exactly four states and not two, three, six, or eight; why the Klein four-group rather than the cyclic group C4 or a non-abelian group; why an operator algebra rather than a continuous scale or a flat label taxonomy; with a comparison table on parsimony, compositionality, constraint-verifiability, transition-modeling, and empirical-tractability), a normative Limitations and Scope Boundaries section (four-state coarseness, absence of empirical validation to date, and cultural-specificity / semantic-interpretation risk), an Exclusion Argument and explicit use-boundary / ethics guidance in the explanation, and per-state bridge paragraphs and limitations notes in the four owl specifications. The V4 algebra, the four state-operator tuples, the sigma_h assignment to METACOGNITIVE, the canonical formal sentence, the triple-redundant accessibility rule, the color/orientation semantics, and the asset set are unchanged from v2.0.2."
 keywords:
   - visual epistemic notation
   - classification system
@@ -46,9 +49,9 @@ preferred-citation:
       given-names: "Carey James"
       orcid: "https://orcid.org/0009-0000-5237-9065"
   title: "Owl Semaphore Badge System"
-  version: "v2.0.2"
-  date-released: 2026-05-28
+  version: "v3.0.0"
+  date-released: 2026-05-30
   license: "CC-BY-4.0"
   repository-code: "https://github.com/IT-Help-San-Diego/owl-semaphore"
   url: "https://github.com/IT-Help-San-Diego/owl-semaphore"
-  doi: "10.5281/zenodo.20433053"
+  doi: "10.5281/zenodo.20468727"
