@@ -43,22 +43,13 @@ REPO = os.path.dirname(os.path.abspath(__file__))
 
 # ── Project-wide metadata (v3.0.0) ──────────────────────────────────────────
 #
-# DOI strategy for the v3.0.0 source snapshot. v3.0.0 is a structural /
-# scientific remediation release. At source-snapshot time the v3.0.0
-# version-specific DOI has not yet been reserved on Zenodo, so — rather than
-# invent or placeholder a version DOI — the artifacts cite the **concept
-# DOI** as the citing DOI. The concept DOI is the durable all-versions DOI
-# and resolves to the latest published version, so it is a correct, stable,
-# non-transient citation target for the source snapshot.
-#
-# When the v3.0.0 version-specific DOI is reserved on Zenodo (a single
-# controlled step documented in RELEASE-PROCESS.md §1 and the Zenodo
-# checklist), the operator sets VERSION_DOI below to the reserved value and
-# re-runs `make pdfs hashes manifest test`; the banner-tuple test reads the
-# same constant, so embedding the reserved DOI everywhere is a one-line
-# source edit followed by a regeneration. Until then VERSION_DOI is the
-# concept DOI, which keeps every release-facing artifact free of transient
-# cleanup markers (no "TBD"/"pending"/"placeholder").
+# DOI strategy for the v3.0.0 release. v3.0.0 is a structural / scientific
+# remediation release. The v3.0.0 version-specific DOI has been reserved on
+# Zenodo (new-version draft of the concept record) and is embedded here as
+# the citing DOI for the release, so it appears inside every PDF banner
+# tuple, footer, and metadata file. The concept DOI is preserved separately
+# as the durable all-versions DOI that resolves to the latest published
+# version.
 #
 # Earlier published version DOIs (v2.0.2, v2.0.1, v2.0.0, v1.2.0) remain
 # recorded as historical entries for citation continuity.
@@ -69,11 +60,7 @@ AUTHOR = "Carey James Balboa"
 ORCID = "0009-0000-5237-9065"
 REPO_URL = "github.com/IT-Help-San-Diego/owl-semaphore"
 CONCEPT_DOI = "10.5281/zenodo.19473697"  # all-versions concept DOI (resolves to latest)
-# v3.0.0 version-specific DOI is not reserved at source-snapshot time. The
-# concept DOI is cited as the citing DOI until the version DOI is reserved;
-# see RELEASE-PROCESS.md §1. Set VERSION_DOI to the reserved value and
-# re-run `make pdfs hashes manifest test` as the single controlled step.
-VERSION_DOI = CONCEPT_DOI  # citing DOI for v3.0.0 source snapshot (concept DOI)
+VERSION_DOI = "10.5281/zenodo.20468727"  # v3.0.0 version-specific DOI (reserved on Zenodo)
 CITING_DOI = VERSION_DOI
 PREVIOUS_VERSION_DOI = "10.5281/zenodo.20433053"  # v2.0.2 (previous published)
 PRIOR_V201_DOI = "10.5281/zenodo.20419874"  # v2.0.1 (earlier published)
@@ -267,9 +254,8 @@ def build_typst_document(doc: dict, body_typst: str) -> str:
 
     # Stable banner-tuple line — every PDF page-1 must contain this exact string
     # so the banner-tuple test can verify it.
-    # The banner tuple cites the v3.0.0 citing DOI as the primary VERSION-DOI
-    # (the concept DOI until the v3.0.0 version-specific DOI is reserved; see
-    # RELEASE-PROCESS.md §1), the concept DOI as the all-versions DOI, and the
+    # The banner tuple cites the reserved v3.0.0 version-specific DOI as the
+    # primary VERSION-DOI, the concept DOI as the all-versions DOI, and the
     # previous-published version DOI (v2.0.2) for citation continuity.
     banner_tuple = (
         f"BANNER-TUPLE :: STATE={state_token} :: TRANSFORM={mathline} :: "

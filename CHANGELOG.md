@@ -21,7 +21,7 @@ Each release entry records the **canonical formal sentence used in that release*
 
 **Canonical human sentence (unchanged):** *Four owls tell the reader what kind of thinking they are looking at: standard, exploration, inversion, or self-audit.*
 
-**Citing DOI for the v3.0.0 source snapshot:** [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697) — the concept (all-versions) DOI, which resolves to the latest published version. The v3.0.0 version-specific DOI is reserved on Zenodo as a single controlled release step (see `RELEASE-PROCESS.md`); the concept DOI is the citing DOI embedded in source, PDFs, and metadata until that reservation is performed, so no transient DOI markers appear anywhere in the corpus.
+**Version-specific DOI (v3.0.0):** [10.5281/zenodo.20468727](https://doi.org/10.5281/zenodo.20468727) — reserved on Zenodo and embedded as the citing DOI in source, PDFs, and metadata, so the exact version DOI appears inside every published artifact. No transient DOI markers appear anywhere in the corpus.
 **Concept DOI (all versions):** [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697) — resolves to the latest published version.
 **Previous published version DOI (v2.0.2):** [10.5281/zenodo.20433053](https://doi.org/10.5281/zenodo.20433053)
 **Earlier published version DOI (v2.0.1):** [10.5281/zenodo.20419874](https://doi.org/10.5281/zenodo.20419874)
@@ -42,10 +42,11 @@ Each release entry records the **canonical formal sentence used in that release*
 
 ### DOI strategy (this release)
 
-- The **concept DOI `10.5281/zenodo.19473697`** (all versions; resolves to latest) is the citing DOI embedded in the v3.0.0 source snapshot, PDFs, and metadata. No invented or transient version DOI is used.
-- The **v3.0.0 version-specific DOI is reserved on Zenodo as a single controlled release step** documented in `RELEASE-PROCESS.md` and `ZENODO-RELEASE-CHECKLIST.md`. When that reservation is performed, the operator sets `VERSION_DOI` in `generate_pdfs.py` (and the matching constant in `tests/test_banner_tuple.py`) to the reserved value and re-runs `make pdfs hashes manifest test` as one controlled step.
+- The **v3.0.0 version-specific DOI `10.5281/zenodo.20468727`** is reserved on Zenodo and is the citing DOI embedded in the v3.0.0 source, PDFs, and metadata, so the exact version DOI appears inside every published artifact. `VERSION_DOI` in `generate_pdfs.py` and the matching constant in `tests/test_banner_tuple.py` are set to this value.
+- The **concept DOI `10.5281/zenodo.19473697`** (all versions; resolves to latest) is preserved as the durable cross-version citation target.
 - DOI family roles in metadata as of v3.0.0:
-  - Concept DOI `10.5281/zenodo.19473697` — all-versions / citing DOI for the v3.0.0 source snapshot.
+  - **v3.0.0 DOI `10.5281/zenodo.20468727`** — version-specific citing DOI for v3.0.0 (reserved on Zenodo; embedded in source and PDFs).
+  - Concept DOI `10.5281/zenodo.19473697` — all-versions DOI; resolves to the latest published version.
   - **v2.0.2 DOI `10.5281/zenodo.20433053`** — recorded as the *previous published* version DOI.
   - **v2.0.1 DOI `10.5281/zenodo.20419874`** — recorded as an *earlier published* version DOI.
   - **v2.0.0 DOI `10.5281/zenodo.20418539`** — recorded as an *earlier published* version DOI.

@@ -3,17 +3,12 @@
 Each generated PDF in the Owl Semaphore release embeds a single-line
 ``BANNER-TUPLE :: ...`` string on its title page that names the state, the
 operator/transform, the determinant, the coordinate mapping, the canonical
-quote, the version, the v3.0.0 citing DOI, the concept DOI (all-versions),
-and the previous-published version DOI (v2.0.2).
+quote, the version, the v3.0.0 version-specific DOI, the concept DOI
+(all-versions), and the previous-published version DOI (v2.0.2).
 
-At the v3.0.0 source snapshot the version-specific DOI has not yet been
-reserved on Zenodo, so the citing DOI embedded as VERSION-DOI is the concept
-DOI (the durable all-versions DOI that resolves to the latest published
-version) rather than an invented or placeholder version DOI. When the
-v3.0.0 version DOI is reserved, the operator sets ``VERSION_DOI`` in
-``generate_pdfs.py`` (and the constant below) to the reserved value and
-re-runs ``make pdfs hashes manifest test`` as a single controlled step; see
-``RELEASE-PROCESS.md`` §1.
+The v3.0.0 version-specific DOI is reserved on Zenodo and embedded as the
+citing DOI (VERSION-DOI) in every PDF banner tuple. The concept DOI is the
+durable all-versions DOI that resolves to the latest published version.
 
 This test extracts page-one text from each PDF via ``pdftotext -layout`` and
 verifies that the banner tuple is present and that every expected field is
@@ -38,11 +33,9 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 VERSION = "v3.0.0"
 CONCEPT_DOI = "10.5281/zenodo.19473697"
-# Citing DOI embedded as VERSION-DOI in the v3.0.0 source snapshot. Until the
-# v3.0.0 version-specific DOI is reserved on Zenodo, this is the concept DOI
-# (see module docstring and RELEASE-PROCESS.md §1). When the version DOI is
-# reserved, set this and generate_pdfs.py's VERSION_DOI to the reserved value.
-VERSION_DOI = CONCEPT_DOI
+# v3.0.0 version-specific DOI, reserved on Zenodo and embedded as VERSION-DOI
+# in every PDF banner tuple. Must match generate_pdfs.py's VERSION_DOI.
+VERSION_DOI = "10.5281/zenodo.20468727"
 PREVIOUS_VERSION_DOI = "10.5281/zenodo.20433053"  # v2.0.2 (previous published)
 
 # (state, transform substring, det sign, mapping substring, quote, pdf filename)

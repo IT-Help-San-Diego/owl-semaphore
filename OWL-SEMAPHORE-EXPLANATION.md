@@ -256,7 +256,8 @@ The Owl Semaphore marks the **state of thought before action**. It is the visibl
 - DNS Tool confidence framework: https://dnstool.it-help.tech/confidence
 - DNS Tool corpus (where Owl Semaphore functions as the live legend): https://dnstool.it-help.tech/corpus
 - DNS Tool publications: https://dnstool.it-help.tech/publications
-- Concept DOI (all versions, resolves to the latest published version; the citing DOI for the v3.0.0 source snapshot until the v3.0.0 version-specific DOI is reserved on Zenodo): https://doi.org/10.5281/zenodo.19473697
+- Version-specific DOI (v3.0.0; the citing DOI for this release, reserved on Zenodo): https://doi.org/10.5281/zenodo.20468727
+- Concept DOI (all versions, resolves to the latest published version): https://doi.org/10.5281/zenodo.19473697
 - Previous published version DOI (v2.0.2): https://doi.org/10.5281/zenodo.20433053
 - Earlier published version DOI (v2.0.1): https://doi.org/10.5281/zenodo.20419874
 - Earlier published version DOI (v2.0.0): https://doi.org/10.5281/zenodo.20418539

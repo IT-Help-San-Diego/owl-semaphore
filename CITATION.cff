@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use the Owl Semaphore system, please cite the concept DOI 10.5281/zenodo.19473697, which resolves to the latest published version. The previous published version DOI (v2.0.2) is 10.5281/zenodo.20433053; earlier published version DOIs (v2.0.1, v2.0.0, v1.2.0) are 10.5281/zenodo.20419874, 10.5281/zenodo.20418539, and 10.5281/zenodo.19474599 respectively. The v3.0.0 version-specific DOI is reserved on Zenodo as a single controlled release step (see RELEASE-PROCESS.md); until then the concept DOI is the citing DOI for the v3.0.0 source snapshot."
+message: "If you use the Owl Semaphore system, please cite the version-specific DOI 10.5281/zenodo.20468727 (v3.0.0), or the concept DOI 10.5281/zenodo.19473697, which resolves to the latest published version. The previous published version DOI (v2.0.2) is 10.5281/zenodo.20433053; earlier published version DOIs (v2.0.1, v2.0.0, v1.2.0) are 10.5281/zenodo.20419874, 10.5281/zenodo.20418539, and 10.5281/zenodo.19474599 respectively."
 title: "Owl Semaphore Badge System"
 type: software
 authors:
@@ -11,11 +11,14 @@ date-released: 2026-05-30
 license: "CC-BY-4.0"
 repository-code: "https://github.com/IT-Help-San-Diego/owl-semaphore"
 url: "https://github.com/IT-Help-San-Diego/owl-semaphore"
-doi: "10.5281/zenodo.19473697"
+doi: "10.5281/zenodo.20468727"
 identifiers:
   - type: doi
+    value: "10.5281/zenodo.20468727"
+    description: "Version-specific DOI for v3.0.0 of the Owl Semaphore Badge System, reserved on Zenodo."
+  - type: doi
     value: "10.5281/zenodo.19473697"
-    description: "Concept DOI (all versions) for the Owl Semaphore Badge System. Resolves to the latest published version and is the citing DOI for the v3.0.0 source snapshot until the v3.0.0 version-specific DOI is reserved on Zenodo."
+    description: "Concept DOI (all versions) for the Owl Semaphore Badge System. Resolves to the latest published version."
   - type: doi
     value: "10.5281/zenodo.20433053"
     description: "Previously published version DOI (v2.0.2), retained for citation continuity."
@@ -51,4 +54,4 @@ preferred-citation:
   license: "CC-BY-4.0"
   repository-code: "https://github.com/IT-Help-San-Diego/owl-semaphore"
   url: "https://github.com/IT-Help-San-Diego/owl-semaphore"
-  doi: "10.5281/zenodo.19473697"
+  doi: "10.5281/zenodo.20468727"

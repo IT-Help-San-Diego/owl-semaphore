@@ -9,46 +9,37 @@ without any post-release source-side reapplication, without transient
 markers in canonical source or PDFs, and without producing a duplicate
 Zenodo record via GitHub auto-ingest.
 
-> **v3.0.0 status (single controlled DOI step).** The v3.0.0 source
-> snapshot does **not** invent or guess a version-specific DOI. Until the
-> v3.0.0 version DOI is reserved on Zenodo, the **concept DOI
-> `10.5281/zenodo.19473697`** (all-versions; resolves to the latest
-> published version) is the citing DOI embedded in `generate_pdfs.py`,
-> the PDFs, `CITATION.cff`, `.zenodo.json`, `README.md`, and the
-> CHANGELOG release block. Reserving the v3.0.0 DOI and swapping it in is
-> a **single controlled step**, described in §0 below: reserve the DOI on
-> a Zenodo new-version draft, set `VERSION_DOI` in `generate_pdfs.py` and
-> the matching constant in `tests/test_banner_tuple.py` to the reserved
-> value, and re-run `make pdfs hashes manifest test` once. Because the
-> concept DOI is a real, resolvable DOI, every artifact in the v3.0.0
-> source snapshot is already citable and free of transient markers before
-> that step is performed.
+> **v3.0.0 status (DOI reserved and embedded).** The v3.0.0
+> version-specific DOI **`10.5281/zenodo.20468727`** has been reserved on
+> a Zenodo new-version draft of the concept record and is embedded as the
+> citing DOI in `generate_pdfs.py`, the PDFs, `CITATION.cff`,
+> `.zenodo.json`, `README.md`, and the CHANGELOG release block. The
+> concept DOI `10.5281/zenodo.19473697` (all-versions; resolves to the
+> latest published version) is preserved as the durable cross-version
+> citation target. The reserve-and-swap controlled step (§0 below) is
+> **complete**; the only remaining DOI-related action is to upload the
+> released files to the reserved Zenodo draft
+> (`https://zenodo.org/uploads/20468727`) and publish it (§4).
 
 ---
 
-## 0. v3.0.0 single controlled DOI step (reserve + swap)
+## 0. v3.0.0 controlled DOI step (reserve + swap) — COMPLETE
 
-This is the only DOI-related action outstanding for v3.0.0, and it is
-deliberately isolated so it can be done in one pass with no other source
-edits:
+This controlled step has been performed for v3.0.0. It is recorded here
+for provenance:
 
-1. On Zenodo, create a *new-version* draft of the concept record
-   (concept DOI `10.5281/zenodo.19473697`) and **reserve** the v3.0.0
-   version DOI. Record the draft URL and reserved DOI.
-2. Set the reserved DOI as `VERSION_DOI` in `generate_pdfs.py` (replacing
-   the line that currently sets `VERSION_DOI = CONCEPT_DOI`) and set
-   `VERSION_DOI` in `tests/test_banner_tuple.py` to the same reserved
-   value.
-3. Run `make pdfs hashes manifest test` once. The banner-tuple test will
-   then assert the reserved version DOI; the forbidden-token test
-   continues to pass because a real DOI is not a transient marker.
-4. Proceed with the tag + publish steps in §4, treating the reserved
-   v3.0.0 DOI exactly as §1–§4 describe the version-specific DOI.
-
-If this step is **not** performed before release, the release is still
-internally consistent: the concept DOI is the citing DOI everywhere, and
-it resolves to the latest published version. The reserve+swap simply
-upgrades the citing DOI from the concept DOI to the v3.0.0-specific DOI.
+1. On Zenodo, a *new-version* draft of the concept record (concept DOI
+   `10.5281/zenodo.19473697`) was created and the v3.0.0 version DOI
+   **`10.5281/zenodo.20468727`** was reserved. Draft URL:
+   `https://zenodo.org/uploads/20468727`.
+2. The reserved DOI was set as `VERSION_DOI` in `generate_pdfs.py` and as
+   the matching constant in `tests/test_banner_tuple.py`.
+3. `make pdfs hashes manifest test` was re-run once. The banner-tuple test
+   asserts the reserved version DOI; the forbidden-token test passes
+   because a real DOI is not a transient marker.
+4. The remaining action is the tag + publish steps in §4: upload the
+   released files into the same Zenodo draft the DOI was reserved on, then
+   publish that draft.
 
 The process has three halves:
 

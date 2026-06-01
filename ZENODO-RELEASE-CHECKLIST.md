@@ -77,7 +77,7 @@
 
 > **Convention (effective v2.0.2).** The release-specific version DOI is **reserved on Zenodo before the release** by creating a Zenodo new-version record for the concept DOI and capturing the reserved version DOI from that record. The reserved version DOI is then embedded directly into source files, PDFs, and metadata so the exact version DOI appears inside every published artifact. The same Zenodo new-version record is published from the Zenodo UI after the GitHub Release is created, so exactly one Zenodo record per release exists. The GitHub-Zenodo auto-ingest path is intentionally side-stepped for this release to avoid producing a duplicate Zenodo record with a different DOI. The full publication recipe lives in `RELEASE-PROCESS.md`.
 
-> **DOI gate for v3.0.0 (single controlled step).** The v3.0.0 source snapshot does **not** invent a version DOI. The **concept DOI `10.5281/zenodo.19473697`** (all-versions; resolves to the latest published version) is the citing DOI embedded everywhere until the v3.0.0 version DOI is reserved. The reserve-and-swap is one controlled step: reserve the v3.0.0 DOI on a Zenodo new-version draft, set `VERSION_DOI` in `generate_pdfs.py` and `tests/test_banner_tuple.py` to the reserved value, then re-run `make pdfs hashes manifest test` once. Final release PDFs must carry a real DOI — the concept DOI before the swap, or the reserved v3.0.0 DOI after it — never a transient marker. See `RELEASE-PROCESS.md` §0.
+> **DOI gate for v3.0.0 (complete).** The v3.0.0 version-specific DOI **`10.5281/zenodo.20468727`** has been reserved on a Zenodo new-version draft of the concept record (`https://zenodo.org/uploads/20468727`) and embedded as the citing DOI everywhere — `generate_pdfs.py`, the regenerated PDFs, `tests/test_banner_tuple.py`, and all metadata. The concept DOI `10.5281/zenodo.19473697` (all-versions; resolves to the latest published version) is preserved as the durable cross-version citation target. Final release PDFs carry the reserved v3.0.0 DOI — never a transient marker. The remaining work is to upload the released files to the reserved draft and publish it. See `RELEASE-PROCESS.md` §0 and §4.
 
 - [x] Zenodo account connected to GitHub
 - [x] repository enabled in Zenodo (and temporarily disabled before the GitHub Release for this release, then re-enabled afterwards, per `RELEASE-PROCESS.md` §4)
@@ -86,8 +86,9 @@
 - [x] earlier published version DOI recorded (v2.0.1): `10.5281/zenodo.20419874`
 - [x] earlier published version DOI recorded (v2.0.0): `10.5281/zenodo.20418539`
 - [x] earlier published version DOI recorded (v1.2.0): `10.5281/zenodo.19474599`
-- [x] v3.0.0 source snapshot cites the concept DOI `10.5281/zenodo.19473697` as the citing DOI (no invented version DOI)
-- [x] Citing DOI embedded in source/PDFs/metadata:
+- [x] v3.0.0 version-specific DOI reserved on Zenodo new-version draft: `10.5281/zenodo.20468727` (draft `https://zenodo.org/uploads/20468727`)
+- [x] Reserved v3.0.0 DOI swapped into `generate_pdfs.py` + `tests/test_banner_tuple.py`, then `make pdfs hashes manifest test` re-run once
+- [x] v3.0.0 version-specific DOI `10.5281/zenodo.20468727` embedded as the citing DOI in source/PDFs/metadata:
   - [x] `README.md`
   - [x] `CITATION.cff`
   - [x] `.zenodo.json`
@@ -96,11 +97,9 @@
   - [x] `INTEGRITY-MANIFEST.md`
   - [x] `generate_pdfs.py` and regenerated PDF page-one banner tuples
   - [x] `tests/test_banner_tuple.py`
-- [ ] v3.0.0 version-specific DOI reserved on Zenodo new-version draft (DOI gate — human step; see `RELEASE-PROCESS.md` §0)
-- [ ] Reserved v3.0.0 DOI swapped into `generate_pdfs.py` + `tests/test_banner_tuple.py`, then `make pdfs hashes manifest test` re-run once
-- [ ] Files matching the merge commit uploaded to the Zenodo new-version record that holds the reserved DOI
-- [ ] Zenodo new-version record published from the Zenodo UI
-- [ ] Zenodo "Versions" tab confirms exactly one v3.0.0 record with the reserved DOI
+- [ ] Files matching the merge commit uploaded to the Zenodo new-version record that holds the reserved DOI `10.5281/zenodo.20468727` (human step; see `RELEASE-PROCESS.md` §4)
+- [ ] Zenodo new-version record published from the Zenodo UI (human step)
+- [ ] Zenodo "Versions" tab confirms exactly one v3.0.0 record with DOI `10.5281/zenodo.20468727`
 
 ## 8. Post-Release
 
