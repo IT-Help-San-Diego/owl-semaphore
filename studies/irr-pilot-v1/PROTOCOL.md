@@ -1,9 +1,17 @@
 # Owl Semaphore — Inter-Rater Reliability Pilot Study (PROTOCOL)
 
 **Study ID:** OS-IRR-PILOT-v1
-**Status:** DRAFT — local-only, **not committed, not pushed**. Review before use.
+**Status:** DRAFT — committed to the repository for review; pre-registration not frozen (no data collected).
 **Addresses:** Reviewer Gap 2 (Empirical Validation). Target: move the empirical claim
 from "design hypothesis" (system spec §12A.2) to a feasibility-grade measurement.
+
+> **Correction (2026-07-23).** The status line above originally read "DRAFT — local-only,
+> **not committed, not pushed**. Review before use." That was inaccurate: this file has been
+> committed and public since commit `52b2ba8` (2026-06-26). The line is amended rather than
+> the file withdrawn — a dated correction preserves provenance better than deletion, and the
+> original wording remains in git history. No study data had been collected as of this
+> correction, so the pre-registered thresholds and methods (§2, §8) are unchanged and remain
+> fixed in advance of data collection.
 
 > **Scope discipline.** This study tests ONE thing: *can independent raters, given only
 > the spec and a codebook, assign the same one of the four states to the same passage
@@ -22,22 +30,32 @@ short codebook, is their agreement reliably above chance?
 - **H0 (null):** Agreement is no better than chance. Population Fleiss' κ ≤ 0.
 - **H1:** Agreement is at least *moderate*. Population Fleiss' κ ≥ 0.41 (Landis & Koch).
 
-This is a **pre-registered** analysis plan: thresholds and methods below are fixed
-*before* any real data is collected. (Pre-registration is the verification-principle move —
-it prevents choosing the favorable statistic after seeing results.)
+This is a **pre-registration draft**: thresholds and methods below are set in advance of
+data collection and are **frozen at the moment data collection begins** (§7 step 0 records
+the freezing commit hash). No data has been collected as of the latest amendment (see the
+Amendment log at the end of this file). (Pre-registration is the verification-principle
+move — it prevents choosing the favorable statistic after seeing results.)
 
 ## 2. Pre-registered success criteria
 
 A **PASS** (feasibility demonstrated, justifies a larger study) requires BOTH:
 
 1. **Fleiss' κ point estimate ≥ 0.41** (at least "moderate"), AND
-2. **lower bound of the 95% bootstrap CI > 0.21** (credibly above "fair").
+2. **lower bound of the 95% bootstrap CI > 0.21** (credibly above chance — the true κ is
+   credibly at least "fair"; 0.21 is the Landis & Koch slight/fair boundary).
 
 - κ ≥ 0.61 (substantial) is the **aspirational** result.
-- κ point estimate 0.21–0.40, or a CI lower bound ≤ 0.21 → **CONDITIONAL**: the codebook
-  needs revision (see §8 confusion analysis) and a re-run, not a larger study.
-- κ ≤ 0.20 → **FAIL**: the state definitions are not operationally separable as written.
-  This is an honest, publishable negative result and a direct signal to revise §4.2 of the spec.
+- **CONDITIONAL** — either **0.21 ≤ κ point estimate < 0.41**, or **κ ≥ 0.41 with a CI lower
+  bound ≤ 0.21**: the codebook needs revision (see §8 confusion analysis) and a re-run, not
+  a larger study.
+- **FAIL** — **κ point estimate < 0.21**: the state definitions are not operationally
+  separable as written. This is an honest, publishable negative result and a direct signal
+  to revise §4.2 of the spec.
+- **UNDEFINED** — κ is not computable (degenerate marginals, e.g. every rating in a single
+  category): inspect the data. An undefined κ is not a FAIL.
+
+The bands partition the outcome space: every computable (κ, CI) result maps to exactly one
+verdict, and the mapping is what `analyze_irr.py` implements.
 
 Reviewer 2 explicitly accepted κ = 0.4–0.6 as sufficient for a *pilot* to demonstrate
 feasibility — so the bar above is calibrated to the review, not invented.
@@ -85,12 +103,17 @@ feasibility — so the bar above is calibrated to the review, not invented.
 
 For a nominal κ with 4 categories and 4 raters, 60 items yields a 95% CI half-width on κ of
 roughly ±0.12–0.15 under moderate agreement (estimated by the bootstrap in `analyze_irr.py`,
-not assumed). That is precise enough to separate "moderate" from "fair/chance," which is all
-a feasibility pilot must do. We are not powering for a tight point estimate — we are powering
-to clear the κ = 0.21 floor with the CONFIDENCE INTERVAL, not just the point estimate.
+not assumed). That is precise enough to place κ credibly above the chance/slight region
+(CI lower bound > 0.21) when true agreement is moderate — which is all a feasibility pilot
+must do. It is **not** precise enough to statistically separate "moderate" from "fair"
+(that boundary is 0.41, and a moderate point estimate's CI will typically overlap the fair
+band). We are not powering for a tight point estimate — we are powering to clear the
+κ = 0.21 floor with the CONFIDENCE INTERVAL, not just the point estimate.
 
 ## 7. Procedure (run order)
 
+0. **Freeze the pre-registration:** record the commit hash of the final pre-data
+   `PROTOCOL.md` + `codebook.md` in `RESULTS.md`. No amendments after this point.
 1. Compiler builds corpus + manifest; computes hashes; freezes the file (record its hash).
 2. Raters complete calibration; record calibration agreement (sanity check only).
 3. Raters code the 60 test passages independently (randomized order).
@@ -106,8 +129,12 @@ to clear the κ = 0.21 floor with the CONFIDENCE INTERVAL, not just the point es
   Krippendorff α disagree by > 0.1, investigate before interpreting.
 - **Per-category κ** (one-vs-rest) for each state — reveals *which* state is unreliable.
 - **Confusion matrix** of rater-pair disagreements — reveals *which pairs* of states get
-  confused (the prediction worth testing: NON-NORMATIVE↔CRITICAL and NORMATIVE↔METACOGNITIVE
-  will confuse most, since each pair shares one of the two binary axes).
+  confused. The prediction worth testing: NON-NORMATIVE↔CRITICAL and NORMATIVE↔METACOGNITIVE
+  will confuse most — these are the two pairs that differ **only on the locus-of-audit axis
+  (Q2)**, and the prediction is that Q2 is the harder judgment. They should confuse more than
+  the stance-adjacent pairs (NORMATIVE↔NON-NORMATIVE, CRITICAL↔METACOGNITIVE, which differ
+  only on Q1), and far more than the diagonal pairs (NORMATIVE↔CRITICAL,
+  NON-NORMATIVE↔METACOGNITIVE, which differ on both axes).
 - **Secondary:** re-run primary κ excluding passages flagged "blended" by ≥ 2 raters.
 
 All computed by the included script — no hand calculation, no spreadsheet.
@@ -157,3 +184,32 @@ A PASS shows the four states are **operationally distinguishable by trained rate
 does NOT show they are the *right* four, that they are *useful*, or that they beat a Likert
 scale. Those remain future work (the spec already concedes this in §12A.2). A pilot's job is
 narrow: prove the categories aren't mush. That is exactly the brick the review says is missing.
+
+---
+
+## Amendment log
+
+All amendments below predate any data collection (none has occurred). Original wording is
+preserved in git history; the pre-registration freezes at §7 step 0.
+
+- **2026-07-23 — provenance:** status line corrected (see the note under the header).
+- **2026-07-23 — §1/§7:** freeze mechanics made explicit (frozen at data-collection start,
+  recorded by commit hash in `RESULTS.md`).
+- **2026-07-23 — §2:** verdict bands restated as a true partition. Previously the
+  CONDITIONAL clause "or a CI lower bound ≤ 0.21" carried no point-estimate qualifier, so
+  every FAIL result also satisfied it, and κ values between the printed band edges (e.g.
+  0.205) were unclassified. The restated bands match what `analyze_irr.py` has always
+  implemented. An explicit UNDEFINED verdict was added for non-computable κ.
+- **2026-07-23 — §2:** the CI-floor gloss "credibly above 'fair'" corrected to "credibly at
+  least 'fair'" — 0.21 is the Landis & Koch slight/fair boundary, not the fair/moderate one.
+- **2026-07-23 — §6:** precision claim corrected: the design separates at-least-fair from
+  slight/chance; it does not statistically separate moderate from fair.
+- **2026-07-23 — §8:** confusion-prediction rationale corrected. "Each pair shares one of
+  the two binary axes" describes four of the six pairs, not the two named; the named pairs
+  are the two that differ only on the locus axis, and the prediction is now stated as
+  "locus is the harder judgment," which does single them out.
+- **2026-07-23 — codebook:** the decision tree and the METACOGNITIVE-vs-CRITICAL tie-breaker
+  previously located CRITICAL at the object level, contradicting the codebook's own 2×2
+  table and the system algebra (CRITICAL = C₂ = σᵥ∘σₕ, the composition of the stance and
+  locus reflections). The locus axis is now defined once and all instruments agree; see the
+  amendment note in `codebook.md`.

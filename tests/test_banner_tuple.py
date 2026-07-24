@@ -6,7 +6,7 @@ operator/transform, the determinant, the coordinate mapping, the canonical
 quote, the version, the v3.0.0 version-specific DOI, the concept DOI
 (all-versions), and the previous-published version DOI (v2.0.2).
 
-The v3.0.0 version-specific DOI is reserved on Zenodo and embedded as the
+The v3.0.0 version-specific DOI is published on Zenodo and embedded as the
 citing DOI (VERSION-DOI) in every PDF banner tuple. The concept DOI is the
 durable all-versions DOI that resolves to the latest published version.
 
@@ -33,7 +33,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 VERSION = "v3.0.0"
 CONCEPT_DOI = "10.5281/zenodo.19473697"
-# v3.0.0 version-specific DOI, reserved on Zenodo and embedded as VERSION-DOI
+# v3.0.0 version-specific DOI, published on Zenodo and embedded as VERSION-DOI
 # in every PDF banner tuple. Must match generate_pdfs.py's VERSION_DOI.
 VERSION_DOI = "10.5281/zenodo.20468727"
 PREVIOUS_VERSION_DOI = "10.5281/zenodo.20433053"  # v2.0.2 (previous published)

@@ -5,7 +5,7 @@
 #
 # Targets:
 #   make sync-assets re-derive assets/ from the canonical gold-masters
-#   make pdfs        regenerate all five PDFs from the .md sources
+#   make pdfs        regenerate all six PDFs from the .md sources
 #   make hashes      recompute SHA-3-512 hashes for release assets + PDFs
 #   make manifest    rewrite generated integrity-manifest blocks from hashes
 #   make test        run integrity tests + study toolkit regression tests
@@ -21,7 +21,7 @@ REPO   := $(CURDIR)
 help:
 	@echo "Owl Semaphore — make targets:"
 	@echo "  make sync-assets  re-derive assets/ from canonical gold-masters"
-	@echo "  make pdfs         regenerate all five PDFs"
+	@echo "  make pdfs         regenerate all six PDFs"
 	@echo "  make hashes       recompute SHA-3-512 hashes -> RELEASE-HASHES.txt"
 	@echo "  make manifest     rewrite integrity-manifest sections from hashes"
 	@echo "  make test         run integrity tests + study toolkit regression tests"

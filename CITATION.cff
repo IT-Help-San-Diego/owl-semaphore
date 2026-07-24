@@ -15,7 +15,7 @@ doi: "10.5281/zenodo.20468727"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.20468727"
-    description: "Version-specific DOI for v3.0.0 of the Owl Semaphore Badge System, reserved on Zenodo."
+    description: "Version-specific DOI for v3.0.0 of the Owl Semaphore Badge System, published on Zenodo 2026-05-31."
   - type: doi
     value: "10.5281/zenodo.19473697"
     description: "Concept DOI (all versions) for the Owl Semaphore Badge System. Resolves to the latest published version."

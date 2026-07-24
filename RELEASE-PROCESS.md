@@ -9,17 +9,18 @@ without any post-release source-side reapplication, without transient
 markers in canonical source or PDFs, and without producing a duplicate
 Zenodo record via GitHub auto-ingest.
 
-> **v3.0.0 status (DOI reserved and embedded).** The v3.0.0
-> version-specific DOI **`10.5281/zenodo.20468727`** has been reserved on
-> a Zenodo new-version draft of the concept record and is embedded as the
-> citing DOI in `generate_pdfs.py`, the PDFs, `CITATION.cff`,
-> `.zenodo.json`, `README.md`, and the CHANGELOG release block. The
-> concept DOI `10.5281/zenodo.19473697` (all-versions; resolves to the
-> latest published version) is preserved as the durable cross-version
-> citation target. The reserve-and-swap controlled step (§0 below) is
-> **complete**; the only remaining DOI-related action is to upload the
-> released files to the reserved Zenodo draft
-> (`https://zenodo.org/uploads/20468727`) and publish it (§4).
+> **v3.0.0 status (DOI published).** The v3.0.0 version-specific DOI
+> **`10.5281/zenodo.20468727`** was reserved on a Zenodo new-version
+> draft of the concept record, embedded as the citing DOI in
+> `generate_pdfs.py`, the PDFs, `CITATION.cff`, `.zenodo.json`,
+> `README.md`, and the CHANGELOG release block, and the Zenodo record
+> was **published on 2026-05-31**
+> (`https://doi.org/10.5281/zenodo.20468727`). The concept DOI
+> `10.5281/zenodo.19473697` (all-versions; resolves to the latest
+> published version) is preserved as the durable cross-version citation
+> target. Both the reserve-and-swap controlled step (§0 below) and the
+> upload + publish step (§4) are **complete** for v3.0.0; no DOI-related
+> actions remain for this release.
 
 ---
 
@@ -37,9 +38,10 @@ for provenance:
 3. `make pdfs hashes manifest test` was re-run once. The banner-tuple test
    asserts the reserved version DOI; the forbidden-token test passes
    because a real DOI is not a transient marker.
-4. The remaining action is the tag + publish steps in §4: upload the
-   released files into the same Zenodo draft the DOI was reserved on, then
-   publish that draft.
+4. The tag + publish steps in §4 were subsequently completed: the
+   released files were uploaded into the same Zenodo draft the DOI was
+   reserved on, and that draft was published on 2026-05-31. The DOI now
+   resolves to the live v3.0.0 record.
 
 The process has three halves:
 

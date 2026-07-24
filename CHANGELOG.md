@@ -8,6 +8,26 @@ Each release entry records the **canonical formal sentence used in that release*
 
 ---
 
+## [Unreleased]
+
+Changes on `main` since the `v3.0.0` tag. These are repository-side additions and post-publication documentation corrections; none of them alter the released v3.0.0 artifacts, the V₄ algebra, the canonical state-operator tuples, or the approved asset set. The v3.0.0 release block below is preserved verbatim as the historical record of the release as shipped.
+
+### Added
+
+- **IRR pilot study toolkit** (`studies/irr-pilot-v1/`): pre-registration protocol, rater codebook, `analyze_irr.py` (Fleiss' κ with bootstrap CI), example ratings CSV, and regression tests wired into `make test` via the new `make test-studies` target.
+- **`AGENTS.md`** — repository governance and agent guardrails, with a `.hermes.md` symlink pointing at it.
+- `.gitignore` rules for local-only research artifacts.
+
+### Changed (post-publication corrections)
+
+- **DOI status language updated to published.** The v3.0.0 Zenodo record [10.5281/zenodo.20468727](https://doi.org/10.5281/zenodo.20468727) was published on 2026-05-31; `README.md`, `CITATION.cff`, `.zenodo.json`, `RELEASE-PROCESS.md`, `ZENODO-RELEASE-CHECKLIST.md`, `INTEGRITY-MANIFEST.md`, and code comments in `generate_pdfs.py` / `tests/test_banner_tuple.py` no longer describe the DOI as reserved-but-unpublished.
+- **`LICENSE` now carries the full CC BY 4.0 legal code** (previously a one-line reference, which GitHub/Zenodo license auto-detection could not recognize). The license itself is unchanged: CC BY 4.0.
+- **PDF count corrected from five to six** (system spec + explanation + four state specs) in `generate_pdfs.py`, the `Makefile`, `scripts/compute_hashes.py`, and `README.md`.
+- **Integrity manifest unified to one generated hash source.** `scripts/update_manifest.py` now rewrites the §11.1 per-file `sha3_512:` values from `RELEASE-HASHES.txt` in addition to the generated block, and a stray, stale "METACOGNITIVE STANDARD (ADDED)" hash block was removed from `INTEGRITY-MANIFEST.md`.
+- `RELEASE-HASHES.txt` and the manifest hash records re-stamped for the post-tag state of the tracked markdown/metadata files (PDF and asset hashes unchanged; the released v3.0.0 hashes remain recorded at the `v3.0.0` tag and in the Zenodo record).
+- **IRR protocol provenance correction.** `studies/irr-pilot-v1/PROTOCOL.md` carried a status line reading "local-only, not committed, not pushed" although the file has been committed and public since `52b2ba8` (2026-06-26). The status line is amended with a dated correction note rather than the file withdrawn; no study data had been collected.
+- **IRR pilot pre-data scientific amendments (2026-07-23, before any data collection; full detail in PROTOCOL.md's Amendment log).** An adversarial review of the study toolkit surfaced and fixed: §2 verdict bands that did not partition the outcome space (every FAIL also satisfied the literal CONDITIONAL clause; band-edge gaps; now matches what `analyze_irr.py` implements, plus an explicit UNDEFINED verdict); two mislabeled Landis–Koch boundary glosses (§2, §6 — 0.21 is the slight/fair boundary, not fair/moderate); an under-determined §8 confusion-prediction rationale (restated as "the two pairs differing only on the locus axis"); a codebook decision tree and tie-breaker that located CRITICAL at the object level, contradicting the codebook's own 2×2 table and the C₂ = σᵥ∘σₕ composition (locus axis now defined once; all instruments agree); a study README that misstated the §8 prediction and presented uniform-noise synthetic runs as confirming it (they verify bookkeeping only); and two toolkit hardenings — `analyze_irr.py` now enforces the fully-crossed schema (malformed merges fail loudly instead of computing a silently wrong κ) and reports UNDEFINED for non-computable κ, both covered by new regression tests.
+
 <!-- BEGIN v3.0.0 RELEASE BLOCK -->
 
 ## [v3.0.0] — structural and scientific remediation release

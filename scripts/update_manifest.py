@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
-"""Update the generated section of INTEGRITY-MANIFEST.md (v3.0.0).
+"""Update the generated sections of INTEGRITY-MANIFEST.md (v3.0.0).
 
-Reads RELEASE-HASHES.txt (produced by scripts/compute_hashes.py) and rewrites
-the block between the markers ``<!-- BEGIN GENERATED HASHES -->`` and
-``<!-- END GENERATED HASHES -->`` in INTEGRITY-MANIFEST.md so that the manifest
-always reflects the current hash output. If the markers are missing, the block
-is appended at the end of the manifest.
+Reads RELEASE-HASHES.txt (produced by scripts/compute_hashes.py) and rewrites:
+
+  1. the block between the markers ``<!-- BEGIN GENERATED HASHES -->`` and
+     ``<!-- END GENERATED HASHES -->`` (appended at the end of the manifest
+     if the markers are missing), and
+  2. the ``sha3_512:`` field of every §11.1 per-file record whose ``path:``
+     appears in RELEASE-HASHES.txt,
+
+so that RELEASE-HASHES.txt is the single source of truth for every hash
+value in the manifest.
 """
 
 from __future__ import annotations
@@ -64,10 +69,28 @@ def main() -> int:
             manifest_text += "\n"
         new_manifest = manifest_text + "\n" + block
 
+    # Rewrite the sha3_512 field of each per-file record (§11.1) from the
+    # same hash source. Records use the canonical format from §10:
+    #   - path: <path>
+    #     ...
+    #     sha3_512: <digest>
+    updated_records = 0
+    for path, digest in parsed:
+        pattern = (
+            r"(?m)(- path: "
+            + re.escape(path)
+            + r"\n(?:  \S[^\n]*\n)*?  sha3_512: )[0-9a-f]{128}"
+        )
+        new_manifest, n = re.subn(pattern, r"\g<1>" + digest, new_manifest)
+        updated_records += n
+
     with open(MANIFEST, "w") as f:
         f.write(new_manifest)
 
-    print(f"Wrote {MANIFEST} (with {len(parsed)} hash entries)")
+    print(
+        f"Wrote {MANIFEST} "
+        f"({len(parsed)} generated-block entries, {updated_records} per-file records updated)"
+    )
     return 0
 
 

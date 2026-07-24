@@ -68,6 +68,31 @@ def main():
     if (hi_l - lo_l) >= (hi_s - lo_s):
         fails.append("CI did not narrow with more passages")
 
+    # 7. Fully-crossed schema enforced: duplicate / missing ratings raise, valid data passes
+    good = [(f"P{i:03d}", r, STATES[i % 4], 0) for i in range(5) for r in raters]
+    try:
+        A.validate(good)
+    except ValueError:
+        fails.append("validate() rejected a valid fully-crossed dataset")
+    for bad, label in ((good + [good[0]], "a duplicate (passage, rater) row"),
+                       (good[:-1], "a missing rating")):
+        try:
+            A.validate(bad)
+            fails.append(f"validate() accepted {label}")
+        except ValueError:
+            pass
+
+    # 8. Verdict bands partition per PROTOCOL section 2; NaN kappa is UNDEFINED, not FAIL
+    nan = float("nan")
+    expected = [((0.50, 0.30), "PASS"), ((0.41, 0.22), "PASS"),
+                ((0.50, 0.15), "CONDITIONAL"), ((0.30, 0.10), "CONDITIONAL"),
+                ((0.21, 0.05), "CONDITIONAL"), ((0.205, 0.05), "FAIL"),
+                ((0.10, -0.05), "FAIL"), ((nan, nan), "UNDEFINED")]
+    for (kv, lov), want in expected:
+        got = A.verdict(kv, lov)
+        if got != want:
+            fails.append(f"verdict({kv}, {lov}) = {got}, expected {want}")
+
     if fails:
         print("FAIL:")
         for f in fails:

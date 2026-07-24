@@ -2,7 +2,7 @@
 """
 Generate publication-grade PDFs for the Owl Semaphore system (v3.0.0).
 
-Produces, with one command, five PDFs:
+Produces, with one command, six PDFs:
   - OWL-SEMAPHORE-SYSTEM.pdf
   - OWL-SEMAPHORE-EXPLANATION.pdf
   - OWL-1-NORMATIVE.pdf
@@ -44,10 +44,10 @@ REPO = os.path.dirname(os.path.abspath(__file__))
 # ── Project-wide metadata (v3.0.0) ──────────────────────────────────────────
 #
 # DOI strategy for the v3.0.0 release. v3.0.0 is a structural / scientific
-# remediation release. The v3.0.0 version-specific DOI has been reserved on
-# Zenodo (new-version draft of the concept record) and is embedded here as
-# the citing DOI for the release, so it appears inside every PDF banner
-# tuple, footer, and metadata file. The concept DOI is preserved separately
+# remediation release. The v3.0.0 version-specific DOI was reserved on
+# Zenodo (new-version draft of the concept record), embedded here as the
+# citing DOI for the release so it appears inside every PDF banner tuple,
+# footer, and metadata file, and published on Zenodo on 2026-05-31. The concept DOI is preserved separately
 # as the durable all-versions DOI that resolves to the latest published
 # version.
 #
@@ -60,7 +60,7 @@ AUTHOR = "Carey James Balboa"
 ORCID = "0009-0000-5237-9065"
 REPO_URL = "github.com/IT-Help-San-Diego/owl-semaphore"
 CONCEPT_DOI = "10.5281/zenodo.19473697"  # all-versions concept DOI (resolves to latest)
-VERSION_DOI = "10.5281/zenodo.20468727"  # v3.0.0 version-specific DOI (reserved on Zenodo)
+VERSION_DOI = "10.5281/zenodo.20468727"  # v3.0.0 version-specific DOI (published on Zenodo)
 CITING_DOI = VERSION_DOI
 PREVIOUS_VERSION_DOI = "10.5281/zenodo.20433053"  # v2.0.2 (previous published)
 PRIOR_V201_DOI = "10.5281/zenodo.20419874"  # v2.0.1 (earlier published)
