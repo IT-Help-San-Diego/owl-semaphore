@@ -8,9 +8,36 @@ Each release entry records the **canonical formal sentence used in that release*
 
 ---
 
-## [Unreleased]
+<!-- BEGIN v3.0.1 RELEASE BLOCK -->
 
-Changes on `main` since the `v3.0.0` tag. These are repository-side additions and post-publication documentation corrections; none of them alter the released v3.0.0 artifacts, the V₄ algebra, the canonical state-operator tuples, or the approved asset set. The v3.0.0 release block below is preserved verbatim as the historical record of the release as shipped.
+## [v3.0.1] — errata and toolchain release
+
+> v3.0.1 is a **PATCH-level errata release** on top of v3.0.0. It inserts one clarifying sentence into System §4A.1 (the locus-of-audit axis), switches PDF generation to the parity-proven `owl-semaphore-press` package, and folds in the repository-side additions and post-publication documentation corrections accumulated on `main` since the v3.0.0 tag. **No change** to the V₄ algebra, the four canonical state-operator tuples, the σₕ assignment to METACOGNITIVE, the canonical formal sentence, the accessibility rule, the color/orientation semantics, or the approved asset set.
+
+**Canonical formal sentence (this release, unchanged from v2.0.0):**
+> *A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants.*
+
+**Canonical operational sentence (unchanged):** *A four-state visual system for marking how a claim, document, dataset, or finding should be evaluated before belief, challenge, or action.*
+
+**Canonical human sentence (unchanged):** *Four owls tell the reader what kind of thinking they are looking at: standard, exploration, inversion, or self-audit.*
+
+**Version-specific DOI (v3.0.1):** [10.5281/zenodo.21524422](https://doi.org/10.5281/zenodo.21524422) — reserved on Zenodo and embedded as the citing DOI in source, PDFs, and metadata, so the exact version DOI appears inside every published artifact. No transient DOI markers appear anywhere in the corpus.
+**Concept DOI (all versions):** [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697) — resolves to the latest published version.
+**Previous published version DOI (v3.0.0):** [10.5281/zenodo.20468727](https://doi.org/10.5281/zenodo.20468727)
+**Earlier published version DOI (v2.0.2):** [10.5281/zenodo.20433053](https://doi.org/10.5281/zenodo.20433053)
+**Earlier published version DOI (v2.0.1):** [10.5281/zenodo.20419874](https://doi.org/10.5281/zenodo.20419874)
+**Earlier published version DOI (v2.0.0):** [10.5281/zenodo.20418539](https://doi.org/10.5281/zenodo.20418539)
+**Earlier published version DOI (v1.2.0):** [10.5281/zenodo.19474599](https://doi.org/10.5281/zenodo.19474599)
+
+### Changed (errata, normative)
+
+- **§4A.1 locus-axis clarifying sentence.** One sentence inserted into the "Distinction 2 — locus of audit (object vs. frame)" bullet of `OWL-SEMAPHORE-SYSTEM.md` §4A.1, defining the frame pole as the premises, method, or evaluative assumptions under which a claim is judged — one's own frame, audited at METACOGNITIVE (the pure σₕ move), or the framework the claim rests on, inverted at CRITICAL (C₂ = σᵥ∘σₕ). This mirrors the harmonized IRR codebook Q2 wording so the specification and the study instruments define the locus axis identically. No change to the algebra, the state definitions, or any canonical tuple.
+
+### Changed (toolchain)
+
+- **PDF generation now drives the [`owl-semaphore-press`](https://github.com/IT-Help-San-Diego/owl-semaphore-press) package (pinned 0.1.0).** The Owl Semaphore design language (state colors, letter-spaced labels, per-page owl headers, banner tuple, title page with DOI block, contact sheet, classification-ledger back page) was extracted from the legacy `generate_pdfs.py` into the package, with a byte-identical Typst-source parity test proving the extraction faithful. `generate_pdfs.py` is now a thin driver that supplies the release identity (version stamp and DOI family) and renders the six canonical documents through the package; the renderer identity + version are stamped in each PDF's Creator metadata as provenance. This repository remains the normative source of the design language.
+
+The entries below are the repository-side additions and post-publication documentation corrections accumulated on `main` since the v3.0.0 tag, folded into this release. None of them alter the released v3.0.0 artifacts, the V₄ algebra, the canonical state-operator tuples, or the approved asset set. The v3.0.0 release block below is preserved verbatim as the historical record of the release as shipped.
 
 ### Added
 
@@ -27,6 +54,8 @@ Changes on `main` since the `v3.0.0` tag. These are repository-side additions an
 - `RELEASE-HASHES.txt` and the manifest hash records re-stamped for the post-tag state of the tracked markdown/metadata files (PDF and asset hashes unchanged; the released v3.0.0 hashes remain recorded at the `v3.0.0` tag and in the Zenodo record).
 - **IRR protocol provenance correction.** `studies/irr-pilot-v1/PROTOCOL.md` carried a status line reading "local-only, not committed, not pushed" although the file has been committed and public since `52b2ba8` (2026-06-26). The status line is amended with a dated correction note rather than the file withdrawn; no study data had been collected.
 - **IRR pilot pre-data scientific amendments (2026-07-23, before any data collection; full detail in PROTOCOL.md's Amendment log).** An adversarial review of the study toolkit surfaced and fixed: §2 verdict bands that did not partition the outcome space (every FAIL also satisfied the literal CONDITIONAL clause; band-edge gaps; now matches what `analyze_irr.py` implements, plus an explicit UNDEFINED verdict); two mislabeled Landis–Koch boundary glosses (§2, §6 — 0.21 is the slight/fair boundary, not fair/moderate); an under-determined §8 confusion-prediction rationale (restated as "the two pairs differing only on the locus axis"); a codebook decision tree and tie-breaker that located CRITICAL at the object level, contradicting the codebook's own 2×2 table and the C₂ = σᵥ∘σₕ composition (locus axis now defined once; all instruments agree); a study README that misstated the §8 prediction and presented uniform-noise synthetic runs as confirming it (they verify bookkeeping only); and two toolkit hardenings — `analyze_irr.py` now enforces the fully-crossed schema (malformed merges fail loudly instead of computing a silently wrong κ) and reports UNDEFINED for non-computable κ, both covered by new regression tests.
+
+<!-- END v3.0.1 RELEASE BLOCK -->
 
 <!-- BEGIN v3.0.0 RELEASE BLOCK -->
 

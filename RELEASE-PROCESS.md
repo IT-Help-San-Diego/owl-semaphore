@@ -9,6 +9,21 @@ without any post-release source-side reapplication, without transient
 markers in canonical source or PDFs, and without producing a duplicate
 Zenodo record via GitHub auto-ingest.
 
+> **v3.0.1 status (DOI reserved; upload + publish remain).** The v3.0.1
+> version-specific DOI **`10.5281/zenodo.21524422`** was reserved on a
+> Zenodo new-version draft of the concept record via
+> `owl-press zenodo new-version` (draft URL:
+> `https://zenodo.org/deposit/21524422`) and embedded as the citing DOI
+> in `generate_pdfs.py` (as of v3.0.1 a thin driver over the
+> `owl-semaphore-press` package), the PDFs, `CITATION.cff`,
+> `.zenodo.json`, `README.md`, `OWL-SEMAPHORE-EXPLANATION.md`, the
+> CHANGELOG release block, and the banner-tuple test. The §4 steps for
+> v3.0.1 — tag at the merge commit, GitHub Release, upload the released
+> files into draft 21524422 (`owl-press zenodo upload 21524422 <files>
+> --fresh`), publish (`owl-press zenodo publish 21524422 --yes`), and
+> verify exactly one Zenodo record — are performed after the
+> release-prep PR merges.
+
 > **v3.0.0 status (DOI published).** The v3.0.0 version-specific DOI
 > **`10.5281/zenodo.20468727`** was reserved on a Zenodo new-version
 > draft of the concept record, embedded as the citing DOI in
