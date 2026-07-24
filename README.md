@@ -3,23 +3,24 @@
 # OWL SEMAPHORE — SYSTEM SPECIFICATION
 A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants.
 
-## Version 3.0.0
+## Version 3.0.1
 
-> **Version notice.** v3.0.0 is a structural and scientific remediation release on top of v2.0.2 — **not a visual redesign.** It adds a normative *Formal Justification for the V₄ Structure* (why exactly four states and not two, three, six, or eight — closure under composition forces the fourth state; why the Klein four-group rather than the cyclic group C₄ or a non-abelian group; why an operator algebra rather than a continuous scale or a flat label taxonomy; with a comparison table), a normative *Limitations and Scope Boundaries* section (four-state coarseness, no empirical validation yet, cultural-specificity / semantic-interpretation risk), an *Exclusion Argument* and explicit use-boundary / ethics guidance in the explanation, and per-state bridge paragraphs and limitations notes in the four owl specifications. **It does not change the V₄ algebra, the four canonical state-operator tuples, the σₕ assignment for METACOGNITIVE, the canonical formal sentence, the accessibility rule, the color/orientation semantics, or the approved asset set.** The v3.0.0 version-specific DOI [10.5281/zenodo.20468727](https://doi.org/10.5281/zenodo.20468727) is published on Zenodo (2026-05-31) and embedded as the citing DOI throughout the v3.0.0 source, PDFs, and metadata; the concept DOI [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697) is the all-versions DOI that resolves to the latest published version.
+> **Version notice.** v3.0.1 is a **PATCH-level errata and toolchain release** on top of v3.0.0. It inserts one clarifying sentence into System §4A.1 defining the locus-of-audit axis's frame pole (one's own frame, audited at METACOGNITIVE, or the framework a claim rests on, inverted at CRITICAL) so the specification and the IRR study instruments define the axis identically, switches PDF generation to the parity-proven [`owl-semaphore-press`](https://github.com/IT-Help-San-Diego/owl-semaphore-press) package, and folds in the repository-side additions and post-publication documentation corrections accumulated since the v3.0.0 tag (see [`CHANGELOG.md`](CHANGELOG.md)). **It does not change the V₄ algebra, the four canonical state-operator tuples, the σₕ assignment for METACOGNITIVE, the canonical formal sentence, the accessibility rule, the color/orientation semantics, or the approved asset set.** The v3.0.1 version-specific DOI [10.5281/zenodo.21524422](https://doi.org/10.5281/zenodo.21524422) is reserved on Zenodo and embedded as the citing DOI throughout the v3.0.1 source, PDFs, and metadata; the concept DOI [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697) is the all-versions DOI that resolves to the latest published version.
 
-[![Version DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20468727.svg)](https://doi.org/10.5281/zenodo.20468727)
+[![Version DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21524422.svg)](https://doi.org/10.5281/zenodo.21524422)
 [![Concept DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19473697.svg)](https://doi.org/10.5281/zenodo.19473697)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-- **Version DOI (v3.0.0):** [10.5281/zenodo.20468727](https://doi.org/10.5281/zenodo.20468727) — the version-specific DOI for this release; the citing DOI embedded in the v3.0.0 source, PDFs, and metadata
+- **Version DOI (v3.0.1):** [10.5281/zenodo.21524422](https://doi.org/10.5281/zenodo.21524422) — the version-specific DOI for this release; the citing DOI embedded in the v3.0.1 source, PDFs, and metadata
 - **Concept DOI (all versions):** [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697) — resolves to the latest published version
-- **Previous version DOI (v2.0.2):** [10.5281/zenodo.20433053](https://doi.org/10.5281/zenodo.20433053)
+- **Previous version DOI (v3.0.0):** [10.5281/zenodo.20468727](https://doi.org/10.5281/zenodo.20468727)
+- **Earlier version DOI (v2.0.2):** [10.5281/zenodo.20433053](https://doi.org/10.5281/zenodo.20433053)
 - **Earlier version DOI (v2.0.1):** [10.5281/zenodo.20419874](https://doi.org/10.5281/zenodo.20419874)
 - **Earlier version DOI (v2.0.0):** [10.5281/zenodo.20418539](https://doi.org/10.5281/zenodo.20418539)
 - **Earlier version DOI (v1.2.0):** [10.5281/zenodo.19474599](https://doi.org/10.5281/zenodo.19474599)
 - **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
-## Canonical Sentence Stack (v3.0.0)
+## Canonical Sentence Stack (v3.0.1)
 
 | Layer | Sentence | Use |
 | --- | --- | --- |
@@ -29,7 +30,7 @@ A finite algebra over epistemic states, implemented as a reproducible visual not
 
 See [`CHANGELOG.md`](CHANGELOG.md) for the per-version canonical sentence history.
 
-## The Four States (v3.0.0)
+## The Four States (v3.0.1)
 
 | State | Operator | Determinant | Quote (normative) | Standards register |
 | --- | --- | --- | --- | --- |
@@ -38,7 +39,7 @@ See [`CHANGELOG.md`](CHANGELOG.md) for the per-version canonical sentence histor
 | CRITICAL | C₂ | +1 | *"This inverts the standard."* | RFC 2119 MUST NOT / SHALL NOT |
 | METACOGNITIVE | σₕ | −1 | **"The observer audits the frame."** | Epistemic / Framework (META) |
 
-The METACOGNITIVE phrasing was refined in v2.0.0 and is unchanged through v3.0.0. The earlier line *"This audits the standard"* is deprecated because it failed to express *thinking examining its own frame*. See [`OWL-4-METACOGNITIVE.md`](OWL-4-METACOGNITIVE.md) §1 and [`OWL-SEMAPHORE-EXPLANATION.md`](OWL-SEMAPHORE-EXPLANATION.md) for the warmer explanatory variant *"Thinking examines its own frame."*
+The METACOGNITIVE phrasing was refined in v2.0.0 and is unchanged through v3.0.1. The earlier line *"This audits the standard"* is deprecated because it failed to express *thinking examining its own frame*. See [`OWL-4-METACOGNITIVE.md`](OWL-4-METACOGNITIVE.md) §1 and [`OWL-SEMAPHORE-EXPLANATION.md`](OWL-SEMAPHORE-EXPLANATION.md) for the warmer explanatory variant *"Thinking examines its own frame."*
 
 ## Accessibility — Color Is Not the Only Carrier
 
@@ -46,19 +47,20 @@ Every state's identity is recoverable from three redundant channels: **color + o
 
 ## Citation
 
-If you use the Owl Semaphore Badge System, cite the v3.0.0 version-specific DOI for this exact release, or the concept DOI for cross-version citation (it resolves to the latest published version):
+If you use the Owl Semaphore Badge System, cite the v3.0.1 version-specific DOI for this exact release, or the concept DOI for cross-version citation (it resolves to the latest published version):
 
-> Balboa, Carey James. *Owl Semaphore Badge System* (v3.0.0). Zenodo. https://doi.org/10.5281/zenodo.20468727
+> Balboa, Carey James. *Owl Semaphore Badge System* (v3.0.1). Zenodo. https://doi.org/10.5281/zenodo.21524422
 >
 > Concept DOI (all versions): https://doi.org/10.5281/zenodo.19473697
 >
 > Previously published versions:
 >
+> - Balboa, Carey James. *Owl Semaphore Badge System* (v3.0.0). Zenodo. https://doi.org/10.5281/zenodo.20468727
 > - Balboa, Carey James. *Owl Semaphore Badge System* (v2.0.2). Zenodo. https://doi.org/10.5281/zenodo.20433053
 > - Balboa, Carey James. *Owl Semaphore Badge System* (v2.0.1). Zenodo. https://doi.org/10.5281/zenodo.20419874
 > - Balboa, Carey James. *Owl Semaphore Badge System* (v2.0.0). Zenodo. https://doi.org/10.5281/zenodo.20418539
 
-The version-specific DOI [10.5281/zenodo.20468727](https://doi.org/10.5281/zenodo.20468727) is the citing DOI embedded in the v3.0.0 source, PDFs, and metadata. The concept DOI [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697) is the all-versions DOI for cross-version citation and resolves to the latest published version. Machine-readable citation metadata is in [`CITATION.cff`](CITATION.cff).
+The version-specific DOI [10.5281/zenodo.21524422](https://doi.org/10.5281/zenodo.21524422) is the citing DOI embedded in the v3.0.1 source, PDFs, and metadata. The concept DOI [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697) is the all-versions DOI for cross-version citation and resolves to the latest published version. Machine-readable citation metadata is in [`CITATION.cff`](CITATION.cff).
 
 ## Reproducing the PDFs
 
@@ -70,7 +72,13 @@ make pdfs
 python3 generate_pdfs.py
 ```
 
-`make pdfs` produces page-one banner-tuple-bearing PDFs with embedded PDF metadata (Title, Author, Subject, Keywords, Producer, Version), a contact-sheet header, a classification ledger back page, and per-page owl headers. The pipeline uses pandoc → Typst (via the `typst` Python package). See [`Makefile`](Makefile) for additional targets:
+`make pdfs` produces page-one banner-tuple-bearing PDFs with embedded PDF metadata (Title, Author, Subject, Keywords, Producer, Version), a contact-sheet header, a classification ledger back page, and per-page owl headers. As of v3.0.1 the pipeline drives the parity-proven [`owl-semaphore-press`](https://github.com/IT-Help-San-Diego/owl-semaphore-press) package (pandoc → Typst → PDF); install it pinned, with `pandoc` on PATH:
+
+```bash
+pip install "owl-semaphore-press[render] @ git+https://github.com/IT-Help-San-Diego/owl-semaphore-press@0.1.0"
+```
+
+See [`Makefile`](Makefile) for additional targets:
 
 - `make hashes` — recompute SHA-3-512 hashes for committed PDFs and release assets
 - `make manifest` — rewrite `INTEGRITY-MANIFEST.md` integrity records from current hashes
@@ -192,12 +200,13 @@ NORM-composite-white-540.png
   "@context": "https://schema.org",
   "@type": "SoftwareSourceCode",
   "name": "Owl Semaphore Badge System",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "codeRepository": "https://github.com/IT-Help-San-Diego/owl-semaphore",
   "datePublished": "2026-04-07",
-  "dateModified": "2026-05-30",
+  "dateModified": "2026-07-23",
   "identifier": [
+    "https://doi.org/10.5281/zenodo.21524422",
     "https://doi.org/10.5281/zenodo.20468727",
     "https://doi.org/10.5281/zenodo.19473697",
     "https://doi.org/10.5281/zenodo.20433053",
@@ -205,7 +214,7 @@ NORM-composite-white-540.png
     "https://doi.org/10.5281/zenodo.20418539",
     "https://doi.org/10.5281/zenodo.19474599"
   ],
-  "sameAs": "https://doi.org/10.5281/zenodo.20468727",
+  "sameAs": "https://doi.org/10.5281/zenodo.21524422",
   "programmingLanguage": "Not applicable",
   "author": {
     "@type": "Person",
@@ -225,7 +234,7 @@ NORM-composite-white-540.png
     "metacognition",
     "accessibility"
   ],
-  "releaseNotes": "v3.0.0 — structural and scientific remediation release on top of v2.0.2 (not a visual redesign). Adds a normative Formal Justification for the V4 structure (why four states and not two/three/six/eight; why the Klein four-group rather than C4 or a non-abelian group; why an operator algebra rather than a continuous scale or flat label set; with a comparison table on parsimony, compositionality, constraint-verifiability, transition-modeling, and empirical-tractability); a normative Limitations and Scope Boundaries section (four-state coarseness, no empirical validation yet, cultural-specificity/semantic-interpretation risk); an Exclusion Argument and explicit use-boundary/ethics guidance in the explanation; and per-state bridge paragraphs and limitations notes in the four owl specifications. The V4 algebra, the four canonical state-operator tuples, the σh assignment to METACOGNITIVE, the canonical formal sentence, the accessibility rule, the color/orientation semantics, and the asset set are unchanged from v2.0.2.",
+  "releaseNotes": "v3.0.1 — PATCH-level errata and toolchain release on top of v3.0.0. Inserts one clarifying sentence into System §4A.1 defining the locus-of-audit axis's frame pole (one's own frame, audited at METACOGNITIVE, or the framework a claim rests on, inverted at CRITICAL), so the specification and the IRR study instruments define the axis identically. Switches PDF generation to the parity-proven owl-semaphore-press package (byte-identical Typst-source parity with the legacy generator). Folds in the IRR pilot study toolkit, repository governance documentation, and post-publication documentation corrections accumulated since the v3.0.0 tag. The V4 algebra, the four canonical state-operator tuples, the σh assignment to METACOGNITIVE, the canonical formal sentence, the accessibility rule, the color/orientation semantics, and the asset set are unchanged from v3.0.0.",
   "isAccessibleForFree": true
 }
 </script>

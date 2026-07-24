@@ -1,12 +1,12 @@
-"""Banner-tuple PDF integrity test (v3.0.0).
+"""Banner-tuple PDF integrity test (v3.0.1).
 
 Each generated PDF in the Owl Semaphore release embeds a single-line
 ``BANNER-TUPLE :: ...`` string on its title page that names the state, the
 operator/transform, the determinant, the coordinate mapping, the canonical
-quote, the version, the v3.0.0 version-specific DOI, the concept DOI
-(all-versions), and the previous-published version DOI (v2.0.2).
+quote, the version, the v3.0.1 version-specific DOI, the concept DOI
+(all-versions), and the previous-published version DOI (v3.0.0).
 
-The v3.0.0 version-specific DOI is published on Zenodo and embedded as the
+The v3.0.1 version-specific DOI is reserved on Zenodo and embedded as the
 citing DOI (VERSION-DOI) in every PDF banner tuple. The concept DOI is the
 durable all-versions DOI that resolves to the latest published version.
 
@@ -31,12 +31,12 @@ import unittest
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-VERSION = "v3.0.0"
+VERSION = "v3.0.1"
 CONCEPT_DOI = "10.5281/zenodo.19473697"
-# v3.0.0 version-specific DOI, published on Zenodo and embedded as VERSION-DOI
+# v3.0.1 version-specific DOI, reserved on Zenodo and embedded as VERSION-DOI
 # in every PDF banner tuple. Must match generate_pdfs.py's VERSION_DOI.
-VERSION_DOI = "10.5281/zenodo.20468727"
-PREVIOUS_VERSION_DOI = "10.5281/zenodo.20433053"  # v2.0.2 (previous published)
+VERSION_DOI = "10.5281/zenodo.21524422"
+PREVIOUS_VERSION_DOI = "10.5281/zenodo.20468727"  # v3.0.0 (previous published)
 
 # (state, transform substring, det sign, mapping substring, quote, pdf filename)
 EXPECTED = [
@@ -134,9 +134,9 @@ class BannerTupleTest(unittest.TestCase):
             (_normalize(transform), f"{pdf_name} banner tuple does not report transform {transform}"),
             (_normalize(quote), f"{pdf_name} banner tuple does not contain canonical quote {quote}"),
             (f"VERSION={VERSION}", f"{pdf_name} banner tuple does not report VERSION={VERSION}"),
-            (f"VERSION-DOI={VERSION_DOI}", f"{pdf_name} banner tuple does not report VERSION-DOI={VERSION_DOI} (v3.0.0 citing DOI)"),
+            (f"VERSION-DOI={VERSION_DOI}", f"{pdf_name} banner tuple does not report VERSION-DOI={VERSION_DOI} (v3.0.1 citing DOI)"),
             (f"CONCEPT-DOI={CONCEPT_DOI}", f"{pdf_name} banner tuple does not report CONCEPT-DOI={CONCEPT_DOI}"),
-            (f"PREVIOUS-VERSION-DOI={PREVIOUS_VERSION_DOI}", f"{pdf_name} banner tuple does not report PREVIOUS-VERSION-DOI={PREVIOUS_VERSION_DOI} (v2.0.2)"),
+            (f"PREVIOUS-VERSION-DOI={PREVIOUS_VERSION_DOI}", f"{pdf_name} banner tuple does not report PREVIOUS-VERSION-DOI={PREVIOUS_VERSION_DOI} (v3.0.0)"),
         ):
             self.assertIn(needle, text, message)
         if det is not None:
