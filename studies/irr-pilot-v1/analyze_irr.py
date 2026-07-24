@@ -37,6 +37,28 @@ def interpret(k):
     return "poor"
 
 
+def validate(rows):
+    """Enforce the fully-crossed schema (PROTOCOL §9): every (passage, rater) pair
+    exactly once, every passage rated by every rater. Fleiss' kappa assumes a
+    constant rater count per item, so a malformed merge must fail loudly here
+    rather than yield a silently wrong published statistic."""
+    seen = set()
+    for pid, rid, _state, _bf in rows:
+        key = (pid, rid)
+        if key in seen:
+            raise ValueError(f"duplicate rating for passage {pid!r} by rater {rid!r}")
+        seen.add(key)
+    all_raters = {rid for _pid, rid, _state, _bf in rows}
+    by_pid = defaultdict(set)
+    for pid, rid, _state, _bf in rows:
+        by_pid[pid].add(rid)
+    for pid in sorted(by_pid):
+        missing = sorted(all_raters - by_pid[pid])
+        if missing:
+            raise ValueError(f"passage {pid!r} is missing ratings from {missing} "
+                             "(schema requires fully-crossed data)")
+
+
 def load(path):
     rows = []
     with open(path, newline="", encoding="utf-8") as f:
@@ -46,6 +68,7 @@ def load(path):
                 raise ValueError(f"Unknown state {state!r} for {r['passage_id']}/{r['rater_id']}")
             rows.append((r["passage_id"].strip(), r["rater_id"].strip(),
                          state, int(r.get("blend_flag", "0") or 0)))
+    validate(rows)
     return rows
 
 
@@ -173,6 +196,18 @@ def bootstrap_ci(rows, stat_fn, B=10000, seed=42):
     return (lo, hi)
 
 
+def verdict(k, lo):
+    """Pre-registered verdict bands (PROTOCOL.md §2). The bands partition the
+    outcome space; an uncomputable kappa is UNDEFINED, not FAIL."""
+    if k != k:  # NaN: degenerate marginals (e.g. every rating in one category)
+        return "UNDEFINED"
+    if k >= 0.41 and lo > 0.21:
+        return "PASS"
+    if k >= 0.21:
+        return "CONDITIONAL"
+    return "FAIL"
+
+
 def confusion(rows, passage_subset=None):
     """Unordered pairwise disagreement counts between states across rater pairs."""
     by_passage = defaultdict(list)
@@ -254,14 +289,19 @@ def main():
     print("\n" + "=" * 64)
     print("PRE-REGISTERED VERDICT (PROTOCOL.md §2)")
     print("=" * 64)
-    if k == k and k >= 0.41 and lo > 0.21:
+    v = verdict(k, lo)
+    if v == "PASS":
         print("  PASS — moderate+ agreement, CI clears the 0.21 floor.")
         print("  -> Feasibility demonstrated; justifies a larger study.")
-    elif k == k and k >= 0.21:
+    elif v == "CONDITIONAL":
         print("  CONDITIONAL — fair/moderate but CI does not clear 0.21,")
         print("  or point estimate < 0.41. Revise codebook (see confusion above) and re-run.")
+    elif v == "UNDEFINED":
+        print("  UNDEFINED — kappa is not computable (degenerate marginals,")
+        print("  e.g. every rating in a single category). Inspect the data;")
+        print("  this is not a FAIL.")
     else:
-        print("  FAIL — agreement at/below 'fair'. State definitions are not")
+        print("  FAIL — agreement below 'fair'. State definitions are not")
         print("  operationally separable as written. Honest negative result;")
         print("  revise SYSTEM spec §4.2 before any larger study.")
     print("=" * 64)

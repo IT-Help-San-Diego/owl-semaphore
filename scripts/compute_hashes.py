@@ -5,7 +5,7 @@ Writes RELEASE-HASHES.txt at the repository root, formatted compatibly with
 ``openssl dgst -sha3-512`` output, covering:
 
   - all PNGs under assets/releases/540/
-  - all five generated specification PDFs (when present)
+  - all six generated specification PDFs (when present)
   - the markdown specifications and README and CHANGELOG and EXPLANATION
 
 The output is deterministic (sorted by path) so the hashes file diffs cleanly.

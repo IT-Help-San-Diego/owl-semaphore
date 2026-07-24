@@ -1,5 +1,13 @@
 # Owl Semaphore — Rater Codebook (OS-IRR-PILOT-v1)
 
+> **Amendment (2026-07-23, pre-data).** The decision tree and the METACOGNITIVE-vs-CRITICAL
+> tie-breaker previously located CRITICAL at the object level, contradicting this codebook's
+> own 2×2 table (which places CRITICAL at departs + frame, matching the system algebra:
+> CRITICAL = C₂ = σᵥ∘σₕ). The locus axis (Q2) is now defined once — object vs. frame, where
+> "frame" covers premises/method/assumptions, one's own or the ones the claim rests on — and
+> the tree and tie-breakers follow the table. No data had been collected. Original wording
+> is preserved in git history. See PROTOCOL.md Amendment log.
+
 You will read short passages and assign **exactly one** of four states to each: the *kind of
 epistemic move* the passage is making. You are NOT judging whether the passage is true, good,
 or well-written. You are marking **what sort of thinking it is.**
@@ -17,12 +25,19 @@ Ask these in order. They are the system's two independent axes.
 standard/framework, or *push against / depart from* it?
 
 **Q2 — Locus of audit:** is attention on the **object** (the claim/thing being discussed),
-or turned back on the **evaluator's own frame/method/assumptions** (thinking about the thinking)?
+or on a **frame** — the premises, method, or evaluative assumptions under which the claim
+is judged (one's own frame, or the framework the claim rests on)?
 
 | | Object-level (Q2 = object) | Frame-level (Q2 = frame) |
 |---|---|---|
 | **Upholds standard (Q1 = preserve)** | **NORMATIVE** | **METACOGNITIVE** |
 | **Departs from standard (Q1 = reverse)** | **NON-NORMATIVE** | **CRITICAL** |
+
+Within the frame column, Q1 is what separates the two cells: frame-level attention that
+**upholds** the enterprise is self-audit (METACOGNITIVE — typically one's own method,
+assumptions, limits); frame-level attention that **reverses** stance is adversarial
+inversion of the premises (CRITICAL). This matches the system algebra, where CRITICAL is
+the composition of the stance reflection and the locus reflection (C₂ = σᵥ∘σₕ).
 
 ---
 
@@ -62,20 +77,24 @@ biases, or scope. Upholds the enterprise but audits *how we are judging*.
 
 ## Decision tree (use when unsure)
 
-1. Is the passage mainly examining **its own method/assumptions/limits** (the lens), not the
-   object? → **METACOGNITIVE**. Stop.
-2. Otherwise it's object-level. Is it **attacking/inverting/falsifying** the claim or its
-   premises? → **CRITICAL**. Stop.
-3. Otherwise. Is it **departing from / offering an alternative to** the accepted view, but by
-   accepted methods? → **NON-NORMATIVE**. Stop.
+1. Is the passage's attention on a **frame** — premises, method, or evaluative assumptions
+   (its own or the ones the claim rests on) — rather than on the object-level claim itself?
+   If NO → go to step 3.
+2. Frame-level. Is the move **adversarial** — attacking, inverting, or trying to break the
+   premises/framework? → **CRITICAL**. Or **upholding** — auditing its own method,
+   assumptions, or limits to bound or strengthen the enterprise? → **METACOGNITIVE**. Stop.
+3. Object-level. Is it **departing from / offering an alternative to** the accepted view, but
+   by accepted methods? → **NON-NORMATIVE**. Stop.
 4. Otherwise (it asserts/applies the accepted standard) → **NORMATIVE**.
 
 ## Tie-breakers (predeclared, to keep raters consistent)
 
 - **CRITICAL vs NON-NORMATIVE:** does it want to *replace within the system* (NON-NORMATIVE)
   or *break/invert the system* (CRITICAL)? Intent to demolish → CRITICAL.
-- **METACOGNITIVE vs CRITICAL:** is the target the *author's own frame* (META) or *someone's
-  claim/the external framework* (CRITICAL)? Self-directed audit → METACOGNITIVE.
+- **METACOGNITIVE vs CRITICAL:** both are frame-level; **stance** separates them. Auditing a
+  frame to *bound or strengthen* it (typically one's own method or limits) → **METACOGNITIVE**.
+  Attacking a frame to *break or invert* it (typically the premises the claim rests on)
+  → **CRITICAL**.
 - **NORMATIVE vs METACOGNITIVE:** plain assertion of standard (NORM) vs commentary on the
   adequacy of one's own method (META).
 

@@ -77,7 +77,7 @@
 
 > **Convention (effective v2.0.2).** The release-specific version DOI is **reserved on Zenodo before the release** by creating a Zenodo new-version record for the concept DOI and capturing the reserved version DOI from that record. The reserved version DOI is then embedded directly into source files, PDFs, and metadata so the exact version DOI appears inside every published artifact. The same Zenodo new-version record is published from the Zenodo UI after the GitHub Release is created, so exactly one Zenodo record per release exists. The GitHub-Zenodo auto-ingest path is intentionally side-stepped for this release to avoid producing a duplicate Zenodo record with a different DOI. The full publication recipe lives in `RELEASE-PROCESS.md`.
 
-> **DOI gate for v3.0.0 (complete).** The v3.0.0 version-specific DOI **`10.5281/zenodo.20468727`** has been reserved on a Zenodo new-version draft of the concept record (`https://zenodo.org/uploads/20468727`) and embedded as the citing DOI everywhere — `generate_pdfs.py`, the regenerated PDFs, `tests/test_banner_tuple.py`, and all metadata. The concept DOI `10.5281/zenodo.19473697` (all-versions; resolves to the latest published version) is preserved as the durable cross-version citation target. Final release PDFs carry the reserved v3.0.0 DOI — never a transient marker. The remaining work is to upload the released files to the reserved draft and publish it. See `RELEASE-PROCESS.md` §0 and §4.
+> **DOI gate for v3.0.0 (complete — record published).** The v3.0.0 version-specific DOI **`10.5281/zenodo.20468727`** was reserved on a Zenodo new-version draft of the concept record and embedded as the citing DOI everywhere — `generate_pdfs.py`, the regenerated PDFs, `tests/test_banner_tuple.py`, and all metadata. The released files were uploaded to that draft and the record was **published on 2026-05-31**; the DOI resolves to the live v3.0.0 record. The concept DOI `10.5281/zenodo.19473697` (all-versions; resolves to the latest published version) is preserved as the durable cross-version citation target. Final release PDFs carry the v3.0.0 DOI — never a transient marker. See `RELEASE-PROCESS.md` §0 and §4.
 
 - [x] Zenodo account connected to GitHub
 - [x] repository enabled in Zenodo (and temporarily disabled before the GitHub Release for this release, then re-enabled afterwards, per `RELEASE-PROCESS.md` §4)
@@ -97,9 +97,9 @@
   - [x] `INTEGRITY-MANIFEST.md`
   - [x] `generate_pdfs.py` and regenerated PDF page-one banner tuples
   - [x] `tests/test_banner_tuple.py`
-- [ ] Files matching the merge commit uploaded to the Zenodo new-version record that holds the reserved DOI `10.5281/zenodo.20468727` (human step; see `RELEASE-PROCESS.md` §4)
-- [ ] Zenodo new-version record published from the Zenodo UI (human step)
-- [ ] Zenodo "Versions" tab confirms exactly one v3.0.0 record with DOI `10.5281/zenodo.20468727`
+- [x] Files matching the merge commit uploaded to the Zenodo new-version record that holds the reserved DOI `10.5281/zenodo.20468727` (human step; see `RELEASE-PROCESS.md` §4)
+- [x] Zenodo new-version record published from the Zenodo UI (human step) — published 2026-05-31
+- [x] Zenodo "Versions" tab confirms exactly one v3.0.0 record with DOI `10.5281/zenodo.20468727` (verified via the Zenodo API, 2026-07-23)
 
 ## 8. Post-Release
 

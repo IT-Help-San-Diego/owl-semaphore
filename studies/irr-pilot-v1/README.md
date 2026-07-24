@@ -1,7 +1,9 @@
 # Owl Semaphore — Inter-Rater Reliability Pilot (`irr-pilot-v1`)
 
-This directory is a **self-contained, pre-registered feasibility study** answering the
-single empirical question the peer review says is missing:
+This directory is a **self-contained feasibility study with a pre-registration protocol**
+(thresholds set in advance of data collection; the pre-registration freezes at
+data-collection start — PROTOCOL §7 step 0), answering the single empirical question the
+peer review says is missing:
 
 > *Can independent raters, given only the spec + codebook, assign the same one of the four
 > Owl Semaphore states to the same passage more reliably than chance?*
@@ -42,23 +44,29 @@ python3 analyze_irr.py ratings.example.csv   # see the full output shape
 5. `python3 analyze_irr.py ratings.csv` → paste output verbatim into `RESULTS.md`.
    **Do not edit data after seeing the result.**
 
-## Pre-registered verdict (fixed before data collection)
+## Pre-registered verdict (set in advance; frozen at data-collection start)
 
 | Outcome | Meaning |
 |---|---|
 | **PASS** | κ ≥ 0.41 AND 95% CI lower bound > 0.21 → feasibility shown; justifies larger study |
-| **CONDITIONAL** | κ 0.21–0.40 or CI floor ≤ 0.21 → revise codebook (use confusion matrix), re-run |
-| **FAIL** | κ ≤ 0.20 → states not separable as written; honest negative; revise SYSTEM spec §4.2 |
+| **CONDITIONAL** | 0.21 ≤ κ < 0.41, or κ ≥ 0.41 with CI floor ≤ 0.21 → revise codebook (use confusion matrix), re-run |
+| **FAIL** | κ < 0.21 → states not separable as written; honest negative; revise SYSTEM spec §4.2 |
+| **UNDEFINED** | κ not computable (degenerate marginals) → inspect data; not a FAIL |
 
 ## Validation status of the tooling
 
-`analyze_irr.py` was validated on synthetic data at three known agreement levels before
+`analyze_irr.py` was checked on synthetic data at three known agreement levels before
 release. Point estimates land where they should (κ ≈ 0.79 / 0.47 / 0.06 for high/moderate/
-chance), Krippendorff's α tracks κ within 0.01, and the confusion matrix correctly surfaces
-that NORMATIVE↔NON-NORMATIVE and NORMATIVE↔METACOGNITIVE confuse most under noise — the
-predicted pattern, since each of those pairs differs on only one of the two binary axes.
+chance), Krippendorff's α tracks κ within 0.01, and the confusion matrix correctly counts
+pairwise disagreements. Note the synthetic generator draws rater errors **uniformly** over
+the four states, so all six state-pairs confuse equally in expectation — synthetic runs
+verify the bookkeeping, not the confusability prediction. The pre-registered prediction
+(PROTOCOL §8: NON-NORMATIVE↔CRITICAL and NORMATIVE↔METACOGNITIVE confuse most, because they
+differ only on the locus axis) can only be tested with real rater data.
 A bootstrap-resampling bug (duplicate passages merging and inflating κ above 1) was found
-and fixed; `test_analyze_irr.py` guards against its return.
+and fixed; `test_analyze_irr.py` guards against its return. The script also enforces the
+fully-crossed schema (duplicate or missing ratings fail loudly rather than yielding a
+silently wrong κ).
 
 ## Scope honesty
 

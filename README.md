@@ -5,7 +5,7 @@ A finite algebra over epistemic states, implemented as a reproducible visual not
 
 ## Version 3.0.0
 
-> **Version notice.** v3.0.0 is a structural and scientific remediation release on top of v2.0.2 — **not a visual redesign.** It adds a normative *Formal Justification for the V₄ Structure* (why exactly four states and not two, three, six, or eight — closure under composition forces the fourth state; why the Klein four-group rather than the cyclic group C₄ or a non-abelian group; why an operator algebra rather than a continuous scale or a flat label taxonomy; with a comparison table), a normative *Limitations and Scope Boundaries* section (four-state coarseness, no empirical validation yet, cultural-specificity / semantic-interpretation risk), an *Exclusion Argument* and explicit use-boundary / ethics guidance in the explanation, and per-state bridge paragraphs and limitations notes in the four owl specifications. **It does not change the V₄ algebra, the four canonical state-operator tuples, the σₕ assignment for METACOGNITIVE, the canonical formal sentence, the accessibility rule, the color/orientation semantics, or the approved asset set.** The v3.0.0 version-specific DOI [10.5281/zenodo.20468727](https://doi.org/10.5281/zenodo.20468727) is reserved on Zenodo and embedded as the citing DOI throughout the v3.0.0 source, PDFs, and metadata; the concept DOI [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697) is the all-versions DOI that resolves to the latest published version.
+> **Version notice.** v3.0.0 is a structural and scientific remediation release on top of v2.0.2 — **not a visual redesign.** It adds a normative *Formal Justification for the V₄ Structure* (why exactly four states and not two, three, six, or eight — closure under composition forces the fourth state; why the Klein four-group rather than the cyclic group C₄ or a non-abelian group; why an operator algebra rather than a continuous scale or a flat label taxonomy; with a comparison table), a normative *Limitations and Scope Boundaries* section (four-state coarseness, no empirical validation yet, cultural-specificity / semantic-interpretation risk), an *Exclusion Argument* and explicit use-boundary / ethics guidance in the explanation, and per-state bridge paragraphs and limitations notes in the four owl specifications. **It does not change the V₄ algebra, the four canonical state-operator tuples, the σₕ assignment for METACOGNITIVE, the canonical formal sentence, the accessibility rule, the color/orientation semantics, or the approved asset set.** The v3.0.0 version-specific DOI [10.5281/zenodo.20468727](https://doi.org/10.5281/zenodo.20468727) is published on Zenodo (2026-05-31) and embedded as the citing DOI throughout the v3.0.0 source, PDFs, and metadata; the concept DOI [10.5281/zenodo.19473697](https://doi.org/10.5281/zenodo.19473697) is the all-versions DOI that resolves to the latest published version.
 
 [![Version DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20468727.svg)](https://doi.org/10.5281/zenodo.20468727)
 [![Concept DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19473697.svg)](https://doi.org/10.5281/zenodo.19473697)
@@ -62,7 +62,7 @@ The version-specific DOI [10.5281/zenodo.20468727](https://doi.org/10.5281/zenod
 
 ## Reproducing the PDFs
 
-All five PDFs (system spec + four state specs + explanation) regenerate from the markdown sources with a single command:
+All six PDFs (system spec + four state specs + explanation) regenerate from the markdown sources with a single command:
 
 ```bash
 make pdfs
@@ -74,7 +74,7 @@ python3 generate_pdfs.py
 
 - `make hashes` — recompute SHA-3-512 hashes for committed PDFs and release assets
 - `make manifest` — rewrite `INTEGRITY-MANIFEST.md` integrity records from current hashes
-- `make test` — run the banner-tuple integrity test (`tests/test_banner_tuple.py`)
+- `make test` — run the integrity test suite (`tests/`) plus the study toolkit regression tests
 - `make clean` — remove generated `.typ` intermediates
 
 ## Repository Layout
@@ -212,7 +212,7 @@ NORM-composite-white-540.png
     "name": "Carey James Balboa",
     "identifier": "https://orcid.org/0009-0000-5237-9065"
   },
-  "description": "A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants. Four-state classification (NORMATIVE, NON-NORMATIVE, CRITICAL, METACOGNITIVE) for DNS Tool documentation and related research artifacts. v3.0.0 is a structural and scientific remediation release on top of v2.0.2 that adds a normative Formal Justification for the V4 structure, a normative Limitations and Scope Boundaries section, an Exclusion Argument with use-boundary/ethics guidance, and per-state bridge and limitations paragraphs, with no change to the V4 algebra, the canonical state-operator tuples, the canonical formal sentence, the accessibility rule, or the asset set. The v3.0.0 version-specific DOI 10.5281/zenodo.20468727 (reserved on Zenodo) is the citing DOI embedded in the v3.0.0 source, PDFs, and metadata. The concept DOI 10.5281/zenodo.19473697 is the all-versions DOI that resolves to the latest published version. Previous published version DOI (v2.0.2): 10.5281/zenodo.20433053.",
+  "description": "A finite algebra over epistemic states, implemented as a reproducible visual notation system with enforced invariants. Four-state classification (NORMATIVE, NON-NORMATIVE, CRITICAL, METACOGNITIVE) for DNS Tool documentation and related research artifacts. v3.0.0 is a structural and scientific remediation release on top of v2.0.2 that adds a normative Formal Justification for the V4 structure, a normative Limitations and Scope Boundaries section, an Exclusion Argument with use-boundary/ethics guidance, and per-state bridge and limitations paragraphs, with no change to the V4 algebra, the canonical state-operator tuples, the canonical formal sentence, the accessibility rule, or the asset set. The v3.0.0 version-specific DOI 10.5281/zenodo.20468727 (published on Zenodo) is the citing DOI embedded in the v3.0.0 source, PDFs, and metadata. The concept DOI 10.5281/zenodo.19473697 is the all-versions DOI that resolves to the latest published version. Previous published version DOI (v2.0.2): 10.5281/zenodo.20433053.",
   "keywords": [
     "Owl Semaphore",
     "DNS Tool",
