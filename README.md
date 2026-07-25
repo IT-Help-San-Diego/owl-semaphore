@@ -75,7 +75,7 @@ python3 generate_pdfs.py
 `make pdfs` produces page-one banner-tuple-bearing PDFs with embedded PDF metadata (Title, Author, Subject, Keywords, Producer, Version), a contact-sheet header, a classification ledger back page, and per-page owl headers. As of v3.0.1 the pipeline drives the parity-proven [`owl-semaphore-press`](https://github.com/IT-Help-San-Diego/owl-semaphore-press) package (pandoc → Typst → PDF); install it pinned, with `pandoc` on PATH:
 
 ```bash
-pip install "owl-semaphore-press[render] @ git+https://github.com/IT-Help-San-Diego/owl-semaphore-press@0.1.0"
+pip install "owl-semaphore-press[render] @ git+https://github.com/IT-Help-San-Diego/owl-semaphore-press@0.1.1"
 ```
 
 See [`Makefile`](Makefile) for additional targets:

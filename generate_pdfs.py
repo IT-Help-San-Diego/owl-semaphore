@@ -31,7 +31,7 @@ Each PDF carries:
 
 Requires: pandoc (cli) and the pinned press package with its render extra:
 
-    pip install "owl-semaphore-press[render] @ git+https://github.com/IT-Help-San-Diego/owl-semaphore-press@0.1.0"
+    pip install "owl-semaphore-press[render] @ git+https://github.com/IT-Help-San-Diego/owl-semaphore-press@0.1.1"
 
 (The render extra pulls the `typst` and `pikepdf` Python packages. Pin the
 press version: a styling change in the package must never silently restyle
@@ -57,7 +57,7 @@ except ImportError:
     print(
         "ERROR: the 'owl-semaphore-press' package is not installed.\n"
         "Run: pip install \"owl-semaphore-press[render] @ "
-        "git+https://github.com/IT-Help-San-Diego/owl-semaphore-press@0.1.0\"",
+        "git+https://github.com/IT-Help-San-Diego/owl-semaphore-press@0.1.1\"",
         file=sys.stderr,
     )
     sys.exit(1)
