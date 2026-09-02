@@ -80,6 +80,22 @@ Each element is its own inverse: \(g^2 = I\) for all \(g \in V_4\). The four gro
 
 This closure is not decorative. It enforces that all epistemic transitions remain inside a defined state space. Group structure guarantees algebraic closure; it does not by itself guarantee security or behavioral correctness without further proof.
 
+### 2.5 Derived Properties (informative)
+
+Three consequences follow from §2.1–§2.3 and are recorded here because they are load-bearing elsewhere in this specification. All three are checkable directly from the Cayley table.
+
+**2.5.1 Only two states are primitive.** Since C₂ = σᵥ ∘ σₕ, CRITICAL is *derived*: it is the composition of NON-NORMATIVE with METACOGNITIVE. The state space has four elements but rank two. Any two non-identity elements generate the whole group, so the four states are the four combinations of the two independent binary distinctions of §4A.1 — not four peers.
+
+**2.5.2 Orientation is the parity of the two distinctions.** Writing each state as (d₁, d₂) with d₁ the σᵥ coordinate and d₂ the σₕ coordinate — I = (0,0), σᵥ = (1,0), σₕ = (0,1), C₂ = (1,1) — the determinant satisfies
+
+    det(g) = (−1)^(d₁ + d₂)
+
+so the orientation-preserving states are exactly those engaging an even number of distinctions. Consequence for the visual system (§6): a 2×2 layout indexed by (d₁, d₂) is load-bearing in both directions, since the determinant split falls on its diagonals. A one-dimensional left/right split by determinant alone carries only d₁ + d₂ mod 2 and cannot recover the individual coordinates.
+
+**2.5.3 The algebra does not privilege any single reflection.** Aut(V₄) ≅ S₃: all six permutations of the non-identity elements are automorphisms, and conjugating the canonical representation by the diagonal mirror σ_d : (x, y) → (y, x) preserves the group while exchanging σᵥ with σₕ. Therefore no group-theoretic property distinguishes METACOGNITIVE from NON-NORMATIVE; the determinant separates reflections from rotations, and nothing separates the two reflections from each other. Everything that distinguishes the two reflections comes from the *content* of the distinctions named in §4A.1. This is a constraint on how the algebra may be cited, not a defect: claims about a specific state must appeal to its stated semantics, never to its position in the group.
+
+**Note on σ_d.** σ_d itself is not a fifth state and cannot become one. ⟨V₄, σ_d⟩ = D₄, of order 8, which is non-abelian and contains an element of order 4 — violating both the involution requirement and the commutativity requirement argued for in §4A.2. σ_d is an operator *on* the state space, not a member of it. Any position that "sees both distinctions as the same kind of move" is therefore outside the four states by construction, and the state space remains complete at four.
+
 ---
 
 ## 3. State vs Process

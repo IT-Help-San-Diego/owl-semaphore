@@ -79,6 +79,8 @@ This state indicates that:
 
 In one sentence: **the observer audits the frame.**
 
+This is where the axiom sits, and that is a claim rather than a remark. σₕ is the *pure* Distinction-2 move (SYSTEM §4A.1): it engages the locus-of-audit toggle while leaving the stance toward the standard untouched — coordinates (d₁, d₂) = (0, 1). CRITICAL, by contrast, is the compound (1, 1), since C₂ = σᵥ ∘ σₕ. So METACOGNITIVE is the only state that relocates the observer without taking any position on the object, which is why the premises reached here are the ones an argument rests on rather than the ones it asserts. The layer's own story states the invariant directly: left is still left, right is still right.
+
 ### 3.3 What It Does Not Mean
 
 - not subject change (the object of analysis is unchanged)
@@ -128,7 +130,7 @@ Within V₄ the METACOGNITIVE element σₕ satisfies:
 - σₕ ∘ σᵥ = C₂
 - σₕ ∘ C₂ = σᵥ
 
-This places METACOGNITIVE on the reflection axis orthogonal to NON-NORMATIVE within the group.
+This places METACOGNITIVE on the reflection axis orthogonal to NON-NORMATIVE **in the canonical 2-D representation** (§6). The qualifier is load-bearing: orthogonality is a property of the representation, not of the abstract group. V₄ has no axes of its own, and Aut(V₄) ≅ S₃ — all six permutations of the non-identity elements are automorphisms — so no group-theoretic property distinguishes σₕ from σᵥ. What distinguishes them is the *content* of the two distinctions named in SYSTEM §4A.1, not the algebra. A related convention note: in strict Schoenflies notation the point group C₂ᵥ has two vertical mirrors, σᵥ and σᵥ′, both containing the C₂ axis — there is no σₕ in C₂ᵥ. The reading here is the 2-D mirror-line convention (non-square rectangle: horizontal reflection, vertical reflection, 180° rotation), and every operator is defined by explicit matrix in SYSTEM §2, which overrides the point-group convention. The note is made pre-emptively so a crystallographer does not have to raise it first.
 
 ---
 

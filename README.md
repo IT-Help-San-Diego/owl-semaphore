@@ -162,9 +162,11 @@ authoritative editable masters that carry the full layer model):
 
 ## Related Resources
 
-- DNS Tool Owl Semaphore page: https://dnstool.it-help.tech/owl-semaphore
-- DNS Tool confidence framework: https://dnstool.it-help.tech/confidence
-- DNS Tool corpus (epistemic classification legend): https://dnstool.it-help.tech/corpus
+- Public home: https://owlsemaphore.systems
+- Repository: https://github.com/IT-Help-San-Diego/owl-semaphore
+- Version DOI: https://doi.org/10.5281/zenodo.21524422
+- Concept DOI: https://doi.org/10.5281/zenodo.19473697
+- Bridge page: https://dnstool.it-help.tech/owl-semaphore
 - DNS Tool publications: https://dnstool.it-help.tech/publications
 
 ## Standards
